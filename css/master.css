@@ -1,6 +1,22 @@
 
+:root {
+  --mainColor: rgb(41, 41, 41);
+}
+
 body {
-  background: rgb(10, 203, 255);
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mainHeader {
+  width: 100%;
+  height: 60px;
+  background-color: var(--mainColor);
+}
+
+.mainHeader .av {
+  width: 60px;
+  height: 60px;
 }
 
 .WUP {
