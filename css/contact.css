@@ -24,3 +24,7 @@
   border-width: 2px;
   background: rgba(195, 54, 54, 0.47);
 }
+
+.formErrorMsg {
+  color: rgb(195, 54, 54);
+}

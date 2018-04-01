@@ -33,12 +33,12 @@
       <section class="disMsg">
         <h3>Send quick message</h3>
         <form name="disMsg" onsubmit="sendWebhook()">
-          <p>Author</p>
-          <input class="formInput" type="text" name="author" required>
-          <p>E-Mail</p>
-          <input class="formInput" type="text" name="email" required>
-          <p>Message</p>
-          <textarea class="formInput" name="message" rows="8" cols="35" required></textarea>
+          <p id="formAuthorTxt">Author</p>
+          <input class="formInput" type="text" name="author">
+          <p id="formEmailTxt">E-Mail</p>
+          <input class="formInput" type="text" name="email">
+          <p id="formMessageTxt">Message</p>
+          <textarea class="formInput" name="message" rows="8" cols="35"></textarea>
         </form>
         <button onclick="sendWebhook()">Send</button>
       </section>
