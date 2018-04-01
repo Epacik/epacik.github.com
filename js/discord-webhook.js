@@ -2,24 +2,40 @@
 
 let webhookURL = 'https://discordapp.com/api/webhooks/427579628547342336/hhTXGxRGkOsXHg6cmUaMAxMS68u_rNC-0jI1T_dXyTgjxnvxONDbuHAuq0dOwLue6o2R';
 
+let fillIt = 'Fill it in before sending';
+
+document.forms.disMsg.author.addEventListener('click', function () {
+  document.forms.disMsg.author.classList.remove('wrongInput');
+  document.querySelector('#formAuthorTxt').innerHTML = `Author`;
+});
+
+document.forms.disMsg.email.addEventListener('click', function () {
+  document.forms.disMsg.email.classList.remove('wrongInput');
+  document.querySelector('#formEmailTxt').innerHTML = `E-Mail`;
+});
+
+document.forms.disMsg.message.addEventListener('click', function () {
+  document.forms.disMsg.message.classList.remove('wrongInput');
+  document.querySelector('#formMessageTxt').innerHTML = `Message`;
+});
+
 let checkDisMsgForm = function (disMsg) {
   let ret = true;
-  console.log(disMsg);
   if (disMsg.author.value == '') {
     disMsg.author.classList.add('wrongInput');
-    document.querySelector('#formAuthorTxt').innerHTML = `Author <div class="formErrorMsg">Fill it in before sending</div>`;
+    document.querySelector('#formAuthorTxt').innerHTML = `Author <div class="formErrorMsg">${fillIt}</div>`;
     ret = false;
   }
 
   if (disMsg.message.value == '') {
     disMsg.message.classList.add('wrongInput');
-    document.querySelector('#formMessageTxt').innerHTML = `Message <div class="formErrorMsg">Fill it in before sending</div>`;
+    document.querySelector('#formMessageTxt').innerHTML = `Message <div class="formErrorMsg">${fillIt}</div>`;
     ret = false;
   }
 
   if (disMsg.email.value == '') {
     disMsg.email.classList.add('wrongInput');
-    document.querySelector('#formEmailTxt').innerHTML = `E-Mail <div class="formErrorMsg">Fill it in before sending</div>`;
+    document.querySelector('#formEmailTxt').innerHTML = `E-Mail <div class="formErrorMsg">${fillIt}</div>`;
     ret = false;
   }
 
