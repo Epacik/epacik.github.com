@@ -7,19 +7,19 @@ let checkDisMsgForm = function (disMsg) {
   console.log(disMsg);
   if (disMsg.author.value == '') {
     disMsg.author.classList.add('wrongInput');
-    document.querySelector('#formAuthorTxt').insertAdjacentHTML('beforeEnd', '<div class="formErrorMsg">Fill it in before sending</div>');
+    document.querySelector('#formAuthorTxt').innerHTML = `Author <div class="formErrorMsg">Fill it in before sending</div>`;
     ret = false;
   }
 
   if (disMsg.message.value == '') {
     disMsg.message.classList.add('wrongInput');
-    document.querySelector('#formMessageTxt').insertAdjacentHTML('beforeEnd', '<div class="formErrorMsg">Fill it in before sending</div>');
+    document.querySelector('#formMessageTxt').innerHTML = `Message <div class="formErrorMsg">Fill it in before sending</div>`;
     ret = false;
   }
 
   if (disMsg.email.value == '') {
     disMsg.email.classList.add('wrongInput');
-    document.querySelector('#formEmailTxt').insertAdjacentHTML('beforeEnd', '<div class="formErrorMsg">Fill it in before sending</div>');
+    document.querySelector('#formEmailTxt').innerHTML = `E-Mail <div class="formErrorMsg">Fill it in before sending</div>`;
     ret = false;
   }
 
