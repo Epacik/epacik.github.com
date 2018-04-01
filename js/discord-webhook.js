@@ -3,15 +3,12 @@
 let webhookURL = 'https://discordapp.com/api/webhooks/427579628547342336/hhTXGxRGkOsXHg6cmUaMAxMS68u_rNC-0jI1T_dXyTgjxnvxONDbuHAuq0dOwLue6o2R';
 
 let sendWebhook = function () {
+  let disMsg = document.forms.disMsg;
   const embed = {
-    author: {
-      name: $('#author_name').val(),
-      url: '',
-      icon_url: '',
-    },
+
     color: parseInt('0E95FB', 16),
-    description: $('#text').val(),
-    title: $('#contact').val(),
+    description: disMsg.message.value,
+    title: disMsg.email.value,
     url: '',
     image: { url: '' },
     thumbnail: { url: '' },
@@ -37,7 +34,7 @@ let sendWebhook = function () {
       crossDomain: true,
       data: JSON.stringify({
         content: '',
-        username: '',
+        username: disMsg.author.value,
         avatar_url: '',
         embeds: props.some(Boolean) ? [embed] : undefined,
       }),

@@ -1,6 +1,6 @@
 /*jshint esversion:6*/
 
-let underConstruction = true;
+let underConstruction = false;
 let debug = false;
 
 function getURLParam(key) {
