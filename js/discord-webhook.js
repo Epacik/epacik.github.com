@@ -23,19 +23,22 @@ let checkDisMsgForm = function (disMsg) {
   let ret = true;
   if (disMsg.author.value == '') {
     disMsg.author.classList.add('wrongInput');
-    document.querySelector('#formAuthorTxt').innerHTML = `Author <div class="formErrorMsg">${fillIt}</div>`;
+    document.querySelector('#formAuthorTxt').innerHTML = `Author
+      <p class="formErrorMsg">${fillIt}</p>`;
     ret = false;
   }
 
   if (disMsg.message.value == '') {
     disMsg.message.classList.add('wrongInput');
-    document.querySelector('#formMessageTxt').innerHTML = `Message <div class="formErrorMsg">${fillIt}</div>`;
+    document.querySelector('#formMessageTxt').innerHTML = `Message
+      <p class="formErrorMsg">${fillIt}</p>`;
     ret = false;
   }
 
   if (disMsg.email.value == '') {
     disMsg.email.classList.add('wrongInput');
-    document.querySelector('#formEmailTxt').innerHTML = `E-Mail <div class="formErrorMsg">${fillIt}</div>`;
+    document.querySelector('#formEmailTxt').innerHTML = `E-Mail
+      <p class="formErrorMsg">${fillIt}</p>`;
     ret = false;
   }
 
