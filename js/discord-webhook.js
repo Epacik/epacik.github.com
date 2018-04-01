@@ -2,8 +2,32 @@
 
 let webhookURL = 'https://discordapp.com/api/webhooks/427579628547342336/hhTXGxRGkOsXHg6cmUaMAxMS68u_rNC-0jI1T_dXyTgjxnvxONDbuHAuq0dOwLue6o2R';
 
+let checkDisMsgForm = function (disMsg) {
+  let ret = true;
+  console.log(disMsg);
+  if (disMsg.author.value == '') {
+    ret = false;
+  }
+
+  if (disMsg.message.value == '') {
+    ret = false;
+  }
+
+  if (disMsg.email.value == '') {
+    ret = false;
+  }
+
+  return ret;
+};
+
 let sendWebhook = function () {
   let disMsg = document.forms.disMsg;
+
+  if (!checkDisMsgForm(disMsg)) {
+    alert('fuck off');
+    return;
+  }
+
   const embed = {
 
     color: parseInt('0E95FB', 16),

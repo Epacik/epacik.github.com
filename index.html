@@ -31,14 +31,14 @@
 
     <section class="contact">
       <section class="disMsg">
+        <h3>Send quick message</h3>
         <form name="disMsg" onsubmit="sendWebhook()">
-          <h3></h3>
           <p>Author</p>
-          <input class="formInput" type="text" name="author">
+          <input class="formInput" type="text" name="author" required>
           <p>E-Mail</p>
-          <input class="formInput" type="text" name="email">
+          <input class="formInput" type="text" name="email" required>
           <p>Message</p>
-          <textarea class="formInput" name="message" rows="8" cols="35"></textarea>
+          <textarea class="formInput" name="message" rows="8" cols="35" required></textarea>
         </form>
         <button onclick="sendWebhook()">Send</button>
       </section>
