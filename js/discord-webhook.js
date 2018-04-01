@@ -6,14 +6,17 @@ let checkDisMsgForm = function (disMsg) {
   let ret = true;
   console.log(disMsg);
   if (disMsg.author.value == '') {
+    disMsg.author.classList.add('wrongInput');
     ret = false;
   }
 
   if (disMsg.message.value == '') {
+    disMsg.message.classList.add('wrongInput');
     ret = false;
   }
 
   if (disMsg.email.value == '') {
+    disMsg.email.classList.add('wrongInput');
     ret = false;
   }
 
@@ -24,7 +27,6 @@ let sendWebhook = function () {
   let disMsg = document.forms.disMsg;
 
   if (!checkDisMsgForm(disMsg)) {
-    alert('fuck off');
     return;
   }
 
