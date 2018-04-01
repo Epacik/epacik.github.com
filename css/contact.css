@@ -1,0 +1,15 @@
+
+.disMsg {
+  background: rgb(242, 242, 242);
+  color: #36393e;
+  border-radius: 10px;
+}
+
+.formInput {
+  resize: none;
+  padding:4px;
+  background: rgb(231, 230, 230);
+  border-radius: 5px;
+  border-style: none;
+  outline: none;
+}

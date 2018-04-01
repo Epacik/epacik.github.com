@@ -2,7 +2,7 @@
 
 let webhookURL = 'https://discordapp.com/api/webhooks/427579628547342336/hhTXGxRGkOsXHg6cmUaMAxMS68u_rNC-0jI1T_dXyTgjxnvxONDbuHAuq0dOwLue6o2R';
 
-let sendWebhook = () => {
+let sendWebhook = function () {
   const embed = {
     author: {
       name: $('#author_name').val(),

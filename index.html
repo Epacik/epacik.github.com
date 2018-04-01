@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="./css/master.css">
+  <link rel="stylesheet" href="./css/contact.css">
   <link rel="shortcut icon" href="favicon.png">
   <title>Epat</title>
 </head>
@@ -14,8 +15,10 @@
 <body>
   <main class="wrapper">
     <header class="mainHeader">
-      <img src="./img/{E}.png" alt="" class="av">
-      <h1>Epat</h1>
+      <img src="./img/{E}.png" class="av">
+      <div>
+        <p>Epat</p>
+      </div>
     </header>
     <menu class="mainNav">
       <header>
@@ -25,6 +28,20 @@
         <button id="goContact">Contact</button>
       </header>
     </menu>
+
+    <section class="contact">
+      <section class="disMsg">
+        <form name="disMsg">
+          <p>Author</p>
+          <input class="formInput" type="text" name="author">
+          <p>E-Mail</p>
+          <input class="formInput" type="text" name="email">
+          <p>Message</p>
+          <textarea class="formInput" name="message" rows="8" cols="35"></textarea>
+        </form>
+
+      </section>
+    </section>
   </main>
 
 
@@ -36,6 +53,7 @@
     </div>
   </section>
   <script src="./js/jquery.min.js" charset="utf-8"></script>
+  <script src="./js/discord-webhook.js" charset="utf-8"></script>
   <script src="./js/main.js" charset="utf-8"></script>
 </body>
 
