@@ -25,8 +25,10 @@ function showConstr() {
   }
 }
 
-if (getURLParam('deb')) {
-  debug = true;
+if (typeof URLSearchParams != 'undefined') {
+  if (getURLParam('deb')) {
+    debug = true;
+  }
 }
 
 showConstr();

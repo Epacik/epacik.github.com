@@ -1,6 +1,6 @@
 /*jshint esversion:6*/
 
-let webhookURL = 'https://discordapp.com/api/webhooks/426039054765654023/zd-FQPVHtMoaIsPH4xTuuYPCmGYSNPpJBWkKYN40L5FEF9kdJaRx4gUlrFP7P0p_F1PU';
+let webhookURL = 'https://discordapp.com/api/webhooks/427579628547342336/hhTXGxRGkOsXHg6cmUaMAxMS68u_rNC-0jI1T_dXyTgjxnvxONDbuHAuq0dOwLue6o2R';
 
 let sendWebhook = () => {
   const embed = {
