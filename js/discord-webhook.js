@@ -2,7 +2,7 @@
 
 let webhookURL = 'https://discordapp.com/api/webhooks/427579628547342336/hhTXGxRGkOsXHg6cmUaMAxMS68u_rNC-0jI1T_dXyTgjxnvxONDbuHAuq0dOwLue6o2R';
 
-let fillIt = 'Fill it in before sending';
+let fillIt = 'Fill it in before sending message';
 
 document.forms.disMsg.author.addEventListener('click', function () {
   document.forms.disMsg.author.classList.remove('wrongInput');
