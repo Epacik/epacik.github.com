@@ -6,7 +6,8 @@
   padding: 10px;
   margin: 10px;
   width: calc(100% - 40px);
-  max-width: 310px;
+  max-width: 400px;
+  box-shadow: 0 3px 5px 0 rgb(156, 156, 156);
 }
 
 .disMsg div {
@@ -30,7 +31,7 @@
   border-width: 0;
   outline: none;
   width: calc(100% - 10px);
-  max-width: 300px;
+  max-width: 390px;
   transition: 0.2s;
   border-color: rgb(231, 230, 230);
   border-style: solid;

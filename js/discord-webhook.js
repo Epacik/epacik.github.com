@@ -6,45 +6,45 @@ let fillIt = 'Can\'t be empty';
 
 document.forms.disMsg.author.addEventListener('focus', function () {
   document.forms.disMsg.author.classList.remove('wrongInput');
-  document.querySelector('#formAuthorTxt').innerHTML = `Author`;
+  document.querySelector('#formAuthorTxt').innerHTML = lang.contact.sendQM.author;
 });
 
 document.forms.disMsg.email.addEventListener('focus', function () {
   document.forms.disMsg.email.classList.remove('wrongInput');
-  document.querySelector('#formEmailTxt').innerHTML = `E-Mail`;
+  document.querySelector('#formEmailTxt').innerHTML = lang.contact.sendQM.email;
 });
 
 document.forms.disMsg.message.addEventListener('focus', function () {
   document.forms.disMsg.message.classList.remove('wrongInput');
-  document.querySelector('#formMessageTxt').innerHTML = `Message`;
+  document.querySelector('#formMessageTxt').innerHTML = lang.contact.sendQM.msg;
 });
 
 let checkDisMsgForm = function (disMsg) {
   let ret = true;
   if (disMsg.author.value == '') {
     disMsg.author.classList.add('wrongInput');
-    document.querySelector('#formAuthorTxt').innerHTML = `Author
-      <p class="formErrorMsg">${fillIt}</p>`;
+    document.querySelector('#formAuthorTxt').innerHTML = `${lang.contact.sendQM.author}
+      <p class="formErrorMsg">${lang.contact.sendQM.empty}</p>`;
     ret = false;
   }
 
   if (disMsg.message.value == '') {
     disMsg.message.classList.add('wrongInput');
-    document.querySelector('#formMessageTxt').innerHTML = `Message
-      <p class="formErrorMsg">${fillIt}</p>`;
+    document.querySelector('#formMessageTxt').innerHTML = `${lang.contact.sendQM.msg}
+      <p class="formErrorMsg">${lang.contact.sendQM.empty}</p>`;
     ret = false;
   }
 
   if (disMsg.email.value == '') {
     disMsg.email.classList.add('wrongInput');
-    document.querySelector('#formEmailTxt').innerHTML = `E-Mail
-      <p class="formErrorMsg">${fillIt}</p>`;
+    document.querySelector('#formEmailTxt').innerHTML = `${lang.contact.sendQM.email}
+      <p class="formErrorMsg">${lang.contact.sendQM.empty}</p>`;
     ret = false;
   } else {
     if (!validateEmail(disMsg.email.value)) {
       disMsg.email.classList.add('wrongInput');
       document.querySelector('#formEmailTxt').innerHTML = `E-Mail
-        <p class="formErrorMsg">Invalid E-Mail</p>`;
+        <p class="formErrorMsg">${lang.contact.sendQM.invalid}</p>`;
     }
   }
 
