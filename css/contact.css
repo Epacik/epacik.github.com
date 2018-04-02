@@ -5,19 +5,36 @@
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
-  width: 310px;
+  width: calc(100% - 40px);
+  max-width: 310px;
+}
+
+.disMsg div {
+  margin: 5px 0;
+}
+
+.disMsg h3 {
+  margin: 0;
+}
+
+.disMsg p {
+  display: inline-block;
+  margin: 0;
 }
 
 .formInput {
   resize: none;
-  padding:4px;
+  padding: 4px;
   background: rgb(231, 230, 230);
   border-radius: 5px;
-  border-style: solid;
   border-width: 0;
   outline: none;
-  width: 300px;
+  width: calc(100% - 10px);
+  max-width: 300px;
   transition: 0.2s;
+  border-color: rgb(231, 230, 230);
+  border-style: solid;
+  border-width: 2px;
 }
 
 .wrongInput {

@@ -2,19 +2,19 @@
 
 let webhookURL = 'https://discordapp.com/api/webhooks/427579628547342336/hhTXGxRGkOsXHg6cmUaMAxMS68u_rNC-0jI1T_dXyTgjxnvxONDbuHAuq0dOwLue6o2R';
 
-let fillIt = 'Fill it in before sending message';
+let fillIt = 'Can\'t be empty';
 
-document.forms.disMsg.author.addEventListener('click', function () {
+document.forms.disMsg.author.addEventListener('focus', function () {
   document.forms.disMsg.author.classList.remove('wrongInput');
   document.querySelector('#formAuthorTxt').innerHTML = `Author`;
 });
 
-document.forms.disMsg.email.addEventListener('click', function () {
+document.forms.disMsg.email.addEventListener('focus', function () {
   document.forms.disMsg.email.classList.remove('wrongInput');
   document.querySelector('#formEmailTxt').innerHTML = `E-Mail`;
 });
 
-document.forms.disMsg.message.addEventListener('click', function () {
+document.forms.disMsg.message.addEventListener('focus', function () {
   document.forms.disMsg.message.classList.remove('wrongInput');
   document.querySelector('#formMessageTxt').innerHTML = `Message`;
 });
@@ -40,10 +40,27 @@ let checkDisMsgForm = function (disMsg) {
     document.querySelector('#formEmailTxt').innerHTML = `E-Mail
       <p class="formErrorMsg">${fillIt}</p>`;
     ret = false;
+  } else {
+    if (!validateEmail(disMsg.email.value)) {
+      disMsg.email.classList.add('wrongInput');
+      document.querySelector('#formEmailTxt').innerHTML = `E-Mail
+        <p class="formErrorMsg">Invalid E-Mail</p>`;
+    }
   }
 
   return ret;
 };
+
+function validateEmail(sEmail) {
+  var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
+
+  if (!sEmail.match(reEmail)) {
+    return false;
+  }
+
+  return true;
+
+}
 
 let sendWebhook = function () {
   let disMsg = document.forms.disMsg;
@@ -97,4 +114,7 @@ let sendWebhook = function () {
   } catch (e) {
     console.log('lol');
   }
+
+  disMsg.reset();
+  alert('Message was sent');
 };
