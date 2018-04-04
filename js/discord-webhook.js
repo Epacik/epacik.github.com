@@ -45,6 +45,7 @@ let checkDisMsgForm = function (disMsg) {
       disMsg.email.classList.add('wrongInput');
       document.querySelector('#formEmailTxt').innerHTML = `E-Mail
         <p class="formErrorMsg">${lang.contact.sendQM.invalid}</p>`;
+      ret = false;
     }
   }
 
