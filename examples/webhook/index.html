@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://smtpjs.com/v2/smtp.js"></script>
+  <script src="../../js/jquery.min.js" charset="utf-8"></script>
+  <script src="./js/discord-webhook2.js" charset="utf-8"></script>
+  <title>Prezentacja Webhooka</title>
+</head>
+<body>
+  <form name="discordWebhook" action="index.html" method="post">
+    <h2>Podstawowe informacje</h2><br>
+    <h3>Nazwa użytkownika</h3>
+    <input type="text" name="name">
+    <h3>Główna część wiadomości</h3>
+    <input type="text" name="content">
+    <h3>Adres URL obrazka avatara</h3>
+    <input type="text" name="avatarUrl">
+    <br><br>
+    <h2>Zawartość osadzona (Embed content)</h2><br>
+    <h3>Autor</h3>
+    <input type="text" name="embAuthor">
+    <h3>URL autora</h3>
+    <input type="text" name="embAutUrl">
+    <h3>Ikona autora</h3>
+    <input type="text" name="embAutIco">
+    <h3>Tytuł</h3>
+    <input type="text" name="title">
+    <h3>URL tytułu</h3>
+    <input type="text" name="url">
+    <h3>Opis</h3>
+    <input type="text" name="desc">
+    <h3>URL obrazka</h3>
+    <input type="text" name="imgUrl">
+    <h3>Adres miniaturki</h3>
+    <input type="text" name="thumbUrl">
+    <h3>Tekst stopki</h3>
+    <input type="text" name="footer">
+    <h3>URL ikony stopki</h3>
+    <input type="text" name="footImg">
+    <h3>Kolor akcentu</h3>
+    <input type="color" name="color">
+
+  </form>
+  <button onclick="sendWebhook()">Wyślij</button>
+
+</body>
+</html>

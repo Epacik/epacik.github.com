@@ -3,10 +3,16 @@ let webhookURL = 'https://discordapp.com/api/webhooks/432657481945317388/V52Ynj7
 
 let sendWebhook = function () {
   let disMsg = document.forms.discordWebhook;
+  let color = String(disMsg.color.value);
+  color = color.slice(1);
 
   const embed = {
-
-    color: parseInt(disMsg.col.value, 16),
+    author: {
+      name: disMsg.embAuthor.value,
+      url: disMsg.embAutUrl.value,
+      icon_url: disMsg.embAutIco.value,
+    },
+    color: parseInt(color, 16),
     description: disMsg.desc.value,
     title: disMsg.title.value,
     url: disMsg.url.value,
@@ -34,8 +40,8 @@ let sendWebhook = function () {
       crossDomain: true,
       data: JSON.stringify({
         content: disMsg.content.value,
-        username: disMsg.author.value,
-        avatar_url: disMsg.avaratUrl.value,
+        username: disMsg.name.value,
+        avatar_url: disMsg.avatarUrl.value,
         embeds: props.some(Boolean) ? [embed] : undefined,
       }),
       success: success => {
@@ -47,7 +53,8 @@ let sendWebhook = function () {
       },
     });
   } catch (e) {
-    console.log('lol');
+    console.log('error:');
+    console.log(e);
   }
 
 };

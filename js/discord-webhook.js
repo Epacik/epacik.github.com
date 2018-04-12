@@ -102,7 +102,7 @@ let sendWebhook = function () {
         content: '',
         username: disMsg.author.value,
         avatar_url: '',
-        embeds: props.some(Boolean) ? [embed, embed] : undefined,
+        embeds: props.some(Boolean) ? [embed] : undefined,
       }),
       success: success => {
         console.log(success);
