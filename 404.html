@@ -1,15 +1,72 @@
+---
+permalink: /404.html
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('./img/404/background.jpg');
+      background-size: cover;
+      background-clip: content-box;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: black;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    #e404 {
+      position: fixed;
+      font-size: 15vh;
+      left: 0;
+      width: 100vw;
+      text-align: center;
+      top: 0;
+      color: rgba(255, 255, 255, 0.53);
+    }
+
+    #e404 h1 {
+      margin: 0;
+    }
+
+    #e404 h3 {
+      font-size: 30%;
+      margin: 0;
+    }
+
+    .lost {
+      position: fixed;
+      width: 100%;
+      color: white;
+      font-size: 5vh;
+      margin: 0;
+      filter: blur(0.4vh);
+      bottom: 5vh;
+      left: 0;
+      text-align: center;
+    }
+
+  </style>
   <title>Oops :(</title>
 </head>
 <body>
   <main class="wrapper">
-    <h1>404</h1>
-    <h2 class="lost">I think, we're lost</h2>
+    <section id="e404">
+      <h1>404</h1>
+      <h3>File not found</h3>
+    </section>
+    <h3></h3>
+    <h2 class="lost">We shouldn't even be here...</h2>
     <section class="background"></section>
   </main>
 </body>
