@@ -4,6 +4,7 @@ body {
   font-family: 'Roboto', sans-serif;
   width: 100%;
   max-width: 100vw;
+  font-size: 20px;
 }
 
 * {
@@ -30,7 +31,6 @@ body {
   height: 60px;
   vertical-align: top;
   margin: 0;
-  align-self: top;
 }
 
 .mainHeader div p {

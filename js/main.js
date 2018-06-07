@@ -14,21 +14,6 @@ function setURLParam(key, value) {
   location.search = params.toString();
 }
 
-function showConstr() {
-  let constr = document.querySelector('.WUP');
-  if (!debug && underConstruction) {
-    constr.style.opacity = '1';
-    constr.style.pointerEvents = 'all';
-  } else {
-    constr.style.opacity = '';
-    constr.style.pointerEvents = '';
-  }
-}
-
 if (typeof URLSearchParams != 'undefined') {
-  if (getURLParam('deb')) {
-    debug = true;
-  }
-}
 
-showConstr();
+}
