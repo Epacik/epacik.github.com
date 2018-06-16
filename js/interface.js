@@ -22,9 +22,14 @@ let scrollCards = function (e) {
     let elP = cards[i];
 
     let b = elP.getBoundingClientRect().bottom;
+    let o = win.h;
 
-    if (b <= win.h) {
-      let p = win.h - b;
+    if (elP.offsetHeight < o) {
+      o = elP.offsetHeight;
+    }
+
+    if (b <= o) {
+      let p = o - b;
       if (p <= elP.offsetHeight) {
         let sc = 1 - (p / elP.offsetHeight);
         if (sc <= 0.9) {

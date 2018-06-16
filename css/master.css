@@ -47,22 +47,29 @@ body {
   background-color: white;
 }
 
-.content {
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
-  padding: 5px;
-
-  /* z-index: 1; */
-}
-
 .card {
   width: 100%;
+  min-height: 100vh;
   height: 150vh;
   position: relative;
   background-color: transparent;
   box-shadow: 0 0 7px 0 black;
   color: white
 }
+
+.content {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  padding: 5px;
+
+  background-image: linear-gradient(
+    var(--accentColor), var(--navColor)
+    );
+
+  /* z-index: 1; */
+}
+
+
 
 #cont2 .content {
   background-color: var(--accentColor)
