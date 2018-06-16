@@ -45,12 +45,11 @@ body {
 
 .wrapper {
   background-color: white;
-  margin: 40px auto;
 }
 
 .card {
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   min-height: 100vh;
   height: 150vh;
@@ -62,11 +61,10 @@ body {
 .content {
   width: calc(100% - 10px);
   height: calc(100% - 10px);
-  max-width: 1200px;
-  margin: 20px auto;
+  /* max-width: 1200px; */
+  margin: 0 auto;
   box-shadow: 0 0 7px 0 black;
   padding: 5px;
-  transition: 0.1s;
 
   background-image: linear-gradient(
     var(--accentColor), var(--navColor)

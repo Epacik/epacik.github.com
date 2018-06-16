@@ -26,15 +26,15 @@ let scrollCards = function (e) {
 
     if (b <= o) {
       let p = o - b;
-      if (p <= elP.offsetHeight - 40) {
+      if (p <= elP.offsetHeight) {
         let sc = 1 - (p / elP.offsetHeight);
         if (sc <= 0.9) {
           sc = 0.9;
         }
 
-        el.style.transform = `scale(${sc.toFixed(5)})`;
+        el.style.transform = `scale(${sc})`;
         console.log(el.style.transform);
-        el.style.bottom = `${i * 2}vh`;
+        el.style.bottom = `0`;
         el.style.position = 'fixed';
         el.style.width = elP.offsetWidth - 10 + 'px';
         el.style.height = elP.offsetHeight + 'px';
