@@ -1,6 +1,10 @@
 #mainHeader {
-  height: 300px;
+  /* height: 300px; */
   position: relative;
+}
+
+#mainHeader .content {
+  background-color: rgb(226, 181, 230);
 }
 
 #mainHeader nav {
