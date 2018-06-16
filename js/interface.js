@@ -24,13 +24,9 @@ let scrollCards = function (e) {
     let b = elP.getBoundingClientRect().bottom;
     let o = win.h;
 
-    if (elP.offsetHeight < o) {
-      o = elP.offsetHeight;
-    }
-
     if (b <= o) {
       let p = o - b;
-      if (p <= elP.offsetHeight) {
+      if (p <= elP.offsetHeight - 40) {
         let sc = 1 - (p / elP.offsetHeight);
         if (sc <= 0.9) {
           sc = 0.9;
@@ -40,13 +36,15 @@ let scrollCards = function (e) {
         //   sc = String(sc) + i * 2;
         // }
 
-        el.style.transform = `scale(${sc})`;
+        el.style.transform = `scale(${sc.toFixed(5)})`;
         console.log(el.style.transform);
         el.style.bottom = `${i * 2}vh`;
         el.style.position = 'fixed';
+        el.style.width = elP.offsetWidth - 10 + 'px';
         el.style.height = elP.offsetHeight + 'px';
         el.style.zIndex = `0.0000${i}`;
         el.style.boxShadow = '0 0 5px 0 black';
+        elP.style.boxShadow = '0 0 0 0 transparent';
       }
     } else {
       el.style.transform = `scale(1)`;
@@ -55,6 +53,7 @@ let scrollCards = function (e) {
       el.style.position = '';
       el.style.zIndex = ``;
       el.style.boxShadow = '';
+      elP.style.boxShadow = '';
     }
 
   }
