@@ -8,7 +8,7 @@ let win = {
 let resize = function () {
   win.w = window.innerWidth;
   win.h = window.innerHeight;
-  console.log(win);
+  scrollCards();
 };
 
 let scrollCards = function (e) {
@@ -31,10 +31,6 @@ let scrollCards = function (e) {
         if (sc <= 0.9) {
           sc = 0.9;
         }
-
-        // if (sc < 1) {
-        //   sc = String(sc) + i * 2;
-        // }
 
         el.style.transform = `scale(${sc.toFixed(5)})`;
         console.log(el.style.transform);
