@@ -57,10 +57,11 @@ body {
 
 .card {
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   position: relative;
   background-color: transparent;
   box-shadow: 0 0 7px 0 black;
+  color: white
 }
 
 #cont2 .content {

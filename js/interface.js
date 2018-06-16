@@ -19,25 +19,34 @@ let scrollCards = function (e) {
 
   for (var i = 0; i < cards.length - 1; i++) {
     let el = cards[i].children[0];
+    let elP = cards[i];
 
-    let b = cards[i].getBoundingClientRect().bottom;
+    let b = elP.getBoundingClientRect().bottom;
+
     if (b <= win.h) {
       let p = win.h - b;
-      if (p <= win.h) {
-        let sc = 1 - (p / win.h);
-        if (sc <= 0.8) {
-          sc = 0.8;
+      if (p <= elP.offsetHeight) {
+        let sc = 1 - (p / elP.offsetHeight);
+        if (sc <= 0.9) {
+          sc = 0.9;
         }
 
+        // if (sc < 1) {
+        //   sc = String(sc) + i * 2;
+        // }
+
         el.style.transform = `scale(${sc})`;
-        el.style.top = `0.${i}vh`;
+        console.log(el.style.transform);
+        el.style.bottom = `${i * 2}vh`;
         el.style.position = 'fixed';
+        el.style.height = elP.offsetHeight + 'px';
         el.style.zIndex = `0.0000${i}`;
         el.style.boxShadow = '0 0 5px 0 black';
       }
     } else {
       el.style.transform = `scale(1)`;
-      el.style.top = '';
+      el.style.bottom = '';
+      el.style.height = '';
       el.style.position = '';
       el.style.zIndex = ``;
       el.style.boxShadow = '';
