@@ -33,14 +33,11 @@ let scrollCards = function (e) {
         }
 
         el.style.transform = `scale(${sc})`;
-        console.log(el.style.transform);
         el.style.bottom = `0`;
         el.style.position = 'fixed';
-        el.style.width = elP.offsetWidth - 10 + 'px';
         el.style.height = elP.offsetHeight + 'px';
         el.style.zIndex = `0.0000${i}`;
         el.style.boxShadow = '0 0 5px 0 black';
-        elP.style.boxShadow = '0 0 0 0 transparent';
       }
     } else {
       el.style.transform = `scale(1)`;
@@ -49,7 +46,6 @@ let scrollCards = function (e) {
       el.style.position = '';
       el.style.zIndex = ``;
       el.style.boxShadow = '';
-      elP.style.boxShadow = '';
     }
 
   }
