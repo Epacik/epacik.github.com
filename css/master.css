@@ -54,7 +54,6 @@ body {
   margin: 0 auto;
   height: 150vh;
   position: relative;
-  color: white;
 }
 
 .content {
@@ -73,15 +72,19 @@ body {
 
 footer {
   height: 300px !important;
+  color: white;
 }
 
 footer .content {
   background-color: var(--accentColor);
+
+
 }
 
 footer ul {
   list-style-type: none;
   max-width: 300px;
+  margin-right: 15px;
 }
 
 footer li {
