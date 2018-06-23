@@ -1,4 +1,12 @@
 #mainHeader {
-  /* height: 300px; */
+  height: 100vh;
   position: relative;
+}
+
+#mainHeader header {
+  background-color: var(--mainColor);
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 0 3px 0 black;
 }

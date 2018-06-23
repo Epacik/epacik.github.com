@@ -4,6 +4,10 @@
   display: inline-block;
 }
 
-/* .ico path {
-  fill: white;
-} */
+#scrUp {
+  color: white;
+}
+
+.ico path {
+  color: white;
+}

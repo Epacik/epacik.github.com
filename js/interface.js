@@ -77,3 +77,8 @@ window.addEventListener('resize', resize);
 document.addEventListener('scroll', scrollCards);
 
 scrollCards();
+
+document.getElementById('scrUp').addEventListener('click', function () {
+  document.querySelector('#mainHeader').scrollIntoView({ behavior: 'smooth',
+    inline: 'start', block: 'start', });
+});
