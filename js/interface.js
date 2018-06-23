@@ -29,14 +29,19 @@ let scrollCards = function (e) {
 
     if (b <= o) {
       let p = o - b;
-      if (p <= elP.offsetHeight) {
+      if (window.scrollY < win.h && i == 0) {
+        el.style.transform = `scale(0.9)`;
+        el.style.bottom = `0`;
+        el.style.position = 'fixed';
+        el.style.height = elP.offsetHeight + 'px';
+        el.style.zIndex = `0.0000${i}`;
+        el.style.boxShadow = '0 0 5px 0 black';
+      } else if (p <= elP.offsetHeight) {
         let sc = 1 - (p / elP.offsetHeight);
-        console.log((p / elP.offsetHeight));
         if (sc <= 0.9) {
           sc = 0.9;
         }
 
-        console.log(sc);
         el.style.transform = `scale(${sc})`;
         el.style.bottom = `0`;
         el.style.position = 'fixed';
