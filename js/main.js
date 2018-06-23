@@ -44,14 +44,14 @@ function navigate() {
     hash = hash.split('#')[1];
   }
 
-  if (hash == 'testPage') {
-    id = 'testPage';
+  if (hash != 'home' && hash != '') {
+    id = hash;
   } else {
-    id = 'home';
+    id = 'Home';
   }
 
   for (i = 0; i < pages.length; i++) {
-    if (pages[i].id == id) {
+    if (pages[i].id.toUpperCase() == id.toUpperCase()) {
       pages[i].style.left = '0';
       pages[i].style.opacity = '1';
       pages[i].style.position = 'static';
@@ -69,6 +69,7 @@ window.addEventListener('hashchange', navigate);
 
 function goto(pl) {
   inst.clMenu();
+  location.hash = '';
   location.hash = pl;
 }
 

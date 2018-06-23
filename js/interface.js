@@ -12,10 +12,13 @@ let resize = function () {
 };
 
 let scrollCards = function (e) {
+
   // console.log(e);
-  let h = document.querySelector('header');
-  let hc = document.querySelector('header').children[0];
+
   let cards = document.querySelectorAll('.card');
+  if (cards == null) {
+    return;
+  }
 
   for (var i = 0; i < cards.length - 1; i++) {
     let el = cards[i].children[0];
@@ -28,10 +31,12 @@ let scrollCards = function (e) {
       let p = o - b;
       if (p <= elP.offsetHeight) {
         let sc = 1 - (p / elP.offsetHeight);
+        console.log((p / elP.offsetHeight));
         if (sc <= 0.9) {
           sc = 0.9;
         }
 
+        console.log(sc);
         el.style.transform = `scale(${sc})`;
         el.style.bottom = `0`;
         el.style.position = 'fixed';
@@ -83,6 +88,81 @@ document.getElementById('scrUp').addEventListener('click', function () {
     inline: 'start', block: 'start', });
 });
 
-function buildPage(page, data) {
+function buildPage() {
+  let pgDOM = document.getElementById('pages');
+  pgDOM.innerHTML = '';
+  for (i = 0; i < pages.length; i++) {
+    let main = document.createElement('main');
+    main.id = pages[i].id.toUpperCase();
+    main.classList.add('wrapper');
+    pgDOM.appendChild(main);
+    let pg = document.getElementById(pages[i].id.toUpperCase());
+    let content = pages[i].content;
 
+    for (j = 0; j < content.length; j++) {
+      let card = document.createElement(content[j].type);
+      let cnt = document.createElement('section');
+      console.log(content[j].type);
+      console.log(card);
+      card.classList.add('card');
+
+      if (content[j].id) {
+        card.id = content[j].id;
+      }
+
+      if (content[j].class) {
+        for (c = 0; c < content[j].class.length; c++) {
+          card.classList.add(content[j].class[c]);
+        }
+      }
+
+      if (typeof content[j].content == 'string') {
+        cnt.innerHTML = content[j].content;
+      } else if (typeof content[j].content == 'object') {
+        let c = content[j].content;
+        for (k = 0; k < c.length; k++) {
+          let cn = c[k];
+          let el = document.createElement(cn.type);
+          el.innerHTML = cn.content;
+          if (cn.id) {
+            el.id = cn.id;
+          }
+
+          if (cn.class) {
+            for (c = 0; c < cn.class.length; c++) {
+              el.classList.add(cn.class[c]);
+            }
+          }
+
+          cnt.appendChild(el);
+          console.log(cnt);
+        }
+      }
+
+      cnt.classList.add('content');
+      card.appendChild(cnt);
+      pg.appendChild(card);
+    }
+  }
+
+  let nav = elements.sideNav;
+  nav.innerHTML = '';
+  for (i = 0; i < pages.length; i++) {
+    let btn = document.createElement('button');
+    let id = pages[i].id;
+    btn.onclick = `goto(${id})`;
+
+    btn.addEventListener('click', function () {
+      goto(id);
+      console.log(id);
+    });
+
+    btn.innerHTML = pages[i].id;
+    nav.appendChild(btn);
+  };
+
+  goto('home');
+  scrollCards();
 }
+
+buildPage();
