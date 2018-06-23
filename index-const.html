@@ -18,6 +18,8 @@
 </head>
 
 <body>
+  <section id="begin"></section>
+
   <section id="loading">
     <section>
       <div id="spinner">
@@ -26,7 +28,10 @@
       <p>Loading...</p>
     </section>
   </section>
-  <main class="wrapper">
+
+<section id="pages">
+
+  <main id="home" class="wrapper">
 
 
     <header id="mainHeader" class="card">
@@ -67,23 +72,32 @@
           </li>
           <li onclick="window.open('https://www.codewars.com/users/Epacik')">
             <div class="ico ico-codewars">
-              <svg viewbox="0 0 32 32">
-                <use href="./img/brands/codewars.svg#codewars"></use>
-              </svg>
             </div>
             <p>Codewars</p>
           </li>
         </ul>
       </section>
     </footer>
-
-
-
-
-
   </main>
-  <menu class="sideNav">
 
+  <main id="testPage" class="wrapper">
+    <header id="mainHeader" class="card">
+      <section class="content">
+        <header style="color: white;">LOLOLO</header>
+      </section>
+    </header>
+
+    <section id="cont2" class="card">
+      <section class="content">
+      </section>
+    </section>
+  </main>
+
+</section>
+
+  <menu class="sideNav">
+    <button onclick="goto('home')">Home</button>
+    <button onclick="goto('testPage')">testPage</button>
   </menu>
   <section class="mb-scene">
     <div class="mfb">

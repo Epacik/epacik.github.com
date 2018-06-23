@@ -67,7 +67,7 @@ inst.opMenu = function () {
 inst.clMenu = function () {
   elements.sideNav.style.bottom = '';
   elements.navBtn.classList.remove('flip');
-  document.body.style.overflow = '';
+  document.body.style.overflow = 'auto';
 };
 
 elements.mbtn.addEventListener('click', inst.opMenu);
@@ -79,6 +79,10 @@ document.addEventListener('scroll', scrollCards);
 scrollCards();
 
 document.getElementById('scrUp').addEventListener('click', function () {
-  document.querySelector('#mainHeader').scrollIntoView({ behavior: 'smooth',
+  document.querySelector('body').scrollIntoView({ behavior: 'smooth',
     inline: 'start', block: 'start', });
 });
+
+function buildPage(page, data) {
+
+}

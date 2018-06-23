@@ -1,6 +1,7 @@
 .sideNav {
   width: 100vw;
   height: 100vh;
+  padding-top: 20px;
   position: fixed;
   bottom: -200vh;
   left: 0;
@@ -11,7 +12,21 @@
     var(--accentColor)
     );
   transition: bottom 0.3s;
+  z-index: 300;
 }
+
+.sideNav button {
+  width: calc(100% - 80px);
+  height: 40px;
+  margin: 10px auto;
+  background-color: rgba(0, 0, 0, 0.31);
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  font-size: 150%;
+}
+
+
 
 .mb-scene {
   width: 50px;

@@ -4,16 +4,16 @@ console.log('loaded');
 
 function toggleLoading() {
   loading = document.getElementById('loading');
-  if (loading.style.opacity == '') {
-    loading.style.opacity = '0';
-    loading.style.pointerEvents = 'none';
-    document.body.style.overflow = 'auto';
-    document.querySelector('#loading #spinner div').style.animationName = 'none';
-  } else {
+  if (loading.style.opacity == '0') {
     loading.style.opacity = '';
     loading.style.pointerEvents = '';
     document.body.style.overflow = '';
     document.querySelector('#loading #spinner div').style.animationName = '';
+  } else {
+    loading.style.opacity = '0';
+    loading.style.pointerEvents = 'none';
+    document.body.style.overflow = 'auto';
+    document.querySelector('#loading #spinner div').style.animationName = 'none';
   }
 
 }
@@ -36,10 +36,41 @@ if (typeof URLSearchParams != 'undefined') {
   console.log(URLSearchParams);
 }
 
-function navigate(e) {
-  console.log(e);
+function navigate() {
+  let pages = document.getElementById('pages').children;
+  let id = '';
+  let hash = location.hash;
+  if (hash != '') {
+    hash = hash.split('#')[1];
+  }
+
+  if (hash == 'testPage') {
+    id = 'testPage';
+  } else {
+    id = 'home';
+  }
+
+  for (i = 0; i < pages.length; i++) {
+    if (pages[i].id == id) {
+      pages[i].style.left = '0';
+      pages[i].style.opacity = '1';
+      pages[i].style.position = 'static';
+      pages[i].style.pointerEvents = 'all';
+    } else {
+      pages[i].style.left = '';
+      pages[i].style.opacity = '';
+      pages[i].style.position = '';
+      pages[i].style.pointerEvents = '';
+    }
+  }
 }
 
 window.addEventListener('hashchange', navigate);
 
+function goto(pl) {
+  inst.clMenu();
+  location.hash = pl;
+}
+
+navigate();
 toggleLoading();
