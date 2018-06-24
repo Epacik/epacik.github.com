@@ -6,8 +6,21 @@
 #mainHeader header {
   background-color: var(--mainColor);
   height: 70px;
+  font-size: 60px;
   margin: 0;
   padding: 0;
   box-shadow: 0 0 3px 0 black;
   color: white;
+}
+
+#mainHeader div {
+  display: inline;
+  width: calc(100% - 70px);
+  margin: 0;
+  margin-right: 0;
+}
+
+#mainHeader header img {
+  height: 70px;
+  width: 70px;
 }

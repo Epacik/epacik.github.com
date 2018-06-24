@@ -25,6 +25,7 @@ let footer = `<ul>
 let pages = [
   {
     id: 'home',
+    name: 'Home',
     content: [
       {
         type: 'header',
@@ -32,7 +33,7 @@ let pages = [
         content: [
           {
             type: 'header',
-            content: '{Epat}',
+            content: '<div><img src="./img/e.png"></div><div>Epat</div>',
           },
           {
             type: 'p',
@@ -56,6 +57,7 @@ let pages = [
   },
   {
     id: 'testingPage',
+    name: 'Testing Page',
     content: [
       {
         type: 'header',

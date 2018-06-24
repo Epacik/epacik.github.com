@@ -29,7 +29,9 @@ let scrollCards = function (e) {
 
     if (b <= o) {
       let p = o - b;
-      if (window.scrollY < win.h && i == 0) {
+      if (window.scrollY > win.h && i == 0) {
+        // console.log(window.scrollY);
+        // console.log(win.h);
         el.style.transform = `scale(0.9)`;
         el.style.bottom = `0`;
         el.style.position = 'fixed';
@@ -71,13 +73,13 @@ elements.sideNav = document.querySelector('.sideNav');
 inst.opMenu = function () {
   elements.sideNav.style.bottom = '0';
   elements.navBtn.classList.add('flip');
-  document.body.style.overflow = 'hidden';
+  // document.body.style.overflow = 'hidden';
 };
 
 inst.clMenu = function () {
   elements.sideNav.style.bottom = '';
   elements.navBtn.classList.remove('flip');
-  document.body.style.overflow = 'auto';
+  // document.body.style.overflow = 'auto';
 };
 
 elements.mbtn.addEventListener('click', inst.opMenu);
@@ -162,7 +164,7 @@ function buildPage() {
       console.log(id);
     });
 
-    btn.innerHTML = pages[i].id;
+    btn.innerHTML = pages[i].name;
     nav.appendChild(btn);
   };
 
@@ -171,3 +173,4 @@ function buildPage() {
 }
 
 buildPage();
+toggleLoading();

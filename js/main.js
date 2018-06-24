@@ -74,4 +74,3 @@ function goto(pl) {
 }
 
 navigate();
-toggleLoading();
