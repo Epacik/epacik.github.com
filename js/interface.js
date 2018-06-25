@@ -11,6 +11,30 @@ let resize = function () {
   scrollCards();
 };
 
+function scrollUpButton() {
+  let scrUp = document.getElementById('scrUp');
+  if (window.scrollY * 2.5 > win.h) {
+    scrUp.style.opacity = '1';
+    scrUp.style.pointerEvents = 'all';
+  } else {
+    scrUp.style.opacity = '';
+    scrUp.style.pointerEvents = '';
+  }
+}
+
+function mdParse() {
+  let md = document.querySelectorAll('.markdown');
+
+  for (var i = 0; i < md.length; i++) {
+    md[i].innerHTML = marked(md[i].dataset.md);
+  }
+}
+
+function scroll() {
+  scrollCards();
+  scrollUpButton();
+}
+
 let scrollCards = function (e) {
 
   // console.log(e);
@@ -73,12 +97,14 @@ elements.sideNav = document.querySelector('.sideNav');
 inst.opMenu = function () {
   elements.sideNav.style.bottom = '0';
   elements.navBtn.classList.add('flip');
+
   // document.body.style.overflow = 'hidden';
 };
 
 inst.clMenu = function () {
   elements.sideNav.style.bottom = '';
   elements.navBtn.classList.remove('flip');
+
   // document.body.style.overflow = 'auto';
 };
 
@@ -86,7 +112,7 @@ elements.mbtn.addEventListener('click', inst.opMenu);
 elements.bbtn.addEventListener('click', inst.clMenu);
 
 window.addEventListener('resize', resize);
-document.addEventListener('scroll', scrollCards);
+document.addEventListener('scroll', scroll);
 
 scrollCards();
 
@@ -168,6 +194,7 @@ function buildPage() {
     nav.appendChild(btn);
   };
 
+  mdParse();
   goto('home');
   scrollCards();
 }

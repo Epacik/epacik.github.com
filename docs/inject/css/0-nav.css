@@ -1,0 +1,94 @@
+.sideNav {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 20px;
+  position: fixed;
+  bottom: -200vh;
+  left: 0;
+  margin: 0;
+  background-color: var(--navColor);
+  background-image: linear-gradient(
+    var(--navColor),
+    var(--accentColor)
+    );
+  transition: bottom 0.3s;
+  z-index: 300;
+}
+
+.sideNav button {
+  width: calc(100% - 80px);
+  height: 40px;
+  margin: 10px auto;
+  background-color: rgba(0, 0, 0, 0.31);
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  font-size: 150%;
+}
+
+.sideNav button:active {
+  background-color: rgba(0, 0, 0, 0.61);
+}
+
+.mb-scene {
+  width: 50px;
+  height: 50px;
+  perspective: 200px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.mfb {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.mfb button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  border-style: solid;
+  color: white;
+  box-shadow: 3px 3px 5px 0 var(--shadowColor);
+  transition: 0.1s;
+}
+
+.mfb button:active {
+
+  box-shadow: 2px 2px 3px 0 var(--shadowColor);
+}
+
+.mfb button svg {
+  transform: rotateZ(-45deg);
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+}
+
+.mfb button i {
+  transform: rotateZ(-45deg);
+  font-size: 30px;
+}
+
+#mbtn {
+  background-color: var(--navColor);
+  /* border-color: var(--navColor); */
+  transform: rotateZ(45deg);
+}
+
+#bbtn {
+  background-color: var(--accentColor);
+  /* border-color: var(--accentColor); */
+  transform: rotateY(180deg) rotateZ(45deg);
+}
+
+.mfb.flip {
+  transform: rotateY(180deg);
+}

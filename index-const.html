@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+  <script type="text/javascript">
+    window.onerror = function (e) {
+      alert(`${e} occured, for further informations open developer tools`);
+    };
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -44,7 +49,8 @@
   <button id="scrUp" >
     <i class="fas fa-chevron-up"></i>
   </button>
-  <script src="./js/jquery.min.js" charset="utf-8"></script>
+  <script src="./js/jquery.min.js" charset="utf-8" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" async></script>
   <script src="./js/content.js" charset="utf-8" async></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   <script src="./js/lang.js" charset="utf-8"></script>

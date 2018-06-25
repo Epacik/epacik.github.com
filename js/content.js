@@ -33,21 +33,24 @@ let pages = [
         content: [
           {
             type: 'header',
-            content: '<div><img src="./img/e.png"></div><div>Epat</div>',
+            content: '<div></div><div>Epat</div>',
           },
           {
-            type: 'p',
-            content: 'TESTING;',
+            type: 'section',
+            class: [
+              'slider',
+            ],
+            content: '',
           },
         ],
       },
       {
         type: 'section',
-        content: 'card number 2',
+        content: '<p class="markdown" data-md="# lol \n## even more testing"></p>',
       },
       {
         type: 'section',
-        content: 'card number 3',
+        content: '<p class="markdown" data-md="### looool"></p>',
       },
       {
         type: 'footer',
