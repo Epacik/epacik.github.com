@@ -36,6 +36,12 @@ if (typeof URLSearchParams != 'undefined') {
   console.log(URLSearchParams);
 }
 
+
+/**
+ * navigate - description
+ *
+ * @return {type}  description
+ */
 function navigate() {
   let pages = document.getElementById('pages').children;
   let id = '';
@@ -69,6 +75,10 @@ window.addEventListener('hashchange', navigate);
 
 function goto(pl) {
   inst.clMenu();
+  if (location.hash == pl) {
+    return;
+  }
+
   location.hash = '';
   location.hash = pl;
 }

@@ -1,0 +1,21 @@
+{
+    "plugins": [],
+    "recurseDepth": 10,
+    "source": {
+        "include": ["./js/content.js", "./js/icons.js", "./js/interface.js", "./js/lang.js", "./js/main.js"],
+        "includePattern": ".+\\.js(doc|x)?$"
+    },
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "opts": {
+      "destination": "./docs/",
+      "template": "./jsdoc-templates/tui"
+    }
+}

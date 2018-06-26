@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   margin: 0;
@@ -141,11 +145,13 @@ footer {
 footer .content {
   padding-top: 5px;
   background-color: var(--accentColor);
+
 }
 
 footer ul {
   list-style-type: none;
   max-width: 300px;
+  margin-left: 20px;
   margin-right: 15px;
 }
 

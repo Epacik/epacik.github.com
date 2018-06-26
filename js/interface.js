@@ -22,11 +22,13 @@ function scrollUpButton() {
   }
 }
 
-function mdParse() {
+function mdParse(a, b, c, d) {
   let md = document.querySelectorAll('.markdown');
 
   for (var i = 0; i < md.length; i++) {
-    md[i].innerHTML = marked(md[i].dataset.md);
+    if (md[i].dataset != undefined && md[i].dataset.md != undefined) {
+      md[i].innerHTML = marked(md[i].dataset.md);
+    }
   }
 }
 
@@ -139,6 +141,20 @@ function buildPage() {
       console.log(card);
       card.classList.add('card');
 
+      if (content[j].dataset != undefined && typeof content[j].dataset == 'object') {
+        for (var k = 0; k < content[j].dataset.length; k++) {
+          let d = content[j].dataset[k];
+          card.setAttribute(`data-${d.name}`, d.data);
+        }
+      }
+
+      if (content[j].contentDataset != undefined && typeof content[j].contentDataset == 'object') {
+        for (var k = 0; k < content[j].contentDataset.length; k++) {
+          let d = content[j].contentDataset[k];
+          cnt.setAttribute(`data-${d.name}`, d.data);
+        }
+      }
+
       if (content[j].id) {
         card.id = content[j].id;
       }
@@ -164,6 +180,13 @@ function buildPage() {
           if (cn.class) {
             for (c = 0; c < cn.class.length; c++) {
               el.classList.add(cn.class[c]);
+            }
+          }
+
+          if (cn.dataset != undefined && typeof cn.dataset == 'object') {
+            for (var k = 0; k < cn.dataset.length; k++) {
+              let d = cn.dataset[k];
+              el.setAttribute(`data-${d.name}`, d.data);
             }
           }
 
