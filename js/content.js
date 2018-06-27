@@ -105,7 +105,7 @@ let pages = [
      * @desc List of CSS classes
      */
     class: [
-      'home-page'
+      'home-page',
     ],
 
     /**
@@ -190,9 +190,8 @@ let pages = [
          */
         id: 'mainHeader',
 
-
         /**
-         * @type {Arrat.<Object>}
+         * @type {Array.<Object>}
          * @memberof pages.content
          * @namespace
          * @desc Content of a section of subpage
@@ -204,17 +203,64 @@ let pages = [
          */
         content: [
           {
+
+            /**
+             * @memberof pages.content.content
+             * @type {String}
+             * @desc type of a HTML element eg. 'header'
+             */
             type: 'header',
-            id: ''
+
+            /**
+             * @memberof pages.content.content
+             * @type {String}
+             * @desc HTML id of element
+             */
+            id: 'top-bar',
+
+            /**
+             * @memberof pages.content.content
+             * @type {Array.<String>}
+             * @desc List of CSS classes
+             */
+
             class: [
               'markdown',
             ],
+
+            /**
+             * @type {Array.<Object>}
+             * @memberof pages.content.content
+             * @namespace
+             * @desc Array of objects used for Dataset API in element
+             * @example
+             * <JavaScript>
+             * [
+             *  {name: 'theme', data 'light'},
+             * ]
+             */
             dataset: [
               {
+                /**
+                 * @type {String}
+                 * @memberof pages.content.content.dataset
+                 * @desc name of data unit (data-{name})
+                 */
                 name: 'md',
+                /**
+                 * @type {String}
+                 * @memberof pages.content.content.dataset
+                 * @desc data contained in unit
+                 */
                 data: 'Epat',
               },
             ],
+
+            /**
+             * @type {String}
+             * @memberof pages.content.content
+             * @desc content of a HTML element (innerHTML)
+             */
             content: '<div>Epat</div>',
           },
           {

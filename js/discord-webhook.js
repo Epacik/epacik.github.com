@@ -1,7 +1,15 @@
 /*jshint esversion:6*/
 
+
+/**
+ * @type {String}
+ * @desc URL of Discors Webhook
+ */
 let webhookURL = 'https://discordapp.com/api/webhooks/427579628547342336/hhTXGxRGkOsXHg6cmUaMAxMS68u_rNC-0jI1T_dXyTgjxnvxONDbuHAuq0dOwLue6o2R';
 
+/**
+ * @private
+ */
 let fillIt = 'Can\'t be empty';
 
 document.forms.disMsg.author.addEventListener('focus', function () {
@@ -19,6 +27,13 @@ document.forms.disMsg.message.addEventListener('focus', function () {
   document.querySelector('#formMessageTxt').innerHTML = lang.contact.sendQM.msg;
 });
 
+
+/**
+ * checkDisMsgForm - Check if input form is filled correctly
+ *
+ * @param  {Object} disMsg HTML form
+ * @return {Boolean}       is form fillded correctly
+ */
 let checkDisMsgForm = function (disMsg) {
   let ret = true;
   if (disMsg.author.value == '') {
@@ -52,7 +67,19 @@ let checkDisMsgForm = function (disMsg) {
   return ret;
 };
 
+
+/**
+ * validateEmail - check syntax of an email address
+ *
+ * @param  {String} sEmail Email address to check
+ * @return {Boolean}       is it correct
+ */
 function validateEmail(sEmail) {
+
+
+  /**
+   * @desc this somehow can check syntax of email address
+   */
   var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
 
   if (!sEmail.match(reEmail)) {
@@ -60,8 +87,11 @@ function validateEmail(sEmail) {
   }
 
   return true;
-
 }
+
+/**
+ * sendWebhook - Sends message to a webhook
+ */
 
 let sendWebhook = function () {
   let disMsg = document.forms.disMsg;

@@ -1,4 +1,14 @@
+
+/**
+ * @type {Object}
+ * @desc object of all elements needed in interface
+ */
 let elements = {};
+
+/**
+ * @type {Object}
+ * @desc instances of all elements (methods, obects etc. )
+ */
 let inst = {};
 let win = {
   w: window.innerWidth,

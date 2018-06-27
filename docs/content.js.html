@@ -34,7 +34,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Namespaces</h3><ul><li><a href="pages.html">pages</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="pages.html#.id">id</a></li><li><a href="pages.html#.name">name</a></li></ul></div></li><li><a href="pages.content.html">pages.content</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages.content_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="pages.content.html#.id">id</a></li><li><a href="pages.content.html#.type">type</a></li></ul></div></li><li><a href="pages.content.content.html">pages.content.content</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages.content.content_sub"></div></li><li><a href="pages.content.contentDataset.html">pages.content.contentDataset</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages.content.contentDataset_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="pages.content.contentDataset.html#.data">data</a></li><li><a href="pages.content.contentDataset.html#.name">name</a></li></ul></div></li><li><a href="pages.content.dataset.html">pages.content.dataset</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages.content.dataset_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="pages.content.dataset.html#.data">data</a></li><li><a href="pages.content.dataset.html#.name">name</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#navigate">navigate</a></li></ul></div>
+    <div class="lnb-api hidden"><h3>Namespaces</h3><ul><li><a href="pages.html">pages</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="pages.html#.class">class</a></li><li><a href="pages.html#.id">id</a></li><li><a href="pages.html#.name">name</a></li></ul></div></li><li><a href="pages.content.html">pages.content</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages.content_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="pages.content.html#.id">id</a></li><li><a href="pages.content.html#.type">type</a></li></ul></div></li><li><a href="pages.content.content.html">pages.content.content</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages.content.content_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="pages.content.content.html#.class">class</a></li><li><a href="pages.content.content.html#.content">content</a></li><li><a href="pages.content.content.html#.id">id</a></li><li><a href="pages.content.content.html#.type">type</a></li></ul></div></li><li><a href="pages.content.content.dataset.html">pages.content.content.dataset</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages.content.content.dataset_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="pages.content.content.dataset.html#.data">data</a></li><li><a href="pages.content.content.dataset.html#.name">name</a></li></ul></div></li><li><a href="pages.content.contentDataset.html">pages.content.contentDataset</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages.content.contentDataset_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="pages.content.contentDataset.html#.data">data</a></li><li><a href="pages.content.contentDataset.html#.name">name</a></li></ul></div></li><li><a href="pages.content.dataset.html">pages.content.dataset</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="pages.content.dataset_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="pages.content.dataset.html#.data">data</a></li><li><a href="pages.content.dataset.html#.name">name</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#elements">elements</a></li><li><a href="global.html#inst">inst</a></li><li><a href="global.html#navigate">navigate</a></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -148,6 +148,15 @@ let pages = [
     name: 'Home',
 
     /**
+     * @memberof pages
+     * @type {Array.&lt;String>}
+     * @desc List of CSS classes
+     */
+    class: [
+      'home-page',
+    ],
+
+    /**
      * @type {array.&lt;Object>}
      * @desc contains sections of subpage
      * @namespace
@@ -229,25 +238,77 @@ let pages = [
          */
         id: 'mainHeader',
 
-
         /**
-         * @type {Arrat.&lt;Object>}
+         * @type {Array.&lt;Object>}
          * @memberof pages.content
          * @namespace
          * @desc Content of a section of subpage
+         * @example
+         * &lt;JavaScript>
+         * [
+         *  {type: 'header' id}
+         * ]
          */
         content: [
           {
+
+            /**
+             * @memberof pages.content.content
+             * @type {String}
+             * @desc type of a HTML element eg. 'header'
+             */
             type: 'header',
+
+            /**
+             * @memberof pages.content.content
+             * @type {String}
+             * @desc HTML id of element
+             */
+            id: 'top-bar',
+
+            /**
+             * @memberof pages.content.content
+             * @type {Array.&lt;String>}
+             * @desc List of CSS classes
+             */
+
             class: [
               'markdown',
             ],
+
+            /**
+             * @type {Array.&lt;Object>}
+             * @memberof pages.content.content
+             * @namespace
+             * @desc Array of objects used for Dataset API in element
+             * @example
+             * &lt;JavaScript>
+             * [
+             *  {name: 'theme', data 'light'},
+             * ]
+             */
             dataset: [
               {
+                /**
+                 * @type {String}
+                 * @memberof pages.content.content.dataset
+                 * @desc name of data unit (data-{name})
+                 */
                 name: 'md',
+                /**
+                 * @type {String}
+                 * @memberof pages.content.content.dataset
+                 * @desc data contained in unit
+                 */
                 data: 'Epat',
               },
             ],
+
+            /**
+             * @type {String}
+             * @memberof pages.content.content
+             * @desc content of a HTML element (innerHTML)
+             */
             content: '&lt;div>Epat&lt;/div>',
           },
           {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Namespace: content | Namespace: content</title>
+    <title>Namespace: dataset | Namespace: dataset</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -24,7 +24,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Namespace: content</a></h1>
+        <h1><a href="index.html" class="link">Namespace: dataset</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -47,7 +47,7 @@
 <header>
     
         <h2>
-            <span class="ancestors"><a href="pages.html">pages</a><a href="pages.content.html">.content</a>.</span>content</h2>
+            <span class="ancestors"><a href="pages.html">pages</a><a href="pages.content.html">.content</a><a href="pages.content.content.html">.content</a>.</span>dataset</h2>
         
     
 </header>
@@ -57,7 +57,7 @@
         <div class="container-overview">
         
             
-                <div class="description">Content of a section of subpage</div>
+                <div class="description">Array of objects used for Dataset API in element</div>
             
 
             
@@ -102,7 +102,7 @@
                 
     <pre class="prettyprint"><code>&lt;JavaScript>
 [
- {type: 'header' id}
+ {name: 'theme', data 'light'},
 ]</code></pre>
 
             
@@ -121,24 +121,6 @@
     
 
     
-        <h3 class="subsection-title">Namespaces</h3>
-        
-
-<dl>
-    
-        <dt>
-            <h4 class="name">
-                <a href="pages.content.content.dataset.html">dataset</a>
-                <div class="container-source members">
-                    <code><a href="pages.content.content.dataset.html">pages.content.content.dataset</a></code>
-                </div>
-            </h4>
-        </dt>
-        
-    
-</dl>
-
-    
 
     
         <h3 class="subsection-title">Members</h3>
@@ -147,12 +129,12 @@
             
 
 <dt>
-<h4 class="name" id=".class">
-    <span class="type-signature"><span class="icon green">static</span> </span>class<span class="type-signature"> :Array.&lt;String></span>
+<h4 class="name" id=".data">
+    <span class="type-signature"><span class="icon green">static</span> </span>data<span class="type-signature"> :String</span>
     
     <div class="container-source members">
         <code><a href="content.js.html">content.js</a></code>,
-        <code><a href="content.js.html#line227">line 227</a></code>
+        <code><a href="content.js.html#line255">line 255</a></code>
     </div>
     
 </h4>
@@ -162,86 +144,7 @@
 <dd>
     
     <div class="description">
-        List of CSS classes
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Array.&lt;String></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".content">
-    <span class="type-signature"><span class="icon green">static</span> </span>content<span class="type-signature"> :String</span>
-    
-    <div class="container-source members">
-        <code><a href="content.js.html">content.js</a></code>,
-        <code><a href="content.js.html#line264">line 264</a></code>
-    </div>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        content of a HTML element (innerHTML)
+        data contained in unit
     </div>
     
 
@@ -305,12 +208,12 @@
             
 
 <dt>
-<h4 class="name" id=".id">
-    <span class="type-signature"><span class="icon green">static</span> </span>id<span class="type-signature"> :String</span>
+<h4 class="name" id=".name">
+    <span class="type-signature"><span class="icon green">static</span> </span>name<span class="type-signature"> :String</span>
     
     <div class="container-source members">
         <code><a href="content.js.html">content.js</a></code>,
-        <code><a href="content.js.html#line219">line 219</a></code>
+        <code><a href="content.js.html#line249">line 249</a></code>
     </div>
     
 </h4>
@@ -320,86 +223,7 @@
 <dd>
     
     <div class="description">
-        HTML id of element
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">String</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".type">
-    <span class="type-signature"><span class="icon green">static</span> </span>type<span class="type-signature"> :String</span>
-    
-    <div class="container-source members">
-        <code><a href="content.js.html">content.js</a></code>,
-        <code><a href="content.js.html#line212">line 212</a></code>
-    </div>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        type of a HTML element eg. 'header'
+        name of data unit (data-{name})
     </div>
     
 
@@ -486,7 +310,7 @@
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'pages.content.content_sub'.replace(/"/g, '_');
+        var id = 'pages.content.content.dataset_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
