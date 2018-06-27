@@ -67,7 +67,6 @@ let checkDisMsgForm = function (disMsg) {
   return ret;
 };
 
-
 /**
  * validateEmail - check syntax of an email address
  *
@@ -75,7 +74,6 @@ let checkDisMsgForm = function (disMsg) {
  * @return {Boolean}       is it correct
  */
 function validateEmail(sEmail) {
-
 
   /**
    * @desc this somehow can check syntax of email address
