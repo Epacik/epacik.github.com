@@ -16,6 +16,6 @@
     },
     "opts": {
       "destination": "./docs/",
-      "template": "./jsdoc-templates/tui"
+      "template": "./../jsdoc-templates/tui"
     }
 }

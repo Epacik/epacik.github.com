@@ -1,26 +1,42 @@
 
 /**
  * @type {Object}
+ * @namespace
  * @desc object of all elements needed in interface
  */
 let elements = {};
 
 /**
  * @type {Object}
- * @desc instances of all elements (methods, obects etc. )
+ * @namespace
+ * @desc instances of all elements (methods, objects etc. )
  */
 let inst = {};
+
+/**
+ * @type {Object}
+ * @name win
+ * @desc Contains quick info about vrowser window
+ */
 let win = {
   w: window.innerWidth,
   h: window.innerHeight,
 };
 
+/**
+ * @function resize
+ * @desc Update {@link win} object and positions of sections of subpage
+ */
 let resize = function () {
   win.w = window.innerWidth;
   win.h = window.innerHeight;
   scrollCards();
 };
 
+/**
+ * @function scrollUpButton
+ * @desc Shor or hide "Scroll up button"
+ */
 function scrollUpButton() {
   let scrUp = document.getElementById('scrUp');
   if (window.scrollY * 2.5 > win.h) {
@@ -32,7 +48,11 @@ function scrollUpButton() {
   }
 }
 
-function mdParse(a, b, c, d) {
+/**
+ * @function mdParse
+ * @desc Replace content of all elements with parsed markdown from data-md tag if element have CSS class "markdown"
+ */
+function mdParse() {
   let md = document.querySelectorAll('.markdown');
 
   for (var i = 0; i < md.length; i++) {
@@ -42,14 +62,20 @@ function mdParse(a, b, c, d) {
   }
 }
 
-function scroll() {
+/**
+ * @function scroll
+ * @desc call functions while scrolling
+ */
+function scroll(e) {
   scrollCards();
   scrollUpButton();
 }
 
-let scrollCards = function (e) {
-
-  // console.log(e);
+/**
+ * @function scrollCards
+ * @desc scroll sections of subpage with "fading behind"
+ */
+let scrollCards = function () {
 
   let cards = document.querySelectorAll('.card');
   if (cards == null) {
@@ -100,38 +126,103 @@ let scrollCards = function (e) {
 
 };
 
-//elements of DOM
+/**
+ * @name mbtn
+ * @type {Object}
+ * @memberof elements
+ * @desc Contains menu button
+ */
 elements.mbtn = document.getElementById('mbtn');
+
+/**
+ * @name bbtn
+ * @type {Object}
+ * @memberof elements
+ * @desc Contains close menu button
+ */
 elements.bbtn = document.getElementById('bbtn');
+
+/**
+ * @name navBtn
+ * @type {Object}
+ * @memberof elements
+ * @desc Container for {@link mbtn} and {@link bbtn}
+ */
 elements.navBtn = document.querySelector('.mfb');
+
+/**
+ * @name sideNav
+ * @type {Object}
+ * @memberof  elements
+ * @desc Side navigation menu
+ */
 elements.sideNav = document.querySelector('.sideNav');
 
+/**
+ * @name scrUp
+ * @memberof elements
+ * @desc Contains scroll up button
+ */
+elements.scrUp = document.getElementById('scrUp');
+
+/**
+ * @method opMenu
+ * @memberof inst
+ * @function
+ * @desc Opens {@link elements.sideNav}
+ */
 inst.opMenu = function () {
   elements.sideNav.style.bottom = '0';
   elements.navBtn.classList.add('flip');
-
-  // document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
 };
 
+/**
+ * @method clMenu
+ * @memberof inst
+ * @function
+ * @desc Closes {@link elements.sideNav}
+ */
 inst.clMenu = function () {
   elements.sideNav.style.bottom = '';
   elements.navBtn.classList.remove('flip');
-
-  // document.body.style.overflow = 'auto';
+  document.body.style.overflow = 'auto';
 };
 
+/**
+ * @event mbtn-click
+ * @memberof elements
+ * @desc Click on {@link elements.mbtn} calls {@link inst.opMenu}
+ */
 elements.mbtn.addEventListener('click', inst.opMenu);
+
+/**
+ * @event bbtn-click
+ * @memberof elements
+ * @desc Click on {@link elements.bbtn} calls {@link inst.clMenu}
+ */
 elements.bbtn.addEventListener('click', inst.clMenu);
 
+/**
+ * @event window-resize
+ * @desc Calls {@link resize} function on resize of browser window
+ */
 window.addEventListener('resize', resize);
+
+/**
+ * @event document-scroll
+ * @desc Calls {@link scroll} function on scroll
+ */
 document.addEventListener('scroll', scroll);
 
 scrollCards();
 
-document.getElementById('scrUp').addEventListener('click', function () {
-  document.querySelector('body').scrollIntoView({ behavior: 'smooth',
+function scrollToTop() {
+  document.body.scrollIntoView({ behavior: 'smooth',
     inline: 'start', block: 'start', });
-});
+}
+
+elements.scrUp.addEventListener('click', scrollToTop);
 
 function buildPage() {
   let pgDOM = document.getElementById('pages');
@@ -229,6 +320,7 @@ function buildPage() {
 
   mdParse();
   goto('home');
+  navigate();
   scrollCards();
 }
 

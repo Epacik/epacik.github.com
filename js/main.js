@@ -38,9 +38,9 @@ if (typeof URLSearchParams != 'undefined') {
 
 
 /**
- * navigate - description
+ * @function navigate
+ * @desc change subpage
  *
- * @return {type}  description
  */
 function navigate() {
   let pages = document.getElementById('pages').children;
@@ -71,11 +71,15 @@ function navigate() {
   }
 }
 
+
+/**
+ *
+ */
 window.addEventListener('hashchange', navigate);
 
 function goto(pl) {
   inst.clMenu();
-  if (location.hash == pl) {
+  if (String(location.hash) == '#' + String(pl)) {
     return;
   }
 
