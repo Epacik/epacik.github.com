@@ -274,11 +274,11 @@ let pages = [
       },
       {
         type: 'section',
-        content: '<p class="markdown" data-md="# lol \n## even more testing"></p>',
+        content: '<p class="markdown" data-md="# This \n## is markdown"></p>',
       },
       {
         type: 'section',
-        content: '<p class="markdown" data-md="### looool"></p>',
+        content: '<p class="markdown" data-md="### Some more text in markdown"></p>',
       },
       {
         type: 'footer',
