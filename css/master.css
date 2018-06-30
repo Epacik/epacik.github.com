@@ -45,7 +45,6 @@ body {
   border-style: dashed;
   border-width: 4px !important;
   display: block;
-  animation-name: spin;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   box-sizing: border-box;

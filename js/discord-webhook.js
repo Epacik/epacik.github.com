@@ -1,5 +1,4 @@
-/*jshint esversion:6*/
-
+// jscs:disable maximumLineLength
 
 /**
  * @type {String}
@@ -26,7 +25,6 @@ document.forms.disMsg.message.addEventListener('focus', function () {
   document.forms.disMsg.message.classList.remove('wrongInput');
   document.querySelector('#formMessageTxt').innerHTML = lang.contact.sendQM.msg;
 });
-
 
 /**
  * checkDisMsgForm - Check if input form is filled correctly

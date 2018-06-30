@@ -1,3 +1,4 @@
+/* jscs:disable maximumLineLength */
 let footer = `<ul>
   <li>
     <div class="icon fab fa-discord"></div>
@@ -97,7 +98,7 @@ let pages = [
      * @type {String}
      * @desc Name used in Side Nav Menu
      */
-    name: 'Home',
+    name: lang.menu.home,
 
     /**
      * @memberof pages
@@ -238,6 +239,8 @@ let pages = [
              * [
              *  {name: 'theme', data 'light'},
              * ]
+             * <HTML>
+             * <a data-theme="light"></a>
              */
             dataset: [
               {

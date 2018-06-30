@@ -1,4 +1,4 @@
-
+/* jscs:disable maximumLineLength */
 /**
  * @type {Object}
  * @namespace
@@ -217,13 +217,25 @@ document.addEventListener('scroll', scroll);
 
 scrollCards();
 
+/**
+ * @function scrollToTop
+ * @desc Scrolls website to top
+ */
 function scrollToTop() {
   document.body.scrollIntoView({ behavior: 'smooth',
     inline: 'start', block: 'start', });
 }
 
+/**
+ * @event Click-scrUp
+ * @desc Calls {@link scrollToTop} on click
+ */
 elements.scrUp.addEventListener('click', scrollToTop);
 
+/**
+ * @function buildPage
+ * @desc builds webpage using structure stored in {@link pages}
+ */
 function buildPage() {
   let pgDOM = document.getElementById('pages');
   pgDOM.innerHTML = '';
@@ -302,6 +314,10 @@ function buildPage() {
     }
   }
 
+  /**
+   * @function nav
+   * @desc Generates content of sidenav menu based on {@link pages}
+   */
   let nav = elements.sideNav;
   nav.innerHTML = '';
   for (i = 0; i < pages.length; i++) {

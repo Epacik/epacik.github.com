@@ -1,3 +1,7 @@
+/**
+ * @name lang
+ * @desc Contains language data
+ */
 let lang = {
   menu: {
     home: 'Home',

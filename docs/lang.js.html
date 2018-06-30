@@ -1,8 +1,10 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Namespace: contentDataset | Namespace: contentDataset</title>
+    <title>Source: lang.js | Source: lang.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -24,7 +26,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Namespace: contentDataset</a></h1>
+        <h1><a href="index.html" class="link">Source: lang.js</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -41,256 +43,35 @@
 
 
 
-
-<section>
-
-<header>
     
-        <h2>
-            <span class="ancestors"><a href="pages.html">pages</a><a href="pages.content.html">.content</a>.</span>contentDataset</h2>
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-                <div class="description">Array of objects used for Dataset API in card (content of a section)</div>
-            
-
-            
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-            
-                <h3>Example</h3>
-                
-    <pre class="prettyprint"><code>&lt;JavaScript>[ {name: 'md', data '# Heading'},]</code></pre>
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-
-<dt>
-<h4 class="name" id=".data">
-    <span class="type-signature"><span class="icon green">static</span> </span>data<span class="type-signature"> :String</span>
-    
-    <div class="container-source members">
-        <code><a href="content.js.html">content.js</a></code>,
-        <code><a href="content.js.html#line183">line 183</a></code>
-    </div>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        data contained in unit
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">String</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".name">
-    <span class="type-signature"><span class="icon green">static</span> </span>name<span class="type-signature"> :String</span>
-    
-    <div class="container-source members">
-        <code><a href="content.js.html">content.js</a></code>,
-        <code><a href="content.js.html#line176">line 176</a></code>
-    </div>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        name of data unit (data-{name})
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">String</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @name lang
+ * @desc Contains language data
+ */
+let lang = {
+  menu: {
+    home: 'Home',
+    about: 'About Me',
+    portfolio: 'Portfolio',
+    contack: 'Contact',
+  },
+  contact: {
+    sendQM: {
+      qm: 'Send message',
+      author: 'Author',
+      email: 'E-Mail',
+      msg: 'Message',
+      empty: 'Can\'t be empty',
+      invalid: 'Invalid E-mail',
+      send: 'Send',
+    },
+  },
+};
+</code></pre>
+        </article>
+    </section>
 
 
 
@@ -307,7 +88,7 @@
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'pages.content.contentDataset_sub'.replace(/"/g, '_');
+        var id = '_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
