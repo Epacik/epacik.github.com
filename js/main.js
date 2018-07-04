@@ -37,7 +37,6 @@ function getURLParam(key) {
   return params.get(key);
 }
 
-
 /**
  * @function setURLParam
  * @desc Set an URL Parameter
@@ -70,11 +69,11 @@ function navigate() {
   if (hash != 'home' && hash != '') {
     id = hash;
   } else {
-    id = 'Home';
+    id = 'home';
   }
 
   for (i = 0; i < pages.length; i++) {
-    if (pages[i].id.toUpperCase() == id.toUpperCase()) {
+    if (pages[i].id == id) {
       pages[i].style.left = '0';
       pages[i].style.opacity = '1';
       pages[i].style.position = 'static';

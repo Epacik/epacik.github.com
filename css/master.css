@@ -203,3 +203,9 @@ footer li * {
 #scrUp:active {
   background-color: rgba(103, 100, 100, 1);
 }
+
+.slider {
+  height: 50px;
+  width: 100%;
+  background-color: var(--accentColor);
+}

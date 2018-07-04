@@ -1,4 +1,4 @@
-/* jscs:disable maximumLineLength */
+// jscs:disable maximumLineLength
 /**
  * @type {Object}
  * @namespace
@@ -9,50 +9,62 @@ let elements = {};
 /**
  * @type {Object}
  * @namespace
- * @desc instances of all elements (methods, objects etc. )
+ * @desc instances of all elements (methods, objects etc.)
  */
 let inst = {};
 
 /**
+ * @name eif
+ * @type {Object}
+ * @namespace
+ * @desc "Epat Interface Framework" 😂 contains methods and properties for building interface
+ */
+let eif = {};
+
+/**
  * @type {Object}
  * @name win
- * @desc Contains quick info about vrowser window
+ * @memberof eif
+ * @desc Contains quick info about browser window
  */
-let win = {
+eif.win = {
   w: window.innerWidth,
   h: window.innerHeight,
 };
 
 /**
  * @function resize
- * @desc Update {@link win} object and positions of sections of subpage
+ * @memberof eif
+ * @desc Update {@link eif.win} object and positions of sections of subpage
  */
-let resize = function () {
-  win.w = window.innerWidth;
-  win.h = window.innerHeight;
-  scrollCards();
+eif.resize = function () {
+  eif.win.w = window.innerWidth;
+  eif.win.h = window.innerHeight;
+  eif.scrollCards();
 };
 
 /**
  * @function scrollUpButton
+ * @memberof eif
  * @desc Shor or hide "Scroll up button"
  */
-function scrollUpButton() {
+eif.scrollUpButton = function () {
   let scrUp = document.getElementById('scrUp');
-  if (window.scrollY * 2.5 > win.h) {
+  if (window.scrollY * 2.5 > eif.win.h) {
     scrUp.style.opacity = '1';
     scrUp.style.pointerEvents = 'all';
   } else {
     scrUp.style.opacity = '';
     scrUp.style.pointerEvents = '';
   }
-}
+};
 
 /**
  * @function mdParse
+ * @memberof eif
  * @desc Replace content of all elements with parsed markdown from data-md tag if element have CSS class "markdown"
  */
-function mdParse() {
+eif.mdParse = function () {
   let md = document.querySelectorAll('.markdown');
 
   for (var i = 0; i < md.length; i++) {
@@ -60,22 +72,24 @@ function mdParse() {
       md[i].innerHTML = marked(md[i].dataset.md);
     }
   }
-}
+};
 
 /**
  * @function scroll
+ * @memberof eif
  * @desc call functions while scrolling
  */
-function scroll(e) {
-  scrollCards();
-  scrollUpButton();
-}
+eif.scroll = function (e) {
+  eif.scrollCards();
+  eif.scrollUpButton();
+};
 
 /**
  * @function scrollCards
+ * @memberof eif
  * @desc scroll sections of subpage with "fading behind"
  */
-let scrollCards = function () {
+eif.scrollCards = function () {
 
   let cards = document.querySelectorAll('.card');
   if (cards == null) {
@@ -87,11 +101,11 @@ let scrollCards = function () {
     let elP = cards[i];
 
     let b = elP.getBoundingClientRect().bottom;
-    let o = win.h;
+    let o = eif.win.h;
 
     if (b <= o) {
       let p = o - b;
-      if (window.scrollY > win.h && i == 0) {
+      if (window.scrollY > eif.win.h && i == 0) {
         // console.log(window.scrollY);
         // console.log(win.h);
         el.style.transform = `scale(0.9)`;
@@ -205,46 +219,51 @@ elements.bbtn.addEventListener('click', inst.clMenu);
 
 /**
  * @event window-resize
- * @desc Calls {@link resize} function on resize of browser window
+ * @memberof eif
+ * @desc Calls {@link eif.resize} function on resize of browser window
  */
-window.addEventListener('resize', resize);
+window.addEventListener('resize', eif.resize);
 
 /**
  * @event document-scroll
- * @desc Calls {@link scroll} function on scroll
+ * @memberof eif
+ * @desc Calls {@link eif.scroll} function on scroll
  */
-document.addEventListener('scroll', scroll);
+document.addEventListener('scroll', eif.scroll);
 
-scrollCards();
+eif.scrollCards();
 
 /**
  * @function scrollToTop
+ * @memberof eif
  * @desc Scrolls website to top
  */
-function scrollToTop() {
+eif.scrollToTop = function () {
   document.body.scrollIntoView({ behavior: 'smooth',
     inline: 'start', block: 'start', });
-}
+};
 
 /**
  * @event Click-scrUp
- * @desc Calls {@link scrollToTop} on click
+ * @memberof eif
+ * @desc Calls {@link eif.scrollToTop} on click
  */
-elements.scrUp.addEventListener('click', scrollToTop);
+elements.scrUp.addEventListener('click', eif.scrollToTop);
 
 /**
  * @function buildPage
+ * @memberof eif
  * @desc builds webpage using structure stored in {@link pages}
  */
-function buildPage() {
+eif.buildPage = function () {
   let pgDOM = document.getElementById('pages');
   pgDOM.innerHTML = '';
   for (i = 0; i < pages.length; i++) {
     let main = document.createElement('main');
-    main.id = pages[i].id.toUpperCase();
+    main.id = pages[i].id;
     main.classList.add('wrapper');
     pgDOM.appendChild(main);
-    let pg = document.getElementById(pages[i].id.toUpperCase());
+    let pg = document.getElementById(pages[i].id);
     let content = pages[i].content;
 
     for (j = 0; j < content.length; j++) {
@@ -283,9 +302,16 @@ function buildPage() {
       } else if (typeof content[j].content == 'object') {
         let c = content[j].content;
         for (k = 0; k < c.length; k++) {
+          console.log(c.length);
+          console.log('c: ');
+          console.log(c);
+
           let cn = c[k];
+          console.log(cn.id);
           let el = document.createElement(cn.type);
           el.innerHTML = cn.content;
+          console.log(el);
+          console.log(cn.content);
           if (cn.id) {
             el.id = cn.id;
           }
@@ -304,7 +330,6 @@ function buildPage() {
           }
 
           cnt.appendChild(el);
-          console.log(cnt);
         }
       }
 
@@ -334,11 +359,162 @@ function buildPage() {
     nav.appendChild(btn);
   };
 
-  mdParse();
+  eif.mdParse();
   goto('home');
   navigate();
-  scrollCards();
-}
+  eif.scrollCards();
+};
 
-buildPage();
-toggleLoading();
+eif.makeSlider = function () {
+
+};
+
+// eif.buildPage();
+// toggleLoading();
+
+eif.ex_BP = function (pages) {
+  if (pages == undefined || Object.prototype.toString.call(pages) !== '[object Array]') { //Object.prototype.toString.call(pages) check type of "pages"
+    if (content == undefined) {
+      return 'invalid argument';
+    }
+
+    pages = content;
+  }
+
+  // make page
+  let pgsEl = document.getElementById('pages');
+  let snv = document.getElementById('sidenav');
+
+  pgsEl.innerHTML = ''; //clear pages container
+
+  for (i = 0; i < pages.length; i++) {
+    let pc = pages[i];
+    let page = document.createElement('main');
+    if (pc.id != undefined) {
+      page.id = pc.id;
+    };
+
+    page.classList.add('wrapper');
+    eif.addClasses(page, pc.classlist);
+    eif.addData(page, pc.dataset);
+
+    //make cards
+    for (j = 0; j < pc.content.length; j++) {
+      let cont = pc.content[j];
+      let card = document.createElement(cont.type);
+      let cCont = document.createElement('section');
+
+      if (cont.id != undefined) {
+        card.id = cont.id;
+      }
+
+      eif.addClasses(card, cont.classlist);
+      card.classList.add('card');
+      eif.addData(card, cont.dataset);
+
+      if (typeof cont.content === 'string') {
+        cCont.innerHTML = cont.content;
+      } else {
+        eif.addData(cCont, [{ name: 'content', data: JSON.stringify(cont.content) }]);
+        cCont.classList.add('eif-ToBuild');
+      }
+
+      cCont.classList.add('content');
+      card.appendChild(cCont);
+      page.appendChild(card);
+    }
+
+    pgsEl.appendChild(page);
+    eif.scrollCards();
+  }
+
+  // generate menu
+  snv.innerHTML = '';
+  for (i = 0; i < pages.length; i++) {
+    let btn = document.createElement('button');
+    let id = pages[i].id;
+    btn.onclick = `goto(${id})`;
+
+    btn.addEventListener('click', function () {
+      goto(id);
+      console.log(id);
+    });
+
+    btn.innerHTML = pages[i].name;
+    snv.appendChild(btn);
+  };
+
+  goto(pages[0].id);
+  eif.mdParse();
+  navigate();
+  eif.scrollCards();
+  eif.buildInterface();
+  toggleLoading();
+};
+
+/**
+ *
+ *
+ * @param  {Object} element HTML Object
+ * @param  {Array.<Object>} dataset Array of Objest containing data for dataset API ({name: String, data: Any})
+ */
+eif.addData = function (element, dataset) {
+  if (Object.prototype.toString.call(element) === '[object Object]') {
+    console.warn('Element must be an HTML DOM Object');
+    return;
+  }
+
+  if (dataset != undefined && Object.prototype.toString.call(dataset) === '[object Array]') {
+    for (var k = 0; k < dataset.length; k++) {
+      let d = dataset[k];
+      element.setAttribute(`data-${d.name}`, d.data);
+    }
+  }
+};
+
+eif.addClasses = function (element, classlist) {
+  if (classlist != undefined) {
+    for (c = 0; c < classlist.length; c++) {
+      element.classList.add(classlist[c]);
+    }
+  }
+};
+
+eif.buildInterface = function () {
+  while (document.querySelector('.eif-ToBuild') !== null) {
+    let elements = document.querySelectorAll('.eif-ToBuild');
+    console.log(elements);
+    for (let i = 0; i < elements.length; i++) {
+      let el = elements[i];
+      let cont = JSON.parse(el.dataset.content);
+      for (j = 0; j < cont.length; j++) {
+        let cEl = document.createElement(cont[j].type);
+
+        eif.addClasses(cEl, cont[j].classlist);
+        eif.addData(cEl, cont[j].dataset);
+        console.log(cont[j]);
+        if (cont[j].id != undefined) {
+          cEl.id = cont[j].id;
+        }
+
+        if (typeof cont[j].content === 'string') {
+          cEl.innerHTML = cont[j].content;
+        } else {
+          eif.addData(cEl, [{ name: 'content', data: JSON.stringify(cont[j].content) }]);
+          cEl.classList.add('eif-ToBuild');
+        }
+
+        console.log(cEl);
+        el.appendChild(cEl);
+      }
+
+      el.dataset.content = '';
+      el.classList.remove('eif-ToBuild');
+
+    }
+  }
+
+  eif.mdParse();
+};
+
+eif.ex_BP();
