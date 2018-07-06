@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/epat
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://epat9.github.io
+  * I am epat (https://keybase.io/epat) on keybase.
+  * I have a public key ASA1ozpgy7kEinmzqXtjqeJ7BUdHcg3JhLwB3D2HqOE8Hwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01203ade5dc7e1e46602decc2b5650f71d2086031bab8c3c23076e202b2140dccd830a",
+      "host": "keybase.io",
+      "kid": "012035a33a60cbb9048a79b3a97b63a9e27b054747720dc984bc01dc3d87a8e13c1f0a",
+      "uid": "eedf4828eacd9d6748fca003bf5f0e19",
+      "username": "epat"
+    },
+    "merkle_root": {
+      "ctime": 1530871335,
+      "hash": "07774bce0668b640c8bc9da05f179162979ade018c27eba991976390291fb129609776fc3b465ae405c90081f464fec04f8a5d8eec78ad7daafbcddeced9f5ac",
+      "hash_meta": "4e025a2d079e9cba20ac7d753298f20ba0b61809105e3d72f467c10bfe442662",
+      "seqno": 3208367
+    },
+    "service": {
+      "entropy": "4tnH1cUXZYF//ITCbsuditRn",
+      "hostname": "epat9.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.1.2"
+  },
+  "ctime": 1530871357,
+  "expire_in": 504576000,
+  "prev": "2c00797d5353f9aef767b99e6914def0c984737459d507767b7b183ba1ee64ce",
+  "seqno": 15,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgNaM6YMu5BIp5s6l7Y6niewVHR3INyYS8Adw9h6jhPB8Kp3BheWxvYWTESpcCD8QgLAB5fVNT+a73Z7meaRTe8MmEc3RZ1Qd2e3sYO6HuZM7EIJPXiQi6pwicd1iGjj+dXfQkqnzElYCqoUvYxLWR2UeyAgHCo3NpZ8RAIxsRLLnDudtcK/VcFlufAjmXKp3rEpk5VfafpLTde3kHETyucbc+E+F3dESgtq2mjw3M6XQ0WAerOnihMpo9AqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOFosJpvZAsb4kd/Ku2zmCHslboIPyD4RLJxes0OeHato3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/epat
+
+==================================================================

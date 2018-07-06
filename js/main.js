@@ -1,6 +1,13 @@
 /*jshint esversion:6*/
 // jscs:disable maximumLineLength
 
+// Internet Explorer 6-11
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+if (isIE) {
+  alert('This webpage isn\'t supporting Internet Explorer.\nIf you want to use that page, you have to use newer web browser like:\nGoogle Chrome, Mozilla Firefox, Opera, Apple Safari, Microsoft Edge etc.');
+}
+
 console.log('loaded');
 
 /**

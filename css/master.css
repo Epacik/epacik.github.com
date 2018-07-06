@@ -20,7 +20,7 @@ body {
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: var(--navColor);
+  background-color: rgb(158, 0, 255);
   background-image: linear-gradient(var(--navColor), var(--accentColor));
   z-index: 1000000;
   transition: opacity 0.3s;
@@ -122,13 +122,12 @@ body {
 .card {
   margin-top: 10px;
   width: 100vw;
-  height: 100vh;
+  position: relative;
   position: relative;
 }
 
 .content {
   width: 100%;
-  height: 100%;
   margin: 0 auto;
   box-shadow: 0 0 7px 0 black;
   padding: 0;
@@ -137,12 +136,16 @@ body {
 
 
 footer {
-  height: 310px !important;
+  min-height: 310px !important;
+  max-height: 310px;
+  min-height: 310px;
   color: white;
 }
 
 footer .content {
   padding-top: 5px;
+  min-height: 310px;
+  max-height: 310px;
   background-color: var(--accentColor);
 
 }
@@ -204,8 +207,62 @@ footer li * {
   background-color: rgba(103, 100, 100, 1);
 }
 
-.slider {
-  height: 50px;
-  width: 100%;
+.eif-slider {
   background-color: var(--accentColor);
+  position: relative;
+  clear: both;
+}
+
+.eif-slider section {
+  width: 90%;
+  left: 50%;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  z-index: 5;
+  opacity: 0;
+}
+
+.eif-slider img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.eif div {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.eif-slider-controls {
+  top: 0;
+  left: 0 !important;
+  width: 100%;
+  height: 100%;
+  opacity: 1 !important;
+}
+
+.eif-slider-controls button {
+  height: 100%;
+  width: 30%;
+  background-color: transparent;
+  border: none;
+  outline-width: 0;
+  transition: background 0.2s;
+}
+
+.eif-slider-controls button:hover {
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.eif-slider-left {
+  float: left;
+}
+
+.eif-slider-right {
+  float: right;
 }

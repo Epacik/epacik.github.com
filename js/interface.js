@@ -40,7 +40,9 @@ eif.win = {
 eif.resize = function () {
   eif.win.w = window.innerWidth;
   eif.win.h = window.innerHeight;
+  eif.adjustHeightOfCards();
   eif.scrollCards();
+  eif.slider.resize();
 };
 
 /**
@@ -82,6 +84,7 @@ eif.mdParse = function () {
 eif.scroll = function (e) {
   eif.scrollCards();
   eif.scrollUpButton();
+
 };
 
 /**
@@ -373,13 +376,6 @@ eif.makeSlider = function () {
 // toggleLoading();
 
 eif.ex_BP = function (pages) {
-  if (pages == undefined || Object.prototype.toString.call(pages) !== '[object Array]') { //Object.prototype.toString.call(pages) check type of "pages"
-    if (content == undefined) {
-      return 'invalid argument';
-    }
-
-    pages = content;
-  }
 
   // make page
   let pgsEl = document.getElementById('pages');
@@ -444,12 +440,6 @@ eif.ex_BP = function (pages) {
     snv.appendChild(btn);
   };
 
-  goto(pages[0].id);
-  eif.mdParse();
-  navigate();
-  eif.scrollCards();
-  eif.buildInterface();
-  toggleLoading();
 };
 
 /**
@@ -513,8 +503,133 @@ eif.buildInterface = function () {
 
     }
   }
-
-  eif.mdParse();
 };
 
-eif.ex_BP();
+eif.slider = {};
+
+eif.slider.imgLoaded = function (e) {
+  let img = e.target;
+  let slider = img.parentNode.parentNode;
+  if (img.offsetHeight > slider.offsetHeight) {
+    slider.style.height = img.offsetHeight + 'px';
+  }
+}
+
+eif.slider.resize = function () {
+  let sliders = document.querySelectorAll('.eif-slider');
+  for (i = 0; i < sliders.length; i++) {
+    let height = 0;
+    let j;
+    let ch = sliders[i].children;
+    for (j = 0; j < ch.length - 1; j++) {
+      if (ch[j].children[0].offsetHeight > height) {
+        height = ch[j].children[0].offsetHeight;
+      }
+    }
+
+    sliders[i].style.height = height + 'px';
+  }
+}
+
+eif.initSlider = function () {
+  let sliders = document.querySelectorAll('.eif-slider');
+
+  for (i = 0; i < sliders.length; i++) {
+    let slider = sliders[i];
+    let sliderHeight = 0;
+    slider.innerHTML = '';
+    let slides = JSON.parse(slider.dataset.slides);
+    let folder = slider.dataset.sliderfolder;
+    console.log(slider.dataset.sliderfolder);
+    for (j = 0; j < slides.length; j++) {
+      let slide = document.createElement('img');
+      slide.addEventListener('load', eif.slider.imgLoaded)
+      let desc = document.createElement('div');
+      desc.innerHTML = slides[j].desc;
+      slide.src = folder + slides[j].name;
+      let wrapper = document.createElement('section');
+      wrapper.appendChild(slide);
+      wrapper.appendChild(desc);
+      slider.appendChild(wrapper);
+    }
+  }
+
+  for (i = 0; i < sliders.length; i++) {
+    let height = 0;
+    let j;
+    let ch = sliders[i].children;
+    for (j = 0; j < ch.length - 1; j++) {
+      if (ch[j].children[0].offsetHeight > height) {
+        height = ch[j].children[0].offsetHeight;
+      }
+    }
+
+    sliders[i].style.height = height + 'px';
+
+    let controls = document.createElement('section');
+    controls.classList.add('eif-slider-controls');
+    controls.setAttribute('data-active-slide', '0');
+
+    let lb = document.createElement('button');
+    lb.classList.add('eif-slider-left');
+
+    let rb = document.createElement('button');
+    rb.classList.add('eif-slider-right');
+
+    let indicator = document.createElement('div');
+    indicator.classList.add('eif-slider-indicator');
+
+    for (k = 0; k < j; k++) {
+      let dot = document.createElement('div');
+      let c = document.createElement('div');
+      c.classList.add('eif-slider-indicator-element');
+      c.appendChild(dot);
+      indicator.appendChild(c)
+    }
+    controls.appendChild(lb);
+    controls.appendChild(rb);
+    controls.appendChild(indicator);
+    sliders[i].appendChild(controls);
+  }
+};
+
+eif.adjustHeightOfCards = function () {
+  let cards = document.querySelectorAll('.card');
+  for (i = 0; i < cards.length; i++) {
+    cards[i].style.height = '';
+    cards[i].children[0].style.height = '';
+    if (cards[i].tagName == 'FOOTER') {
+      continue;
+    }
+
+    if (cards[i].offsetHeight < eif.win.h) {
+      cards[i].style.height = eif.win.h + 'px';
+      cards[i].children[0].style.height = eif.win.h + 'px';
+    } else {
+      cards[i].style.height = cards[i].offsetHeight + 'px';
+      cards[i].children[0].style.height = cards[i].offsetHeight + 'px';
+    }
+  }
+};
+
+eif.initAll = function (pages) {
+  if (pages == undefined || Object.prototype.toString.call(pages) !== '[object Array]') { //Object.prototype.toString.call(pages) check type of "pages"
+    if (content == undefined) {
+      return 'invalid argument';
+    }
+
+    pages = content;
+  }
+
+  eif.ex_BP(pages);
+  goto(pages[0].id);
+  navigate();
+  eif.buildInterface();
+  eif.initSlider();
+  eif.mdParse();
+  eif.adjustHeightOfCards();
+  eif.scrollCards();
+  toggleLoading();
+};
+
+eif.initAll();

@@ -57,7 +57,7 @@
   border-style: solid;
   color: white;
   box-shadow: 3px 3px 5px 0 var(--shadowColor);
-  transition: 0.1s;
+  transition: 0.2s;
 }
 
 .mfb button:active {
@@ -66,29 +66,38 @@
 }
 
 .mfb button svg {
-  transform: rotateZ(-45deg);
   width: 30px;
   height: 30px;
   font-size: 30px;
 }
 
 .mfb button i {
-  transform: rotateZ(-45deg);
   font-size: 30px;
 }
 
 #mbtn {
   background-color: var(--navColor);
   /* border-color: var(--navColor); */
-  transform: rotateZ(45deg);
 }
 
 #bbtn {
   background-color: var(--accentColor);
   /* border-color: var(--accentColor); */
-  transform: rotateY(180deg) rotateZ(45deg);
+  transform: rotateZ(90deg);
+  pointer-events: none;
+  opacity: 0;
 }
 
 .mfb.flip {
-  transform: rotateY(180deg);
+  transform: rotateZ(-90deg);
+}
+
+.mfb.flip #mbtn {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.mfb.flip #bbtn {
+  pointer-events: all;
+  opacity: 1;
 }

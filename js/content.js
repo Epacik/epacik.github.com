@@ -26,7 +26,7 @@ let footer = `<ul>
 let mainSlider =  {
     type: 'section',
     classlist: [
-      'slider',
+      'eif-slider',
     ],
     dataset: [
       {
@@ -34,46 +34,46 @@ let mainSlider =  {
         data: JSON.stringify(
           [
             {
-              name: 'sl (1).jpg',
+              name: 'sl(1).jpg',
               desc: 'Rocket in VAB',
             },
             {
-              name: 'sl (2).jpg',
+              name: 'sl(2).jpg',
               desc: 'Sun over the horizon',
             },
             {
-              name: 'sl (3).jpg',
+              name: 'sl(3).jpg',
               desc: 'Planet with rings',
             },
             {
-              name: 'sl (4).jpg',
+              name: 'sl(4).jpg',
               desc: 'Start over mountians',
             },
             {
-              name: 'sl (5).jpg',
+              name: 'sl(5).jpg',
               desc: 'Gaia and Sun',
             },
             {
-              name: 'sl (6).jpg',
+              name: 'sl(6).jpg',
               desc: 'High above ground',
             },
             {
-              name: 'sl (7).jpg',
+              name: 'sl(7).jpg',
               desc: 'Almost in space',
             },
             {
-              name: 'sl (8).jpg',
+              name: 'sl(8).jpg',
               desc: 'Boosters separation and gravity turn',
             },
             {
-              name: 'sl (9).jpg',
+              name: 'sl(9).jpg',
               desc: 'To other worlds',
             },
           ]
         ),
       },
       {
-        name: 'sliderFolder',
+        name: 'sliderfolder',
         data: './img/mainSlider/',
       },
     ],
@@ -458,6 +458,7 @@ let content = [{
           type: 'header',
           content: 'Epat',
         },
+        mainSlider,
         {
           type: 'div',
           content: [

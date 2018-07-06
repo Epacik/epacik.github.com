@@ -1,6 +1,5 @@
 #mainHeader {
   margin-top: 0;
-  height: 100vh;
   position: relative;
 }
 
@@ -17,7 +16,6 @@
 
 #mainHeader div {
   display: inline;
-  width: calc(100% - 70px);
   margin: 0;
   margin-right: 0;
 }
