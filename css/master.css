@@ -278,3 +278,38 @@ footer li * {
 .eif-slider-right {
   float: right;
 }
+
+.eif-slider-indicator {
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  margin: 0 auto;
+  bottom: 0;
+  margin: 0;
+  position: absolute;
+}
+
+.eif-slider-indicator-element {
+  height: 100%;
+  width: 20px;
+  float: left;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+
+.eif-slider-indicator-element div {
+  width: 8px;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - (8px / 2));
+  top: calc(50% - (8px / 2));
+  content: 'a';
+  min-height: 8px;
+  clear: both;
+  background-color: white;
+  opacity: 0.3;
+}
