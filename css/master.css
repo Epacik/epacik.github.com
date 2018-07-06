@@ -283,7 +283,8 @@ footer li * {
   display: flex;
   justify-content: center;
   height: 20px;
-  margin: 0 auto;
+  left: 0;
+  padding: 0 auto;
   bottom: 0;
   margin: 0;
   position: absolute;
@@ -312,4 +313,9 @@ footer li * {
   clear: both;
   background-color: white;
   opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.eif-slider-indicator-element.active div {
+  opacity: 1;
 }

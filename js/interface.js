@@ -581,7 +581,7 @@ eif.initSlider = function () {
     let indicator = document.createElement('div');
     indicator.classList.add('eif-slider-indicator');
 
-    for (k = 0; k < j; k++) {
+    for (k = 0; k < j + 1; k++) {
       let dot = document.createElement('div');
       let c = document.createElement('div');
       c.classList.add('eif-slider-indicator-element');
@@ -597,6 +597,11 @@ eif.initSlider = function () {
   let ctrl = document.querySelectorAll('.eif-slider-controls');
   for (i = 0; i < ctrl.length; i++) {
     sliders[i].children[0].classList.add('active');
+    let ind = sliders[i].children[sliders[i].children.length - 1].children[2];
+    ind.children[0].classList.add('active');
+    let cW = ind.parentNode.offsetWidth;
+    ind.style.left = String((cW / 2) - (ind.offsetWidth / 2)) + 'px';
+
     ctrl[i].children[0].addEventListener('click', eif.slider.chSl);
     ctrl[i].children[1].addEventListener('click', eif.slider.chSl);
   }
@@ -604,10 +609,12 @@ eif.initSlider = function () {
 
 eif.slider.chSl = function (e) {
   let sl = e.target.parentNode.parentNode;
+  let ind = e.target.parentNode.children[2];
   let bt = e.target;
   let active = sl.dataset.active_slide;
 
   sl.children[active].classList.remove('active');
+  ind.children[active].classList.remove('active');
   if (bt.classList.contains('eif-slider-right')) {
     if (Number(active) == sl.children.length - 2) {
       active = 0;
@@ -629,7 +636,7 @@ eif.slider.chSl = function (e) {
     sl.children[i].classList.add('onleft')
   }
   sl.children[active].classList.add('active');
-
+  ind.children[active].classList.add('active');
 }
 
 eif.adjustHeightOfCards = function () {
