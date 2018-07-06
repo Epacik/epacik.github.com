@@ -210,7 +210,7 @@ footer li * {
 }
 
 .eif-slider {
-  background-color: var(--accentColor);
+  background-color: black;
   position: relative;
   clear: both;
 }
