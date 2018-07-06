@@ -76,6 +76,10 @@ let mainSlider =  {
         name: 'sliderfolder',
         data: './img/mainSlider/',
       },
+      {
+        name: 'active_slide',
+        data: '0',
+      }
     ],
     content: '',
   };

@@ -572,9 +572,11 @@ eif.initSlider = function () {
 
     let lb = document.createElement('button');
     lb.classList.add('eif-slider-left');
+    lb.onclick = 'eif.slider.chSl(this)';
 
     let rb = document.createElement('button');
     rb.classList.add('eif-slider-right');
+    rb.onclick = 'eif.slider.chSl(this)';
 
     let indicator = document.createElement('div');
     indicator.classList.add('eif-slider-indicator');
@@ -591,7 +593,37 @@ eif.initSlider = function () {
     controls.appendChild(indicator);
     sliders[i].appendChild(controls);
   }
+
+  let ctrl = document.querySelectorAll('.eif-slider-controls');
+  for (i = 0; i < ctrl.length; i++) {
+    sliders[i].children[0].classList.add('active');
+    ctrl[i].children[0].addEventListener('click', eif.slider.chSl);
+    ctrl[i].children[1].addEventListener('click', eif.slider.chSl);
+  }
 };
+
+eif.slider.chSl = function (e) {
+  let sl = e.target.parentNode.parentNode;
+  let bt = e.target;
+  let active = sl.dataset.active_slide;
+  sl.children[active].classList.remove('active');
+  if (bt.classList.contains('eif-slider-right')) {
+    if (Number(active) == sl.children.length - 2) {
+      active = 0;
+    } else {
+      active++;
+    }
+  } else if (bt.classList.contains('eif-slider-left')) {
+    if (Number(active) == 0) {
+      active = sl.children.length - 2;
+    } else {
+      active--;
+    }
+  }
+  sl.dataset.active_slide = active;
+  sl.children[active].classList.add('active');
+
+}
 
 eif.adjustHeightOfCards = function () {
   let cards = document.querySelectorAll('.card');
