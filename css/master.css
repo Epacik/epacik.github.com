@@ -216,13 +216,23 @@ footer li * {
 }
 
 .eif-slider section {
-  width: 90%;
+  width: 100%;
   left: 50%;
   top: 0;
   position: absolute;
   height: 100%;
   z-index: 5;
   opacity: 0;
+  transition: 0.5s;
+}
+
+.eif-slider .onleft {
+  left: -50%;
+}
+
+.eif-slider .active {
+  left: 0;
+  opacity: 1;
 }
 
 .eif-slider img {

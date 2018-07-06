@@ -606,6 +606,7 @@ eif.slider.chSl = function (e) {
   let sl = e.target.parentNode.parentNode;
   let bt = e.target;
   let active = sl.dataset.active_slide;
+
   sl.children[active].classList.remove('active');
   if (bt.classList.contains('eif-slider-right')) {
     if (Number(active) == sl.children.length - 2) {
@@ -621,6 +622,12 @@ eif.slider.chSl = function (e) {
     }
   }
   sl.dataset.active_slide = active;
+  for (i = active; i < sl.children.length - 2; i++) {
+    sl.children[i].classList.remove('onleft')
+  }
+  for (i = 0; i < active; i++) {
+    sl.children[i].classList.add('onleft')
+  }
   sl.children[active].classList.add('active');
 
 }

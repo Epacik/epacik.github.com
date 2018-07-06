@@ -3,6 +3,7 @@
 
 <head>
   <script type="text/javascript">
+  var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
     window.onerror = function (e) {
       alert(`${e} occured, for further informations open developer tools`);
     };
