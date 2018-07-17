@@ -26,62 +26,70 @@ let footer = `<ul>
 let mainSlider =  {
     type: 'section',
     classlist: [
-      'eif-slider',
+      'eif-slider'
     ],
-    dataset: [
+    content: [
       {
-        name: 'slides',
-        data: JSON.stringify(
-          [
-            {
-              name: 'sl(1).jpg',
-              desc: 'Rocket in VAB',
-            },
-            {
-              name: 'sl(2).jpg',
-              desc: 'Sun over the horizon',
-            },
-            {
-              name: 'sl(3).jpg',
-              desc: 'Planet with rings',
-            },
-            {
-              name: 'sl(4).jpg',
-              desc: 'Start over mountians',
-            },
-            {
-              name: 'sl(5).jpg',
-              desc: 'Gaia and Sun',
-            },
-            {
-              name: 'sl(6).jpg',
-              desc: 'High above ground',
-            },
-            {
-              name: 'sl(7).jpg',
-              desc: 'Almost in space',
-            },
-            {
-              name: 'sl(8).jpg',
-              desc: 'Boosters separation and gravity turn',
-            },
-            {
-              name: 'sl(9).jpg',
-              desc: 'To other worlds',
-            },
-          ]
-        ),
-      },
-      {
-        name: 'sliderfolder',
-        data: './img/mainSlider/',
-      },
-      {
-        name: 'active_slide',
-        data: '0',
+        type: 'ul',
+        classlist: [
+          'rslides'
+        ],
+        dataset: [
+          {
+            name: 'slides',
+            data: JSON.stringify(
+              [
+                {
+                  name: 'sl(1).jpg',
+                  desc: 'Rocket in VAB',
+                },
+                {
+                  name: 'sl(2).jpg',
+                  desc: 'Sun over the horizon',
+                },
+                {
+                  name: 'sl(3).jpg',
+                  desc: 'Planet with rings',
+                },
+                {
+                  name: 'sl(4).jpg',
+                  desc: 'Start over mountians',
+                },
+                {
+                  name: 'sl(5).jpg',
+                  desc: 'Gaia and Sun',
+                },
+                {
+                  name: 'sl(6).jpg',
+                  desc: 'High above ground',
+                },
+                {
+                  name: 'sl(7).jpg',
+                  desc: 'Almost in space',
+                },
+                {
+                  name: 'sl(8).jpg',
+                  desc: 'Boosters separation and gravity turn',
+                },
+                {
+                  name: 'sl(9).jpg',
+                  desc: 'To other worlds',
+                },
+              ]
+            ),
+          },
+          {
+            name: 'sliderfolder',
+            data: './img/mainSlider/',
+          },
+          {
+            name: 'active_slide',
+            data: '0',
+          }
+        ],
+        content: '',
       }
     ],
-    content: '',
   };
 
 // // * @property {Array.<{id: String}>} id id of a subpage

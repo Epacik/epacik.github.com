@@ -213,6 +213,8 @@ footer li * {
   background-color: black;
   position: relative;
   clear: both;
+  width: 100%;
+  height: 200px;
 }
 
 .eif-slider section {
@@ -236,7 +238,8 @@ footer li * {
 }
 
 .eif-slider img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   position: absolute;
   top: 0;
   z-index: 10;

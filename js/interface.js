@@ -508,7 +508,7 @@ eif.buildInterface = function () {
 eif.slider = {};
 
 eif.slider.imgLoaded = function (e) {
-  let img = e.target;
+  let img = e;
   let slider = img.parentNode.parentNode;
   if (img.offsetHeight > slider.offsetHeight) {
     slider.style.height = img.offsetHeight + 'px';
@@ -516,23 +516,23 @@ eif.slider.imgLoaded = function (e) {
 }
 
 eif.slider.resize = function () {
-  let sliders = document.querySelectorAll('.eif-slider');
-  for (i = 0; i < sliders.length; i++) {
-    let height = 0;
-    let j;
-    let ch = sliders[i].children;
-    for (j = 0; j < ch.length - 1; j++) {
-      if (ch[j].children[0].offsetHeight > height) {
-        height = ch[j].children[0].offsetHeight;
-      }
-    }
-
-    sliders[i].style.height = height + 'px';
-  }
+  // let sliders = document.querySelectorAll('.eif-slider');
+  // for (i = 0; i < sliders.length; i++) {
+  //   let height = 0;
+  //   let j;
+  //   let ch = sliders[i].children;
+  //   for (j = 0; j < ch.length - 1; j++) {
+  //     if (ch[j].children[0].offsetHeight > height) {
+  //       height = ch[j].children[0].offsetHeight;
+  //     }
+  //   }
+  //
+  //   sliders[i].style.height = height + 'px';
+  // }
 }
 
 eif.initSlider = function () {
-  let sliders = document.querySelectorAll('.eif-slider');
+  let sliders = document.querySelectorAll('.rslides');
 
   for (i = 0; i < sliders.length; i++) {
     let slider = sliders[i];
@@ -540,71 +540,22 @@ eif.initSlider = function () {
     slider.innerHTML = '';
     let slides = JSON.parse(slider.dataset.slides);
     let folder = slider.dataset.sliderfolder;
-    console.log(slider.dataset.sliderfolder);
     for (j = 0; j < slides.length; j++) {
-      let slide = document.createElement('img');
-      slide.addEventListener('load', eif.slider.imgLoaded)
-      let desc = document.createElement('div');
-      desc.innerHTML = slides[j].desc;
-      slide.src = folder + slides[j].name;
-      let wrapper = document.createElement('section');
-      wrapper.appendChild(slide);
-      wrapper.appendChild(desc);
-      slider.appendChild(wrapper);
+      let li = document.createElement('li');
+      let img = document.createElement('img');
+      img.src = folder + slides[j].name;
+      img.alt = slides[j].desc;
+      img.setAttribute('onload', 'eif.slider.imgLoaded(this)');
+      li.appendChild(img);
+      slider.appendChild(li);
     }
+    $(".rslides").responsiveSlides({
+      auto: true,
+      nav: true,
+
+    });
   }
 
-  for (i = 0; i < sliders.length; i++) {
-    let height = 0;
-    let j;
-    let ch = sliders[i].children;
-    for (j = 0; j < ch.length - 1; j++) {
-      if (ch[j].children[0].offsetHeight > height) {
-        height = ch[j].children[0].offsetHeight;
-      }
-    }
-
-    sliders[i].style.height = height + 'px';
-
-    let controls = document.createElement('section');
-    controls.classList.add('eif-slider-controls');
-    controls.setAttribute('data-active-slide', '0');
-
-    let lb = document.createElement('button');
-    lb.classList.add('eif-slider-left');
-    lb.onclick = 'eif.slider.chSl(this)';
-
-    let rb = document.createElement('button');
-    rb.classList.add('eif-slider-right');
-    rb.onclick = 'eif.slider.chSl(this)';
-
-    let indicator = document.createElement('div');
-    indicator.classList.add('eif-slider-indicator');
-
-    for (k = 0; k < j + 1; k++) {
-      let dot = document.createElement('div');
-      let c = document.createElement('div');
-      c.classList.add('eif-slider-indicator-element');
-      c.appendChild(dot);
-      indicator.appendChild(c)
-    }
-    controls.appendChild(lb);
-    controls.appendChild(rb);
-    controls.appendChild(indicator);
-    sliders[i].appendChild(controls);
-  }
-
-  let ctrl = document.querySelectorAll('.eif-slider-controls');
-  for (i = 0; i < ctrl.length; i++) {
-    sliders[i].children[0].classList.add('active');
-    let ind = sliders[i].children[sliders[i].children.length - 1].children[2];
-    ind.children[0].classList.add('active');
-    let cW = ind.parentNode.offsetWidth;
-    ind.style.left = String((cW / 2) - (ind.offsetWidth / 2)) + 'px';
-
-    ctrl[i].children[0].addEventListener('click', eif.slider.chSl);
-    ctrl[i].children[1].addEventListener('click', eif.slider.chSl);
-  }
 };
 
 eif.slider.chSl = function (e) {
