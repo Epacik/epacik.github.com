@@ -624,6 +624,15 @@ eif.autoFill = function () {
   }
 }
 
+eif.scrToCard = function (i) {
+  if (i > 0) {
+    i--;
+  } else {
+   i = 0;
+  }
+  document.querySelector(location.hash).children[i].scrollIntoView({behavior: 'smooth'});
+}
+
 eif.initAll = function (pages) {
   if (pages == undefined || Object.prototype.toString.call(pages) !== '[object Array]') { //Object.prototype.toString.call(pages) check type of "pages"
     if (content == undefined) {
