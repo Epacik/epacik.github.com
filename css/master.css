@@ -73,24 +73,34 @@ body {
 
 }
 
-.mainHeader .av {
-  width: 60px;
-  height: 60px;
-  display: inline-block;
+.mainHeader section {
+  position: relative;
 }
 
-.mainHeader div {
-  display: inline-block;
-  color: white;
-  font-size: 40px;
-  height: 60px;
-  vertical-align: top;
-  margin: 0;
+#mhLogoBackground {
+  background-color: rgb(232, 232, 232);
+  width: 100%;
+  height: 250px;
+  box-shadow: 0 5px 5px -4px black;
 }
 
-.mainHeader div p {
-  margin: 0;
-  align-self: center;
+#headerLogo {
+  width: 200px;
+  height: 200px;
+  left: calc(50vw - 100px);
+  top: 25px;
+  position: absolute;
+  background-size: contain;
+  background-image: url(./../img/e.png);
+}
+
+#qHeadOverview {
+  padding: 10px;
+  text-align: center;
+}
+
+@supports (display:flex) {
+
 }
 
 .mainNav {

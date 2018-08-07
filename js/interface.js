@@ -189,7 +189,7 @@ elements.scrUp = document.getElementById('scrUp');
  * @desc Opens {@link elements.sideNav}
  */
 inst.opMenu = function () {
-  elements.sideNav.style.bottom = '0';
+  elements.sideNav.classList.add('open');
   elements.navBtn.classList.add('flip');
   document.body.style.overflow = 'hidden';
 };
@@ -201,7 +201,7 @@ inst.opMenu = function () {
  * @desc Closes {@link elements.sideNav}
  */
 inst.clMenu = function () {
-  elements.sideNav.style.bottom = '';
+  elements.sideNav.classList.remove('open');
   elements.navBtn.classList.remove('flip');
   document.body.style.overflow = 'auto';
 };
@@ -425,6 +425,14 @@ eif.ex_BP = function (pages) {
   }
 
   // generate menu
+  eif.pagesToNav
+
+};
+
+eif.pagesToNav = function () {
+  let pgsEl = document.getElementById('pages');
+  let snv = document.getElementById('sidenav');
+
   snv.innerHTML = '';
   for (i = 0; i < pages.length; i++) {
     let btn = document.createElement('button');
@@ -439,8 +447,7 @@ eif.ex_BP = function (pages) {
     btn.innerHTML = pages[i].name;
     snv.appendChild(btn);
   };
-
-};
+}
 
 /**
  *
@@ -509,6 +516,7 @@ eif.slider = {};
 
 eif.slider.imgLoaded = function (e) {
   let img = e;
+  console.log(e);
   let slider = img.parentNode.parentNode;
   if (img.offsetHeight > slider.offsetHeight) {
     slider.style.height = img.offsetHeight + 'px';
@@ -516,19 +524,19 @@ eif.slider.imgLoaded = function (e) {
 }
 
 eif.slider.resize = function () {
-  // let sliders = document.querySelectorAll('.eif-slider');
-  // for (i = 0; i < sliders.length; i++) {
-  //   let height = 0;
-  //   let j;
-  //   let ch = sliders[i].children;
-  //   for (j = 0; j < ch.length - 1; j++) {
-  //     if (ch[j].children[0].offsetHeight > height) {
-  //       height = ch[j].children[0].offsetHeight;
-  //     }
-  //   }
-  //
-  //   sliders[i].style.height = height + 'px';
-  // }
+  let sliders = document.querySelectorAll('.eif-slider');
+  for (i = 0; i < sliders.length; i++) {
+    let height = 0;
+    let j;
+    let ch = sliders[i].children;
+    for (j = 0; j < ch.length - 1; j++) {
+      if (ch[j].children[0].offsetHeight > height) {
+        height = ch[j].children[0].offsetHeight;
+      }
+    }
+
+    sliders[i].style.height = height + 'px';
+  }
 }
 
 eif.initSlider = function () {
@@ -609,6 +617,22 @@ eif.adjustHeightOfCards = function () {
   }
 };
 
+eif.autoFill = function () {
+  let af = document.querySelectorAll('.eif-autoFill');
+  for (i = 0; i < af.length; i++) {
+    af[i].innerHTML = ct[af[i].dataset.ct];
+  }
+}
+
+eif.scrToCard = function (i) {
+  if (i > 0) {
+    i--;
+  } else {
+   i = 0;
+  }
+  document.querySelector(location.hash).children[i].scrollIntoView({behavior: 'smooth'});
+}
+
 eif.initAll = function (pages) {
   if (pages == undefined || Object.prototype.toString.call(pages) !== '[object Array]') { //Object.prototype.toString.call(pages) check type of "pages"
     if (content == undefined) {
@@ -618,10 +642,12 @@ eif.initAll = function (pages) {
     pages = content;
   }
 
-  eif.ex_BP(pages);
+  // eif.ex_BP(pages);
+  eif.pagesToNav();
   goto(pages[0].id);
   navigate();
-  eif.buildInterface();
+  eif.autoFill();
+  // eif.buildInterface();
   eif.initSlider();
   eif.mdParse();
   eif.adjustHeightOfCards();

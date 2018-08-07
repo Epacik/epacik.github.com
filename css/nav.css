@@ -3,16 +3,20 @@
   height: 100vh;
   padding-top: 20px;
   position: fixed;
-  bottom: -200vh;
-  left: 0;
+  right: -110vw;
+  top: 0;
   margin: 0;
   background-color: var(--navColor);
   background-image: linear-gradient(
     var(--navColor),
     var(--accentColor)
     );
-  transition: bottom 0.3s;
+  transition: right 0.3s;
   z-index: 300;
+}
+
+.sideNav.open {
+  right: 0;
 }
 
 .sideNav button {
@@ -100,4 +104,31 @@
 .mfb.flip #bbtn {
   pointer-events: all;
   opacity: 1;
+}
+
+.scrInd {
+  font-size: 70%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.scrInd button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid;
+  position: relative;
+}
+
+.scrInd button * {
+  min-width: 20px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 10px);
+  animation: scrDown;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
