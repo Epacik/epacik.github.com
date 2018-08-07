@@ -1,5 +1,6 @@
 /* jscs ignore:maximumLineLength */
-let footer = `<ul>
+let ct = {};
+ct.footer = `<ul>
   <li>
     <div class="icon fab fa-discord"></div>
     <p>Discord: Epat#9309</p>
@@ -22,6 +23,12 @@ let footer = `<ul>
     <p>Codewars</p>
   </li>
 </ul>`;
+
+ct.strings = {
+  welcomeTxt: "Hello!\nI'm Epat,\na student from Poland which want"
+};
+
+let footer = ct.footer;
 
 let mainSlider =  {
     type: 'section',
