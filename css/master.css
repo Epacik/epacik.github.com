@@ -93,6 +93,11 @@ body {
   background-image: url(./../img/e.png);
 }
 
+#qHeadOverview {
+  padding: 10px;
+  text-align: center;
+}
+
 @supports (display:flex) {
 
 }
