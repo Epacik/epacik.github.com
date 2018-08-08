@@ -82,7 +82,7 @@ body {
   background-color: rgb(232, 232, 232);
   width: 100%;
   height: 250px;
-  box-shadow: 0 5px 5px -4px black;
+  box-shadow: var(--hShadow);
 }
 
 #headerLogo {
@@ -100,8 +100,19 @@ body {
   text-align: center;
 }
 
-@supports (display:flex) {
+/* My projects */
 
+#myProjects {
+  min-height: 100vh;
+}
+
+#myProjects header {
+  background-color: var(--accentColor);
+  padding: 15px;
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  box-shadow: var(--hShadow)
 }
 
 .mainNav {

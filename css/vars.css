@@ -3,4 +3,5 @@
   --navColor: rgb(158, 0, 255);
   --accentColor: rgb(0, 140, 255);
   --shadowColor: rgba(0, 0, 0, 0.5);
+  --hShadow: 0 5px 5px -4px black;
 }
