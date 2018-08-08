@@ -66,6 +66,14 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+#pages {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 .mainHeader {
   width: 100%;
   height: 100vh;
@@ -129,13 +137,6 @@ body {
   pointer-events: none;
 }
 
-#pages {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 100%;
-  overflow: hidden;
-}
 
 /* #home {
   left: 0;
@@ -160,14 +161,14 @@ body {
 }
 
 
-footer {
+footer.card {
   min-height: 310px !important;
   max-height: 310px;
   min-height: 310px;
   color: white;
 }
 
-footer .content {
+footer.card .content {
   padding-top: 5px;
   min-height: 310px;
   max-height: 310px;
@@ -175,14 +176,14 @@ footer .content {
 
 }
 
-footer ul {
+footer.card ul {
   list-style-type: none;
   max-width: 300px;
   margin-left: 20px;
   margin-right: 15px;
 }
 
-footer li {
+footer.card li {
   background-color: var(--shadowColor);
   border-radius: 5px;
   width: auto;
@@ -191,15 +192,15 @@ footer li {
   transition: background-color 0.1s;
 }
 
-footer li:hover {
+footer.card li:hover {
   background-color: rgba(0, 0, 0, 0.64)
 }
 
-footer li:active {
+footer.card li:active {
   background-color: rgba(0, 0, 0, 0.3)
 }
 
-footer li * {
+footer.card li * {
   display: inline;
 }
 
