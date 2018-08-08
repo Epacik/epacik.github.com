@@ -99,6 +99,23 @@ eif.scrollCards = function () {
     return;
   }
 
+  if (window.scrollY < 10) {
+    for (i = 0; i < cards.length; i++) {
+      let el = cards[i].children[0];
+      let elP = cards[i];
+      if (el.parentNode.tagName == "HEADER") {
+        el.parentNode.style.marginTop = `5px;`
+      }
+      el.style.transform = ``;
+      el.style.bottom = '';
+      el.style.height = '';
+      el.style.position = '';
+      el.style.zIndex = '';
+      el.style.boxShadow = '';
+    }
+    return;
+  }
+
   for (var i = 0; i < cards.length - 1; i++) {
     let el = cards[i].children[0];
     let elP = cards[i];
