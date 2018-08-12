@@ -81,15 +81,9 @@ function navigate() {
 
   for (i = 0; i < pages.length; i++) {
     if (pages[i].id == id) {
-      pages[i].style.left = '0';
-      pages[i].style.opacity = '1';
-      pages[i].style.position = 'static';
-      pages[i].style.pointerEvents = 'all';
+      pages[i].classList.add('activeWrapper')
     } else {
-      pages[i].style.left = '';
-      pages[i].style.opacity = '';
-      pages[i].style.position = '';
-      pages[i].style.pointerEvents = '';
+      pages[i].classList.remove('activeWrapper')
     }
   }
 }

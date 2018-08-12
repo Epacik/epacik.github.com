@@ -106,12 +106,11 @@ eif.scrollCards = function () {
       if (el.parentNode.tagName == "HEADER") {
         el.parentNode.style.marginTop = `5px;`
       }
-      el.style.transform = ``;
-      el.style.bottom = '';
+      el.classList.remove('bgCard');
+
       el.style.height = '';
       el.style.position = '';
       el.style.zIndex = '';
-      el.style.boxShadow = '';
     }
     return;
   }
@@ -126,34 +125,22 @@ eif.scrollCards = function () {
     if (b <= o) {
       let p = o - b;
       if (window.scrollY > eif.win.h && i == 0) {
-        // console.log(window.scrollY);
-        // console.log(win.h);
-        el.style.transform = `scale(0.9)`;
-        el.style.bottom = `0`;
-        el.style.position = 'fixed';
+        el.classList.add('bgCard');
         el.style.height = elP.offsetHeight + 'px';
         el.style.zIndex = `0.0000${i}`;
-        el.style.boxShadow = '0 0 5px 0 black';
       } else if (p <= elP.offsetHeight) {
         let sc = 1 - (p / elP.offsetHeight);
         if (sc <= 0.9) {
           sc = 0.9;
         }
-
-        el.style.transform = `scale(${sc})`;
-        el.style.bottom = `0`;
-        el.style.position = 'fixed';
+        el.classList.add('bgCard');
         el.style.height = elP.offsetHeight + 'px';
         el.style.zIndex = `0.0000${i}`;
-        el.style.boxShadow = '0 0 5px 0 black';
       }
     } else {
-      el.style.transform = `scale(1)`;
-      el.style.bottom = '';
+      el.classList.remove('bgCard');
       el.style.height = '';
-      el.style.position = '';
-      el.style.zIndex = ``;
-      el.style.boxShadow = '';
+      el.style.zIndex = '';
     }
 
   }
@@ -667,7 +654,7 @@ eif.initAll = function (pages) {
   // eif.buildInterface();
   eif.initSlider();
   eif.mdParse();
-  eif.adjustHeightOfCards();
+  // eif.adjustHeightOfCards();
   eif.scrollCards();
   toggleLoading();
 };

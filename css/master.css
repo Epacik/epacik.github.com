@@ -16,7 +16,7 @@ body {
 
 #loading {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
@@ -70,8 +70,7 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  height: 100%;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .mainHeader {
@@ -114,7 +113,7 @@ body {
   min-height: 100vh;
 }
 
-#myProjects header {
+#myProjects .title {
   background-color: var(--accentColor);
   padding: 15px;
   text-align: center;
@@ -137,6 +136,12 @@ body {
   pointer-events: none;
 }
 
+.activeWrapper {
+  left: 0;
+  opacity: 1;
+  pointer-events: all;
+}
+
 
 /* #home {
   left: 0;
@@ -147,17 +152,27 @@ body {
 .card {
   margin-top: 25px;
   width: 100vw;
-
+  min-height: 100vh;
   position: relative;
+
 }
 
 .content {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   box-shadow: 0 0 7px 0 black;
   padding: 0;
   background-color: white;
+  transition: 0.2s;
+}
+
+.bgCard {
+  bottom: 0;
+  position: fixed;
+  transform: scale(0.9);
+  box-shadow: '0 0 5px 0 black';
 }
 
 
