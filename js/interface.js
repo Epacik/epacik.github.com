@@ -103,11 +103,7 @@ eif.scrollCards = function () {
     for (i = 0; i < cards.length; i++) {
       let el = cards[i].children[0];
       let elP = cards[i];
-      if (el.parentNode.tagName == "HEADER") {
-        el.parentNode.style.marginTop = `5px;`
-      }
       el.classList.remove('bgCard');
-
       el.style.height = '';
       el.style.position = '';
       el.style.zIndex = '';
@@ -603,6 +599,7 @@ eif.slider.chSl = function (e) {
 }
 
 eif.adjustHeightOfCards = function () {
+  return;
   let cards = document.querySelectorAll('.card');
   for (i = 0; i < cards.length; i++) {
     cards[i].style.height = '';
@@ -654,7 +651,6 @@ eif.initAll = function (pages) {
   // eif.buildInterface();
   eif.initSlider();
   eif.mdParse();
-  // eif.adjustHeightOfCards();
   eif.scrollCards();
   toggleLoading();
 };
