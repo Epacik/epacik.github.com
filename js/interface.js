@@ -89,36 +89,30 @@ eif.scrollCards = function () {
     return;
   }
 
-  for (var i = 0; i < cards.length - 1; i++) {
-    let el = cards[i].children[0];
-    let elP = cards[i];
+  for (var i = 0; i < cards.length; i++) {
+    let card = cards[i];
+    let cont = card.children[0];
+    let botOfCard = card.getBoundingClientRect().bottom;
+    let height = window.innerHeight;
 
-    let b = elP.getBoundingClientRect().bottom;
-    let o = window.innerHeight;
-
-    if (b <= o) {
-      let p = o - b;
-      if (window.scrollY > window.innerHeight && i == 0) {
-        el.classList.add('bgCard');
-        el.style.height = elP.offsetHeight + 'px';
-        el.style.zIndex = `0.0000${i}`;
-      } else if (p <= elP.offsetHeight) {
-        let sc = 1 - (p / elP.offsetHeight);
-        if (sc <= 0.9) {
-          sc = 0.9;
-        }
-        el.classList.add('bgCard');
-        el.style.height = elP.offsetHeight + 'px';
-        el.style.zIndex = `0.0000${i}`;
+    // console.log(botOfCard);
+    if (botOfCard <= height) {
+      let pos = height - botOfCard + 200;
+      if (i == 1) {
+        console.log(card.offsetHeight);
+        console.log(pos);
+      }
+      if (((window.scrollY > window.innerHeight) && i == 0) || pos < window.innerHeight) {
+        cont.classList.add('bgCard');
+        cont.style.height = card.offsetHeight + 'px';
+        cont.style.zIndex = `0.0000${i}`;
       }
     } else {
-      el.classList.remove('bgCard');
-      el.style.height = '';
-      el.style.zIndex = '';
+      cont.classList.remove('bgCard');
+      cont.style.height = '';
+      cont.style.zIndex = '';
     }
-
   }
-
 };
 
 /**
@@ -609,7 +603,13 @@ eif.scrToCard = function (i) {
   } else {
    i = 0;
   }
-  document.querySelector(location.hash).children[i].scrollIntoView({behavior: 'smooth'});
+  document.querySelector(location.hash).children[i].children[0].scrollIntoView(
+    {
+      behavior: 'smooth',
+      block: "start",
+      inline: "start"
+    }
+  );
 }
 
 eif.initAll = function (pages) {
