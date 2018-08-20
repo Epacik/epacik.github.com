@@ -42,7 +42,6 @@ eif.resize = function () {
   eif.win.h = window.innerHeight;
   eif.adjustHeightOfCards();
   eif.scrollCards();
-  eif.slider.resize();
 };
 
 /**
