@@ -40,8 +40,8 @@ eif.win = {
 eif.resize = function () {
   eif.win.w = window.innerWidth;
   eif.win.h = window.innerHeight;
-  eif.adjustHeightOfCards();
-  eif.scrollCards();
+
+  eif.resize();
 };
 
 /**
@@ -79,10 +79,14 @@ eif.mdParse = function () {
  * @desc call functions while scrolling
  */
 eif.scroll = function (e) {
-  eif.scrollCards();
   eif.scrollUpButton();
-
+  eif.resize();
 };
+
+eif.resize = function () {
+  eif.scrollCards();
+  eif.adjustHeightOfCards();
+}
 
 /**
  * @function scrollCards
