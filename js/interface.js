@@ -52,11 +52,9 @@ eif.resize = function () {
 eif.scrollUpButton = function () {
   let scrUp = document.getElementById('scrUp');
   if (window.scrollY * 2.5 > eif.win.h) {
-    scrUp.style.opacity = '1';
-    scrUp.style.pointerEvents = 'all';
+    scrUp.classList.add('show');
   } else {
-    scrUp.style.opacity = '';
-    scrUp.style.pointerEvents = '';
+    scrUp.classList.remove('show');
   }
 };
 
