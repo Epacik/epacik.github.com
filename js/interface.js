@@ -22,36 +22,13 @@ let inst = {};
 let eif = {};
 
 /**
- * @type {Object}
- * @name win
- * @memberof eif
- * @desc Contains quick info about browser window
- */
-eif.win = {
-  w: window.innerWidth,
-  h: window.innerHeight,
-};
-
-/**
- * @function resize
- * @memberof eif
- * @desc Update {@link eif.win} object and positions of sections of subpage
- */
-eif.resize = function () {
-  eif.win.w = window.innerWidth;
-  eif.win.h = window.innerHeight;
-
-  eif.resize();
-};
-
-/**
  * @function scrollUpButton
  * @memberof eif
  * @desc Shor or hide "Scroll up button"
  */
 eif.scrollUpButton = function () {
   let scrUp = document.getElementById('scrUp');
-  if (window.scrollY * 2.5 > eif.win.h) {
+  if (window.scrollY * 2.5 > window.innerHeight) {
     scrUp.classList.add('show');
   } else {
     scrUp.classList.remove('show');
@@ -117,11 +94,11 @@ eif.scrollCards = function () {
     let elP = cards[i];
 
     let b = elP.getBoundingClientRect().bottom;
-    let o = eif.win.h;
+    let o = window.innerHeight;
 
     if (b <= o) {
       let p = o - b;
-      if (window.scrollY > eif.win.h && i == 0) {
+      if (window.scrollY > window.innerHeight && i == 0) {
         el.classList.add('bgCard');
         el.style.height = elP.offsetHeight + 'px';
         el.style.zIndex = `0.0000${i}`;
@@ -609,9 +586,9 @@ eif.adjustHeightOfCards = function () {
       continue;
     }
 
-    if (cards[i].offsetHeight < eif.win.h) {
-      cards[i].style.height = eif.win.h + 'px';
-      cards[i].children[0].style.height = eif.win.h + 'px';
+    if (cards[i].offsetHeight < window.innerHeight) {
+      cards[i].style.height = window.innerHeight + 'px';
+      cards[i].children[0].style.height = window.innerHeight + 'px';
     } else {
       cards[i].style.height = cards[i].offsetHeight + 'px';
       cards[i].children[0].style.height = cards[i].offsetHeight + 'px';
