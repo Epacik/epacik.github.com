@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71223bd9-34b2-4a1f-995b-6010ba25efcf" name="Default Changelist" comment="SVG images for background">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xmas2018/styles/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/xmas2018/styles/master.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xmas2018/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/xmas2018/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,25 +21,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Top secret/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="425">
               <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xmas2018/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="84" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
+            <state relative-caret-position="85">
+              <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmas2018/styles/master.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
+            <state relative-caret-position="891">
               <caret line="72" column="22" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
             </state>
           </provider>
@@ -85,8 +84,8 @@
         <option value="$PROJECT_DIR$/christmas2018/index.html" />
         <option value="$PROJECT_DIR$/christmas2018/styles/master.css" />
         <option value="$PROJECT_DIR$/xmas2018/scripts/main.js" />
-        <option value="$PROJECT_DIR$/xmas2018/index.html" />
         <option value="$PROJECT_DIR$/xmas2018/styles/master.css" />
+        <option value="$PROJECT_DIR$/xmas2018/index.html" />
       </list>
     </option>
   </component>
@@ -239,7 +238,7 @@
       <workItem from="1545505318889" duration="1963000" />
       <workItem from="1545511869857" duration="9405000" />
       <workItem from="1545524737661" duration="3553000" />
-      <workItem from="1545605157096" duration="6702000" />
+      <workItem from="1545605157096" duration="6894000" />
     </task>
     <task id="LOCAL-00001" summary="webpage and styling">
       <created>1545609895152</created>
@@ -252,7 +251,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21623000" />
+    <option name="totallyTimeSpent" value="21815000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -329,27 +328,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/xmas2018/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmas2018/styles/master.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="72" column="22" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../Top secret/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="425">
           <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmas2018/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="84" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmas2018/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmas2018/styles/master.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="72" column="22" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
+        <state relative-caret-position="85">
+          <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
         </state>
       </provider>
     </entry>
