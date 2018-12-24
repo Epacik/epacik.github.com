@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xmas2018/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
+            <state relative-caret-position="153">
+              <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -238,7 +238,7 @@
       <workItem from="1545505318889" duration="1963000" />
       <workItem from="1545511869857" duration="9405000" />
       <workItem from="1545524737661" duration="3553000" />
-      <workItem from="1545605157096" duration="7389000" />
+      <workItem from="1545605157096" duration="7697000" />
     </task>
     <task id="LOCAL-00001" summary="webpage and styling">
       <created>1545609895152</created>
@@ -251,7 +251,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22310000" />
+    <option name="totallyTimeSpent" value="22618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -347,8 +347,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xmas2018/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
+        <state relative-caret-position="153">
+          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
         </state>
       </provider>
     </entry>
