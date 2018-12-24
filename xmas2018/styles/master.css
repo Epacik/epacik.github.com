@@ -2,6 +2,22 @@ body{
     padding: 0;
     background-color: #0d113e;
 }
+
+@font-face {
+    font-family: 'Rochester';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./Rochester-Regular.ttf);
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Kaushan Script';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./KaushanScript-Regular.ttf);
+}
+
+
 svg {
     position: fixed;
     height: 100vh;
@@ -64,11 +80,38 @@ svg {
     }
 }
 
-p {
+#text {
     font-family: 'Rochester', cursive;
     font-size: 15vh;
     color: white;
     text-shadow: 0 0 3vh black;
     padding: 2vh 2vw;
     text-align: center;
+}
+
+#text div {
+    right: 0;
+    left: 0;
+    font-family: 'Kaushan Script', cursive;
+    width: 100%;
+    font-size: 10vh;
+}
+
+#text div {
+
+    transition: 1s;
+}
+
+.h {
+    position: fixed;
+    width: 100vw;
+    right: -50vw;
+    opacity: 0;
+}
+
+.lh {
+    position: fixed;
+    width: 100vw;
+    left: -50vw;
+    opacity: 0;
 }
