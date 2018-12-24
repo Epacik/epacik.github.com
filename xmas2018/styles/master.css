@@ -23,6 +23,7 @@ svg {
     position: fixed;
     right: 15%;
     top: 10%;
+    z-index: -10;
 }
 
 #tree {
@@ -65,8 +66,9 @@ svg {
 
 p {
     font-family: 'Rochester', cursive;
-    font-size: 20vh;
+    font-size: 15vh;
     color: white;
     text-shadow: 0 0 3vh black;
     padding: 2vh 2vw;
+    text-align: center;
 }
