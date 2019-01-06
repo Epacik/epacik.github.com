@@ -4,17 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/xmas2018/styles/master.css" line="75" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71223bd9-34b2-4a1f-995b-6010ba25efcf" name="Default Changelist" comment="SVG images for background">
-      <change afterPath="$PROJECT_DIR$/scripts/interface.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stylesheets/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stylesheets/master.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-const.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-const.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-const1.2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-const2.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-const2.html" afterDir="false" />
-    </list>
+    <list default="true" id="71223bd9-34b2-4a1f-995b-6010ba25efcf" name="Default Changelist" comment="SVG images for background" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -304,7 +294,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
