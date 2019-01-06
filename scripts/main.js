@@ -58,7 +58,11 @@ function showPage() {
     let navlinks = document.querySelectorAll(".nav-link");
 
     for (let i = 0; i < navlinks.length; i++){
-        if (navlinks[i].href.split("#")[1].split("/")[0] == hash[0]) {
+        let dest = navlinks[i].href.split("#")[1].split("/")[0];
+        if ( hash[0] == "#" || hash[0] == ""){
+            hash[0] = "home";
+        }
+        if (dest == hash[0]) {
             navlinks[i].parentElement.classList.add("active");
         } else {
             navlinks[i].parentElement.classList.remove("active");

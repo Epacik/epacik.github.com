@@ -122,13 +122,14 @@ o88o    88 o88o  o888o 888
     transform: scale(0.8);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s, left 0.3s, transform 0.3s;
+    transition: opacity 0.3s, left 0.3s, transform 0.3s cubic-bezier(1.000, 0.005, 1.000, 0.005);
 }
 
 .subpage.show {
     opacity: 1;
     pointer-events: all;
     transform: scale(1);
+    transition: opacity 0.3s, left 0.3s, transform 0.3s;
     /*left: 0;*/
 }
 
