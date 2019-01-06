@@ -2,69 +2,122 @@
 <html lang="en">
 
 <head>
+  <script type="text/javascript">
+    var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
+    window.onerror = function (e) {
+      alert(`${e} occured, for further informations open developer tools`);
+    };
+  </script>
+  <script src="./js/lib/jquery.min.js" charset="utf-8" async></script>
+  <script src="./js/lib/marked.min.js" async></script>
+  <script src="./js/content.js" charset="utf-8" async></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="./css/vars.css">
+  <link rel="stylesheet" href="./css/icons.css">
   <link rel="stylesheet" href="./css/master.css">
   <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="./css/contact.css">
   <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/responsiveslides.css">
+  <link rel="stylesheet" href="./css/animations.css">
   <link rel="shortcut icon" href="favicon.png">
   <title>Epat</title>
 </head>
 
 <body>
-  <main class="wrapper">
+<section id="begin"></section>
 
-    <header id="mainHeader">
-      <nav>
-        <div class="avatar"></div>
+<section id="loading">
+  <section>
+    <div id="spinner">
+      <div style="
+        animation-name: spin;"></div>
+    </div>
+    <p>Loading...</p>
+  </section>
+</section>
 
-      </nav>
+<menu id="sidenav" class="sideNav"></menu>
+<section class="mb-scene">
+  <div class="mfb">
+    <button id="mbtn"><i class="fas fa-bars"></i></button>
+    <button id="bbtn"><i class="fas fa-arrow-left"></i></button>
+  </div>
+</section>
+
+<button id="scrUp" >
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<section id="pages">
+  <main id="home" class="wrapper" data-name="Home Page">
+    <header id="mainHeader" class="card">
+      <section class="content">
+        <section id="mhLogoBackground">
+          <div id="headerLogo"></div>
+        </section>
+        <section id="qHeadOverview">
+          <p>
+          <h2>
+            Hi, I'm Epat ^^<br>
+          </h2>
+          a simple student from Poland who wants to do something nice ;)</p>
+        </section>
+        <section class="scrInd">
+          <button onclick="eif.scrToCard(2)">
+            <i class="fas fa-angle-double-down"></i>
+          </button>
+          <p>Scroll down for more info</p>
+        </section>
+      </section>
     </header>
+    <section id="myProjects" class="card">
+      <section class="content">
+        <header class="markdown title" data-md="## My projects"></header>
+        <section class="projects">
+          <section id="project-n">
+            <section class="projectThumbnail"></section>
+            <header>Project-N</header>
+            <details open>
 
-    <section id="mainContent">
-
-    </section>
-
-    <section class="mb-scene">
-      <div class="mfb">
-        <button id="mbtn"><i class="fas fa-bars"></i></button>
-        <button id="bbtn"><i class="fas fa-arrow-left"></i></button>
-      </div>
-    </section>
-
-    <menu class="sideNav">
-
-    </menu>
-
-    <section class="contact">
-      <section class="card contactInfo">
-
-      </section>
-      <section class="disMsg card">
-        <h3>Send quick message</h3>
-        <form name="disMsg" onsubmit="sendWebhook()">
-          <div id="formAuthorTxt">Author</div>
-          <input class="formInput" type="text" name="author">
-          <div id="formEmailTxt">E-Mail</div>
-          <input class="formInput" type="text" name="email">
-          <div id="formMessageTxt">Message</div>
-          <textarea class="formInput" name="message" rows="8" cols="35"></textarea>
-        </form>
-        <button  onclick="sendWebhook()">Send</button>
+            </details>
+          </section>
+        </section>
+        <footer>And more on the way</footer>
+        <iframe src="https://discordapp.com/widget?id=356831466300243978&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
       </section>
     </section>
+    <footer class="card">
+      <section class="eif-autoFill content" data-ct="footer"></section>
+    </footer>
   </main>
-  <script src="./js/jquery.min.js" charset="utf-8"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-  <script src="./js/lang.js" charset="utf-8"></script>
-  <script src="./js/discord-webhook.js" charset="utf-8"></script>
-  <script src="./js/main.js" charset="utf-8"></script>
-  <script src="./js/interface.js" charset="utf-8"></script>
+</section>
+
+<script src="./js/lang.js" charset="utf-8"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAdRGrQzJWbK0Xi07BGDqg_a9wRsbX0PwE",
+    authDomain: "epacik-github-io.firebaseapp.com",
+    databaseURL: "https://epacik-github-io.firebaseio.com",
+    projectId: "epacik-github-io",
+    storageBucket: "epacik-github-io.appspot.com",
+    messagingSenderId: "3104720576"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+<script src="js/lib/responsiveslides.min.js"></script>
+<script src="./js/main.js" charset="utf-8" defer></script>
+<script src="./js/interface.js" charset="utf-8" defer></script>
+<script src="./js/icons.js" charset="utf-8" defer></script>
 </body>
 
 </html>
