@@ -74,10 +74,20 @@ function showPage() {
     }
 }
 
+function getURLParam(key) {
+    let params = new URLSearchParams(location.search);
+    return params.get(key);
+}
+
 applyLayout();
 
 showPage();
 
 window.addEventListener("hashchange", showPage);
 
-toggleLoading();
+if (getURLParam("debug_loading") == "true"){
+    setTimeout(toggleLoading, 3000);
+} else {
+    toggleLoading();
+}
+
