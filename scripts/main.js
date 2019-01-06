@@ -70,7 +70,11 @@ function showPage() {
     }
 
     if (!moved) {
-        document.getElementById("home").classList.add("show");
+        if(hash[0] == "") {
+            document.getElementById("home").classList.add("show");
+        } else {
+            location.href = "./404.html";
+        }
     }
 }
 
