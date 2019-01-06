@@ -70,7 +70,7 @@ function showPage() {
     }
 
     if (!moved) {
-        if(hash[0] == "") {
+        if(hash[0] == "" || hash[0] == "home") {
             document.getElementById("home").classList.add("show");
         } else {
             location.href = "./404.html";
