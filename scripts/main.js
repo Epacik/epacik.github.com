@@ -1,4 +1,4 @@
-var isIE = /*@cc_on!@*/false || !!document.documentMode;
+var isIE = /*@cc_on!@*/!!document.documentMode;
 
 if (isIE) {
     alert('This webpage isn\'t supporting Internet Explorer.\nIf you want to use that page, you have to use newer web browser like:\nGoogle Chrome, Mozilla Firefox, Opera, Apple Safari, Microsoft Edge etc.');
@@ -12,7 +12,7 @@ console.log('loaded');
  */
 function toggleLoading() {
     loading = document.querySelector('.page-loading');
-    if (loading.style.opacity == '0') {
+    if (loading.style.opacity === '0') {
         loading.style.opacity = '';
         loading.style.pointerEvents = '';
         loading.style.transform = "scale(1)";
@@ -43,11 +43,11 @@ function showPage() {
     let hash = location.hash;
     hash = hash.toLocaleLowerCase();
     hash = hash.replace("#", "");
-    hash = hash.split("/")
+    hash = hash.split("/");
     let pages = document.querySelectorAll(".subpage");
     let moved = false;
     for (let i = 0; i < pages.length; i++) {
-        if (pages[i].id == hash[0]) {
+        if (pages[i].id === hash[0]) {
             moved = true;
             pages[i].classList.add("show");
         } else {
@@ -59,10 +59,10 @@ function showPage() {
 
     for (let i = 0; i < navlinks.length; i++){
         let dest = navlinks[i].href.split("#")[1].split("/")[0];
-        if ( hash[0] == "#" || hash[0] == ""){
+        if ( hash[0] === "#" || hash[0] === ""){
             hash[0] = "home";
         }
-        if (dest == hash[0]) {
+        if (dest === hash[0]) {
             navlinks[i].parentElement.classList.add("active");
         } else {
             navlinks[i].parentElement.classList.remove("active");
@@ -70,7 +70,7 @@ function showPage() {
     }
 
     if (!moved) {
-        if(hash[0] == "" || hash[0] == "home") {
+        if(hash[0] === "" || hash[0] === "home") {
             document.getElementById("home").classList.add("show");
         } else {
             location.href = "./404.html";
@@ -89,7 +89,7 @@ showPage();
 
 window.addEventListener("hashchange", showPage);
 
-if (getURLParam("debug_loading") == "true"){
+if (getURLParam("debug_loading") === "true"){
     setTimeout(toggleLoading, 3000);
 } else {
     toggleLoading();
