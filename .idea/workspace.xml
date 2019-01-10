@@ -4,7 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/xmas2018/styles/master.css" line="75" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71223bd9-34b2-4a1f-995b-6010ba25efcf" name="Default Changelist" comment="SVG images for background" />
+    <list default="true" id="71223bd9-34b2-4a1f-995b-6010ba25efcf" name="Default Changelist" comment="SVG images for background">
+      <change beforePath="$PROJECT_DIR$/index-const.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-const.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index-const.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="71" column="54" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
+            <state relative-caret-position="357">
+              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -290,7 +292,7 @@
       <workItem from="1546776934305" duration="4819000" />
       <workItem from="1546796355860" duration="2984000" />
       <workItem from="1546865923363" duration="635000" />
-      <workItem from="1547071261679" duration="5798000" />
+      <workItem from="1547071261679" duration="6017000" />
     </task>
     <task id="LOCAL-00001" summary="webpage and styling">
       <created>1545609895152</created>
@@ -303,7 +305,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57815000" />
+    <option name="totallyTimeSpent" value="58034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,8 +484,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index-const.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="71" column="54" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
+        <state relative-caret-position="357">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
