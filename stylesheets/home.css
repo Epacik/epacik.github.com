@@ -7,6 +7,10 @@
     box-shadow: 0 3px 5px 0 rgba(0,0,0,.075);
     text-align: center;
     position: relative;
+    background-image: url("../img/backgrounds/low-poly-purple-light.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 
