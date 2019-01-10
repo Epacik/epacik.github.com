@@ -114,12 +114,13 @@ o88o    88 o88o  o888o 888
 
 
 .subpage {
+    background-color: #f9f9f9;
     height: 100vh;
     position: fixed;
     /*left: 50%;*/
     overflow-y: auto;
     min-width: 100%;
-    transform: scale(0.8);
+    transform: scale(0.9);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s, left 0.3s, transform 0.3s cubic-bezier(1.000, 0.005, 1.000, 0.005);
