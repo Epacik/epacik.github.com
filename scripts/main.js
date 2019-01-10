@@ -90,7 +90,7 @@ showPage();
 window.addEventListener("hashchange", showPage);
 
 if (getURLParam("debug_loading") == "true"){
-    setTimeout(toggleLoading, 3000);
+    setTimeout(toggleLoading, 10000);
 } else {
     toggleLoading();
 }
