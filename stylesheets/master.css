@@ -2,6 +2,7 @@
     --mainColor: rgb(41, 41, 41);
     --navColor: rgb(158, 0, 255);
     --primaryColor: rgb(158, 0, 255);
+    --primaryBorderColor: rgb(187, 84, 255);
     --accentColor: rgb(0, 140, 255);
     --shadowColor: rgba(0, 0, 0, 0.5);
     --hShadow: 0 5px 5px -4px black;
@@ -91,8 +92,17 @@ o888   888o 888    88   888    88   888    888  888    888  888  88  888  88  88
     color: var(--primaryColor) !important;
 }
 
-.bg-primary {
+.bg-primary, .btn-primary {
     background-color: var(--primaryColor) !important;
+    border-color: var(--primaryBorderColor) !important;
+}
+
+.btn-primary:hover {
+    border-color: var(--primaryBorderColor) !important;
+}
+
+.btn-primary {
+
 }
 
 /*.navbar-collapse {*/
@@ -136,4 +146,12 @@ o88o    88 o88o  o888o 888
 
 .navbar {
     box-shadow: 3px 0 5px 0 black;
+}
+
+.pane {
+    padding: 20px;
+    margin: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.075);
 }

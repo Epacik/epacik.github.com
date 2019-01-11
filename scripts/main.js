@@ -78,6 +78,11 @@ function showPage() {
     }
 }
 
+function scrTo(panel) {
+    document.getElementById(panel).scrollIntoView({behavior: "smooth", block: "start"});
+}
+
+
 function getURLParam(key) {
     let params = new URLSearchParams(location.search);
     return params.get(key);

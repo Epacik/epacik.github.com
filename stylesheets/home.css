@@ -1,19 +1,20 @@
 #basicInfo {
     /*width: 100%;*/
-    padding: 20px;
-    margin: 5px;
     min-height: calc(100vh - 70px);
-    box-sizing: border-box;
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,.075);
     text-align: center;
     position: relative;
     background-image: url("../img/backgrounds/low-poly-purple-light.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 0 10px #000;
 
 }
 
+#home-projects{
 
+    min-height: calc(100vh - 70px);
+}
 
 .scrInd {
     position: absolute;
@@ -53,4 +54,12 @@
     100% {
         top: 0;
     }
+}
+
+.card {
+    margin: 10px auto;
+}
+
+.card-img-top {
+    background-color: #868e96;
 }

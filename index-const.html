@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <script type="text/javascript">
-    var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
+  var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
     window.onerror = function (e) {
       alert(`${e} occured, for further informations open developer tools`);
     };
@@ -73,10 +73,29 @@
             <h4>If you want to find out what I'm doing lately, scroll down, maybe something will interest you.</h4>
 
             <section class="scrInd">
-                <button onclick="eif.scrToCard(2)">
+                <button onclick="scrTo('home-projects')">
                     <i class="fas fa-angle-double-down"></i>
                 </button>
             </section>
+        </section>
+        <section id="home-projects" class="pane">
+            <h3>My projects</h3>
+            <div class="card shadow-sm" style="width: 18rem;">
+                <img src="https://raw.githubusercontent.com/Epacik/TF2-Rich-Presence/master/source/build/icon.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">TF2 Rich Presence</h5>
+                    <p class="card-text">A launcher for The-Best-War-Themed-Hat-Simulator™ with Discord integration</p>
+                    <a href="https://github.com/Epacik/TF2-Rich-Presence" target="_blank" class="btn btn-primary">Check it out</a>
+                </div>
+            </div>
+            <div class="card shadow-sm" style="width: 18rem;">
+                <img src="https://raw.githubusercontent.com/Epacik/Your-Discord-RP/master/YourRPC/res/icons/Discord-RPC.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Your-Discord-RP</h5>
+                    <p class="card-text">Make your own Rich Presence status on Discord!</p>
+                    <a href="https://github.com/Epacik/Your-Discord-RP" target="_blank" class="btn btn-primary">Check it out</a>
+                </div>
+            </div>
         </section>
     </section>
       <section id="blog" class="subpage">
