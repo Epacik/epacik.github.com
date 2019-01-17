@@ -101,7 +101,8 @@ o888   888o 888    88   888    88   888    888  888    888  888  88  888  88  88
     border-color: var(--primaryBorderColor) !important;
 }
 
-.btn-primary {
+.card {
+    display: inline-block;
 
 }
 
@@ -122,6 +123,13 @@ o88o    88 o88o  o888o 888
 */
 
 
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%
+}
 
 .subpage {
     background-color: #f9f9f9;

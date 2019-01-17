@@ -62,11 +62,12 @@
     </nav>
     <section class="spContent"></section>
       <footer>
-          © 2019 Damian 'Epat' Kuśmierz
+          © 2018-<span class="curYr"></span> Damian 'Epat' Kuśmierz
       </footer>
   </section>
 
   <section id="main-wrapper">
+
     <section id="home" class="subpage">
         <section id="basicInfo" class="pane">
             <h1>Hello</h1>
@@ -81,25 +82,36 @@
                 </button>
             </section>
         </section>
+
         <section id="home-projects" class="pane">
             <h3>My projects</h3>
-            <div class="card shadow-sm" style="width: 18rem;">
-                <img src="https://raw.githubusercontent.com/Epacik/TF2-Rich-Presence/master/source/build/icon.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">TF2 Rich Presence</h5>
-                    <p class="card-text">A launcher for The-Best-War-Themed-Hat-Simulator™ with Discord integration</p>
-                    <a href="https://github.com/Epacik/TF2-Rich-Presence" target="_blank" class="btn btn-primary">Check it out</a>
+
+            <section class="cards-wrapper">
+                <div class="card shadow-sm" style="width: 18rem;">
+                    <img src="https://raw.githubusercontent.com/Epacik/TF2-Rich-Presence/master/source/build/icon.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TF2 Rich Presence</h5>
+                        <p class="card-text">A launcher for The-Best-War-Themed-Hat-Simulator™ with Discord integration</p>
+                        <a href="https://github.com/Epacik/TF2-Rich-Presence" target="_blank" class="btn btn-primary">Check it out</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card shadow-sm" style="width: 18rem;">
-                <img src="https://raw.githubusercontent.com/Epacik/Your-Discord-RP/master/YourRPC/res/icons/Discord-RPC.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Your-Discord-RP</h5>
-                    <p class="card-text">Make your own Rich Presence status on Discord!</p>
-                    <a href="https://github.com/Epacik/Your-Discord-RP" target="_blank" class="btn btn-primary">Check it out</a>
+
+                <div class="card shadow-sm" style="width: 18rem;">
+                    <img src="https://raw.githubusercontent.com/Epacik/Your-Discord-RP/master/YourRPC/res/icons/Discord-RPC.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Discord RP</h5>
+                        <p class="card-text">Make your own Rich Presence status on Discord!</p>
+                        <a href="https://github.com/Epacik/Your-Discord-RP" target="_blank" class="btn btn-primary">Check it out</a>
+                    </div>
                 </div>
-            </div>
+
+            </section>
+            <h4>And more comming 😉</h4>
         </section>
+
+        <setion id="home-about" class="pane">
+            Who am I?
+        </setion>
     </section>
       <section id="blog" class="subpage">
           PLACEHOLDER
@@ -132,6 +144,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  <script src="lib/smoothscroll.js"></script>
   <script src="./scripts/main.js" charset="utf-8" defer></script>
   <script src="./scripts/interface.js" charset="utf-8" defer></script>
 </body>

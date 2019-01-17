@@ -78,6 +78,13 @@ function showPage() {
     }
 }
 
+function addCurrentYear() {
+    let items = document.querySelectorAll(".curYr");
+    for (i = 0; i < items.length; i++) {
+        items[i].innerHTML = (new Date()).getFullYear();
+    }
+}
+
 function scrTo(panel) {
     document.getElementById(panel).scrollIntoView({behavior: "smooth", block: "start"});
 }
@@ -89,6 +96,7 @@ function getURLParam(key) {
 }
 
 applyLayout();
+addCurrentYear();
 
 showPage();
 

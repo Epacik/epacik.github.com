@@ -11,10 +11,15 @@
 
 }
 
-#home-projects{
+/*#home-projects{*/
+    /*min-height: calc(100vh - 70px);*/
+/*}*/
 
-    min-height: calc(100vh - 70px);
+#home-projects h3, h4 {
+    text-align: center;
 }
+
+
 
 .scrInd {
     position: absolute;
