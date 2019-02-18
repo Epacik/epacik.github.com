@@ -39,8 +39,10 @@ function applyLayout() {
     }
 }
 
+let hash = "";
+
 function showPage() {
-    let hash = location.hash;
+    hash = location.hash;
     hash = hash.toLocaleLowerCase();
     hash = hash.replace("#", "");
     hash = hash.split("/");
@@ -76,6 +78,12 @@ function showPage() {
             location.href = "./404.html";
         }
     }
+    let sec = document.querySelector(`#${hash[0]} #${hash[1]}`);
+    if (hash.length === 2 && sec !== null) {
+        setTimeout(() => {sec.scrollIntoView({behavior: "smooth", block: "start"});}, 100)
+
+    }
+
 }
 
 function addCurrentYear() {
@@ -86,7 +94,7 @@ function addCurrentYear() {
 }
 
 function scrTo(panel) {
-    document.getElementById(panel).scrollIntoView({behavior: "smooth", block: "start"});
+    panel.scrollIntoView({behavior: "smooth", block: "start"});
 }
 
 
@@ -99,12 +107,15 @@ applyLayout();
 addCurrentYear();
 
 showPage();
-
 window.addEventListener("hashchange", showPage);
 
 if (getURLParam("debug_loading") === "true"){
     setTimeout(toggleLoading, 3000);
 } else {
+    // if (hash.length === 2 && document.querySelector(`#${hash[0]} #${hash[1]}`) !== null) {
+    //     scrTo(document.querySelector(`#${hash[0]} #${hash[1]}`));
+    // }
     toggleLoading();
 }
+
 
