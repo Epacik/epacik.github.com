@@ -94,6 +94,9 @@ function addCurrentYear() {
 }
 
 function scrTo(panel) {
+    if (typeof panel == "string"){
+        panel = document.getElementById(panel);
+    }
     panel.scrollIntoView({behavior: "smooth", block: "start"});
 }
 

@@ -103,7 +103,7 @@ o888   888o 888    88   888    88   888    888  888    888  888  88  888  88  88
 
 .card {
     display: inline-block;
-
+    width: 30rem; !important;
 }
 
 /*.navbar-collapse {*/
@@ -162,4 +162,8 @@ o88o    88 o88o  o888o 888
     margin-bottom: 10px;
     box-sizing: border-box;
     box-shadow: 0 3px 5px 0 rgba(0,0,0,.075);
+}
+
+.pane h3, .pane h4 {
+    text-align: center;
 }

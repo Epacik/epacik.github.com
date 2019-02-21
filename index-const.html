@@ -18,8 +18,9 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-  <link href="stylesheets/master.css" rel="stylesheet">
-  <link href="stylesheets/home.css" rel="stylesheet">
+  <link href="stylesheets/master.css" rel="stylesheet" />
+    <link href="stylesheets/home.css" rel="stylesheet" />
+  <link href="stylesheets/contact.css" rel="stylesheet" />
 
 
   <link rel="shortcut icon" href="favicon.png">
@@ -68,6 +69,10 @@
 
   <section id="main-wrapper">
 
+
+
+
+
     <section id="home" class="subpage">
         <section id="basicInfo" class="pane">
             <h1>Hello</h1>
@@ -77,7 +82,7 @@
             <h4>If you want to find out what I'm doing lately, scroll down, maybe something will interest you.</h4>
 
             <section class="scrInd">
-                <button onclick="scrTo('home-projects')">
+                <button onclick="scrTo('projects')">
                     <i class="fas fa-angle-double-down"></i>
                 </button>
             </section>
@@ -110,7 +115,7 @@
         </section>
 
         <section id="renders" class="pane">
-            <h2>Here you can find some renders of scenes that I made</h2>
+            <h3>Here you can find some renders of scenes that I made</h3>
             <section class="cards-wrapper">
                 <div class="card shadow-sm" style="width: 18rem;">
                     <img src="./img/renders/thumbnails/sphere.jpg" class="card-img-top" alt="...">
@@ -131,18 +136,76 @@
             </section>
         </section>
 
-        <setion id="about" class="pane">
-            Who am I?
-        </setion>
+        <section id="about" class="pane">
+
+        </section>
     </section>
 
       <section id="blog" class="subpage">
           PLACEHOLDER
       </section>
 
+
+
+
+
+
     <section id="contact" class="subpage">
         <section class="pane" id="contactPane">
-            
+            <h3>You can find me here</h3>
+            <section class="cards-wrapper">
+                <a href="https://twitter.com/epaciatko" target="_blank" class="card shadow-sm" style="width: 18rem;">
+                    <div class="contact-card card-body">
+                        <div class="card-icon"><i class="fab fa-twitter"></i></div>
+                        <div>
+                            <h5 class="card-title">Twitter</h5>
+                            <p class="card-text">@epaciatko</p>
+                        </div>
+                    </div>
+                </a>
+
+
+                <a href="https://github.com/Epacik" target="_blank" class="card shadow-sm" style="width: 18rem;">
+                    <div class="contact-card card-body" >
+                        <div class="card-icon"><i class="fab fa-github"></i></div>
+                        <div>
+                            <h5 class="card-title">Github</h5>
+                            <p class="card-text">Epacik</p>
+                        </div>
+                    </div>
+                </a>
+
+
+                <a href="https://keybase.io/epat" target="_blank" class="card shadow-sm" style="width: 18rem;">
+                    <div class="contact-card card-body">
+                        <div class="card-icon"><i class="fab fa-keybase"></i></div>
+                        <div>
+                            <h5 class="card-title">Keybase</h5>
+                            <p class="card-text">epat</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://discordapp.com" target="_blank" class="card shadow-sm" style="width: 18rem;">
+                    <div class="contact-card card-body">
+                        <div class="card-icon"><i class="fab fa-discord"></i></div>
+                        <div>
+                            <h5 class="card-title">Discord</h5>
+                            <p class="card-text">epat</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="mailto:epaciatko@gmail.com"  class="card shadow-sm" style="width: 18rem;">
+                    <div class="contact-card card-body">
+                        <div class="card-icon"><i class="far fa-envelope"></i></div>
+                        <div>
+                            <h5 class="card-title">Email</h5>
+                            <p class="card-text">epaciatko@gmail.com</p>
+                        </div>
+                    </div>
+                </a>
+            </section>
         </section>
 
     </section>
@@ -168,7 +231,8 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+          integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   <script src="lib/smoothscroll.js"></script>
   <script src="./scripts/main.js" charset="utf-8" defer></script>
   <script src="./scripts/interface.js" charset="utf-8" defer></script>
