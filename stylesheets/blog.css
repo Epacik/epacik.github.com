@@ -5,3 +5,11 @@
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.41);
     border-radius: 10px;
 }
+
+.post * {
+    /*pointer-events: none;*/
+}
+
+#openPost {
+    display: none;
+}

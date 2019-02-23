@@ -29,7 +29,7 @@
   <link rel="shortcut icon" href="favicon.png">
   <title>Epat</title>
 </head>
-<body>
+<body id="body">
   <section class="page-loading">
     <section>
       <div id="spinner">
@@ -148,33 +148,12 @@
           <section class="posts">
 
           </section>
-          <button type="button" class="btn btn-primary" id="test" data-toggle="modal"
+          <button type="button" class="btn btn-primary" id="openPost" data-toggle="modal"
                   data-target="#postModal">
-              Launch demo modal
+
           </button>
 
-          <!-- Modal -->
-          <div class="modal fade" id="postModal" tabindex="-1" role="dialog"
-               aria-labelledby="postModalScrollableTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable" role="document">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title" id="postModalScrollableTitle">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                      </div>
-                      <div class="modal-body">
-                          some text
 
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
           <!-- Button trigger modal -->
 
       </section>
@@ -241,6 +220,30 @@
 
   </section>
 
+
+  <!-- Modal -->
+  <div class="modal fade modal-lg" id="postModal" tabindex="-1" role="dialog"
+       aria-labelledby="postModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+
+              <div class="modal-header">
+                  <h5 class="modal-title" id="postModalScrollableTitle"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+
+              <div class="modal-body">
+
+              </div>
+              <div class="modal-footer">
+                  <!--<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>-->
+              </div>
+          </div>
+      </div>
+  </div>
+
   <script src="./js/lang.js" charset="utf-8"></script>
 
 
@@ -268,7 +271,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" crossorigin="anonymous"></script>
   <script src="lib/smoothscroll.js"></script>
   <script src="./scripts/main.js" charset="utf-8" defer></script>
-  <script src="./scripts/interface.js" charset="utf-8" defer></script>
-    <script src="scripts/firebase.js" defer></script>
+  <script src="./scripts/interface.js" charset="utf-8"></script>
+  <script src="scripts/firebase.js" defer></script>
 </body>
 </html>

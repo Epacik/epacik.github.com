@@ -1,8 +1,11 @@
 var isIE = /*@cc_on!@*/!!document.documentMode;
 
+
 if (isIE) {
     alert('This webpage isn\'t supporting Internet Explorer.\nIf you want to use that page, you have to use newer web browser like:\nGoogle Chrome, Mozilla Firefox, Opera, Apple Safari, Microsoft Edge etc.');
 }
+
+const postList = document.querySelector("#blog .posts");
 
 console.log('loaded');
 
@@ -40,6 +43,7 @@ function applyLayout() {
 }
 
 let hash = "";
+
 
 function showPage() {
     hash = location.hash;
