@@ -1,5 +1,15 @@
 
+function applyLayout() {
+    let layout = document.querySelector(".layoutTemplate").innerHTML;
+    let pages = document.querySelectorAll(".subpage");
 
+    for (let i = 0; i < pages.length; i++) {
+        let content = pages[i].innerHTML;
+        pages[i].innerHTML = layout;
+        pages[i].querySelector(".spContent").innerHTML = content;
+    }
+    document.body.removeChild(layout);
+}
 
 function addPostToList(key, data) {
     const postList = document.querySelector("#blog .posts");
@@ -68,7 +78,6 @@ function openPost(e) {
               </div>
               <div class="modal-body">
                   ${target.dataset.content}<br><br>
-                  
               </div>
               <div class="modal-footer">
                   <b>${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}

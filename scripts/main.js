@@ -31,16 +31,7 @@ function toggleLoading() {
 
 }
 
-function applyLayout() {
-    let layout = document.querySelector(".layoutTemplate").innerHTML;
-    let pages = document.querySelectorAll(".subpage");
 
-    for (let i = 0; i < pages.length; i++) {
-        let content = pages[i].innerHTML;
-        pages[i].innerHTML = layout;
-        pages[i].querySelector(".spContent").innerHTML = content;
-    }
-}
 
 let hash = "";
 
