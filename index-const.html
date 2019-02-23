@@ -9,6 +9,8 @@
   </script>
   <!---->
   <!--<script src="./js/lib/jquery.min.js" charset="utf-8" async></script>-->
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.6.0/marked.min.js" async></script>
   <script src="./js/content.js" charset="utf-8" async></script>
   <meta charset="UTF-8">
@@ -20,6 +22,7 @@
 
   <link href="stylesheets/master.css" rel="stylesheet" />
     <link href="stylesheets/home.css" rel="stylesheet" />
+    <link rel="stylesheet" href="stylesheets/blog.css">
   <link href="stylesheets/contact.css" rel="stylesheet" />
 
 
@@ -142,13 +145,39 @@
     </section>
 
       <section id="blog" class="subpage">
-          PLACEHOLDER
+          <section class="posts">
+
+          </section>
+          <button type="button" class="btn btn-primary" id="test" data-toggle="modal"
+                  data-target="#postModal">
+              Launch demo modal
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="postModal" tabindex="-1" role="dialog"
+               aria-labelledby="postModalScrollableTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="postModalScrollableTitle">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          some text
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Button trigger modal -->
+
       </section>
-
-
-
-
-
 
     <section id="contact" class="subpage">
         <section class="pane" id="contactPane">
@@ -191,7 +220,7 @@
                         <div class="card-icon"><i class="fab fa-discord"></i></div>
                         <div>
                             <h5 class="card-title">Discord</h5>
-                            <p class="card-text">epat</p>
+                            <p class="card-text">Epat#4076</p>
                         </div>
                     </div>
                 </a>
@@ -214,27 +243,32 @@
 
   <script src="./js/lang.js" charset="utf-8"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+
+
   <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAdRGrQzJWbK0Xi07BGDqg_a9wRsbX0PwE",
-      authDomain: "epacik-github-io.firebaseapp.com",
-      databaseURL: "https://epacik-github-io.firebaseio.com",
-      projectId: "epacik-github-io",
-      storageBucket: "epacik-github-io.appspot.com",
-      messagingSenderId: "3104720576"
-    };
-    firebase.initializeApp(config);
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyCo61ez5fN6_hmXsq-0yaSHKunjRnbtkvo",
+          authDomain: "epacik-github-io-db.firebaseapp.com",
+          databaseURL: "https://epacik-github-io-db.firebaseio.com",
+          projectId: "epacik-github-io-db",
+          storageBucket: "epacik-github-io-db.appspot.com",
+          messagingSenderId: "11190278297"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+      const auth = firebase.auth();
+
+      db.settings({});
   </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
-          integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" crossorigin="anonymous"></script>
   <script src="lib/smoothscroll.js"></script>
   <script src="./scripts/main.js" charset="utf-8" defer></script>
   <script src="./scripts/interface.js" charset="utf-8" defer></script>
+    <script src="scripts/firebase.js" defer></script>
 </body>
 </html>

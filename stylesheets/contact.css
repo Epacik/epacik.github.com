@@ -18,6 +18,11 @@ a.card {
     color: #ec971f;
 }
 
+.fa-discord {
+    color: #7289DA;
+}
+
+
 .contact-card .card-icon {
     margin: 0 15px;
     font-size: 300%;

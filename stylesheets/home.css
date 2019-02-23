@@ -26,6 +26,7 @@
     bottom: 15px;
     left: 0;
     right: 0;
+    font-size: 30px;
     margin: 0 auto;
     text-align: center;
 }
@@ -45,6 +46,7 @@
     top: 0;
     left: calc(50% - 10px);
     animation: scrDown;
+
     animation-duration: 3s;
     animation-iteration-count: infinite;
 }
