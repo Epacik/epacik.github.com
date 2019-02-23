@@ -85,7 +85,7 @@
             <h4>If you want to find out what I'm doing lately, scroll down, maybe something will interest you.</h4>
 
             <section class="scrInd">
-                <button onclick="scrTo('projects')">
+                <button onclick="scrTo(document.querySelector('.scrInd'))">
                     <i class="fas fa-angle-double-down"></i>
                 </button>
             </section>
@@ -262,8 +262,6 @@
       };
       firebase.initializeApp(config);
       const db = firebase.firestore();
-      const auth = firebase.auth();
-
       db.settings({});
   </script>
 

@@ -32,12 +32,13 @@ function addPostToList(key, data) {
     post.setAttribute("data-id", key);
     post.classList.add("post");
     post.addEventListener("click", openPost);
-    postList.appendChild(post);
+    //postList.appendChild(post);
+    postList.insertAdjacentElement("afterBegin", post);
 }
 
 function removePostFromList(key) {
     let post = document.querySelector(`[data-id="${key}"]`);
-    postList.removeChild(post);
+    post.parentNode.removeChild(post);
 }
 
 function changePost(key, data) {
