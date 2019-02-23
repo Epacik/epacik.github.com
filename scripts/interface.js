@@ -8,7 +8,7 @@ function applyLayout() {
         pages[i].innerHTML = layout;
         pages[i].querySelector(".spContent").innerHTML = content;
     }
-    document.body.removeChild(layout);
+    document.body.removeChild(document.querySelector(".layoutTemplate"));
 }
 
 function addPostToList(key, data) {
