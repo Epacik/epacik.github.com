@@ -106,13 +106,7 @@ o888   888o 888    88   888    88   888    888  888    888  888  88  888  88  88
     width: 30rem; !important;
 }
 
-/*.navbar-collapse {*/
-    /*background-image: linear-gradient(var(--navColor) 15%, var(--accentColor) 100%);*/
-/*}*/
 
-/*.navbar-collapse.show {*/
-    /*min-height: 100vh;*/
-/*}*/
 
 /*
 oooo   oooo     o  ooooo  oooo
@@ -132,7 +126,7 @@ o88o    88 o88o  o888o 888
 }
 
 .subpage {
-    background-color: #f9f9f9;
+    background-color: #e4e4e4;
     height: 100vh;
     position: fixed;
     /*left: 50%;*/
