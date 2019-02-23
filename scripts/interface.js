@@ -78,7 +78,7 @@ function openPost(e) {
                   </button>
               </div>
               <div class="modal-body">
-                  ${target.dataset.content}<br><br>
+                  ${marked(target.dataset.content)}<br><br>
               </div>
               <div class="modal-footer">
                   <b>${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}
