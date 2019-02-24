@@ -65,6 +65,11 @@ function changePost(key, data) {
 }
 
 
+function removePostIdFromHash() {
+    location.hash = location.hash.split("/")[0];
+}
+
+
 function openPost(e, isNotEvent) {
     //console.log(e);
     let target;
@@ -73,6 +78,7 @@ function openPost(e, isNotEvent) {
         return;
     }
     if (isNotEvent) {
+        location.hash = `#blog/${e}`;
         db.collection("wpisy").doc(e).get().then(doc => {
             if (doc._document == null) {
                 postModal.children[0].children[0].innerHTML = `<div class="modal-header">
@@ -88,7 +94,8 @@ function openPost(e, isNotEvent) {
               <div class="modal-footer">
                   <b>Epat</b>
               </div>`;
-            } else {
+            }
+            else {
                 let data = doc.data();
 
                 let date = new Date(data.time.seconds * 1000);
@@ -115,6 +122,7 @@ function openPost(e, isNotEvent) {
 
             }
             document.getElementById("openPost").click();
+            document.querySelector('#postModal .close').addEventListener("click", removePostIdFromHash )
         });
     }
     else {
@@ -124,10 +132,11 @@ function openPost(e, isNotEvent) {
         }
         let d = JSON.parse(target.dataset.date);
 
+        location.hash = `#blog/${target.dataset.id}`;
 
         postModal.children[0].children[0].innerHTML = `<div class="modal-header">
                   <h5 class="modal-title" id="postModalScrollableTitle">${target.dataset.title}</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
@@ -139,6 +148,7 @@ function openPost(e, isNotEvent) {
               </div>`;
         document.getElementById("openPost").click();
         //console.log(target);
+        document.querySelector('#postModal .close').addEventListener("click", removePostIdFromHash )
     }
 
 

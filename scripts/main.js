@@ -36,6 +36,7 @@ function toggleLoading() {
 let hash = "";
 
 
+
 function showPage() {
     hash = location.hash;
     hash = hash.replace("#", "");
