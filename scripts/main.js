@@ -124,4 +124,21 @@ if (getURLParam("debug_loading") === "true"){
     toggleLoading();
 }
 
+function copyAddress() {
+    let support = document.getElementById('cpy');
+    support.value = location.href;
+
+    document.getElementById("copyM").click();
+    support.select();
+}
+
+
+
+function addTextToClipboard (text) {
+    let support = document.getElementById("cpy");
+    support.value = text;
+    support.select();
+    document.execCommand("copy");
+    addToast("Copied", `Copied ${text} to clipboard`);
+}
 

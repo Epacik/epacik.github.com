@@ -12,6 +12,6 @@
     /*pointer-events: none;*/
 }
 
-#openPost {
+#openPost, #copyM {
     display: none;
 }

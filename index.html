@@ -153,7 +153,10 @@
                   data-target="#postModal">
 
           </button>
+          <button type="button" class="btn btn-primary" id="copyM" data-toggle="modal"
+                  data-target="#copyModal">
 
+          </button>
 
           <!-- Button trigger modal -->
 
@@ -245,9 +248,36 @@
       </div>
   </div>
 
+  <div class="modal fade" id="copyModal" tabindex="-1" role="dialog"
+       aria-labelledby="postModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+          <div class="modal-content">
+
+              <div class="modal-header">
+                  <h5 class="modal-title" id="copyModalScrollableTitle">Copy address</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <textarea style="resize: none; width: 100%; overflow: hidden" id="cpy"  cols="100000"
+                            wrap="soft"
+                  ></textarea>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+
+
   <script src="./js/lang.js" charset="utf-8"></script>
 
-
+    <section class="toasts" aria-live="polite" aria-atomic="true" style="bottom: 0;min-width: 300px; position: fixed" >
+        <!-- Position it -->
+        <div style="position: relative;min-width: 300px; bottom: 0">
+        </div>
+    </section>
 
   <script>
       // Initialize Firebase
@@ -270,9 +300,16 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" crossorigin="anonymous"></script>
   <script src="lib/smoothscroll.js"></script>
+  <script src="lib/gettext.js"></script>
+  <script>
+      var i18n = window.i18n();
+      i18n.gettext('foo');
+  </script>
 
   <script src="./scripts/interface.js" charset="utf-8" defer></script>
   <script src="scripts/firebase.js" defer></script>
   <script src="./scripts/main.js" charset="utf-8" defer></script>
+
+
 </body>
 </html>

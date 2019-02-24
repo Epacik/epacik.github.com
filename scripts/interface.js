@@ -92,11 +92,12 @@ function openPost(e, isNotEvent) {
                   URL<br><br>
               </div>
               <div class="modal-footer">
-                  <b>Epat</b>
+                  <b>Epat</b> 
               </div>`;
             }
             else {
                 let data = doc.data();
+
 
                 let date = new Date(data.time.seconds * 1000);
                 let d = {
@@ -117,7 +118,11 @@ function openPost(e, isNotEvent) {
                   ${marked(data.content)}<br><br>
               </div>
               <div class="modal-footer">
-                  <b>${data.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}
+                  <button class="btn btn-secondary" onclick="copyAddress()"><i 
+                 class="fas fa-share"></i></button><b>
+${data.author}</b>   
+                    &nbsp; ${d.day}/${d.mnt}/${d.yr} 
+${d.hr}:${d.mn}
               </div>`;
 
             }
@@ -132,6 +137,7 @@ function openPost(e, isNotEvent) {
         }
         let d = JSON.parse(target.dataset.date);
 
+
         location.hash = `#blog/${target.dataset.id}`;
 
         postModal.children[0].children[0].innerHTML = `<div class="modal-header">
@@ -144,7 +150,8 @@ function openPost(e, isNotEvent) {
                   ${marked(target.dataset.content)}<br><br>
               </div>
               <div class="modal-footer">
-                  <b>${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}
+                  <button class="btn btn-secondary" onclick="copyAddress()"><i class="fas fa-share"></i></button><b>
+${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}
               </div>`;
         document.getElementById("openPost").click();
         //console.log(target);
@@ -229,4 +236,23 @@ function changeRender(key, data) {
 function removeRenderFromList(key) {
     let project = document.querySelector(`[data-id="${key}"]`);
     project.parentNode.removeChild(project);
+}
+
+function addToast(title, message) {
+    const toastWrapper = document.querySelector(".toasts").children[0];
+    toastWrapper.insertAdjacentHTML("beforeEnd",
+        `<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+                      <div class="toast-header">
+                        <strong class="mr-auto">${title}</strong>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="toast-body">
+                        ${message}
+                      </div>
+                    </div>`);
+    if (toastWrapper.children.length > 0) {
+       $( toastWrapper.children[toastWrapper.children.length - 1]).toast('show');
+    }
 }
