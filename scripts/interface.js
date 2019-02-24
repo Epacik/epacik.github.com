@@ -118,7 +118,7 @@ function openPost(e, isNotEvent) {
                   ${marked(data.content)}<br><br>
               </div>
               <div class="modal-footer">
-                  <button class="btn btn-secondary" onclick="copyAddress()"><i 
+                  <button class="btn btn-outline-secondary" onclick="copyAddress()"><i 
                  class="fas fa-share"></i></button><b>
 ${data.author}</b>   
                     &nbsp; ${d.day}/${d.mnt}/${d.yr} 
@@ -150,7 +150,7 @@ ${d.hr}:${d.mn}
                   ${marked(target.dataset.content)}<br><br>
               </div>
               <div class="modal-footer">
-                  <button class="btn btn-secondary" onclick="copyAddress()"><i class="fas fa-share"></i></button><b>
+                  <button class="btn btn-outline-secondary" onclick="copyAddress()"><i class="fas fa-share"></i></button><b>
 ${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}
               </div>`;
         document.getElementById("openPost").click();
