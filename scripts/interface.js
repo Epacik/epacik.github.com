@@ -115,7 +115,7 @@ function openPost(e, isNotEvent) {
                   </button>
               </div>
               <div class="modal-body">
-                  ${marked(data.content)}<br><br>
+                  ${marked(data.content)}
               </div>
               <div class="modal-footer">
                   <button class="btn btn-outline-secondary" onclick="copyAddress()"><i 
@@ -147,7 +147,7 @@ ${d.hr}:${d.mn}
                   </button>
               </div>
               <div class="modal-body">
-                  ${marked(target.dataset.content)}<br><br>
+                  ${marked(target.dataset.content)}
               </div>
               <div class="modal-footer">
                   <button class="btn btn-outline-secondary" onclick="copyAddress()"><i class="fas fa-share"></i></button><b>
