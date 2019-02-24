@@ -65,17 +65,67 @@ function changePost(key, data) {
 }
 
 
-function openPost(e) {
+function openPost(e, isNotEvent) {
     //console.log(e);
-    let target = e.target;
-    while( !target.classList.contains("post") || "body" === target.id ){
-        target = target.parentNode;
-    }
-
-    let d = JSON.parse(target.dataset.date);
-
+    let target;
     const postModal = document.getElementById("postModal");
-    postModal.children[0].children[0].innerHTML = `<div class="modal-header">
+    if (hash[0] !== "blog") {
+        return;
+    }
+    if (isNotEvent) {
+        db.collection("wpisy").doc(e).get().then(doc => {
+            if (doc._document == null) {
+                postModal.children[0].children[0].innerHTML = `<div class="modal-header">
+                  <h5 class="modal-title" id="postModalScrollableTitle">Not found</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  Unfortunately, the post you are looking for does not exist.<br> Check if you entered the correct 
+                  URL<br><br>
+              </div>
+              <div class="modal-footer">
+                  <b>Epat</b>
+              </div>`;
+            } else {
+                let data = doc.data();
+
+                let date = new Date(data.time.seconds * 1000);
+                let d = {
+                    hr: ("0" + date.getHours().toString()).slice(-2),
+                    mn: ("0" + date.getMinutes().toString()).slice(-2),
+                    mnt: ("0" + (date.getMonth() + 1).toString()).slice(-2),
+                    day: (("0" + date.getDate().toString()).slice(-2)),
+                    yr: date.getFullYear()
+                };
+
+                postModal.children[0].children[0].innerHTML = `<div class="modal-header">
+                  <h5 class="modal-title" id="postModalScrollableTitle">${data.title}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  ${marked(data.content)}<br><br>
+              </div>
+              <div class="modal-footer">
+                  <b>${data.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}
+              </div>`;
+
+            }
+            document.getElementById("openPost").click();
+        });
+    }
+    else {
+        target = e.target;
+        while( !target.classList.contains("post") || "body" === target.id ){
+            target = target.parentNode;
+        }
+        let d = JSON.parse(target.dataset.date);
+
+
+        postModal.children[0].children[0].innerHTML = `<div class="modal-header">
                   <h5 class="modal-title" id="postModalScrollableTitle">${target.dataset.title}</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
@@ -87,8 +137,11 @@ function openPost(e) {
               <div class="modal-footer">
                   <b>${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}
               </div>`;
-    document.getElementById("openPost").click();
-    //console.log(target);
+        document.getElementById("openPost").click();
+        //console.log(target);
+    }
+
+
 }
 
 

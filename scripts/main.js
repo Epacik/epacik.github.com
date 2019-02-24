@@ -38,7 +38,6 @@ let hash = "";
 
 function showPage() {
     hash = location.hash;
-    hash = hash.toLocaleLowerCase();
     hash = hash.replace("#", "");
     hash = hash.split("/");
     let pages = document.querySelectorAll(".subpage");
@@ -110,9 +109,17 @@ window.addEventListener("hashchange", showPage);
 if (getURLParam("debug_loading") === "true"){
     setTimeout(toggleLoading, 3000);
 } else {
-    // if (hash.length === 2 && document.querySelector(`#${hash[0]} #${hash[1]}`) !== null) {
-    //     scrTo(document.querySelector(`#${hash[0]} #${hash[1]}`));
-    // }
+    if (hash.length === 2  ) {
+        if (document.querySelector(`#${hash[0]} #${hash[1]}`) !== null) {
+            showPage();
+            scrTo(document.querySelector(`#${hash[0]} #${hash[1]}`));
+        } else if (hash[0] === "blog"){
+            showPage();
+            openPost(hash[1], true);
+        }
+
+
+    }
     toggleLoading();
 }
 
