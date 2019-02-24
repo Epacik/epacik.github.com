@@ -11,6 +11,10 @@ function applyLayout() {
     document.body.removeChild(document.querySelector(".layoutTemplate"));
 }
 
+
+
+
+
 function addPostToList(key, data) {
     const postList = document.querySelector("#blog .posts");
     let date = new Date(data.time.seconds * 1000);
@@ -85,4 +89,81 @@ function openPost(e) {
               </div>`;
     document.getElementById("openPost").click();
     //console.log(target);
+}
+
+
+
+
+
+
+
+
+function addProjectToList(key, data) {
+    const projects = document.querySelector("#projectsWrapper");
+
+    projects.insertAdjacentHTML("afterBegin",
+        `<div class="card shadow-sm" data-id="${key}" style="width: 18rem;">
+                        <img src="${data.pathToImg}" class="card-img-top" alt="${data.imgAlt}">
+                        <div class="card-body">
+                            <h5 class="card-title">${data.name}</h5>
+                            <p class="card-text">${data.description}</p>
+                            <a href="${data.link}" target="_blank" class="btn btn-primary">Check it out</a>
+                        </div>
+                </div>`);
+}
+
+
+function changeProject(key, data) {
+    let project = document.querySelector(`[data-id="${key}"]`);
+
+    project.innerHTML = `<img src="${data.pathToImg}" class="card-img-top" alt="${data.imgAlt}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${data.name}</h5>
+                                        <p class="card-text">${data.description}</p>
+                                        <a href="${data.link}" target="_blank" class="btn btn-primary">Check it out</a>
+                                    </div>`;
+
+    project.setAttribute("data-id", key);
+}
+
+function removeProjectFromList(key) {
+    let project = document.querySelector(`[data-id="${key}"]`);
+    project.parentNode.removeChild(project);
+}
+
+
+
+
+
+
+
+
+
+
+function addRenderToList(key, data) {
+    document.querySelector("#rendersWrapper").insertAdjacentHTML("afterBegin",
+        `<div data-id="${key}" class="card shadow-sm" style="width: 18rem;">
+                    <img src="${data.thumbnail}" class="card-img-top" alt="${data.thumbnailAlt}">
+                    <div class="card-body">
+                        <h5 class="card-title">${data.name}</h5>
+                        <p class="card-text">${data.description}</p>
+                    </div>
+                </div>`);
+}
+
+function changeRender(key, data) {
+    let render = document.querySelector(`[data-id="${key}"]`);
+
+    render.innerHTML = `<img src="${data.thumbnail}" class="card-img-top" alt="${data.thumbnailAlt}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${data.name}</h5>
+                                            <p class="card-text">${data.description}</p>
+                                        </div>`;
+
+    render.setAttribute("data-id", key);
+}
+
+function removeRenderFromList(key) {
+    let project = document.querySelector(`[data-id="${key}"]`);
+    project.parentNode.removeChild(project);
 }
