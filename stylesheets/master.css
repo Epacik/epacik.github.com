@@ -6,6 +6,12 @@
     --accentColor: rgb(0, 140, 255);
     --shadowColor: rgba(0, 0, 0, 0.5);
     --hShadow: 0 5px 5px -4px black;
+
+
+}
+
+* {
+    transition: background 0.3s, color 0.2s;
 }
 
 
@@ -148,6 +154,16 @@ o88o    88 o88o  o888o 888
 
 .spContent {
     min-height: calc(100vh - 100px);
+}
+
+.dark .subpage {
+    background-color: #0a0a0a;
+    color: #fff;
+}
+
+
+.dark .modal {
+    color:white;
 }
 
 .navbar {

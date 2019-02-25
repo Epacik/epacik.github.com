@@ -8,6 +8,11 @@
     min-width: 300px;
 }
 
+.dark .post {
+    background-color: #363636;
+    box-shadow: 0 2px 3px 0 rgba(180, 180, 180, 0.2);
+}
+
 .post * {
     /*pointer-events: none;*/
 }

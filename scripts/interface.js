@@ -1,7 +1,25 @@
 
+const darkmodeButton = document.querySelectorAll("#darkmode-button");
+function toggleDarkmode() {
+    darkMode(localStorage.getItem("darkmode") == "true" ? false : true);
+    let ico = document.querySelectorAll("#darkmodeButton i");
+    for (i = 0; i < darkmodeButton.length; i++) {
+        ico[i].classList.remove(localStorage.getItem("darkmode") == "true" ? "fa-moon": "fa-sun");
+        ico[i].children[0].classList.add(localStorage.getItem("darkmode") == "false" ? "fa-moon": "fa-sun");
+    }
+
+}
+
 function applyLayout() {
     let layout = document.querySelector(".layoutTemplate").innerHTML;
     let pages = document.querySelectorAll(".subpage");
+    darkMode(localStorage.getItem("darkmode") == "true"? true : false);
+
+    for (i = 0; i < darkmodeButton.length; i++) {
+        darkmodeButton[i].children[0].classList.remove(localStorage.getItem("darkmode") == "true" ? "fa-moon": "fa-sun");
+        darkmodeButton[i].children[0].classList.add(localStorage.getItem("darkmode") == "false" ? "fa-moon": "fa-sun");
+    }
+
 
     for (let i = 0; i < pages.length; i++) {
         let content = pages[i].innerHTML;
@@ -293,6 +311,28 @@ function addToast(title, message) {
                     </div>`);
     if (toastWrapper.children.length > 0) {
        $( toastWrapper.children[toastWrapper.children.length - 1]).toast('show');
+    }
+}
+
+
+
+
+
+function darkMode(enable) {
+    localStorage.setItem("darkmode", enable);
+
+    if (enable){
+        document.body.classList.add("dark"); //For my css
+        document.querySelector("#postModal .modal-content").classList.add("bg-dark");
+        document.querySelector("#copyModal .modal-content").classList.add("bg-dark");
+        document.querySelector("#postModal .modal-content").classList.add("text-white");
+        document.querySelector("#copyModal .modal-content").classList.add("text-white");
+    } else {
+        document.body.classList.remove("dark");
+        document.querySelector("#postModal .modal-content").classList.remove("bg-dark");
+        document.querySelector("#copyModal .modal-content").classList.remove("bg-dark");
+        document.querySelector("#postModal .modal-content").classList.remove("text-white");
+        document.querySelector("#copyModal .modal-content").classList.remove("text-white");
     }
 }
 

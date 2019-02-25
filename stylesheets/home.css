@@ -9,6 +9,13 @@
     color: white;
     text-shadow: 0 0 10px #000;
 
+    /*transition: background 0.3s, color 0.3s, text-shadow 0.3s;*/
+}
+
+.dark #basicInfo{
+    background-image: url("../img/backgrounds/low-poly-purple.jpg");
+    /*color: black;*/
+    /*text-shadow: 0 0 10px #fff;*/
 }
 
 /*#home-projects{*/
@@ -39,6 +46,12 @@
     position: relative;
 }
 
+.dark .scrInd button {
+    border-color: white;
+    color: white;
+    background-color: black;
+}
+
 .scrInd button * {
     min-width: 20px;
     height: 40px;
@@ -65,6 +78,11 @@
 
 .card {
     margin: 10px auto;
+}
+
+.dark .card {
+    background-color: var(--mainColor);
+    color: white;
 }
 
 .card-img-top {
