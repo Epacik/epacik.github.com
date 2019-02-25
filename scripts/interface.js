@@ -55,10 +55,16 @@ function addPostToList(key, data) {
     post.setAttribute("data-title", title);
     post.setAttribute("data-author", data.author);
     post.setAttribute("data-id", key);
+    post.classList.add("sm");
     post.classList.add("post");
+
     post.addEventListener("click", openPost);
     //postList.appendChild(post);
     postList.insertAdjacentElement("afterBegin", post);
+    ;
+    setTimeout(()=>{
+        post.classList.remove("sm")
+    }, 100)
 }
 
 function removePostFromList(key) {
