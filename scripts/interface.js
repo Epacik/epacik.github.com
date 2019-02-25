@@ -27,11 +27,14 @@ function addPostToList(key, data) {
     };
     let post = document.createElement("div");
 
-    post.insertAdjacentHTML("afterBegin", `<header><h5>${data.title}</h5></header>
+    let title = JSON.parse(data.title)[document.querySelector("html").lang];
+    let content = JSON.parse(data.content)[document.querySelector("html").lang];
+
+    post.insertAdjacentHTML("afterBegin", `<header><h5>${title}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`);
     post.setAttribute("data-date", JSON.stringify(d));
-    post.setAttribute("data-content", data.content);
-    post.setAttribute("data-title", data.title);
+    post.setAttribute("data-content", content);
+    post.setAttribute("data-title", title);
     post.setAttribute("data-author", data.author);
     post.setAttribute("data-id", key);
     post.classList.add("post");
@@ -55,11 +58,15 @@ function changePost(key, data) {
         day: (("0" + date.getDate().toString()).slice(-2)),
         yr: date.getFullYear()
     };
+
+    let title = JSON.parse(data.title)[document.querySelector("html").lang];
+    let content = JSON.parse(data.content)[document.querySelector("html").lang];
+
     post.innerHTML = `<header><h5>${data.title}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`;
     post.setAttribute("data-date", JSON.stringify(d));
-    post.setAttribute("data-content", data.content);
-    post.setAttribute("data-title", data.title);
+    post.setAttribute("data-content", content);
+    post.setAttribute("data-title", title);
     post.setAttribute("data-author", data.author);
     post.setAttribute("data-id", key);
 }
@@ -81,15 +88,16 @@ function openPost(e, isNotEvent) {
         location.hash = `#blog/${e}`;
         db.collection("wpisy").doc(e).get().then(doc => {
             if (doc._document == null) {
+                i18n.textdomain("errors");
+
                 postModal.children[0].children[0].innerHTML = `<div class="modal-header">
-                  <h5 class="modal-title" id="postModalScrollableTitle">Not found</h5>
+                  <h5 class="modal-title" id="postModalScrollableTitle"></h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
-                  Unfortunately, the post you are looking for does not exist.<br> Check if you entered the correct 
-                  URL<br><br>
+                  ${i18n.gettext("missing post")}
               </div>
               <div class="modal-footer">
                   <b>Epat</b> 
@@ -108,14 +116,17 @@ function openPost(e, isNotEvent) {
                     yr: date.getFullYear()
                 };
 
+                let title = JSON.parse(data.title)[document.querySelector("html").lang];
+                let content = JSON.parse(data.content)[document.querySelector("html").lang];
+
                 postModal.children[0].children[0].innerHTML = `<div class="modal-header">
-                  <h5 class="modal-title" id="postModalScrollableTitle">${data.title}</h5>
+                  <h5 class="modal-title" id="postModalScrollableTitle">${title}</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
-                  ${marked(data.content)}
+                  ${marked(content)}
               </div>
               <div class="modal-footer">
                   <button class="btn btn-outline-secondary" onclick="copyAddress()"><i 
@@ -170,14 +181,16 @@ ${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn
 
 function addProjectToList(key, data) {
     const projects = document.querySelector("#projectsWrapper");
-
+    let desc = JSON.parse(data.description)[document.querySelector("html").lang];
+    let alt = JSON.parse(data.imgAlt)[document.querySelector("html").lang];
+    i18n.textdomain("buttons");
     projects.insertAdjacentHTML("afterBegin",
         `<div class="card shadow-sm" data-id="${key}" style="width: 18rem;">
-                        <img src="${data.pathToImg}" class="card-img-top" alt="${data.imgAlt}">
+                        <img src="${data.pathToImg}" class="card-img-top" alt="${alt}">
                         <div class="card-body">
                             <h5 class="card-title">${data.name}</h5>
-                            <p class="card-text">${data.description}</p>
-                            <a href="${data.link}" target="_blank" class="btn btn-primary">Check it out</a>
+                            <p class="card-text">${desc}</p>
+                            <a href="${data.link}" target="_blank" class="btn btn-primary">${i18n.gettext("Check it out")}</a>
                         </div>
                 </div>`);
 }
@@ -185,12 +198,14 @@ function addProjectToList(key, data) {
 
 function changeProject(key, data) {
     let project = document.querySelector(`[data-id="${key}"]`);
-
-    project.innerHTML = `<img src="${data.pathToImg}" class="card-img-top" alt="${data.imgAlt}">
+    i18n.textdomain("buttons");
+    let desc = JSON.parse(data.description)[document.querySelector("html").lang];
+    let alt = JSON.parse(data.imgAlt)[document.querySelector("html").lang];
+    project.innerHTML = `<img src="${data.pathToImg}" class="card-img-top" alt="${alt}">
                                     <div class="card-body">
                                         <h5 class="card-title">${data.name}</h5>
-                                        <p class="card-text">${data.description}</p>
-                                        <a href="${data.link}" target="_blank" class="btn btn-primary">Check it out</a>
+                                        <p class="card-text">${desc}</p>
+                                        <a href="${data.link}" target="_blank" class="btn btn-primary">${i18n.gettext("Check it out")}</a>
                                     </div>`;
 
     project.setAttribute("data-id", key);
@@ -211,12 +226,25 @@ function removeProjectFromList(key) {
 
 
 function addRenderToList(key, data) {
+    let name = "";
+    let desc = "";
+    let alt = "";
+    let tAlt = "";
+    try {
+        name  = JSON.parse(data.name)[document.querySelector("html").lang];
+        desc  = JSON.parse(data.description)[document.querySelector("html").lang];
+        alt = JSON.parse(data.imgAlt)[document.querySelector("html").lang];
+        tAlt  = JSON.parse(data.thumbnailAlt)[document.querySelector("html").lang];
+    } catch {}
+
+
+
     document.querySelector("#rendersWrapper").insertAdjacentHTML("afterBegin",
         `<div data-id="${key}" class="card shadow-sm" style="width: 18rem;">
-                    <img src="${data.thumbnail}" class="card-img-top" alt="${data.thumbnailAlt}">
+                    <img src="${data.thumbnail}" class="card-img-top" alt="${tAlt}">
                     <div class="card-body">
-                        <h5 class="card-title">${data.name}</h5>
-                        <p class="card-text">${data.description}</p>
+                        <h5 class="card-title">${name}</h5>
+                        <p class="card-text">${desc}</p>
                     </div>
                 </div>`);
 }
@@ -224,10 +252,21 @@ function addRenderToList(key, data) {
 function changeRender(key, data) {
     let render = document.querySelector(`[data-id="${key}"]`);
 
-    render.innerHTML = `<img src="${data.thumbnail}" class="card-img-top" alt="${data.thumbnailAlt}">
+    let name = "";
+    let desc = "";
+    let alt = "";
+    let tAlt = "";
+    try {
+        name  = JSON.parse(data.name)[document.querySelector("html").lang];
+        desc  = JSON.parse(data.description)[document.querySelector("html").lang];
+        alt = JSON.parse(data.imgAlt)[document.querySelector("html").lang];
+        tAlt  = JSON.parse(data.thumbnailAlt)[document.querySelector("html").lang];
+    } catch {}
+
+    render.innerHTML = `<img src="${data.thumbnail}" class="card-img-top" alt="${tAlt}">
                                         <div class="card-body">
-                                            <h5 class="card-title">${data.name}</h5>
-                                            <p class="card-text">${data.description}</p>
+                                            <h5 class="card-title">${name}</h5>
+                                            <p class="card-text">${desc}</p>
                                         </div>`;
 
     render.setAttribute("data-id", key);
@@ -256,3 +295,4 @@ function addToast(title, message) {
        $( toastWrapper.children[toastWrapper.children.length - 1]).toast('show');
     }
 }
+
