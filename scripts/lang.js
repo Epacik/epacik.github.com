@@ -141,6 +141,7 @@ function applyLocalization() {
     } else {
         i18n.setLocale("en");
     }
+    document.querySelector("html").lang = i18n.getLocale();
     applyLocaleToNav();
     applyLocaleToHome();
     applyLocaleToContact();
