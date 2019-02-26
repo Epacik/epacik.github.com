@@ -61,8 +61,9 @@ function addPostToList(key, data) {
         let added = false;
         for (i = 0; i < postList.children.length; i++) {
             if (new Date(postList.children[i].dataset.jsondate.replace('"', "").replace('"', "")) < date) {
-                postList.children[i].insertAdjacentElement("afterEnd", post);
-                added = true
+                postList.children[i].insertAdjacentElement("beforeBegin", post);
+                added = true;
+                break;
             }
         }
         if (!added) {
