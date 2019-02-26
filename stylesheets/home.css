@@ -88,3 +88,7 @@
 .card-img-top {
     background-color: #868e96;
 }
+
+.dark .card-img-top {
+    background-color: #373b3f;
+}

@@ -79,6 +79,10 @@ function showPage() {
 
     }
 
+    if (hash[0] === "blog" && hash[1] !== "" && hash[1] !== undefined ){
+        openPost(hash[1], true);
+    }
+
 }
 
 function addCurrentYear() {

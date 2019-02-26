@@ -1,7 +1,7 @@
 
 
 
-db.collection('wpisy').where("show", "==", true).orderBy("time").onSnapshot(snapshot => {
+db.collection('wpisy').where("show", "==", true).orderBy("time", "desc").onSnapshot(snapshot => {
     let ch = snapshot.docChanges();
     ch.forEach(change => {
         if (change.type === "added") {

@@ -11,7 +11,7 @@
 }
 
 * {
-    transition: background 0.3s, background-color 0.3s, color 0.2s;
+    transition: background 0.3s, background-color 0.3s, color 0.2s !important;
 }
 
 
@@ -193,4 +193,8 @@ o88o    88 o88o  o888o 888
 
 .dark .card {
     box-shadow: 0 3px 5px 0 rgba(255,255,255,.075);
+}
+
+.dark {
+    background-color: black;
 }

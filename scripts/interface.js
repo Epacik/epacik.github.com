@@ -2,12 +2,6 @@
 const darkmodeButton = document.querySelectorAll("#darkmode-button");
 function toggleDarkmode() {
     darkMode(localStorage.getItem("darkmode") == "true" ? false : true);
-    let ico = document.querySelectorAll("#darkmodeButton i");
-    for (i = 0; i < darkmodeButton.length; i++) {
-        ico[i].classList.remove(localStorage.getItem("darkmode") == "true" ? "fa-moon": "fa-sun");
-        ico[i].children[0].classList.add(localStorage.getItem("darkmode") == "false" ? "fa-moon": "fa-sun");
-    }
-
 }
 
 function applyLayout() {
@@ -51,6 +45,7 @@ function addPostToList(key, data) {
     post.insertAdjacentHTML("afterBegin", `<header><h5>${title}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`);
     post.setAttribute("data-date", JSON.stringify(d));
+    post.setAttribute("data-JSONDate", JSON.stringify(date));
     post.setAttribute("data-content", content);
     post.setAttribute("data-title", title);
     post.setAttribute("data-author", data.author);
@@ -60,8 +55,20 @@ function addPostToList(key, data) {
 
     post.addEventListener("click", openPost);
     //postList.appendChild(post);
-    postList.insertAdjacentElement("afterBegin", post);
-    ;
+    if (postList.children.length === 0) {
+        postList.insertAdjacentElement("beforeEnd", post);
+    } else {
+        let added = false;
+        for (i = 0; i < postList.children.length; i++) {
+            if (new Date(postList.children[i].dataset.jsondate.replace('"', "").replace('"', "")) < date) {
+                postList.children[i].insertAdjacentElement("afterEnd", post);
+                added = true
+            }
+        }
+        if (!added) {
+            postList.insertAdjacentElement("beforeEnd", post);
+        }
+    }
     setTimeout(()=>{
         post.classList.remove("sm")
     }, 100)
@@ -69,7 +76,11 @@ function addPostToList(key, data) {
 
 function removePostFromList(key) {
     let post = document.querySelector(`[data-id="${key}"]`);
-    post.parentNode.removeChild(post);
+    post.classList.add("sm");
+    setTimeout(()=> {
+        post.parentNode.removeChild(post);
+    }, 500);
+
 }
 
 function changePost(key, data) {
@@ -86,9 +97,10 @@ function changePost(key, data) {
     let title = JSON.parse(data.title)[document.querySelector("html").lang];
     let content = JSON.parse(data.content)[document.querySelector("html").lang];
 
-    post.innerHTML = `<header><h5>${data.title}</h5></header>
+    post.innerHTML = `<header><h5>${title}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`;
     post.setAttribute("data-date", JSON.stringify(d));
+    post.setAttribute("data-JSONDate", JSON.stringify(date));
     post.setAttribute("data-content", content);
     post.setAttribute("data-title", title);
     post.setAttribute("data-author", data.author);
@@ -214,7 +226,7 @@ function addProjectToList(key, data) {
                         <div class="card-body">
                             <h5 class="card-title">${data.name}</h5>
                             <p class="card-text">${desc}</p>
-                            <a href="${data.link}" target="_blank" class="btn btn-primary">${i18n.gettext("Check it out")}</a>
+                            <a href="${data.link}"  class="btn btn-primary">${i18n.gettext("Check it out")}</a>
                         </div>
                 </div>`);
 }
@@ -229,7 +241,7 @@ function changeProject(key, data) {
                                     <div class="card-body">
                                         <h5 class="card-title">${data.name}</h5>
                                         <p class="card-text">${desc}</p>
-                                        <a href="${data.link}" target="_blank" class="btn btn-primary">${i18n.gettext("Check it out")}</a>
+                                        <a href="${data.link}"  class="btn btn-primary">${i18n.gettext("Check it out")}</a>
                                     </div>`;
 
     project.setAttribute("data-id", key);
@@ -326,6 +338,7 @@ function addToast(title, message) {
 
 function darkMode(enable) {
     localStorage.setItem("darkmode", enable);
+    let ico = document.querySelectorAll("#darkmodeButton");
 
     if (enable){
         document.body.classList.add("dark"); //For my css
@@ -333,12 +346,33 @@ function darkMode(enable) {
         document.querySelector("#copyModal .modal-content").classList.add("bg-dark");
         document.querySelector("#postModal .modal-content").classList.add("text-white");
         document.querySelector("#copyModal .modal-content").classList.add("text-white");
+        for (i = 0; i < ico.length; i++) {
+            ico[i].children[0].classList.remove("fa-moon");
+            ico[i].children[0].classList.add( "fa-sun");
+        }
     } else {
         document.body.classList.remove("dark");
         document.querySelector("#postModal .modal-content").classList.remove("bg-dark");
         document.querySelector("#copyModal .modal-content").classList.remove("bg-dark");
         document.querySelector("#postModal .modal-content").classList.remove("text-white");
         document.querySelector("#copyModal .modal-content").classList.remove("text-white");
+        for (i = 0; i < ico.length; i++) {
+            ico[i].children[0].classList.remove("fa-sun");
+            ico[i].children[0].classList.add( "fa-moon");
+        }
     }
 }
 
+setTimeout(()=>{
+    let ico = document.querySelectorAll("#darkmodeButton");
+    for (i = 0; i < ico.length; i++) {
+        if (localStorage.getItem("darkmode") == "true"){
+            ico[i].children[0].classList.remove("fa-moon");
+            ico[i].children[0].classList.add( "fa-sun");
+
+        } else {
+            ico[i].children[0].classList.remove("fa-sun");
+            ico[i].children[0].classList.add( "fa-moon");
+        }
+    }
+}, 1000);
