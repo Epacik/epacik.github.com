@@ -222,7 +222,7 @@ function addProjectToList(key, data) {
     let alt = JSON.parse(data.imgAlt)[document.querySelector("html").lang];
     i18n.textdomain("buttons");
     projects.insertAdjacentHTML("afterBegin",
-        `<div class="card shadow-sm" data-id="${key}" style="width: 18rem;">
+        `<div class="card sm shadow-sm" data-id="${key}" style="width: 18rem;">
                         <img src="${data.pathToImg}" class="card-img-top" alt="${alt}">
                         <div class="card-body">
                             <h5 class="card-title">${data.name}</h5>
@@ -230,6 +230,9 @@ function addProjectToList(key, data) {
                             <a href="${data.link}"  class="btn btn-primary">${i18n.gettext("Check it out")}</a>
                         </div>
                 </div>`);
+    setTimeout(()=>{
+        document.querySelector(`[data-id="${key}"]`).classList.remove("sm")
+    },100);
 }
 
 
@@ -277,13 +280,16 @@ function addRenderToList(key, data) {
 
 
     document.querySelector("#rendersWrapper").insertAdjacentHTML("afterBegin",
-        `<div data-id="${key}" class="card shadow-sm" style="width: 18rem;">
+        `<div data-id="${key}" class="card sm shadow-sm" style="width: 18rem;">
                     <img src="${data.thumbnail}" class="card-img-top" alt="${tAlt}">
                     <div class="card-body">
                         <h5 class="card-title">${name}</h5>
                         <p class="card-text">${desc}</p>
                     </div>
                 </div>`);
+    setTimeout(()=>{
+        document.querySelector(`[data-id="${key}"]`).classList.remove("sm")
+    },100);
 }
 
 function changeRender(key, data) {
@@ -316,7 +322,7 @@ function removeRenderFromList(key) {
 
 
 function addContactToList(key, data) {
-   document.querySelector("#contactCards").insertAdjacentHTML("afterBegin",
+   document.querySelector("#contactCards").insertAdjacentHTML("beforeEnd",
         `<a href="${data.link}" data-id="${key}" target="_blank" class="card shadow-sm sm" style="width: 18rem;">
                     <div class="contact-card card-body">
                         <div class="card-icon"><i class="${data.iconClass}"></i></div>
