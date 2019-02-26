@@ -39,3 +39,16 @@ db.collection('renders').where("show", "==", true).onSnapshot(snapshot => {
         }
     });
 });
+
+db.collection('contact').where("show", "==", true).orderBy("name").onSnapshot(snapshot => {
+    let ch = snapshot.docChanges();
+    ch.forEach(change => {
+        if (change.type === "added") {
+            addContactToList(change.doc.id, change.doc.data());
+        } else if (change.type === "removed") {
+            removeContactFromList(change.doc.id);
+        } else if (change.type === "modified") {
+            changeContact(change.doc.id, change.doc.data());
+        }
+    });
+});

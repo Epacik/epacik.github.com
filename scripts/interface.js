@@ -314,6 +314,54 @@ function removeRenderFromList(key) {
     project.parentNode.removeChild(project);
 }
 
+
+function addContactToList(key, data) {
+   document.querySelector("#contactCards").insertAdjacentHTML("afterBegin",
+        `<a href="${data.link}" data-id="${key}" target="_blank" class="card shadow-sm sm" style="width: 18rem;">
+                    <div class="contact-card card-body">
+                        <div class="card-icon"><i class="${data.iconClass}"></i></div>
+                        <div>
+                            <h5 class="card-title">${data.service}</h5>
+                            <p class="card-text">${data.name}</p>
+                        </div>
+                    </div>
+                </a>`);
+
+    setTimeout(()=>{
+        document.querySelector(`[data-id="${key}"]`).classList.remove("sm")
+    },100);
+}
+
+function changeContact(key, data) {
+    let cont = document.querySelector(`[data-id="${key}"]`);
+
+
+
+    cont.innerHTML = `<div class="contact-card card-body">
+                            <div class="card-icon"><i class="${data.iconClass}"></i></div>
+                            <div>
+                                <h5 class="card-title">${data.service}</h5>
+                                <p class="card-text">${data.name}</p>
+                            </div>
+                        </div> `;
+
+    cont.setAttribute("data-id", key);
+    cont.setAttribute("href", data.link);
+
+}
+
+function removeContactFromList(key) {
+    let cont = document.querySelector(`[data-id="${key}"]`);
+    cont.classList.add("sm");
+    setTimeout(()=> {
+        cont.parentNode.removeChild(cont);
+    }, 500);
+}
+
+
+
+
+
 function addToast(title, message) {
     const toastWrapper = document.querySelector(".toasts").children[0];
     toastWrapper.insertAdjacentHTML("beforeEnd",
@@ -367,7 +415,7 @@ function darkMode(enable) {
 setTimeout(()=>{
     let ico = document.querySelectorAll("#darkmodeButton");
     for (i = 0; i < ico.length; i++) {
-        if (localStorage.getItem("darkmode") == "true"){
+        if (localStorage.getItem("darkmode") === "true"){
             ico[i].children[0].classList.remove("fa-moon");
             ico[i].children[0].classList.add( "fa-sun");
 

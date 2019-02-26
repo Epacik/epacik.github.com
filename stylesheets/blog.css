@@ -29,7 +29,12 @@
     /*pointer-events: none;*/
 }
 
+#postModal img {
+    max-width: 100% !important;
+}
+
 #openPost, #copyM {
     display: none;
 }
+
 
