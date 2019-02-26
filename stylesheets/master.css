@@ -11,7 +11,7 @@
 }
 
 * {
-    transition: background 0.3s, background-color 0.3s, color 0.2s !important;
+    transition: background 0.3s, background-color 0.3s, color 0.2s;
 }
 
 
