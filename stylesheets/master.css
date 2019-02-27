@@ -11,7 +11,7 @@
 }
 
 * {
-    transition: background 0.3s, background-color 0.3s, color 0.2s;
+    transition: background 0.3s, background-color 0.3s, color 0.3s;
 }
 
 
@@ -52,7 +52,7 @@ o888ooooo88   88ooo88 o88o  o888o o888ooo88  o888o o88o    88  888ooo888
     height: 100%;
     border-radius: 50%;
     border-color: white;
-    border-image-source: url(./../img/other/spinner.svg);
+    border-image-source: url(../img/other/spinner.svg);
     border-image-width: 100%;
     border-image-slice: 50%;
     display: block;

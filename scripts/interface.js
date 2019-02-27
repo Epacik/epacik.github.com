@@ -129,7 +129,7 @@ function openPost(e, isNotEvent) {
 
                 postModal.children[0].children[0].innerHTML = `<div class="modal-header">
                   <h5 class="modal-title" id="postModalScrollableTitle"></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close" data-dismiss="modal" onclick="window.stop()" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
@@ -280,13 +280,13 @@ function addRenderToList(key, data) {
 
 
     document.querySelector("#rendersWrapper").insertAdjacentHTML("afterBegin",
-        `<div data-id="${key}" class="card sm shadow-sm" style="width: 18rem;">
+        `<a href="${data.link ? data.link : ""}" data-id="${key}" class="card sm shadow-sm" style="width: 18rem;">
                     <img src="${data.thumbnail}" class="card-img-top" alt="${tAlt}">
                     <div class="card-body">
                         <h5 class="card-title">${name}</h5>
                         <p class="card-text">${desc}</p>
                     </div>
-                </div>`);
+                </a>`);
     setTimeout(()=>{
         document.querySelector(`[data-id="${key}"]`).classList.remove("sm")
     },100);
@@ -313,6 +313,7 @@ function changeRender(key, data) {
                                         </div>`;
 
     render.setAttribute("data-id", key);
+    render.setAttribute("href", data.link ? data.link : "")
 }
 
 function removeRenderFromList(key) {
