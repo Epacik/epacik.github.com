@@ -81,6 +81,8 @@ function showPage() {
 
     if (hash[0] === "blog" && hash[1] !== "" && hash[1] !== undefined ){
         openPost(hash[1], true);
+    }else {
+        $("#postModal").modal("hide");
     }
 
 }
@@ -118,7 +120,7 @@ if (getURLParam("debug_loading") === "true"){
         if (document.querySelector(`#${hash[0]} #${hash[1]}`) !== null) {
             showPage();
             scrTo(document.querySelector(`#${hash[0]} #${hash[1]}`));
-        } else if (hash[0] === "blog"){
+        } else if (hash[0] === "blog" && hash[1] !== undefined){
             showPage();
             openPost(hash[1], true);
         }

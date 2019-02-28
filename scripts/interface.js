@@ -116,6 +116,7 @@ function changePost(key, data) {
 
 function removePostIdFromHash() {
     location.hash = location.hash.split("/")[0];
+    $("#postModal").modal("hide");
 }
 
 
@@ -180,7 +181,8 @@ ${d.hr}:${d.mn}
 
             }
             document.getElementById("openPost").click();
-            document.querySelector('#postModal .close').addEventListener("click", removePostIdFromHash )
+            //document.querySelector('#postModal .close').addEventListener("click", removePostIdFromHash )
+
         });
     }
     else {
@@ -218,6 +220,9 @@ ${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn
 
 
 
+$('#postModal').on('hidden.bs.modal', function (e) {
+    removePostIdFromHash();
+});
 
 
 
