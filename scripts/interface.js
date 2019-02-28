@@ -53,6 +53,11 @@ function addPostToList(key, data) {
     post.classList.add("sm");
     post.classList.add("post");
 
+    let preloader = document.getElementById("postsPreloader");
+    if (preloader) {
+        preloader.parentElement.removeChild(preloader)
+    }
+
     post.addEventListener("click", openPost);
     //postList.appendChild(post);
     if (postList.children.length === 0) {
@@ -220,6 +225,10 @@ function addProjectToList(key, data) {
     const projects = document.querySelector("#projectsWrapper");
     let desc = JSON.parse(data.description)[document.querySelector("html").lang];
     let alt = JSON.parse(data.imgAlt)[document.querySelector("html").lang];
+    let preloader = document.getElementById("projectsPreloader");
+    if (preloader) {
+        preloader.parentElement.removeChild(preloader)
+    }
     i18n.textdomain("buttons");
     projects.insertAdjacentHTML("afterBegin",
         `<div class="card sm shadow-sm" data-id="${key}" style="width: 18rem;">
@@ -270,6 +279,10 @@ function addRenderToList(key, data) {
     let desc = "";
     let alt = "";
     let tAlt = "";
+    let preloader = document.getElementById("rendersPreloader");
+    if (preloader) {
+        preloader.parentElement.removeChild(preloader)
+    }
     try {
         name  = JSON.parse(data.name)[document.querySelector("html").lang];
         desc  = JSON.parse(data.description)[document.querySelector("html").lang];
@@ -323,6 +336,10 @@ function removeRenderFromList(key) {
 
 
 function addContactToList(key, data) {
+    let preloader = document.getElementById("contactPreloader");
+    if (preloader) {
+        preloader.parentElement.removeChild(preloader)
+    }
    document.querySelector("#contactCards").insertAdjacentHTML("beforeEnd",
         `<a href="${data.link}" data-id="${key}" target="_blank" class="card shadow-sm sm" style="width: 18rem;">
                     <div class="contact-card card-body">

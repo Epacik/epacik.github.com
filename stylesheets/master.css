@@ -61,15 +61,7 @@ o888ooooo88   88ooo88 o88o  o888o o888ooo88  o888o o88o    88  888ooo888
     box-sizing: border-box;
 }
 
-@keyframes spin {
-    0% {
-        transform: rotateZ(0deg);
-    }
 
-    100% {
-        transform: rotateZ(360deg);
-    }
-}
 * {
     font-family: 'Roboto', sans-serif;
 }
@@ -197,4 +189,29 @@ o88o    88 o88o  o888o 888
 
 .dark {
     background-color: black;
+}
+
+.preloader {
+    width: 50px;
+    height: 50px;
+}
+
+.spinner-grow {
+    margin: 10px auto;
+}
+
+#postsPreloader {
+    display: block;
+    
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
