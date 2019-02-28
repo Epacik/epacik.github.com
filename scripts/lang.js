@@ -48,7 +48,7 @@ i18n.setMessages("nav", "en", {
 
 i18n.setMessages("home", "pl", {
     "Hello": "Witaj",
-    "I'm Epat": "Jestem Epat",
+    "I'm Epat": "Jestem Damian, albo Epat jeśli wolisz",
     "student": "Zwykły" +
         " uczeń, pasjonat informatyki, astronomii i czegokolwiek co mnie zainteresuje",
     "what I'm doing lately": "Jeśli chcesz" +
@@ -61,7 +61,7 @@ i18n.setMessages("home", "pl", {
 
 i18n.setMessages("home", "en", {
     "Hello": "Hello",
-    "I'm Epat": "I'm Epat",
+    "I'm Epat": "I'm Damian, or Epat if you want",
     "student": "A simple student with passion for computer science, astronomy and whatever else I find interesting.",
     "what I'm doing lately": "If you want to find out what I'm doing lately, scroll down, maybe something will interest you.",
     "My projects": "My projects",

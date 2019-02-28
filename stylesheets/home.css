@@ -26,7 +26,13 @@
     text-align: center;
 }
 
-
+#scrStop {
+    position: absolute;
+    bottom: 30px;
+    background-color: transparent;
+    visibility: hidden;
+    pointer-events: none;
+}
 
 .scrInd {
     position: absolute;
@@ -37,6 +43,7 @@
     margin: 0 auto;
     text-align: center;
 }
+
 
 .scrInd button {
     width: 50px;
