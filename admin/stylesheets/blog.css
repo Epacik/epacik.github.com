@@ -1,0 +1,45 @@
+
+
+.post {
+    padding: 9px;
+    background-color: white;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 60%;
+    margin: 10px auto;
+    min-width: 300px;
+    transition: transform 0.3s;
+}
+
+.post.sm {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    height: 0;
+}
+
+.post p {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.dark .post {
+    background-color: #363636;
+    box-shadow: 0 2px 3px 0 rgba(180, 180, 180, 0.2);
+}
+
+.post * {
+    /*pointer-events: none;*/
+}
+
+#postModal img {
+    max-width: 100% !important;
+}
+
+#openPost, #copyM {
+    display: none;
+}
+
+

@@ -1,0 +1,221 @@
+:root {
+    --mainColor: rgb(41, 41, 41);
+    --navColor: rgb(158, 0, 255);
+    --primaryColor: rgb(158, 0, 255);
+    --primaryBorderColor: rgb(187, 84, 255);
+    --accentColor: rgb(0, 140, 255);
+    --shadowColor: rgba(0, 0, 0, 0.5);
+    --hShadow: 0 5px 5px -4px black;
+
+
+}
+
+* {
+    transition: background 0.3s, background-color 0.3s, color 0.3s;
+}
+
+
+/*
+ooooo         ooooooo      o      ooooooooo  ooooo oooo   oooo  ooooooo8
+ 888        o888   888o   888      888    88o 888   8888o  88 o888    88
+ 888        888     888  8  88     888    888 888   88 888o88 888    oooo
+ 888      o 888o   o888 8oooo88    888    888 888   88   8888 888o    88
+o888ooooo88   88ooo88 o88o  o888o o888ooo88  o888o o88o    88  888ooo888
+*/
+.page-loading {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgb(158, 0, 255);
+    background-image: linear-gradient(var(--navColor) 15%, var(--accentColor) 100%);
+    z-index: 1030;
+    transition: opacity 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.page-loading #spinner {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+
+}
+
+.page-loading #spinner div {
+    border: 4px solid transparent;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-color: white;
+    border-image-source: url(../../img/other/spinner.svg);
+    border-image-width: 100%;
+    border-image-slice: 50%;
+    display: block;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    box-sizing: border-box;
+}
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.layoutTemplate {
+    display: none;
+}
+
+/*
+
+oooooooooo    ooooooo     ooooooo   ooooooooooo  oooooooo8 ooooooooooo oooooooooo       o      oooooooooo
+ 888    888 o888   888o o888   888o 88  888  88 888        88  888  88  888    888     888      888    888
+ 888oooo88  888     888 888     888     888      888oooooo     888      888oooo88     8  88     888oooo88
+ 888    888 888o   o888 888o   o888     888             888    888      888  88o     8oooo88    888
+o888ooo888    88ooo88     88ooo88      o888o    o88oooo888    o888o    o888o  88o8 o88o  o888o o888o
+
+  ooooooo  ooooo  oooo ooooooooooo oooooooooo  oooooooooo  ooooo ooooooooooo ooooooooooo  oooooooo8
+o888   888o 888    88   888    88   888    888  888    888  888  88  888  88  888    88  888
+888     888  888  88    888ooo8     888oooo88   888oooo88   888      888      888ooo8     888oooooo
+888o   o888   88888     888    oo   888  88o    888  88o    888      888      888    oo          888
+  88ooo88      888     o888ooo8888 o888o  88o8 o888o  88o8 o888o    o888o    o888ooo8888 o88oooo888
+
+ */
+
+.text-primary {
+    color: var(--primaryColor) !important;
+}
+
+#loginModal {
+    background-color: #696969;
+}
+
+.bg-primary, .btn-primary {
+    background-color: var(--primaryColor) !important;
+    border-color: var(--primaryBorderColor) !important;
+}
+
+.btn-primary:hover {
+    border-color: var(--primaryBorderColor) !important;
+}
+
+.card {
+    display: inline-block;
+    width: 30rem; !important;
+}
+
+
+
+/*
+oooo   oooo     o  ooooo  oooo
+ 8888o  88     888  888    88
+ 88 888o88    8  88  888  88
+ 88   8888   8oooo88  88888
+o88o    88 o88o  o888o 888
+*/
+
+
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+.subpage {
+    background-color: #e4e4e4;
+    height: 100vh;
+    position: fixed;
+    /*left: 50%;*/
+    overflow-y: auto;
+    min-width: 100%;
+    transform: scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, left 0.3s, transform 0.3s cubic-bezier(1.000, 0.005, 1.000, 0.005);
+}
+
+.subpage.show {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+    transition: opacity 0.3s, left 0.3s, transform 0.3s;
+    /*left: 0;*/
+}
+
+.spContent {
+    min-height: calc(100vh - 100px);
+}
+
+.dark .subpage {
+    background-color: #0a0a0a;
+    color: #fff;
+}
+
+
+.dark .modal {
+    color:white;
+}
+
+.navbar {
+    box-shadow: 3px 0 5px 0 black;
+}
+
+.dark .navbar {
+    box-shadow: 3px 0 5px 0 white;
+}
+
+.pane {
+    padding: 20px;
+    margin: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.075);
+}
+
+.dark .pane {
+
+    box-shadow: 0 3px 5px 0 rgba(255,255,255,.075);
+}
+
+.pane h3, .pane h4 {
+    text-align: center;
+}
+
+.dark .card {
+    box-shadow: 0 3px 5px 0 rgba(255,255,255,.075);
+}
+
+.dark {
+    background-color: black;
+}
+
+.preloader {
+    width: 50px;
+    height: 50px;
+}
+
+.spinner-grow {
+    margin: 10px auto;
+}
+
+#postsPreloader {
+    display: block;
+    
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}

@@ -1,0 +1,53 @@
+a.card {
+    color: black;
+    transition: transform 0.3s, height 0.3s;
+}
+
+.contact-card {
+    padding: 3px;
+    magin: 5px;
+}
+
+.contact-card div {
+    display: inline-block;
+}
+.fa-twitter {
+    color: #2e6da4;
+}
+
+.fa-keybase {
+    color: #ec971f;
+}
+
+.fa-discord {
+    color: #7289DA;
+}
+
+
+
+
+.contact-card .card-icon {
+    margin: 0 15px;
+    font-size: 300%;
+}
+
+.contact-card .card-title {
+    margin: 0;
+}
+
+.card.sm {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    height: 0;
+}
+
+
+@media screen and (min-width: 600px) {
+    #contactPane {
+        width: 60%;
+        margin: 0 auto;
+    }
+}

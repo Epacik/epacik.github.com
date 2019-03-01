@@ -1,0 +1,102 @@
+#basicInfo {
+    /*width: 100%;*/
+    min-height: calc(100vh - 70px);
+    text-align: center;
+    position: relative;
+    background-image: url("../../img/backgrounds/low-poly-purple-light.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 0 10px #000;
+
+    /*transition: background 0.3s, color 0.3s, text-shadow 0.3s;*/
+}
+
+.dark #basicInfo{
+    background-image: url("../../img/backgrounds/low-poly-purple.jpg");
+    /*color: black;*/
+    /*text-shadow: 0 0 10px #fff;*/
+}
+
+/*#home-projects{*/
+    /*min-height: calc(100vh - 70px);*/
+/*}*/
+
+#projects h3, h4 {
+    text-align: center;
+}
+
+#scrStop {
+    position: absolute;
+    bottom: 30px;
+    background-color: transparent;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.scrInd {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.scrInd button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid;
+    position: relative;
+}
+
+.dark .scrInd button {
+    border-color: white;
+    color: white;
+    background-color: black;
+}
+
+.scrInd button * {
+    min-width: 20px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 10px);
+    animation: scrDown;
+
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scrDown {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 10%;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.card {
+    margin: 10px auto;
+    transition: transform 0.3s, height 0.3s;
+}
+
+.dark .card {
+    background-color: var(--mainColor);
+    color: white;
+}
+
+.card-img-top {
+    background-color: #868e96;
+}
+
+.dark .card-img-top {
+    background-color: #373b3f;
+}
