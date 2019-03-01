@@ -86,6 +86,7 @@
 .card {
     margin: 10px auto;
     transition: transform 0.3s, height 0.3s;
+    border-radius: 20px;
 }
 
 .dark .card {
@@ -95,6 +96,7 @@
 
 .card-img-top {
     background-color: #868e96;
+    border-radius: 20px 20px 0 0;
 }
 
 .dark .card-img-top {
