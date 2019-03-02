@@ -87,6 +87,7 @@
     margin: 10px auto;
     transition: transform 0.3s, height 0.3s;
     border-radius: 20px;
+
 }
 
 .dark .card {
