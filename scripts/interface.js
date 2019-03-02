@@ -322,7 +322,7 @@ function changeRender(key, data) {
         desc  = JSON.parse(data.description)[document.querySelector("html").lang];
         alt = JSON.parse(data.imgAlt)[document.querySelector("html").lang];
         tAlt  = JSON.parse(data.thumbnailAlt)[document.querySelector("html").lang];
-    } catch {}
+    } catch (e) {}
 
     render.innerHTML = `<img src="${data.thumbnail}" class="card-img-top" alt="${tAlt}">
                                         <div class="card-body">
