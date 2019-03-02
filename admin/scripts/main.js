@@ -148,15 +148,34 @@ function addTextToClipboard (text) {
     addToast("Copied", `Copied ${text} to clipboard`);
 }
 
-$('#loginModal').modal({
-    backdrop: 'static',
-    keyboard: false  // to prevent closing with Esc button (if you want this too)
+
+
+
+auth.onAuthStateChanged(function(user) {
+    if (user) {
+        console.log("logged in");
+        $('#loginModal').modal("hide");
+        document.getElementById("loginMsg").innerHTML = "";
+    } else {
+        console.log("logged out");
+        $('#loginModal').modal({
+            backdrop: 'static',
+            keyboard: false  // to prevent closing with Esc button (if you want this too)
+        });
+    }
 });
 
-document.getElementById("backB").addEventListener("click", ()=> {
-   window.history.back();
-});
 
 document.getElementById("loginB").addEventListener("click", ()=> {
-
+    auth.signInWithEmailAndPassword(document.getElementById("email").value, document.getElementById("password").value).catch(e => {
+        console.log("WRONG USER OR PASSWORD");
+        document.getElementById("loginMsg").innerHTML =
+            `<div class="alert alert-danger" role="alert">
+               Wrong user or password
+            </div>`;
+    });
 });
+
+function logout() {
+    auth.signOut();
+}

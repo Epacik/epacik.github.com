@@ -169,7 +169,7 @@ function openPost(e, isNotEvent) {
                   </button>
               </div>
               <div class="modal-body">
-                  ${marked(content)}
+                  <textarea>${content}</textarea>
               </div>
               <div class="modal-footer">
                   <button class="btn btn-outline-secondary" onclick="copyAddress()"><i 
@@ -202,7 +202,9 @@ ${d.hr}:${d.mn}
                   </button>
               </div>
               <div class="modal-body">
-                  ${marked(target.dataset.content)}
+                    <label>Lang: <input id="postLang" type="text" placeholder="en"></label>
+                    <label>Title: <input  id="postTitle" type="text" placeholder="Title"> </label>
+                    <label>Content: <textarea >${target.dataset.content}</textarea></label>
               </div>
               <div class="modal-footer">
                   <button class="btn btn-outline-secondary" onclick="copyAddress()"><i class="fas fa-share"></i></button><b>
@@ -293,7 +295,7 @@ function addRenderToList(key, data) {
         desc  = JSON.parse(data.description)[document.querySelector("html").lang];
         alt = JSON.parse(data.imgAlt)[document.querySelector("html").lang];
         tAlt  = JSON.parse(data.thumbnailAlt)[document.querySelector("html").lang];
-    } catch {}
+    } catch (e) {}
 
     let thumbnail = data.thumbnail.includes("http") ? data.thumbnail : "../" + data.thumbnail;
 
@@ -323,7 +325,7 @@ function changeRender(key, data) {
         desc  = JSON.parse(data.description)[document.querySelector("html").lang];
         alt = JSON.parse(data.imgAlt)[document.querySelector("html").lang];
         tAlt  = JSON.parse(data.thumbnailAlt)[document.querySelector("html").lang];
-    } catch {}
+    } catch (e) {}
 
     render.innerHTML = `<img src="${data.thumbnail}" class="card-img-top" alt="${tAlt}">
                                         <div class="card-body">
@@ -425,6 +427,8 @@ function darkMode(enable) {
         document.querySelector("#copyModal .modal-content").classList.add("bg-dark");
         document.querySelector("#postModal .modal-content").classList.add("text-white");
         document.querySelector("#copyModal .modal-content").classList.add("text-white");
+        document.querySelector("#addPostModal .modal-content").classList.add("bg-dark");
+        document.querySelector("#addPostModal .modal-content").classList.add("text-white");
         for (i = 0; i < ico.length; i++) {
             ico[i].children[0].classList.remove("fa-moon");
             ico[i].children[0].classList.add( "fa-sun");
@@ -435,6 +439,8 @@ function darkMode(enable) {
         document.querySelector("#copyModal .modal-content").classList.remove("bg-dark");
         document.querySelector("#postModal .modal-content").classList.remove("text-white");
         document.querySelector("#copyModal .modal-content").classList.remove("text-white");
+        document.querySelector("#addPostModal .modal-content").classList.remove("bg-dark");
+        document.querySelector("#addPostModal .modal-content").classList.remove("text-white");
         for (i = 0; i < ico.length; i++) {
             ico[i].children[0].classList.remove("fa-sun");
             ico[i].children[0].classList.add( "fa-moon");

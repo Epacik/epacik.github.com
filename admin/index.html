@@ -3,9 +3,9 @@
 <head>
   <script type="text/javascript">
   var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
-    window.onerror = function (e) {
-      alert(`${e} occured, for further informations open developer tools`);
-    };
+    // window.onerror = function (e) {
+    //   alert(`${e} occured, for further informations open developer tools`);
+    // };
   </script>
   <!---->
   <!--<script src="./js/lib/jquery.min.js" charset="utf-8" async></script>-->
@@ -73,6 +73,7 @@
             </ul>
 
             <div id="options" class="">
+                <buttom id="logout" onclick="logout()" class="btn btn-outline-light">Logout</buttom>
                 <button id="darkmodeButton" onclick="toggleDarkmode()" class="btn btn-outline-light"><i class="fas fa-moon"></i></button>
             </div>
         </div>
@@ -188,12 +189,12 @@
                       <label>Password
                           <input class="form-control" id="password" type="password" autocomplete="current-password"
                                  placeholder="Enter password" required></label><br>
+                      <div id="loginMsg"></div>
 
                   </form>
               </div>
               <div class="modal-footer">
                   <!--<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>-->
-                  <button id="backB" type="button" class="btn btn-secondary">Back</button>
                   <button id="loginB" type="button" class="btn btn-primary">Login</button>
 
               </div>
@@ -219,6 +220,45 @@
               </div>
               <div class="modal-footer">
                   <!--<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>-->
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="modal fade" id="addPostModal" onclick="" tabindex="-1" role="dialog"
+       aria-labelledby="postModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+          <div class="modal-content">
+
+              <div class="modal-header">
+                  <h5 class="modal-title" id="addPostModalScrollableTitle">Add new post</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+
+              <div class="modal-body">
+                  <form action="">
+                      <div class="form-group col">
+                          <label>Lang:
+                              <input class="form-control" name="lang"  id="postLang" type="text" placeholder="en"></label><br>
+                          <label>Title: <input  class="form-control" name="title" id="postTitle" type="text"
+                              placeholder="Title">
+                          </label><br>
+                          <label>Content: <textarea name="content"  class="form-control" ></textarea></label><br>
+                          <label >Show
+                              <select name="show" id="postShow" class="form-control">
+                                  <option value="true">True</option>
+                                  <option value="false">False</option>
+                              </select>
+                          </label>
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary">Add lang</button>
+                  <button type="button" class="btn btn-primary">Add to DB</button>
               </div>
           </div>
       </div>
@@ -279,6 +319,7 @@
   <script src="lib/gettext.js"></script>
 
   <script src="scripts/lang.js" charset="utf-8"></script>
+  <script src="scripts/addPost.js" charset="utf-8"></script>
   <script>
       let geoData;
       $.getJSON('https://ipapi.co/json/', function(data) {
