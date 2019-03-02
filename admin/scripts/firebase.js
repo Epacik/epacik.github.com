@@ -1,7 +1,7 @@
 
 
 
-db.collection('wpisy').where("show", "==", true).orderBy("time", "desc").onSnapshot(snapshot => {
+db.collection('wpisy').orderBy("time", "desc").onSnapshot(snapshot => {
     let ch = snapshot.docChanges();
     ch.forEach(change => {
         if (change.type === "added") {
@@ -14,7 +14,7 @@ db.collection('wpisy').where("show", "==", true).orderBy("time", "desc").onSnaps
     });
 });
 
-db.collection('projects').where("show", "==", true).onSnapshot(snapshot => {
+db.collection('projects').onSnapshot(snapshot => {
     let ch = snapshot.docChanges();
     ch.forEach(change => {
         if (change.type === "added") {
@@ -27,7 +27,7 @@ db.collection('projects').where("show", "==", true).onSnapshot(snapshot => {
     });
 });
 
-db.collection('renders').where("show", "==", true).onSnapshot(snapshot => {
+db.collection('renders').onSnapshot(snapshot => {
     let ch = snapshot.docChanges();
     ch.forEach(change => {
         if (change.type === "added") {
@@ -40,7 +40,7 @@ db.collection('renders').where("show", "==", true).onSnapshot(snapshot => {
     });
 });
 
-db.collection('contact').where("show", "==", true).orderBy("name").onSnapshot(snapshot => {
+db.collection('contact').orderBy("name").onSnapshot(snapshot => {
     let ch = snapshot.docChanges();
     ch.forEach(change => {
         if (change.type === "added") {
