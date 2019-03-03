@@ -144,5 +144,6 @@ function applyLocalization() {
     applyLocaleToNav();
     applyLocaleToHome();
     applyLocaleToContact();
-    applyLocaleToOthers()
+    applyLocaleToOthers();
+    applyLayout();
 }
