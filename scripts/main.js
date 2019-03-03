@@ -13,23 +13,7 @@ console.log('loaded');
  * @function toggleLoading
  * @desc Toggles loading screen
  */
-function toggleLoading() {
-    loading = document.querySelector('.page-loading');
-    if (loading.style.opacity === '0') {
-        loading.style.opacity = '';
-        loading.style.pointerEvents = '';
-        loading.style.transform = "scale(1)";
-        document.body.style.overflow = '';
-        document.querySelector('.page-loading #spinner div').style.animationName = 'spin';
-    } else {
-        loading.style.opacity = '0';
-        loading.style.pointerEvents = 'none';
-        document.body.style.overflow = 'auto';
-        loading.style.transform = "scale(2)";
-        document.querySelector('.page-loading #spinner div').style.animationName = '';
-    }
 
-}
 
 
 

@@ -350,8 +350,8 @@ function darkMode(enable) {
         let modals = document.querySelectorAll(".modal .modal-content");
 
         modals.forEach(modal => {
-           modal.remove("bg-dark");
-           modal .remove("text-white");
+           modal.classList.remove("bg-dark");
+           modal.classList.remove("text-white");
         });
 
         // document.querySelector("#postModal .modal-content").classList.remove("bg-dark");
