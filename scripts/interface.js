@@ -37,9 +37,7 @@ function addPostToList(key, data) {
         day: (("0" + date.getDate().toString()).slice(-2)),
         yr: date.getFullYear()
     };
-    if (date < new Date(new Date(Date).getTime() - 60 * 60 * 24 * 1000)) {
-        navigator.vibrate([150, 100, 200]);
-    }
+
     let post = document.createElement("div");
 
     let title = typeof data.title === "string" ? JSON.parse(data.title) : data.title;
@@ -48,6 +46,10 @@ function addPostToList(key, data) {
     let lng = document.querySelector("html").lang;
 
     if ( title[lng] === undefined || content[lng] === undefined) return;
+
+    if (date < new Date(new Date(Date).getTime() - 60 * 60 * 24 * 1000)) {
+        navigator.vibrate([300, 200, 400]);
+    }
     post.insertAdjacentHTML("afterBegin", `<header><h5>${title[lng]}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`);
     post.setAttribute("data-date", JSON.stringify(d));
