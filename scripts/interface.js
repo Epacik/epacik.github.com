@@ -23,10 +23,6 @@ function applyLayout() {
     document.body.removeChild(document.querySelector(".layoutTemplate"));
 }
 
-
-
-
-
 function addPostToList(key, data) {
     const postList = document.querySelector("#blog .posts");
     let date = new Date(data.time.seconds * 1000);
@@ -129,12 +125,10 @@ function changePost(key, data) {
     post.setAttribute("data-id", key);
 }
 
-
 function removePostIdFromHash() {
     location.hash = location.hash.split("/")[0];
     $("#postModal").modal("hide");
 }
-
 
 function openPost(e, isNotEvent) {
     //console.log(e);
@@ -205,7 +199,7 @@ ${d.hr}:${d.mn}
     }
     else {
         target = e.target;
-        while( !target.classList.contains("post") || "body" === target.id ){
+        while (!target.classList.contains("post") || "body" === target.id) {
             target = target.parentNode;
         }
         let d = JSON.parse(target.dataset.date);
@@ -228,21 +222,13 @@ ${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn
               </div>`;
         document.getElementById("openPost").click();
         //console.log(target);
-        document.querySelector('#postModal .close').addEventListener("click", removePostIdFromHash )
+        document.querySelector('#postModal .close').addEventListener("click", removePostIdFromHash)
     }
-
-
 }
-
-
-
-
 
 $('#postModal').on('hidden.bs.modal', function (e) {
     removePostIdFromHash();
 });
-
-
 
 function addProjectToList(key, data) {
     const projects = document.querySelector("#projectsWrapper");
@@ -267,7 +253,6 @@ function addProjectToList(key, data) {
     },100);
 }
 
-
 function changeProject(key, data) {
     let project = document.querySelector(`[data-id="${key}"]`);
     i18n.textdomain("buttons");
@@ -287,15 +272,6 @@ function removeProjectFromList(key) {
     let project = document.querySelector(`[data-id="${key}"]`);
     project.parentNode.removeChild(project);
 }
-
-
-
-
-
-
-
-
-
 
 function addRenderToList(key, data) {
     let name = "";
@@ -357,7 +333,6 @@ function removeRenderFromList(key) {
     project.parentNode.removeChild(project);
 }
 
-
 function addContactToList(key, data) {
     let preloader = document.getElementById("contactPreloader");
     if (preloader) {
@@ -405,10 +380,6 @@ function removeContactFromList(key) {
     }, 500);
 }
 
-
-
-
-
 function addToast(title, message) {
     const toastWrapper = document.querySelector(".toasts").children[0];
     toastWrapper.insertAdjacentHTML("beforeEnd",
@@ -427,10 +398,6 @@ function addToast(title, message) {
        $( toastWrapper.children[toastWrapper.children.length - 1]).toast('show');
     }
 }
-
-
-
-
 
 function darkMode(enable) {
     localStorage.setItem("darkmode", enable);

@@ -9,17 +9,7 @@ const postList = document.querySelector("#blog .posts");
 
 console.log('loaded');
 
-/**
- * @function toggleLoading
- * @desc Toggles loading screen
- */
-
-
-
-
 let hash = "";
-
-
 
 function showPage() {
     hash = location.hash;
@@ -57,7 +47,12 @@ function showPage() {
             location.href = "./404.html";
         }
     }
-    let sec = document.querySelector(`#${hash[0]} #${hash[1]}`);
+    let sec;
+    try {
+        sec = document.querySelector(`#${hash[0]} #${hash[1]}`);
+    } catch (e) {
+
+    }
     if (hash.length === 2 && sec !== null) {
         setTimeout(() => {sec.scrollIntoView({behavior: "smooth", block: "start"});}, 100)
 
