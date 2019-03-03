@@ -107,7 +107,7 @@ function getURLParam(key) {
     return params.get(key);
 }
 
-applyLayout();
+//applyLayout();
 addCurrentYear();
 
 showPage();
