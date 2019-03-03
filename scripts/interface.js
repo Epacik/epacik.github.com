@@ -47,7 +47,7 @@ function addPostToList(key, data) {
 
     if ( title[lng] === undefined || content[lng] === undefined) return;
 
-    if (date < new Date(new Date(Date).getTime() - 60 * 60 * 24 * 1000)) {
+    if (date > new Date(new Date(Date).getTime() - 60 * 60 * 24 * 1000)) {
         navigator.vibrate([300, 200, 400]);
     }
     post.insertAdjacentHTML("afterBegin", `<header><h5>${title[lng]}</h5></header>
