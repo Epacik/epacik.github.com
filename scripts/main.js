@@ -127,7 +127,7 @@ if (getURLParam("debug_loading") === "true"){
 
 
     }
-    toggleLoading();
+
 }
 
 function copyAddress() {

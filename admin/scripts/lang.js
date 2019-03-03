@@ -146,4 +146,5 @@ function applyLocalization() {
     applyLocaleToContact();
     applyLocaleToOthers();
     applyLayout();
+    toggleLoading();
 }
