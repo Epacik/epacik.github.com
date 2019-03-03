@@ -155,7 +155,7 @@ auth.onAuthStateChanged(function(user) {
     if (user) {
         console.log("logged in");
         $('#loginModal').modal("hide");
-        document.getElementById("loginMsg").innerHTML = "";
+        //document.getElementById("loginMsg").innerHTML = "";
     } else {
         console.log("logged out");
         $('#loginModal').modal({
