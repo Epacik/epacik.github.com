@@ -42,8 +42,9 @@ function addPostToList(key, data) {
     let title = typeof data.title === "string" ? JSON.parse(data.title) : data.title;
     let content = typeof data.content === "string" ? JSON.parse(data.content) : data.content;
 
-
     let lng = document.querySelector("html").lang;
+
+    if ( title[lng] === undefined || content[lng] === undefined) return;
     post.insertAdjacentHTML("afterBegin", `<header><h5>${title[lng]}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`);
     post.setAttribute("data-date", JSON.stringify(d));
@@ -107,6 +108,7 @@ function changePost(key, data) {
 
     let lng = document.querySelector("html").lang;
 
+    if ( title[lng] === undefined || content[lng] === undefined) return;
     post.innerHTML = `<header><h5>${title[lng]}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`;
     post.setAttribute("data-date", JSON.stringify(d));
