@@ -39,15 +39,17 @@ function addPostToList(key, data) {
     };
     let post = document.createElement("div");
 
-    let title = JSON.parse(data.title)[document.querySelector("html").lang];
-    let content = JSON.parse(data.content)[document.querySelector("html").lang];
+    let title = typeof data.title === "string" ? JSON.parse(data.title) : data.title;
+    let content = typeof data.content === "string" ? JSON.parse(data.content) : data.content;
 
-    post.insertAdjacentHTML("afterBegin", `<header><h5>${title}</h5></header>
+
+    let lng = document.querySelector("html").lang;
+    post.insertAdjacentHTML("afterBegin", `<header><h5>${title[lng]}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`);
     post.setAttribute("data-date", JSON.stringify(d));
     post.setAttribute("data-JSONDate", JSON.stringify(date));
-    post.setAttribute("data-content", content);
-    post.setAttribute("data-title", title);
+    post.setAttribute("data-content", content[lng]);
+    post.setAttribute("data-title", title[lng]);
     post.setAttribute("data-author", data.author);
     post.setAttribute("data-id", key);
     post.classList.add("sm");
@@ -100,15 +102,17 @@ function changePost(key, data) {
         yr: date.getFullYear()
     };
 
-    let title = JSON.parse(data.title)[document.querySelector("html").lang];
-    let content = JSON.parse(data.content)[document.querySelector("html").lang];
+    let title = typeof data.title === "string" ? JSON.parse(data.title) : data.title;
+    let content = typeof data.content === "string" ? JSON.parse(data.content) : data.content;
 
-    post.innerHTML = `<header><h5>${title}</h5></header>
+    let lng = document.querySelector("html").lang;
+
+    post.innerHTML = `<header><h5>${title[lng]}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`;
     post.setAttribute("data-date", JSON.stringify(d));
     post.setAttribute("data-JSONDate", JSON.stringify(date));
-    post.setAttribute("data-content", content);
-    post.setAttribute("data-title", title);
+    post.setAttribute("data-content", content[lng]);
+    post.setAttribute("data-title", title[lng]);
     post.setAttribute("data-author", data.author);
     post.setAttribute("data-id", key);
 }
@@ -159,17 +163,19 @@ function openPost(e, isNotEvent) {
                     yr: date.getFullYear()
                 };
 
-                let title = JSON.parse(data.title)[document.querySelector("html").lang];
-                let content = JSON.parse(data.content)[document.querySelector("html").lang];
+                let title = typeof data.title === "string" ? JSON.parse(data.title) : data.title;
+                let content = typeof data.content === "string" ? JSON.parse(data.content) : data.content;
+
+                let lng = document.querySelector("html").lang;
 
                 postModal.children[0].children[0].innerHTML = `<div class="modal-header">
-                  <h5 class="modal-title" id="postModalScrollableTitle">${title}</h5>
+                  <h5 class="modal-title" id="postModalScrollableTitle">${title[lng]}</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
-                  ${marked(content)}
+                  ${marked(content[lng])}
               </div>
               <div class="modal-footer">
                   <button class="btn btn-outline-secondary" onclick="copyAddress()"><i 
