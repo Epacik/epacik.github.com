@@ -426,20 +426,24 @@ function darkMode(enable) {
 
     if (enable){
         document.body.classList.add("dark"); //For my css
-        document.querySelector("#postModal .modal-content").classList.add("bg-dark");
-        document.querySelector("#copyModal .modal-content").classList.add("bg-dark");
-        document.querySelector("#postModal .modal-content").classList.add("text-white");
-        document.querySelector("#copyModal .modal-content").classList.add("text-white");
+        let modals = document.querySelectorAll(".modal .modal-content");
+
+        modals.forEach(modal => {
+            modal.classList.add("bg-dark");
+            modal.classList.add("text-white");
+        });
         for (i = 0; i < ico.length; i++) {
             ico[i].children[0].classList.remove("fa-moon");
             ico[i].children[0].classList.add( "fa-sun");
         }
     } else {
         document.body.classList.remove("dark");
-        document.querySelector("#postModal .modal-content").classList.remove("bg-dark");
-        document.querySelector("#copyModal .modal-content").classList.remove("bg-dark");
-        document.querySelector("#postModal .modal-content").classList.remove("text-white");
-        document.querySelector("#copyModal .modal-content").classList.remove("text-white");
+        let modals = document.querySelectorAll(".modal .modal-content");
+
+        modals.forEach(modal => {
+            modal.classList.remove("bg-dark");
+            modal.classList.remove("text-white");
+        });
         for (i = 0; i < ico.length; i++) {
             ico[i].children[0].classList.remove("fa-sun");
             ico[i].children[0].classList.add( "fa-moon");
