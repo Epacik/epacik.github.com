@@ -37,6 +37,9 @@ function addPostToList(key, data) {
         day: (("0" + date.getDate().toString()).slice(-2)),
         yr: date.getFullYear()
     };
+    if (date <new Date(new Date(myStringDate).getTime() - 60 * 60 * 24 * 1000)) {
+        navigator.vibrate([150, 100, 200]);
+    }
     let post = document.createElement("div");
 
     let title = typeof data.title === "string" ? JSON.parse(data.title) : data.title;
