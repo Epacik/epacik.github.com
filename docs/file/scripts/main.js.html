@@ -84,24 +84,6 @@ console.log(&apos;loaded&apos;);
  * @function toggleLoading
  * @desc Toggles loading screen
  */
-function toggleLoading() {
-    loading = document.querySelector(&apos;.page-loading&apos;);
-    if (loading.style.opacity === &apos;0&apos;) {
-        loading.style.opacity = &apos;&apos;;
-        loading.style.pointerEvents = &apos;&apos;;
-        loading.style.transform = &quot;scale(1)&quot;;
-        document.body.style.overflow = &apos;&apos;;
-        document.querySelector(&apos;.page-loading #spinner div&apos;).style.animationName = &apos;spin&apos;;
-    } else {
-        loading.style.opacity = &apos;0&apos;;
-        loading.style.pointerEvents = &apos;none&apos;;
-        document.body.style.overflow = &apos;auto&apos;;
-        loading.style.transform = &quot;scale(2)&quot;;
-        document.querySelector(&apos;.page-loading #spinner div&apos;).style.animationName = &apos;&apos;;
-    }
-
-}
-
 
 
 let hash = &quot;&quot;;

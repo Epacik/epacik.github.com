@@ -42,10 +42,10 @@ function openPost(e, isNotEvent) {
 
                 let title = typeof data.title === "string" ? JSON.parse(data.title) : data.title;
                 let content = typeof data.content === "string" ? JSON.parse(data.content) : data.content;
+                let lng = title[document.querySelector("html").lang] === undefined ? "en" : document.querySelector("html").lang;
 
                 location.hash = `#blog/${doc.id}`;
 
-                let lng = title[document.querySelector("html").lang] === undefined ? "en" : document.querySelector("html").lang;
 
                 const form = document.forms.editPost;
 
@@ -91,6 +91,14 @@ function openPost(e, isNotEvent) {
 
 }
 
+function addLangToEdit() {
+    let option = document.createElement("option");
+    let lang = document.forms.
+    option.value = lang;
+    option.innerText = lang;
+    form.langs.add(option)
+}
+
 
 function editPostInDB() {
     const form = document.forms.editPost;
@@ -131,4 +139,24 @@ function changePostLang() {
     form.title.value = postData.title[form.langs.value];
 
     editedLang = form.langs.value;
+}
+
+function addLang() {
+    const form = document.forms.addLang;
+    if (typeof postData.title !== "object") {
+        postData.title = {};
+    }
+    postData.title[form.lang.value.trim() !== "" ? form.lang.value : "en"] = form.title.value;
+    form.title.value = "";
+
+
+    if (typeof postData.content !== "object") {
+        postData.content = {};
+    }
+    postData.content[form.lang.value.trim() !== "" ? form.lang.value : "en"] = form.content.value;
+    form.content.value = "";
+    form.lang.value = "";
+
+    $('#addLangModal').modal('hide')
+
 }

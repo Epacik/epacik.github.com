@@ -103,15 +103,16 @@ function changePost(key, data) {
         yr: date.getFullYear()
     };
 
-    let title = JSON.parse(data.title)[document.querySelector("html").lang];
-    let content = JSON.parse(data.content)[document.querySelector("html").lang];
+    let title = typeof data.title === "string" ? JSON.parse(data.title) : data.title;
+    let content = typeof data.content === "string" ? JSON.parse(data.content) : data.content;
+    let lng = title[document.querySelector("html").lang] === undefined ? "en" : document.querySelector("html").lang;
 
-    post.innerHTML = `<header><h5>${title}</h5></header>
+    post.innerHTML = `<header><h5>${title[lng]}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`;
     post.setAttribute("data-date", JSON.stringify(d));
     post.setAttribute("data-JSONDate", JSON.stringify(date));
-    post.setAttribute("data-content", content);
-    post.setAttribute("data-title", title);
+    post.setAttribute("data-content", content[lng]);
+    post.setAttribute("data-title", title[lng]);
     post.setAttribute("data-author", data.author);
     post.setAttribute("data-id", key);
 }

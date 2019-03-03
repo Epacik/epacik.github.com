@@ -7,8 +7,7 @@
     //   alert(`${e} occured, for further informations open developer tools`);
     // };
     //  debugger;
-  let interval = setInterval(() => {
-      console.log(document.querySelector("#loginModal .modal-body form"))}, 1000)
+
 
   </script>
   <!---->
@@ -277,6 +276,44 @@
       </div>
   </div>
 
+
+
+  <div class="modal fade" id="addLangModal" style="z-index: 10000" onclick="" tabindex="-1" role="dialog"
+       aria-labelledby="postModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+          <div class="modal-content" style="border-width: 3px;">
+
+              <div class="modal-header">
+                  <h5 class="modal-title" id="addLangModalScrollableTitle">Add language</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+
+              <div class="modal-body">
+                  <form name="addLang">
+                      <div class="form-group col">
+                          <label>Lang:
+                              <input class="form-control" name="lang"   type="text" placeholder="en"></label><br>
+                          <label>Title: <input  class="form-control" name="title"  type="text"
+                                                placeholder="Title">
+                          </label><br>
+                          <label>Content:
+                              <textarea name="content"  class="form-control" cols="auto" ></textarea></label><br>
+
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" onclick="addLang();"
+                          class="btn btn-secondary">Add lang</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
   <div class="modal fade" id="editPostModal" onclick="" tabindex="-1" role="dialog"
        aria-labelledby="postModalScrollableTitle" aria-hidden="true">
       <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
@@ -316,6 +353,8 @@
               </div>
               <div class="modal-footer">
                   <button type="button" onclick="deletePost()" class="btn btn-danger">Delete post</button>
+                  <button type="button" onclick="$('#addLangModal').modal('show')" class="btn btn-secondary">Add
+                      Language</button>
                   <button type="button" onclick="editPostInDB()" class="btn btn-primary">Edit post</button>
               </div>
           </div>
@@ -341,9 +380,6 @@
           </div>
       </div>
   </div>
-
-
-
 
 
     <section class="toasts" aria-live="polite" aria-atomic="true" style="bottom: 0;min-width: 300px; position: fixed" >
