@@ -39,10 +39,8 @@ function addPostToList(key, data) {
     };
     let post = document.createElement("div");
 
-
-
-    let title = JSON.parse(data.title);
-    let content = JSON.parse(data.content);
+    let title = typeof data.title === "string" ? JSON.parse(data.title) : data.title;
+    let content = typeof data.content === "string" ? JSON.parse(data.content) : data.content;
 
     let lng = title[document.querySelector("html").lang] === undefined ? "en" : document.querySelector("html").lang;
 
@@ -131,6 +129,7 @@ $('#postModal').on('hidden.bs.modal', function (e) {
 });
 
 $('#editPostModal').on('hidden.bs.modal', function (e){
+    postData = {};
     removePostIdFromHash();
 });
 

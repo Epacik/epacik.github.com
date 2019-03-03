@@ -1,4 +1,6 @@
 
+let editedLang ="";
+
 function openPost(e, isNotEvent) {
     //console.log(e);
     let target;
@@ -38,8 +40,8 @@ function openPost(e, isNotEvent) {
                     yr: date.getFullYear()
                 };
 
-                let title = JSON.parse(data.title);
-                let content = JSON.parse(data.content);
+                let title = typeof data.title === "string" ? JSON.parse(data.title) : data.title;
+                let content = typeof data.content === "string" ? JSON.parse(data.content) : data.content;
 
                 location.hash = `#blog/${doc.id}`;
 
@@ -48,6 +50,8 @@ function openPost(e, isNotEvent) {
                 const form = document.forms.editPost;
 
                 let langs = Object.keys(title);
+
+                editedLang = langs[0];
 
                 while (form.langs.length > 0) {
                     form.langs.remove(0)
@@ -62,6 +66,15 @@ function openPost(e, isNotEvent) {
                 form.content.value = content[form.langs.value];
                 form.author.value = data.author;
                 form.show.value = data.show? "true" : "false";
+
+                postData = {
+                    id: doc.id,
+                    title: title,
+                    content: content,
+                    author: data.author,
+                    show: data.show,
+                    time: data.time,
+                }
             }
             $('#editPostModal').modal("show");
         });
@@ -79,11 +92,43 @@ function openPost(e, isNotEvent) {
 }
 
 
+function editPostInDB() {
+    const form = document.forms.editPost;
+    postData.content[editedLang] = form.content.value;
+    postData.title[editedLang] = form.title.value;
+
+    form.lang.value = form.langs.value;
+    form.content.value = postData.content[form.langs.value];
+    form.title.value = postData.title[form.langs.value];
+
+    // postData.content = JSON.stringify(postData.content);
+    // postData.title = JSON.stringify(postData.title);
+
+    postData.show = form.show.value === "true" ? true : false;
+
+    db.collection('wpisy').doc(postData.id).update(postData);
+}
 
 
 
+function deletePost() {
+    if (confirm("Are you sure?")){
+        db.collection('wpisy').doc(postData.id).delete();
+        document.forms.editPost.reset();
+        $("#editPostModal").modal("hide");
+    }
+}
 
 
 function changePostLang() {
 
+    const form = document.forms.editPost;
+    postData.content[editedLang] = form.content.value;
+    postData.title[editedLang] = form.title.value;
+
+    form.lang.value = form.langs.value;
+    form.content.value = postData.content[form.langs.value];
+    form.title.value = postData.title[form.langs.value];
+
+    editedLang = form.langs.value;
 }

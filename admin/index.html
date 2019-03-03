@@ -309,7 +309,8 @@
                   </form>
               </div>
               <div class="modal-footer">
-                  <button type="button" onclick="editPost()" class="btn btn-primary">Edit post</button>
+                  <button type="button" onclick="deletePost()" class="btn btn-danger">Delete post</button>
+                  <button type="button" onclick="editPostInDB()" class="btn btn-primary">Edit post</button>
               </div>
           </div>
       </div>
@@ -379,7 +380,7 @@
       });
   </script>
   <script src="./scripts/interface.js" charset="utf-8" defer></script>
-  <script src="scripts/editPost.js"></script>
+  <script src="scripts/editPost.js" defer></script>
   <script src="scripts/firebase.js" defer></script>
   <script src="./scripts/main.js" charset="utf-8" defer></script>
 
