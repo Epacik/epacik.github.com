@@ -38,7 +38,7 @@ function addPostToDB() {
 
     postData.title = JSON.stringify(postData.title);
     postData.content = JSON.stringify(postData.content);
-    postData.author = postData.author === undefined ? "Epat" : postData.author;
+    postData.author = form.author.value === "" ? "Epat" : form.author.value;
     postData.show = form.show.value === "true" ? true : false;
     form.reset();
     $('#addPostModal').modal('hide');

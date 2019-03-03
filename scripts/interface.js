@@ -90,6 +90,7 @@ function addPostToList(key, data) {
 
 function removePostFromList(key) {
     let post = document.querySelector(`[data-id="${key}"]`);
+    if (!post) return;
     post.classList.add("sm");
     setTimeout(()=> {
         post.parentNode.removeChild(post);
