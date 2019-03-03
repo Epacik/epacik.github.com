@@ -141,7 +141,7 @@ function changePostLang() {
     editedLang = form.langs.value;
 }
 
-function addLang() {
+function addLangEd() {
     const form = document.forms.addLang;
     if (typeof postData.title !== "object") {
         postData.title = {};
@@ -155,7 +155,16 @@ function addLang() {
     }
     postData.content[form.lang.value.trim() !== "" ? form.lang.value : "en"] = form.content.value;
     form.content.value = "";
+
+    let option = document.createElement("option");
+    option.value = form.lang.value;
+    option.innerText = form.lang.value;
+    document.forms.editPost.langs.add(option);
+
+
     form.lang.value = "";
+
+
 
     $('#addLangModal').modal('hide')
 

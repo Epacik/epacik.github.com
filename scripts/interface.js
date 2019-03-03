@@ -94,6 +94,10 @@ function removePostFromList(key) {
 
 function changePost(key, data) {
     let post = document.querySelector(`[data-id="${key}"]`);
+    if (post === null) {
+        addPostToList(key, data);
+        return;
+    }
     let date = new Date(data.time.seconds * 1000);
     let d = {
         hr: ("0" + date.getHours().toString()).slice(-2),
