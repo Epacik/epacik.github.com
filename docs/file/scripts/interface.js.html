@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">scripts/interface.js</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addContactToList">addContactToList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addPostToList">addPostToList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addProjectToList">addProjectToList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addRenderToList">addRenderToList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addToast">addToast</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyLayout">applyLayout</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeContact">changeContact</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changePost">changePost</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeProject">changeProject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeRender">changeRender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-darkMode">darkMode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-openPost">openPost</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeContactFromList">removeContactFromList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removePostFromList">removePostFromList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removePostIdFromHash">removePostIdFromHash</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeProjectFromList">removeProjectFromList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeRenderFromList">removeRenderFromList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toggleDarkmode">toggleDarkmode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyLocaleToContact">applyLocaleToContact</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyLocaleToHome">applyLocaleToHome</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyLocaleToNav">applyLocaleToNav</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyLocaleToOthers">applyLocaleToOthers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyLocalization">applyLocalization</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCurrentYear">addCurrentYear</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addTextToClipboard">addTextToClipboard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-copyAddress">copyAddress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getURLParam">getURLParam</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-scrTo">scrTo</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-showPage">showPage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toggleLoading">toggleLoading</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-darkmodeButton">darkmodeButton</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-i18n">i18n</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-hash">hash</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-isIE">isIE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-postList">postList</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">scripts/interface.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+const darkmodeButton = document.querySelectorAll(&quot;#darkmode-button&quot;);
+function toggleDarkmode() {
+    darkMode(localStorage.getItem(&quot;darkmode&quot;) == &quot;true&quot; ? false : true);
+}
+
+function applyLayout() {
+    let layout = document.querySelector(&quot;.layoutTemplate&quot;).innerHTML;
+    let pages = document.querySelectorAll(&quot;.subpage&quot;);
+    darkMode(localStorage.getItem(&quot;darkmode&quot;) == &quot;true&quot;? true : false);
+
+    for (i = 0; i &lt; darkmodeButton.length; i++) {
+        darkmodeButton[i].children[0].classList.remove(localStorage.getItem(&quot;darkmode&quot;) == &quot;true&quot; ? &quot;fa-moon&quot;: &quot;fa-sun&quot;);
+        darkmodeButton[i].children[0].classList.add(localStorage.getItem(&quot;darkmode&quot;) == &quot;false&quot; ? &quot;fa-moon&quot;: &quot;fa-sun&quot;);
+    }
+
+
+    for (let i = 0; i &lt; pages.length; i++) {
+        let content = pages[i].innerHTML;
+        pages[i].innerHTML = layout;
+        pages[i].querySelector(&quot;.spContent&quot;).innerHTML = content;
+    }
+    document.body.removeChild(document.querySelector(&quot;.layoutTemplate&quot;));
+}
+
+
+
+
+
+function addPostToList(key, data) {
+    const postList = document.querySelector(&quot;#blog .posts&quot;);
+    let date = new Date(data.time.seconds * 1000);
+    let d = {
+        hr: (&quot;0&quot; + date.getHours().toString()).slice(-2),
+        mn: (&quot;0&quot; + date.getMinutes().toString()).slice(-2),
+        mnt: (&quot;0&quot; + (date.getMonth() + 1).toString()).slice(-2),
+        day: ((&quot;0&quot; + date.getDate().toString()).slice(-2)),
+        yr: date.getFullYear()
+    };
+    let post = document.createElement(&quot;div&quot;);
+
+    let title = JSON.parse(data.title)[document.querySelector(&quot;html&quot;).lang];
+    let content = JSON.parse(data.content)[document.querySelector(&quot;html&quot;).lang];
+
+    post.insertAdjacentHTML(&quot;afterBegin&quot;, `&lt;header&gt;&lt;h5&gt;${title}&lt;/h5&gt;&lt;/header&gt;
+                 &lt;p&gt;&lt;b&gt;${data.author}&lt;/b&gt; ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}&lt;/p&gt;`);
+    post.setAttribute(&quot;data-date&quot;, JSON.stringify(d));
+    post.setAttribute(&quot;data-JSONDate&quot;, JSON.stringify(date));
+    post.setAttribute(&quot;data-content&quot;, content);
+    post.setAttribute(&quot;data-title&quot;, title);
+    post.setAttribute(&quot;data-author&quot;, data.author);
+    post.setAttribute(&quot;data-id&quot;, key);
+    post.classList.add(&quot;sm&quot;);
+    post.classList.add(&quot;post&quot;);
+
+    let preloader = document.getElementById(&quot;postsPreloader&quot;);
+    if (preloader) {
+        preloader.parentElement.removeChild(preloader)
+    }
+
+    post.addEventListener(&quot;click&quot;, openPost);
+    //postList.appendChild(post);
+    if (postList.children.length === 0) {
+        postList.insertAdjacentElement(&quot;beforeEnd&quot;, post);
+    } else {
+        let added = false;
+        for (i = 0; i &lt; postList.children.length; i++) {
+            if (new Date(postList.children[i].dataset.jsondate.replace(&apos;&quot;&apos;, &quot;&quot;).replace(&apos;&quot;&apos;, &quot;&quot;)) &lt; date) {
+                postList.children[i].insertAdjacentElement(&quot;beforeBegin&quot;, post);
+                added = true;
+                break;
+            }
+        }
+        if (!added) {
+            postList.insertAdjacentElement(&quot;beforeEnd&quot;, post);
+        }
+    }
+    setTimeout(()=&gt;{
+        post.classList.remove(&quot;sm&quot;)
+    }, 100)
+}
+
+function removePostFromList(key) {
+    let post = document.querySelector(`[data-id=&quot;${key}&quot;]`);
+    post.classList.add(&quot;sm&quot;);
+    setTimeout(()=&gt; {
+        post.parentNode.removeChild(post);
+    }, 500);
+
+}
+
+function changePost(key, data) {
+    let post = document.querySelector(`[data-id=&quot;${key}&quot;]`);
+    let date = new Date(data.time.seconds * 1000);
+    let d = {
+        hr: (&quot;0&quot; + date.getHours().toString()).slice(-2),
+        mn: (&quot;0&quot; + date.getMinutes().toString()).slice(-2),
+        mnt: (&quot;0&quot; + (date.getMonth() + 1).toString()).slice(-2),
+        day: ((&quot;0&quot; + date.getDate().toString()).slice(-2)),
+        yr: date.getFullYear()
+    };
+
+    let title = JSON.parse(data.title)[document.querySelector(&quot;html&quot;).lang];
+    let content = JSON.parse(data.content)[document.querySelector(&quot;html&quot;).lang];
+
+    post.innerHTML = `&lt;header&gt;&lt;h5&gt;${title}&lt;/h5&gt;&lt;/header&gt;
+                 &lt;p&gt;&lt;b&gt;${data.author}&lt;/b&gt; ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}&lt;/p&gt;`;
+    post.setAttribute(&quot;data-date&quot;, JSON.stringify(d));
+    post.setAttribute(&quot;data-JSONDate&quot;, JSON.stringify(date));
+    post.setAttribute(&quot;data-content&quot;, content);
+    post.setAttribute(&quot;data-title&quot;, title);
+    post.setAttribute(&quot;data-author&quot;, data.author);
+    post.setAttribute(&quot;data-id&quot;, key);
+}
+
+
+function removePostIdFromHash() {
+    location.hash = location.hash.split(&quot;/&quot;)[0];
+    $(&quot;#postModal&quot;).modal(&quot;hide&quot;);
+}
+
+
+function openPost(e, isNotEvent) {
+    //console.log(e);
+    let target;
+    const postModal = document.getElementById(&quot;postModal&quot;);
+    if (hash[0] !== &quot;blog&quot;) {
+        return;
+    }
+    if (isNotEvent) {
+        location.hash = `#blog/${e}`;
+        db.collection(&quot;wpisy&quot;).doc(e).get().then(doc =&gt; {
+            if (doc._document == null) {
+                i18n.textdomain(&quot;errors&quot;);
+
+                postModal.children[0].children[0].innerHTML = `&lt;div class=&quot;modal-header&quot;&gt;
+                  &lt;h5 class=&quot;modal-title&quot; id=&quot;postModalScrollableTitle&quot;&gt;&lt;/h5&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; onclick=&quot;window.stop()&quot; aria-label=&quot;Close&quot;&gt;
+                      &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                  &lt;/button&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;modal-body&quot;&gt;
+                  ${i18n.gettext(&quot;missing post&quot;)}
+              &lt;/div&gt;
+              &lt;div class=&quot;modal-footer&quot;&gt;
+                  &lt;b&gt;Epat&lt;/b&gt; 
+              &lt;/div&gt;`;
+            }
+            else {
+                let data = doc.data();
+
+
+                let date = new Date(data.time.seconds * 1000);
+                let d = {
+                    hr: (&quot;0&quot; + date.getHours().toString()).slice(-2),
+                    mn: (&quot;0&quot; + date.getMinutes().toString()).slice(-2),
+                    mnt: (&quot;0&quot; + (date.getMonth() + 1).toString()).slice(-2),
+                    day: ((&quot;0&quot; + date.getDate().toString()).slice(-2)),
+                    yr: date.getFullYear()
+                };
+
+                let title = JSON.parse(data.title)[document.querySelector(&quot;html&quot;).lang];
+                let content = JSON.parse(data.content)[document.querySelector(&quot;html&quot;).lang];
+
+                postModal.children[0].children[0].innerHTML = `&lt;div class=&quot;modal-header&quot;&gt;
+                  &lt;h5 class=&quot;modal-title&quot; id=&quot;postModalScrollableTitle&quot;&gt;${title}&lt;/h5&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+                      &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                  &lt;/button&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;modal-body&quot;&gt;
+                  ${marked(content)}
+              &lt;/div&gt;
+              &lt;div class=&quot;modal-footer&quot;&gt;
+                  &lt;button class=&quot;btn btn-outline-secondary&quot; onclick=&quot;copyAddress()&quot;&gt;&lt;i 
+                 class=&quot;fas fa-share&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;b&gt;
+${data.author}&lt;/b&gt;   
+                    &amp;nbsp; ${d.day}/${d.mnt}/${d.yr} 
+${d.hr}:${d.mn}
+              &lt;/div&gt;`;
+
+            }
+            document.getElementById(&quot;openPost&quot;).click();
+            //document.querySelector(&apos;#postModal .close&apos;).addEventListener(&quot;click&quot;, removePostIdFromHash )
+
+        });
+    }
+    else {
+        target = e.target;
+        while( !target.classList.contains(&quot;post&quot;) || &quot;body&quot; === target.id ){
+            target = target.parentNode;
+        }
+        let d = JSON.parse(target.dataset.date);
+
+
+        location.hash = `#blog/${target.dataset.id}`;
+
+        postModal.children[0].children[0].innerHTML = `&lt;div class=&quot;modal-header&quot;&gt;
+                  &lt;h5 class=&quot;modal-title&quot; id=&quot;postModalScrollableTitle&quot;&gt;${target.dataset.title}&lt;/h5&gt;
+                  &lt;button type=&quot;button&quot;  class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+                      &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                  &lt;/button&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;modal-body&quot;&gt;
+                  ${marked(target.dataset.content)}
+              &lt;/div&gt;
+              &lt;div class=&quot;modal-footer&quot;&gt;
+                  &lt;button class=&quot;btn btn-outline-secondary&quot; onclick=&quot;copyAddress()&quot;&gt;&lt;i class=&quot;fas fa-share&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;b&gt;
+${target.dataset.author}&lt;/b&gt;     &amp;nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}
+              &lt;/div&gt;`;
+        document.getElementById(&quot;openPost&quot;).click();
+        //console.log(target);
+        document.querySelector(&apos;#postModal .close&apos;).addEventListener(&quot;click&quot;, removePostIdFromHash )
+    }
+
+
+}
+
+
+
+
+
+$(&apos;#postModal&apos;).on(&apos;hidden.bs.modal&apos;, function (e) {
+    removePostIdFromHash();
+});
+
+
+
+function addProjectToList(key, data) {
+    const projects = document.querySelector(&quot;#projectsWrapper&quot;);
+    let desc = JSON.parse(data.description)[document.querySelector(&quot;html&quot;).lang];
+    let alt = JSON.parse(data.imgAlt)[document.querySelector(&quot;html&quot;).lang];
+    let preloader = document.getElementById(&quot;projectsPreloader&quot;);
+    if (preloader) {
+        preloader.parentElement.removeChild(preloader)
+    }
+    i18n.textdomain(&quot;buttons&quot;);
+    projects.insertAdjacentHTML(&quot;afterBegin&quot;,
+        `&lt;div class=&quot;card sm shadow-sm&quot; data-id=&quot;${key}&quot; style=&quot;width: 18rem;&quot;&gt;
+                        &lt;img src=&quot;${data.pathToImg}&quot; class=&quot;card-img-top&quot; alt=&quot;${alt}&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                            &lt;h5 class=&quot;card-title&quot;&gt;${data.name}&lt;/h5&gt;
+                            &lt;p class=&quot;card-text&quot;&gt;${desc}&lt;/p&gt;
+                            &lt;a href=&quot;${data.link}&quot;  class=&quot;btn btn-primary&quot;&gt;${i18n.gettext(&quot;Check it out&quot;)}&lt;/a&gt;
+                        &lt;/div&gt;
+                &lt;/div&gt;`);
+    setTimeout(()=&gt;{
+        document.querySelector(`[data-id=&quot;${key}&quot;]`).classList.remove(&quot;sm&quot;)
+    },100);
+}
+
+
+function changeProject(key, data) {
+    let project = document.querySelector(`[data-id=&quot;${key}&quot;]`);
+    i18n.textdomain(&quot;buttons&quot;);
+    let desc = JSON.parse(data.description)[document.querySelector(&quot;html&quot;).lang];
+    let alt = JSON.parse(data.imgAlt)[document.querySelector(&quot;html&quot;).lang];
+    project.innerHTML = `&lt;img src=&quot;${data.pathToImg}&quot; class=&quot;card-img-top&quot; alt=&quot;${alt}&quot;&gt;
+                                    &lt;div class=&quot;card-body&quot;&gt;
+                                        &lt;h5 class=&quot;card-title&quot;&gt;${data.name}&lt;/h5&gt;
+                                        &lt;p class=&quot;card-text&quot;&gt;${desc}&lt;/p&gt;
+                                        &lt;a href=&quot;${data.link}&quot;  class=&quot;btn btn-primary&quot;&gt;${i18n.gettext(&quot;Check it out&quot;)}&lt;/a&gt;
+                                    &lt;/div&gt;`;
+
+    project.setAttribute(&quot;data-id&quot;, key);
+}
+
+function removeProjectFromList(key) {
+    let project = document.querySelector(`[data-id=&quot;${key}&quot;]`);
+    project.parentNode.removeChild(project);
+}
+
+
+
+
+
+
+
+
+
+
+function addRenderToList(key, data) {
+    let name = &quot;&quot;;
+    let desc = &quot;&quot;;
+    let alt = &quot;&quot;;
+    let tAlt = &quot;&quot;;
+    let preloader = document.getElementById(&quot;rendersPreloader&quot;);
+    if (preloader) {
+        preloader.parentElement.removeChild(preloader)
+    }
+    try {
+        name  = JSON.parse(data.name)[document.querySelector(&quot;html&quot;).lang];
+        desc  = JSON.parse(data.description)[document.querySelector(&quot;html&quot;).lang];
+        alt = JSON.parse(data.imgAlt)[document.querySelector(&quot;html&quot;).lang];
+        tAlt  = JSON.parse(data.thumbnailAlt)[document.querySelector(&quot;html&quot;).lang];
+    } catch (e) {}
+
+
+
+    document.querySelector(&quot;#rendersWrapper&quot;).insertAdjacentHTML(&quot;afterBegin&quot;,
+        `&lt;a href=&quot;${data.link ? data.link : &quot;&quot;}&quot; data-id=&quot;${key}&quot; class=&quot;card sm shadow-sm&quot; style=&quot;width: 18rem;&quot;&gt;
+                    &lt;img src=&quot;${data.thumbnail}&quot; class=&quot;card-img-top&quot; alt=&quot;${tAlt}&quot;&gt;
+                    &lt;div class=&quot;card-body&quot;&gt;
+                        &lt;h5 class=&quot;card-title&quot;&gt;${name}&lt;/h5&gt;
+                        &lt;p class=&quot;card-text&quot;&gt;${desc}&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;`);
+    setTimeout(()=&gt;{
+        document.querySelector(`[data-id=&quot;${key}&quot;]`).classList.remove(&quot;sm&quot;)
+    },100);
+}
+
+function changeRender(key, data) {
+    let render = document.querySelector(`[data-id=&quot;${key}&quot;]`);
+
+    let name = &quot;&quot;;
+    let desc = &quot;&quot;;
+    let alt = &quot;&quot;;
+    let tAlt = &quot;&quot;;
+    try {
+        name  = JSON.parse(data.name)[document.querySelector(&quot;html&quot;).lang];
+        desc  = JSON.parse(data.description)[document.querySelector(&quot;html&quot;).lang];
+        alt = JSON.parse(data.imgAlt)[document.querySelector(&quot;html&quot;).lang];
+        tAlt  = JSON.parse(data.thumbnailAlt)[document.querySelector(&quot;html&quot;).lang];
+    } catch (e) {}
+
+    render.innerHTML = `&lt;img src=&quot;${data.thumbnail}&quot; class=&quot;card-img-top&quot; alt=&quot;${tAlt}&quot;&gt;
+                                        &lt;div class=&quot;card-body&quot;&gt;
+                                            &lt;h5 class=&quot;card-title&quot;&gt;${name}&lt;/h5&gt;
+                                            &lt;p class=&quot;card-text&quot;&gt;${desc}&lt;/p&gt;
+                                        &lt;/div&gt;`;
+
+    render.setAttribute(&quot;data-id&quot;, key);
+    render.setAttribute(&quot;href&quot;, data.link ? data.link : &quot;&quot;)
+}
+
+function removeRenderFromList(key) {
+    let project = document.querySelector(`[data-id=&quot;${key}&quot;]`);
+    project.parentNode.removeChild(project);
+}
+
+
+function addContactToList(key, data) {
+    let preloader = document.getElementById(&quot;contactPreloader&quot;);
+    if (preloader) {
+        preloader.parentElement.removeChild(preloader)
+    }
+   document.querySelector(&quot;#contactCards&quot;).insertAdjacentHTML(&quot;beforeEnd&quot;,
+        `&lt;a href=&quot;${data.link}&quot; data-id=&quot;${key}&quot; target=&quot;_blank&quot; class=&quot;card shadow-sm sm&quot; style=&quot;width: 18rem;&quot;&gt;
+                    &lt;div class=&quot;contact-card card-body&quot;&gt;
+                        &lt;div class=&quot;card-icon&quot;&gt;&lt;i class=&quot;${data.iconClass}&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;h5 class=&quot;card-title&quot;&gt;${data.service}&lt;/h5&gt;
+                            &lt;p class=&quot;card-text&quot;&gt;${data.name}&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;`);
+
+    setTimeout(()=&gt;{
+        document.querySelector(`[data-id=&quot;${key}&quot;]`).classList.remove(&quot;sm&quot;)
+    },100);
+}
+
+function changeContact(key, data) {
+    let cont = document.querySelector(`[data-id=&quot;${key}&quot;]`);
+
+
+
+    cont.innerHTML = `&lt;div class=&quot;contact-card card-body&quot;&gt;
+                            &lt;div class=&quot;card-icon&quot;&gt;&lt;i class=&quot;${data.iconClass}&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;h5 class=&quot;card-title&quot;&gt;${data.service}&lt;/h5&gt;
+                                &lt;p class=&quot;card-text&quot;&gt;${data.name}&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt; `;
+
+    cont.setAttribute(&quot;data-id&quot;, key);
+    cont.setAttribute(&quot;href&quot;, data.link);
+
+}
+
+function removeContactFromList(key) {
+    let cont = document.querySelector(`[data-id=&quot;${key}&quot;]`);
+    cont.classList.add(&quot;sm&quot;);
+    setTimeout(()=&gt; {
+        cont.parentNode.removeChild(cont);
+    }, 500);
+}
+
+
+
+
+
+function addToast(title, message) {
+    const toastWrapper = document.querySelector(&quot;.toasts&quot;).children[0];
+    toastWrapper.insertAdjacentHTML(&quot;beforeEnd&quot;,
+        `&lt;div class=&quot;toast&quot; role=&quot;alert&quot; aria-live=&quot;assertive&quot; aria-atomic=&quot;true&quot; data-delay=&quot;5000&quot;&gt;
+                      &lt;div class=&quot;toast-header&quot;&gt;
+                        &lt;strong class=&quot;mr-auto&quot;&gt;${title}&lt;/strong&gt;
+                        &lt;button type=&quot;button&quot; class=&quot;ml-2 mb-1 close&quot; data-dismiss=&quot;toast&quot; aria-label=&quot;Close&quot;&gt;
+                          &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                        &lt;/button&gt;
+                      &lt;/div&gt;
+                      &lt;div class=&quot;toast-body&quot;&gt;
+                        ${message}
+                      &lt;/div&gt;
+                    &lt;/div&gt;`);
+    if (toastWrapper.children.length &gt; 0) {
+       $( toastWrapper.children[toastWrapper.children.length - 1]).toast(&apos;show&apos;);
+    }
+}
+
+
+
+
+
+function darkMode(enable) {
+    localStorage.setItem(&quot;darkmode&quot;, enable);
+    let ico = document.querySelectorAll(&quot;#darkmodeButton&quot;);
+
+    if (enable){
+        document.body.classList.add(&quot;dark&quot;); //For my css
+        document.querySelector(&quot;#postModal .modal-content&quot;).classList.add(&quot;bg-dark&quot;);
+        document.querySelector(&quot;#copyModal .modal-content&quot;).classList.add(&quot;bg-dark&quot;);
+        document.querySelector(&quot;#postModal .modal-content&quot;).classList.add(&quot;text-white&quot;);
+        document.querySelector(&quot;#copyModal .modal-content&quot;).classList.add(&quot;text-white&quot;);
+        for (i = 0; i &lt; ico.length; i++) {
+            ico[i].children[0].classList.remove(&quot;fa-moon&quot;);
+            ico[i].children[0].classList.add( &quot;fa-sun&quot;);
+        }
+    } else {
+        document.body.classList.remove(&quot;dark&quot;);
+        document.querySelector(&quot;#postModal .modal-content&quot;).classList.remove(&quot;bg-dark&quot;);
+        document.querySelector(&quot;#copyModal .modal-content&quot;).classList.remove(&quot;bg-dark&quot;);
+        document.querySelector(&quot;#postModal .modal-content&quot;).classList.remove(&quot;text-white&quot;);
+        document.querySelector(&quot;#copyModal .modal-content&quot;).classList.remove(&quot;text-white&quot;);
+        for (i = 0; i &lt; ico.length; i++) {
+            ico[i].children[0].classList.remove(&quot;fa-sun&quot;);
+            ico[i].children[0].classList.add( &quot;fa-moon&quot;);
+        }
+    }
+}
+
+setTimeout(()=&gt;{
+    let ico = document.querySelectorAll(&quot;#darkmodeButton&quot;);
+    for (i = 0; i &lt; ico.length; i++) {
+        if (localStorage.getItem(&quot;darkmode&quot;) === &quot;true&quot;){
+            ico[i].children[0].classList.remove(&quot;fa-moon&quot;);
+            ico[i].children[0].classList.add( &quot;fa-sun&quot;);
+
+        } else {
+            ico[i].children[0].classList.remove(&quot;fa-sun&quot;);
+            ico[i].children[0].classList.add( &quot;fa-moon&quot;);
+        }
+    }
+}, 1000);</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

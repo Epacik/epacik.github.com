@@ -1,0 +1,58 @@
+{
+  "coverage": "5.71%",
+  "expectCount": 35,
+  "actualCount": 2,
+  "files": {
+    "scripts/interface.js": {
+      "expectCount": 19,
+      "actualCount": 0,
+      "undocumentLines": [
+        2,
+        3,
+        7,
+        30,
+        83,
+        92,
+        117,
+        123,
+        229,
+        253,
+        268,
+        282,
+        313,
+        337,
+        343,
+        364,
+        382,
+        394,
+        417
+      ]
+    },
+    "scripts/lang.js": {
+      "expectCount": 6,
+      "actualCount": 1,
+      "undocumentLines": [
+        82,
+        94,
+        118,
+        128,
+        136
+      ]
+    },
+    "scripts/main.js": {
+      "expectCount": 10,
+      "actualCount": 1,
+      "undocumentLines": [
+        1,
+        8,
+        36,
+        40,
+        90,
+        97,
+        105,
+        133,
+        143
+      ]
+    }
+  }
+}

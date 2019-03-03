@@ -31,7 +31,7 @@
 
 
   <link rel="shortcut icon" href="../favicon.png">
-  <title>Epat</title>
+  <title>Epat - Administration Panel</title>
 </head>
 <body id="body">
   <section class="page-loading">
@@ -41,7 +41,6 @@
           animation-name: spin;"></div>
       </div>
     </section>
-      <p style="position: fixed; bottom: 10px; right: 15px;">Version: 0.0.2</p>
   </section>
 
   <section class="layoutTemplate">
@@ -125,6 +124,11 @@
 
 
       <section id="blog" class="subpage">
+
+          <section class="posts2">
+              <div  id="addPostButton" class="post" onclick="$('#addPostModal').modal('show');"><i
+                  class="fas fa-plus-circle"></i></div>
+          </section>
 
           <section class="posts">
               <div id="postsPreloader" class="spinner-grow text-primary" role="status">
@@ -239,14 +243,17 @@
               </div>
 
               <div class="modal-body">
-                  <form action="">
+                  <form name="addPost">
                       <div class="form-group col">
                           <label>Lang:
                               <input class="form-control" name="lang"  id="postLang" type="text" placeholder="en"></label><br>
                           <label>Title: <input  class="form-control" name="title" id="postTitle" type="text"
                               placeholder="Title">
                           </label><br>
-                          <label>Content: <textarea name="content"  class="form-control" ></textarea></label><br>
+                          <label>Content:
+                              <textarea name="content"  class="form-control" cols="auto" ></textarea></label><br>
+                          <label>Author: <input  class="form-control" name="author" id="postAuthor" type="text"
+                                                 placeholder="Epat"></label>
                           <label >Show
                               <select name="show" id="postShow" class="form-control">
                                   <option value="true">True</option>
@@ -257,8 +264,52 @@
                   </form>
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary">Add lang</button>
-                  <button type="button" class="btn btn-primary">Add to DB</button>
+                  <button type="button" onclick="addPostLang()" class="btn btn-secondary">Add lang</button>
+                  <button type="button" onclick="addPostToDB()" class="btn btn-primary">Add to DB</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade" id="editPostModal" onclick="" tabindex="-1" role="dialog"
+       aria-labelledby="postModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+          <div class="modal-content">
+
+              <div class="modal-header">
+                  <h5 class="modal-title" id="editPostModalScrollableTitle">Edit post</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+
+              <div class="modal-body">
+                  <form name="editPost">
+                      <div class="form-group col">
+                          <select name="langs" onchange="changePostLang()"  class="form-control">
+                              <option value="true">True</option>
+                              <option value="false">False</option>
+                          </select>
+                          <label>Lang:
+                              <input class="form-control" name="lang"  id="postLangE" type="text" placeholder="en"></label><br>
+                          <label>Title: <input  class="form-control" name="title" id="postTitleE" type="text"
+                                                placeholder="Title">
+                          </label><br>
+                          <label>Content:
+                              <textarea name="content"  class="form-control" cols="auto" ></textarea></label><br>
+                          <label>Author: <input  class="form-control" name="author" id="postAuthorE" type="text"
+                                                 placeholder="Epat"></label>
+                          <label >Show
+                              <select name="show" id="postShowE" class="form-control">
+                                  <option value="true">True</option>
+                                  <option value="false">False</option>
+                              </select>
+                          </label>
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" onclick="editPost()" class="btn btn-primary">Edit post</button>
               </div>
           </div>
       </div>
@@ -328,8 +379,10 @@
       });
   </script>
   <script src="./scripts/interface.js" charset="utf-8" defer></script>
+  <script src="scripts/editPost.js"></script>
   <script src="scripts/firebase.js" defer></script>
   <script src="./scripts/main.js" charset="utf-8" defer></script>
+
 
 
 </body>

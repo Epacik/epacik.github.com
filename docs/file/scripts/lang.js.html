@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl">
-  <title data-ice="title">Home</title>
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">scripts/lang.js</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -68,10 +68,157 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="epat9-github-io">epat9.github.io</h1><p>It&apos;s my webpage hosted by <a href="https://pages.github.com/">Github Pages</a>.</p>
-<p>It contains informations about me, my projects etc.</p>
-<p><a href="https://htmlpreview.github.io/?https://github.com/Epat9/epat9.github.com/blob/master/docs/index.html">Documentation</a></p>
-</div>
+<div class="content" data-ice="content"><h1 data-ice="title">scripts/lang.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @name lang
+ * @desc Contains language data
+ */
+
+var i18n = window.i18n();
+
+
+i18n.setMessages(&quot;buttons&quot;, &quot;pl&quot;, {
+    &quot;Check it out&quot;: &quot;Sprawd&#x17A; projekt&quot;,
+});
+
+i18n.setMessages(&quot;buttons&quot;, &quot;en&quot;, {
+    &quot;Check it out&quot;: &quot;Check it out&quot;,
+});
+
+i18n.setMessages(&quot;other&quot;, &quot;pl&quot;, {
+    &quot;copy address&quot;: &quot;Skopiuj adres&quot;,
+});
+
+i18n.setMessages(&quot;other&quot;, &quot;en&quot;, {
+    &quot;copy address&quot;: &quot;Copy address&quot;,
+});
+
+i18n.setMessages(&quot;errors&quot;, &quot;pl&quot;, {
+    &quot;missing post&quot;: &quot;Post kt&#xF3;rego szukasz nie istnieje.&lt;br&gt; Upewnij si&#x119;, &#x17C;e wprowadzi&#x142;e&#x15B; poprawny adres URL&quot;,
+});
+
+i18n.setMessages(&quot;errors&quot;, &quot;en&quot;, {
+    &quot;missing post&quot;: &quot;Unfortunately, the post you are looking for does not exist.&lt;br&gt; Check if you entered the&quot; +
+        &quot; correct URL address&quot;,
+});
+
+i18n.setMessages(&quot;nav&quot;, &quot;pl&quot;, {
+   &quot;home&quot;: &quot;Strona domowa&quot;,
+    &quot;blog&quot;: &quot;M&#xF3;j Blog&quot;,
+    &quot;contact&quot;: &quot;Kontakt&quot;
+});
+
+i18n.setMessages(&quot;nav&quot;, &quot;en&quot;, {
+    &quot;home&quot;: &quot;Home&quot;,
+    &quot;blog&quot;: &quot;My Blog&quot;,
+    &quot;contact&quot;: &quot;Contact&quot;
+});
+
+
+
+
+i18n.setMessages(&quot;home&quot;, &quot;pl&quot;, {
+    &quot;Hello&quot;: &quot;Witaj&quot;,
+    &quot;I&apos;m Epat&quot;: &quot;Jestem Damian, albo Epat je&#x15B;li wolisz&quot;,
+    &quot;student&quot;: &quot;Zwyk&#x142;y&quot; +
+        &quot; ucze&#x144;, pasjonat informatyki, astronomii i czegokolwiek co mnie zainteresuje&quot;,
+    &quot;what I&apos;m doing lately&quot;: &quot;Je&#x15B;li chcesz&quot; +
+        &quot; dowiedzie&#x107; si&#x119; co ostatnio robi&#x142;em, przewi&#x144; w d&#xF3;&#x142;, mo&#x17C;e znajdziesz co&#x15B; interesuj&#x105;cego.&quot;,
+    &quot;My projects&quot;: &quot;Moje projekty&quot;,
+    &quot;More coming&quot;: &quot;I b&#x119;dzie ich wi&#x119;cej &#x1F609;&quot;,
+    &quot;renders&quot;: &quot;Oto rendery scen zrobionych przeze mnie&quot;,
+
+});
+
+i18n.setMessages(&quot;home&quot;, &quot;en&quot;, {
+    &quot;Hello&quot;: &quot;Hello&quot;,
+    &quot;I&apos;m Epat&quot;: &quot;I&apos;m Damian, or Epat if you want&quot;,
+    &quot;student&quot;: &quot;A simple student with passion for computer science, astronomy and whatever else I find interesting.&quot;,
+    &quot;what I&apos;m doing lately&quot;: &quot;If you want to find out what I&apos;m doing lately, scroll down, maybe something will interest you.&quot;,
+    &quot;My projects&quot;: &quot;My projects&quot;,
+    &quot;More coming&quot;: &quot;And more coming &#x1F609;&quot;,
+    &quot;renders&quot;: &quot;Here you can find some renders of scenes that I made&quot;,
+
+});
+
+
+i18n.setMessages(&quot;contact&quot;, &quot;pl&quot;, {
+    &quot;find me&quot;: &quot;Znajdziesz mnie tutaj&quot;,
+});
+
+i18n.setMessages(&quot;contact&quot;, &quot;en&quot;, {
+    &quot;find me&quot;: &quot;You can find me here&quot;,
+});
+
+function applyLocaleToNav() {
+    let navs = document.querySelectorAll(&quot;.navbar&quot;);
+    i18n.textdomain(&quot;nav&quot;);
+
+    for (i = 0; i &lt; navs.length; i++){
+        let nav = navs[i].querySelector(&quot;.navbar-collapse&quot;);
+        nav.querySelector(&apos;[href=&quot;#home&quot;]&apos;).innerHTML = i18n.gettext(&quot;home&quot;);
+        nav.querySelector(&apos;[href=&quot;#blog&quot;]&apos;).innerHTML = i18n.gettext(&quot;blog&quot;);
+        nav.querySelector(&apos;[href=&quot;#contact&quot;]&apos;).innerHTML = i18n.gettext(&quot;contact&quot;);
+    }
+}
+
+function applyLocaleToHome() {
+    let home = document.getElementById(&quot;home&quot;);
+    let basicInfo = home.querySelector(&quot;#basicInfo&quot;);
+    i18n.textdomain(&quot;home&quot;);
+
+    basicInfo.querySelector(&quot;h1&quot;).innerHTML = i18n.gettext(&quot;Hello&quot;);
+    basicInfo.querySelector(&quot;h3&quot;).innerHTML = i18n.gettext(&quot;I&apos;m Epat&quot;);
+    basicInfo.querySelector(&quot;h5&quot;).innerHTML = i18n.gettext(&quot;student&quot;);
+    basicInfo.querySelector(&quot;h4&quot;).innerHTML = i18n.gettext(&quot;what I&apos;m doing lately&quot;);
+
+
+    let projects = home.querySelector(&quot;#projects&quot;);
+
+    projects.querySelector(&quot;h3&quot;).innerHTML = i18n.gettext(&quot;My projects&quot;);
+    projects.querySelector(&quot;h4&quot;).innerHTML = i18n.gettext(&quot;More coming&quot;);
+
+    let renders = home.querySelector(&quot;#renders&quot;);
+
+    renders.querySelector(&quot;h3&quot;).innerHTML = i18n.gettext(&quot;renders&quot;);
+}
+
+
+
+
+function applyLocaleToContact() {
+    let contact = document.getElementById(&quot;contact&quot;);
+    i18n.textdomain(&quot;contact&quot;);
+
+    let contactPane = contact.querySelector(&quot;#contactPane&quot;);
+
+    contactPane.querySelector(&quot;h3&quot;).innerHTML = i18n.gettext(&quot;find me&quot;);
+
+}
+
+function applyLocaleToOthers() {
+    i18n.textdomain(&quot;other&quot;);
+
+    document.getElementById(&quot;copyModalTitle&quot;).innerHTML = i18n.gettext(&quot;copy address&quot;);
+}
+
+
+
+function applyLocalization() {
+    if (localStorage.getItem(&quot;force-en&quot;) === &quot;true&quot;){
+        i18n.setLocale(&quot;en&quot;);
+    } else if (geoData.country.toLowerCase() === &quot;pl&quot;){
+        i18n.setLocale(geoData.country.toLowerCase())
+    } else {
+        i18n.setLocale(&quot;en&quot;);
+    }
+    document.querySelector(&quot;html&quot;).lang = i18n.getLocale();
+    applyLocaleToNav();
+    applyLocaleToHome();
+    applyLocaleToContact();
+    applyLocaleToOthers()
+}</code></pre>
+
 </div>
 
 <footer class="footer">

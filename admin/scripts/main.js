@@ -174,8 +174,14 @@ document.getElementById("loginB").addEventListener("click", ()=> {
                Wrong user or password
             </div>`;
     });
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
 });
 
 function logout() {
     auth.signOut();
 }
+
+let postData = {};
+
+

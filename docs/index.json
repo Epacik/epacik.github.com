@@ -1,0 +1,1502 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "scripts/.external-ecmascript.js",
+    "static": true,
+    "longname": "scripts/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 49,
+    "kind": "external",
+    "name": "http~ClientRequest",
+    "externalLink": "https://nodejs.org/dist/latest/docs/api/http.html#http_class_http_clientrequest",
+    "memberof": "scripts/.external-nodejs.js",
+    "static": true,
+    "longname": "scripts/.external-nodejs.js~http~ClientRequest",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
+    "name": "scripts/firebase.js",
+    "content": "\r\n\r\n\r\ndb.collection('wpisy').where(\"show\", \"==\", true).orderBy(\"time\", \"desc\").onSnapshot(snapshot => {\r\n    let ch = snapshot.docChanges();\r\n    ch.forEach(change => {\r\n        if (change.type === \"added\") {\r\n            addPostToList(change.doc.id, change.doc.data());\r\n        } else if (change.type === \"removed\") {\r\n            removePostFromList(change.doc.id);\r\n        } else if (change.type === \"modified\") {\r\n            changePost(change.doc.id, change.doc.data());\r\n        }\r\n    });\r\n});\r\n\r\ndb.collection('projects').where(\"show\", \"==\", true).onSnapshot(snapshot => {\r\n    let ch = snapshot.docChanges();\r\n    ch.forEach(change => {\r\n        if (change.type === \"added\") {\r\n            addProjectToList(change.doc.id, change.doc.data());\r\n        } else if (change.type === \"removed\") {\r\n            removeProjectFromList(change.doc.id);\r\n        } else if (change.type === \"modified\") {\r\n            changeProject(change.doc.id, change.doc.data());\r\n        }\r\n    });\r\n});\r\n\r\ndb.collection('renders').where(\"show\", \"==\", true).onSnapshot(snapshot => {\r\n    let ch = snapshot.docChanges();\r\n    ch.forEach(change => {\r\n        if (change.type === \"added\") {\r\n            addRenderToList(change.doc.id, change.doc.data());\r\n        } else if (change.type === \"removed\") {\r\n            removeRenderFromList(change.doc.id);\r\n        } else if (change.type === \"modified\") {\r\n            changeRender(change.doc.id, change.doc.data());\r\n        }\r\n    });\r\n});\r\n\r\ndb.collection('contact').where(\"show\", \"==\", true).orderBy(\"name\").onSnapshot(snapshot => {\r\n    let ch = snapshot.docChanges();\r\n    ch.forEach(change => {\r\n        if (change.type === \"added\") {\r\n            addContactToList(change.doc.id, change.doc.data());\r\n        } else if (change.type === \"removed\") {\r\n            removeContactFromList(change.doc.id);\r\n        } else if (change.type === \"modified\") {\r\n            changeContact(change.doc.id, change.doc.data());\r\n        }\r\n    });\r\n});",
+    "static": true,
+    "longname": "F:/Programowanie/JS/epacik.github.com/scripts/firebase.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 51,
+    "kind": "file",
+    "name": "scripts/interface.js",
+    "content": "\r\nconst darkmodeButton = document.querySelectorAll(\"#darkmode-button\");\r\nfunction toggleDarkmode() {\r\n    darkMode(localStorage.getItem(\"darkmode\") == \"true\" ? false : true);\r\n}\r\n\r\nfunction applyLayout() {\r\n    let layout = document.querySelector(\".layoutTemplate\").innerHTML;\r\n    let pages = document.querySelectorAll(\".subpage\");\r\n    darkMode(localStorage.getItem(\"darkmode\") == \"true\"? true : false);\r\n\r\n    for (i = 0; i < darkmodeButton.length; i++) {\r\n        darkmodeButton[i].children[0].classList.remove(localStorage.getItem(\"darkmode\") == \"true\" ? \"fa-moon\": \"fa-sun\");\r\n        darkmodeButton[i].children[0].classList.add(localStorage.getItem(\"darkmode\") == \"false\" ? \"fa-moon\": \"fa-sun\");\r\n    }\r\n\r\n\r\n    for (let i = 0; i < pages.length; i++) {\r\n        let content = pages[i].innerHTML;\r\n        pages[i].innerHTML = layout;\r\n        pages[i].querySelector(\".spContent\").innerHTML = content;\r\n    }\r\n    document.body.removeChild(document.querySelector(\".layoutTemplate\"));\r\n}\r\n\r\n\r\n\r\n\r\n\r\nfunction addPostToList(key, data) {\r\n    const postList = document.querySelector(\"#blog .posts\");\r\n    let date = new Date(data.time.seconds * 1000);\r\n    let d = {\r\n        hr: (\"0\" + date.getHours().toString()).slice(-2),\r\n        mn: (\"0\" + date.getMinutes().toString()).slice(-2),\r\n        mnt: (\"0\" + (date.getMonth() + 1).toString()).slice(-2),\r\n        day: ((\"0\" + date.getDate().toString()).slice(-2)),\r\n        yr: date.getFullYear()\r\n    };\r\n    let post = document.createElement(\"div\");\r\n\r\n    let title = JSON.parse(data.title)[document.querySelector(\"html\").lang];\r\n    let content = JSON.parse(data.content)[document.querySelector(\"html\").lang];\r\n\r\n    post.insertAdjacentHTML(\"afterBegin\", `<header><h5>${title}</h5></header>\r\n                 <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`);\r\n    post.setAttribute(\"data-date\", JSON.stringify(d));\r\n    post.setAttribute(\"data-JSONDate\", JSON.stringify(date));\r\n    post.setAttribute(\"data-content\", content);\r\n    post.setAttribute(\"data-title\", title);\r\n    post.setAttribute(\"data-author\", data.author);\r\n    post.setAttribute(\"data-id\", key);\r\n    post.classList.add(\"sm\");\r\n    post.classList.add(\"post\");\r\n\r\n    let preloader = document.getElementById(\"postsPreloader\");\r\n    if (preloader) {\r\n        preloader.parentElement.removeChild(preloader)\r\n    }\r\n\r\n    post.addEventListener(\"click\", openPost);\r\n    //postList.appendChild(post);\r\n    if (postList.children.length === 0) {\r\n        postList.insertAdjacentElement(\"beforeEnd\", post);\r\n    } else {\r\n        let added = false;\r\n        for (i = 0; i < postList.children.length; i++) {\r\n            if (new Date(postList.children[i].dataset.jsondate.replace('\"', \"\").replace('\"', \"\")) < date) {\r\n                postList.children[i].insertAdjacentElement(\"beforeBegin\", post);\r\n                added = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!added) {\r\n            postList.insertAdjacentElement(\"beforeEnd\", post);\r\n        }\r\n    }\r\n    setTimeout(()=>{\r\n        post.classList.remove(\"sm\")\r\n    }, 100)\r\n}\r\n\r\nfunction removePostFromList(key) {\r\n    let post = document.querySelector(`[data-id=\"${key}\"]`);\r\n    post.classList.add(\"sm\");\r\n    setTimeout(()=> {\r\n        post.parentNode.removeChild(post);\r\n    }, 500);\r\n\r\n}\r\n\r\nfunction changePost(key, data) {\r\n    let post = document.querySelector(`[data-id=\"${key}\"]`);\r\n    let date = new Date(data.time.seconds * 1000);\r\n    let d = {\r\n        hr: (\"0\" + date.getHours().toString()).slice(-2),\r\n        mn: (\"0\" + date.getMinutes().toString()).slice(-2),\r\n        mnt: (\"0\" + (date.getMonth() + 1).toString()).slice(-2),\r\n        day: ((\"0\" + date.getDate().toString()).slice(-2)),\r\n        yr: date.getFullYear()\r\n    };\r\n\r\n    let title = JSON.parse(data.title)[document.querySelector(\"html\").lang];\r\n    let content = JSON.parse(data.content)[document.querySelector(\"html\").lang];\r\n\r\n    post.innerHTML = `<header><h5>${title}</h5></header>\r\n                 <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`;\r\n    post.setAttribute(\"data-date\", JSON.stringify(d));\r\n    post.setAttribute(\"data-JSONDate\", JSON.stringify(date));\r\n    post.setAttribute(\"data-content\", content);\r\n    post.setAttribute(\"data-title\", title);\r\n    post.setAttribute(\"data-author\", data.author);\r\n    post.setAttribute(\"data-id\", key);\r\n}\r\n\r\n\r\nfunction removePostIdFromHash() {\r\n    location.hash = location.hash.split(\"/\")[0];\r\n    $(\"#postModal\").modal(\"hide\");\r\n}\r\n\r\n\r\nfunction openPost(e, isNotEvent) {\r\n    //console.log(e);\r\n    let target;\r\n    const postModal = document.getElementById(\"postModal\");\r\n    if (hash[0] !== \"blog\") {\r\n        return;\r\n    }\r\n    if (isNotEvent) {\r\n        location.hash = `#blog/${e}`;\r\n        db.collection(\"wpisy\").doc(e).get().then(doc => {\r\n            if (doc._document == null) {\r\n                i18n.textdomain(\"errors\");\r\n\r\n                postModal.children[0].children[0].innerHTML = `<div class=\"modal-header\">\r\n                  <h5 class=\"modal-title\" id=\"postModalScrollableTitle\"></h5>\r\n                  <button type=\"button\" class=\"close\" data-dismiss=\"modal\" onclick=\"window.stop()\" aria-label=\"Close\">\r\n                      <span aria-hidden=\"true\">&times;</span>\r\n                  </button>\r\n              </div>\r\n              <div class=\"modal-body\">\r\n                  ${i18n.gettext(\"missing post\")}\r\n              </div>\r\n              <div class=\"modal-footer\">\r\n                  <b>Epat</b> \r\n              </div>`;\r\n            }\r\n            else {\r\n                let data = doc.data();\r\n\r\n\r\n                let date = new Date(data.time.seconds * 1000);\r\n                let d = {\r\n                    hr: (\"0\" + date.getHours().toString()).slice(-2),\r\n                    mn: (\"0\" + date.getMinutes().toString()).slice(-2),\r\n                    mnt: (\"0\" + (date.getMonth() + 1).toString()).slice(-2),\r\n                    day: ((\"0\" + date.getDate().toString()).slice(-2)),\r\n                    yr: date.getFullYear()\r\n                };\r\n\r\n                let title = JSON.parse(data.title)[document.querySelector(\"html\").lang];\r\n                let content = JSON.parse(data.content)[document.querySelector(\"html\").lang];\r\n\r\n                postModal.children[0].children[0].innerHTML = `<div class=\"modal-header\">\r\n                  <h5 class=\"modal-title\" id=\"postModalScrollableTitle\">${title}</h5>\r\n                  <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                      <span aria-hidden=\"true\">&times;</span>\r\n                  </button>\r\n              </div>\r\n              <div class=\"modal-body\">\r\n                  ${marked(content)}\r\n              </div>\r\n              <div class=\"modal-footer\">\r\n                  <button class=\"btn btn-outline-secondary\" onclick=\"copyAddress()\"><i \r\n                 class=\"fas fa-share\"></i></button><b>\r\n${data.author}</b>   \r\n                    &nbsp; ${d.day}/${d.mnt}/${d.yr} \r\n${d.hr}:${d.mn}\r\n              </div>`;\r\n\r\n            }\r\n            document.getElementById(\"openPost\").click();\r\n            //document.querySelector('#postModal .close').addEventListener(\"click\", removePostIdFromHash )\r\n\r\n        });\r\n    }\r\n    else {\r\n        target = e.target;\r\n        while( !target.classList.contains(\"post\") || \"body\" === target.id ){\r\n            target = target.parentNode;\r\n        }\r\n        let d = JSON.parse(target.dataset.date);\r\n\r\n\r\n        location.hash = `#blog/${target.dataset.id}`;\r\n\r\n        postModal.children[0].children[0].innerHTML = `<div class=\"modal-header\">\r\n                  <h5 class=\"modal-title\" id=\"postModalScrollableTitle\">${target.dataset.title}</h5>\r\n                  <button type=\"button\"  class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                      <span aria-hidden=\"true\">&times;</span>\r\n                  </button>\r\n              </div>\r\n              <div class=\"modal-body\">\r\n                  ${marked(target.dataset.content)}\r\n              </div>\r\n              <div class=\"modal-footer\">\r\n                  <button class=\"btn btn-outline-secondary\" onclick=\"copyAddress()\"><i class=\"fas fa-share\"></i></button><b>\r\n${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}\r\n              </div>`;\r\n        document.getElementById(\"openPost\").click();\r\n        //console.log(target);\r\n        document.querySelector('#postModal .close').addEventListener(\"click\", removePostIdFromHash )\r\n    }\r\n\r\n\r\n}\r\n\r\n\r\n\r\n\r\n\r\n$('#postModal').on('hidden.bs.modal', function (e) {\r\n    removePostIdFromHash();\r\n});\r\n\r\n\r\n\r\nfunction addProjectToList(key, data) {\r\n    const projects = document.querySelector(\"#projectsWrapper\");\r\n    let desc = JSON.parse(data.description)[document.querySelector(\"html\").lang];\r\n    let alt = JSON.parse(data.imgAlt)[document.querySelector(\"html\").lang];\r\n    let preloader = document.getElementById(\"projectsPreloader\");\r\n    if (preloader) {\r\n        preloader.parentElement.removeChild(preloader)\r\n    }\r\n    i18n.textdomain(\"buttons\");\r\n    projects.insertAdjacentHTML(\"afterBegin\",\r\n        `<div class=\"card sm shadow-sm\" data-id=\"${key}\" style=\"width: 18rem;\">\r\n                        <img src=\"${data.pathToImg}\" class=\"card-img-top\" alt=\"${alt}\">\r\n                        <div class=\"card-body\">\r\n                            <h5 class=\"card-title\">${data.name}</h5>\r\n                            <p class=\"card-text\">${desc}</p>\r\n                            <a href=\"${data.link}\"  class=\"btn btn-primary\">${i18n.gettext(\"Check it out\")}</a>\r\n                        </div>\r\n                </div>`);\r\n    setTimeout(()=>{\r\n        document.querySelector(`[data-id=\"${key}\"]`).classList.remove(\"sm\")\r\n    },100);\r\n}\r\n\r\n\r\nfunction changeProject(key, data) {\r\n    let project = document.querySelector(`[data-id=\"${key}\"]`);\r\n    i18n.textdomain(\"buttons\");\r\n    let desc = JSON.parse(data.description)[document.querySelector(\"html\").lang];\r\n    let alt = JSON.parse(data.imgAlt)[document.querySelector(\"html\").lang];\r\n    project.innerHTML = `<img src=\"${data.pathToImg}\" class=\"card-img-top\" alt=\"${alt}\">\r\n                                    <div class=\"card-body\">\r\n                                        <h5 class=\"card-title\">${data.name}</h5>\r\n                                        <p class=\"card-text\">${desc}</p>\r\n                                        <a href=\"${data.link}\"  class=\"btn btn-primary\">${i18n.gettext(\"Check it out\")}</a>\r\n                                    </div>`;\r\n\r\n    project.setAttribute(\"data-id\", key);\r\n}\r\n\r\nfunction removeProjectFromList(key) {\r\n    let project = document.querySelector(`[data-id=\"${key}\"]`);\r\n    project.parentNode.removeChild(project);\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nfunction addRenderToList(key, data) {\r\n    let name = \"\";\r\n    let desc = \"\";\r\n    let alt = \"\";\r\n    let tAlt = \"\";\r\n    let preloader = document.getElementById(\"rendersPreloader\");\r\n    if (preloader) {\r\n        preloader.parentElement.removeChild(preloader)\r\n    }\r\n    try {\r\n        name  = JSON.parse(data.name)[document.querySelector(\"html\").lang];\r\n        desc  = JSON.parse(data.description)[document.querySelector(\"html\").lang];\r\n        alt = JSON.parse(data.imgAlt)[document.querySelector(\"html\").lang];\r\n        tAlt  = JSON.parse(data.thumbnailAlt)[document.querySelector(\"html\").lang];\r\n    } catch (e) {}\r\n\r\n\r\n\r\n    document.querySelector(\"#rendersWrapper\").insertAdjacentHTML(\"afterBegin\",\r\n        `<a href=\"${data.link ? data.link : \"\"}\" data-id=\"${key}\" class=\"card sm shadow-sm\" style=\"width: 18rem;\">\r\n                    <img src=\"${data.thumbnail}\" class=\"card-img-top\" alt=\"${tAlt}\">\r\n                    <div class=\"card-body\">\r\n                        <h5 class=\"card-title\">${name}</h5>\r\n                        <p class=\"card-text\">${desc}</p>\r\n                    </div>\r\n                </a>`);\r\n    setTimeout(()=>{\r\n        document.querySelector(`[data-id=\"${key}\"]`).classList.remove(\"sm\")\r\n    },100);\r\n}\r\n\r\nfunction changeRender(key, data) {\r\n    let render = document.querySelector(`[data-id=\"${key}\"]`);\r\n\r\n    let name = \"\";\r\n    let desc = \"\";\r\n    let alt = \"\";\r\n    let tAlt = \"\";\r\n    try {\r\n        name  = JSON.parse(data.name)[document.querySelector(\"html\").lang];\r\n        desc  = JSON.parse(data.description)[document.querySelector(\"html\").lang];\r\n        alt = JSON.parse(data.imgAlt)[document.querySelector(\"html\").lang];\r\n        tAlt  = JSON.parse(data.thumbnailAlt)[document.querySelector(\"html\").lang];\r\n    } catch (e) {}\r\n\r\n    render.innerHTML = `<img src=\"${data.thumbnail}\" class=\"card-img-top\" alt=\"${tAlt}\">\r\n                                        <div class=\"card-body\">\r\n                                            <h5 class=\"card-title\">${name}</h5>\r\n                                            <p class=\"card-text\">${desc}</p>\r\n                                        </div>`;\r\n\r\n    render.setAttribute(\"data-id\", key);\r\n    render.setAttribute(\"href\", data.link ? data.link : \"\")\r\n}\r\n\r\nfunction removeRenderFromList(key) {\r\n    let project = document.querySelector(`[data-id=\"${key}\"]`);\r\n    project.parentNode.removeChild(project);\r\n}\r\n\r\n\r\nfunction addContactToList(key, data) {\r\n    let preloader = document.getElementById(\"contactPreloader\");\r\n    if (preloader) {\r\n        preloader.parentElement.removeChild(preloader)\r\n    }\r\n   document.querySelector(\"#contactCards\").insertAdjacentHTML(\"beforeEnd\",\r\n        `<a href=\"${data.link}\" data-id=\"${key}\" target=\"_blank\" class=\"card shadow-sm sm\" style=\"width: 18rem;\">\r\n                    <div class=\"contact-card card-body\">\r\n                        <div class=\"card-icon\"><i class=\"${data.iconClass}\"></i></div>\r\n                        <div>\r\n                            <h5 class=\"card-title\">${data.service}</h5>\r\n                            <p class=\"card-text\">${data.name}</p>\r\n                        </div>\r\n                    </div>\r\n                </a>`);\r\n\r\n    setTimeout(()=>{\r\n        document.querySelector(`[data-id=\"${key}\"]`).classList.remove(\"sm\")\r\n    },100);\r\n}\r\n\r\nfunction changeContact(key, data) {\r\n    let cont = document.querySelector(`[data-id=\"${key}\"]`);\r\n\r\n\r\n\r\n    cont.innerHTML = `<div class=\"contact-card card-body\">\r\n                            <div class=\"card-icon\"><i class=\"${data.iconClass}\"></i></div>\r\n                            <div>\r\n                                <h5 class=\"card-title\">${data.service}</h5>\r\n                                <p class=\"card-text\">${data.name}</p>\r\n                            </div>\r\n                        </div> `;\r\n\r\n    cont.setAttribute(\"data-id\", key);\r\n    cont.setAttribute(\"href\", data.link);\r\n\r\n}\r\n\r\nfunction removeContactFromList(key) {\r\n    let cont = document.querySelector(`[data-id=\"${key}\"]`);\r\n    cont.classList.add(\"sm\");\r\n    setTimeout(()=> {\r\n        cont.parentNode.removeChild(cont);\r\n    }, 500);\r\n}\r\n\r\n\r\n\r\n\r\n\r\nfunction addToast(title, message) {\r\n    const toastWrapper = document.querySelector(\".toasts\").children[0];\r\n    toastWrapper.insertAdjacentHTML(\"beforeEnd\",\r\n        `<div class=\"toast\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\" data-delay=\"5000\">\r\n                      <div class=\"toast-header\">\r\n                        <strong class=\"mr-auto\">${title}</strong>\r\n                        <button type=\"button\" class=\"ml-2 mb-1 close\" data-dismiss=\"toast\" aria-label=\"Close\">\r\n                          <span aria-hidden=\"true\">&times;</span>\r\n                        </button>\r\n                      </div>\r\n                      <div class=\"toast-body\">\r\n                        ${message}\r\n                      </div>\r\n                    </div>`);\r\n    if (toastWrapper.children.length > 0) {\r\n       $( toastWrapper.children[toastWrapper.children.length - 1]).toast('show');\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n\r\nfunction darkMode(enable) {\r\n    localStorage.setItem(\"darkmode\", enable);\r\n    let ico = document.querySelectorAll(\"#darkmodeButton\");\r\n\r\n    if (enable){\r\n        document.body.classList.add(\"dark\"); //For my css\r\n        document.querySelector(\"#postModal .modal-content\").classList.add(\"bg-dark\");\r\n        document.querySelector(\"#copyModal .modal-content\").classList.add(\"bg-dark\");\r\n        document.querySelector(\"#postModal .modal-content\").classList.add(\"text-white\");\r\n        document.querySelector(\"#copyModal .modal-content\").classList.add(\"text-white\");\r\n        for (i = 0; i < ico.length; i++) {\r\n            ico[i].children[0].classList.remove(\"fa-moon\");\r\n            ico[i].children[0].classList.add( \"fa-sun\");\r\n        }\r\n    } else {\r\n        document.body.classList.remove(\"dark\");\r\n        document.querySelector(\"#postModal .modal-content\").classList.remove(\"bg-dark\");\r\n        document.querySelector(\"#copyModal .modal-content\").classList.remove(\"bg-dark\");\r\n        document.querySelector(\"#postModal .modal-content\").classList.remove(\"text-white\");\r\n        document.querySelector(\"#copyModal .modal-content\").classList.remove(\"text-white\");\r\n        for (i = 0; i < ico.length; i++) {\r\n            ico[i].children[0].classList.remove(\"fa-sun\");\r\n            ico[i].children[0].classList.add( \"fa-moon\");\r\n        }\r\n    }\r\n}\r\n\r\nsetTimeout(()=>{\r\n    let ico = document.querySelectorAll(\"#darkmodeButton\");\r\n    for (i = 0; i < ico.length; i++) {\r\n        if (localStorage.getItem(\"darkmode\") === \"true\"){\r\n            ico[i].children[0].classList.remove(\"fa-moon\");\r\n            ico[i].children[0].classList.add( \"fa-sun\");\r\n\r\n        } else {\r\n            ico[i].children[0].classList.remove(\"fa-sun\");\r\n            ico[i].children[0].classList.add( \"fa-moon\");\r\n        }\r\n    }\r\n}, 1000);",
+    "static": true,
+    "longname": "F:/Programowanie/JS/epacik.github.com/scripts/interface.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 52,
+    "kind": "variable",
+    "name": "darkmodeButton",
+    "memberof": "scripts/interface.js",
+    "static": true,
+    "longname": "scripts/interface.js~darkmodeButton",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "function",
+    "name": "toggleDarkmode",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~toggleDarkmode",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "name": "applyLayout",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~applyLayout",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 55,
+    "kind": "function",
+    "name": "addPostToList",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~addPostToList",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 56,
+    "kind": "function",
+    "name": "removePostFromList",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~removePostFromList",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 83,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 57,
+    "kind": "function",
+    "name": "changePost",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~changePost",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 92,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 58,
+    "kind": "function",
+    "name": "removePostIdFromHash",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~removePostIdFromHash",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 117,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 59,
+    "kind": "function",
+    "name": "openPost",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~openPost",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 123,
+    "undocument": true,
+    "params": [
+      {
+        "name": "e",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "isNotEvent",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 60,
+    "kind": "function",
+    "name": "addProjectToList",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~addProjectToList",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 229,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 61,
+    "kind": "function",
+    "name": "changeProject",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~changeProject",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 253,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 62,
+    "kind": "function",
+    "name": "removeProjectFromList",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~removeProjectFromList",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 268,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "name": "addRenderToList",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~addRenderToList",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 282,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "function",
+    "name": "changeRender",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~changeRender",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 313,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 65,
+    "kind": "function",
+    "name": "removeRenderFromList",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~removeRenderFromList",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 337,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 66,
+    "kind": "function",
+    "name": "addContactToList",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~addContactToList",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 343,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 67,
+    "kind": "function",
+    "name": "changeContact",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~changeContact",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 364,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 68,
+    "kind": "function",
+    "name": "removeContactFromList",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~removeContactFromList",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 382,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 69,
+    "kind": "function",
+    "name": "addToast",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~addToast",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 394,
+    "undocument": true,
+    "params": [
+      {
+        "name": "title",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "message",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 70,
+    "kind": "function",
+    "name": "darkMode",
+    "memberof": "scripts/interface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/interface.js~darkMode",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/interface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 417,
+    "undocument": true,
+    "params": [
+      {
+        "name": "enable",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 71,
+    "kind": "file",
+    "name": "scripts/lang.js",
+    "content": "/**\r\n * @name lang\r\n * @desc Contains language data\r\n */\r\n\r\nvar i18n = window.i18n();\r\n\r\n\r\ni18n.setMessages(\"buttons\", \"pl\", {\r\n    \"Check it out\": \"Sprawdź projekt\",\r\n});\r\n\r\ni18n.setMessages(\"buttons\", \"en\", {\r\n    \"Check it out\": \"Check it out\",\r\n});\r\n\r\ni18n.setMessages(\"other\", \"pl\", {\r\n    \"copy address\": \"Skopiuj adres\",\r\n});\r\n\r\ni18n.setMessages(\"other\", \"en\", {\r\n    \"copy address\": \"Copy address\",\r\n});\r\n\r\ni18n.setMessages(\"errors\", \"pl\", {\r\n    \"missing post\": \"Post którego szukasz nie istnieje.<br> Upewnij się, że wprowadziłeś poprawny adres URL\",\r\n});\r\n\r\ni18n.setMessages(\"errors\", \"en\", {\r\n    \"missing post\": \"Unfortunately, the post you are looking for does not exist.<br> Check if you entered the\" +\r\n        \" correct URL address\",\r\n});\r\n\r\ni18n.setMessages(\"nav\", \"pl\", {\r\n   \"home\": \"Strona domowa\",\r\n    \"blog\": \"Mój Blog\",\r\n    \"contact\": \"Kontakt\"\r\n});\r\n\r\ni18n.setMessages(\"nav\", \"en\", {\r\n    \"home\": \"Home\",\r\n    \"blog\": \"My Blog\",\r\n    \"contact\": \"Contact\"\r\n});\r\n\r\n\r\n\r\n\r\ni18n.setMessages(\"home\", \"pl\", {\r\n    \"Hello\": \"Witaj\",\r\n    \"I'm Epat\": \"Jestem Damian, albo Epat jeśli wolisz\",\r\n    \"student\": \"Zwykły\" +\r\n        \" uczeń, pasjonat informatyki, astronomii i czegokolwiek co mnie zainteresuje\",\r\n    \"what I'm doing lately\": \"Jeśli chcesz\" +\r\n        \" dowiedzieć się co ostatnio robiłem, przewiń w dół, może znajdziesz coś interesującego.\",\r\n    \"My projects\": \"Moje projekty\",\r\n    \"More coming\": \"I będzie ich więcej 😉\",\r\n    \"renders\": \"Oto rendery scen zrobionych przeze mnie\",\r\n\r\n});\r\n\r\ni18n.setMessages(\"home\", \"en\", {\r\n    \"Hello\": \"Hello\",\r\n    \"I'm Epat\": \"I'm Damian, or Epat if you want\",\r\n    \"student\": \"A simple student with passion for computer science, astronomy and whatever else I find interesting.\",\r\n    \"what I'm doing lately\": \"If you want to find out what I'm doing lately, scroll down, maybe something will interest you.\",\r\n    \"My projects\": \"My projects\",\r\n    \"More coming\": \"And more coming 😉\",\r\n    \"renders\": \"Here you can find some renders of scenes that I made\",\r\n\r\n});\r\n\r\n\r\ni18n.setMessages(\"contact\", \"pl\", {\r\n    \"find me\": \"Znajdziesz mnie tutaj\",\r\n});\r\n\r\ni18n.setMessages(\"contact\", \"en\", {\r\n    \"find me\": \"You can find me here\",\r\n});\r\n\r\nfunction applyLocaleToNav() {\r\n    let navs = document.querySelectorAll(\".navbar\");\r\n    i18n.textdomain(\"nav\");\r\n\r\n    for (i = 0; i < navs.length; i++){\r\n        let nav = navs[i].querySelector(\".navbar-collapse\");\r\n        nav.querySelector('[href=\"#home\"]').innerHTML = i18n.gettext(\"home\");\r\n        nav.querySelector('[href=\"#blog\"]').innerHTML = i18n.gettext(\"blog\");\r\n        nav.querySelector('[href=\"#contact\"]').innerHTML = i18n.gettext(\"contact\");\r\n    }\r\n}\r\n\r\nfunction applyLocaleToHome() {\r\n    let home = document.getElementById(\"home\");\r\n    let basicInfo = home.querySelector(\"#basicInfo\");\r\n    i18n.textdomain(\"home\");\r\n\r\n    basicInfo.querySelector(\"h1\").innerHTML = i18n.gettext(\"Hello\");\r\n    basicInfo.querySelector(\"h3\").innerHTML = i18n.gettext(\"I'm Epat\");\r\n    basicInfo.querySelector(\"h5\").innerHTML = i18n.gettext(\"student\");\r\n    basicInfo.querySelector(\"h4\").innerHTML = i18n.gettext(\"what I'm doing lately\");\r\n\r\n\r\n    let projects = home.querySelector(\"#projects\");\r\n\r\n    projects.querySelector(\"h3\").innerHTML = i18n.gettext(\"My projects\");\r\n    projects.querySelector(\"h4\").innerHTML = i18n.gettext(\"More coming\");\r\n\r\n    let renders = home.querySelector(\"#renders\");\r\n\r\n    renders.querySelector(\"h3\").innerHTML = i18n.gettext(\"renders\");\r\n}\r\n\r\n\r\n\r\n\r\nfunction applyLocaleToContact() {\r\n    let contact = document.getElementById(\"contact\");\r\n    i18n.textdomain(\"contact\");\r\n\r\n    let contactPane = contact.querySelector(\"#contactPane\");\r\n\r\n    contactPane.querySelector(\"h3\").innerHTML = i18n.gettext(\"find me\");\r\n\r\n}\r\n\r\nfunction applyLocaleToOthers() {\r\n    i18n.textdomain(\"other\");\r\n\r\n    document.getElementById(\"copyModalTitle\").innerHTML = i18n.gettext(\"copy address\");\r\n}\r\n\r\n\r\n\r\nfunction applyLocalization() {\r\n    if (localStorage.getItem(\"force-en\") === \"true\"){\r\n        i18n.setLocale(\"en\");\r\n    } else if (geoData.country.toLowerCase() === \"pl\"){\r\n        i18n.setLocale(geoData.country.toLowerCase())\r\n    } else {\r\n        i18n.setLocale(\"en\");\r\n    }\r\n    document.querySelector(\"html\").lang = i18n.getLocale();\r\n    applyLocaleToNav();\r\n    applyLocaleToHome();\r\n    applyLocaleToContact();\r\n    applyLocaleToOthers()\r\n}",
+    "static": true,
+    "longname": "F:/Programowanie/JS/epacik.github.com/scripts/lang.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 72,
+    "kind": "variable",
+    "name": "i18n",
+    "memberof": "scripts/lang.js",
+    "static": true,
+    "longname": "scripts/lang.js~i18n",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/lang.js",
+    "importStyle": null,
+    "description": "Contains language data",
+    "lineNumber": 6,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "function",
+    "name": "applyLocaleToNav",
+    "memberof": "scripts/lang.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/lang.js~applyLocaleToNav",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/lang.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 82,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 74,
+    "kind": "function",
+    "name": "applyLocaleToHome",
+    "memberof": "scripts/lang.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/lang.js~applyLocaleToHome",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/lang.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 94,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 75,
+    "kind": "function",
+    "name": "applyLocaleToContact",
+    "memberof": "scripts/lang.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/lang.js~applyLocaleToContact",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/lang.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 118,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 76,
+    "kind": "function",
+    "name": "applyLocaleToOthers",
+    "memberof": "scripts/lang.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/lang.js~applyLocaleToOthers",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/lang.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 128,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 77,
+    "kind": "function",
+    "name": "applyLocalization",
+    "memberof": "scripts/lang.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/lang.js~applyLocalization",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/lang.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 136,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 78,
+    "kind": "file",
+    "name": "scripts/main.js",
+    "content": "var isIE = /*@cc_on!@*/!!document.documentMode;\r\n\r\n\r\nif (isIE) {\r\n    alert('This webpage isn\\'t supporting Internet Explorer.\\nIf you want to use that page, you have to use newer web browser like:\\nGoogle Chrome, Mozilla Firefox, Opera, Apple Safari, Microsoft Edge etc.');\r\n}\r\n\r\nconst postList = document.querySelector(\"#blog .posts\");\r\n\r\nconsole.log('loaded');\r\n\r\n/**\r\n * @function toggleLoading\r\n * @desc Toggles loading screen\r\n */\r\nfunction toggleLoading() {\r\n    loading = document.querySelector('.page-loading');\r\n    if (loading.style.opacity === '0') {\r\n        loading.style.opacity = '';\r\n        loading.style.pointerEvents = '';\r\n        loading.style.transform = \"scale(1)\";\r\n        document.body.style.overflow = '';\r\n        document.querySelector('.page-loading #spinner div').style.animationName = 'spin';\r\n    } else {\r\n        loading.style.opacity = '0';\r\n        loading.style.pointerEvents = 'none';\r\n        document.body.style.overflow = 'auto';\r\n        loading.style.transform = \"scale(2)\";\r\n        document.querySelector('.page-loading #spinner div').style.animationName = '';\r\n    }\r\n\r\n}\r\n\r\n\r\n\r\nlet hash = \"\";\r\n\r\n\r\n\r\nfunction showPage() {\r\n    hash = location.hash;\r\n    hash = hash.replace(\"#\", \"\");\r\n    hash = hash.split(\"/\");\r\n    let pages = document.querySelectorAll(\".subpage\");\r\n    let moved = false;\r\n    for (let i = 0; i < pages.length; i++) {\r\n        if (pages[i].id === hash[0]) {\r\n            moved = true;\r\n            pages[i].classList.add(\"show\");\r\n        } else {\r\n            pages[i].classList.remove(\"show\");\r\n        }\r\n    }\r\n\r\n    let navlinks = document.querySelectorAll(\".nav-link\");\r\n\r\n    for (let i = 0; i < navlinks.length; i++){\r\n        let dest = navlinks[i].href.split(\"#\")[1].split(\"/\")[0];\r\n        if ( hash[0] === \"#\" || hash[0] === \"\"){\r\n            hash[0] = \"home\";\r\n        }\r\n        if (dest === hash[0]) {\r\n            navlinks[i].parentElement.classList.add(\"active\");\r\n        } else {\r\n            navlinks[i].parentElement.classList.remove(\"active\");\r\n        }\r\n    }\r\n\r\n    if (!moved) {\r\n        if(hash[0] === \"\" || hash[0] === \"home\") {\r\n            document.getElementById(\"home\").classList.add(\"show\");\r\n        } else {\r\n            location.href = \"./404.html\";\r\n        }\r\n    }\r\n    let sec = document.querySelector(`#${hash[0]} #${hash[1]}`);\r\n    if (hash.length === 2 && sec !== null) {\r\n        setTimeout(() => {sec.scrollIntoView({behavior: \"smooth\", block: \"start\"});}, 100)\r\n\r\n    }\r\n\r\n    if (hash[0] === \"blog\" && hash[1] !== \"\" && hash[1] !== undefined ){\r\n        openPost(hash[1], true);\r\n    }else {\r\n        $(\"#postModal\").modal(\"hide\");\r\n    }\r\n\r\n}\r\n\r\nfunction addCurrentYear() {\r\n    let items = document.querySelectorAll(\".curYr\");\r\n    for (i = 0; i < items.length; i++) {\r\n        items[i].innerHTML = (new Date()).getFullYear();\r\n    }\r\n}\r\n\r\nfunction scrTo(panel) {\r\n    if (typeof panel == \"string\"){\r\n        panel = document.getElementById(panel);\r\n    }\r\n    panel.scrollIntoView({behavior: \"smooth\", block: \"start\"});\r\n}\r\n\r\n\r\nfunction getURLParam(key) {\r\n    let params = new URLSearchParams(location.search);\r\n    return params.get(key);\r\n}\r\n\r\napplyLayout();\r\naddCurrentYear();\r\n\r\nshowPage();\r\nwindow.addEventListener(\"hashchange\", showPage);\r\n\r\nif (getURLParam(\"debug_loading\") === \"true\"){\r\n    setTimeout(toggleLoading, 3000);\r\n} else {\r\n    if (hash.length === 2  ) {\r\n        if (document.querySelector(`#${hash[0]} #${hash[1]}`) !== null) {\r\n            showPage();\r\n            scrTo(document.querySelector(`#${hash[0]} #${hash[1]}`));\r\n        } else if (hash[0] === \"blog\" && hash[1] !== undefined){\r\n            showPage();\r\n            openPost(hash[1], true);\r\n        }\r\n\r\n\r\n    }\r\n    toggleLoading();\r\n}\r\n\r\nfunction copyAddress() {\r\n    let support = document.getElementById('cpy');\r\n    support.value = location.href;\r\n\r\n    document.getElementById(\"copyM\").click();\r\n    support.select();\r\n}\r\n\r\n\r\n\r\nfunction addTextToClipboard (text) {\r\n    let support = document.getElementById(\"cpy\");\r\n    support.value = text;\r\n    support.select();\r\n    document.execCommand(\"copy\");\r\n    addToast(\"Copied\", `Copied ${text} to clipboard`);\r\n}\r\n\r\n",
+    "static": true,
+    "longname": "F:/Programowanie/JS/epacik.github.com/scripts/main.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 79,
+    "kind": "variable",
+    "name": "isIE",
+    "memberof": "scripts/main.js",
+    "static": true,
+    "longname": "scripts/main.js~isIE",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "variable",
+    "name": "postList",
+    "memberof": "scripts/main.js",
+    "static": true,
+    "longname": "scripts/main.js~postList",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "function",
+    "name": "toggleLoading",
+    "memberof": "scripts/main.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/main.js~toggleLoading",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/main.js",
+    "importStyle": null,
+    "description": "Toggles loading screen",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@function",
+        "tagValue": "toggleLoading"
+      }
+    ],
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 82,
+    "kind": "variable",
+    "name": "hash",
+    "memberof": "scripts/main.js",
+    "static": true,
+    "longname": "scripts/main.js~hash",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 36,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "function",
+    "name": "showPage",
+    "memberof": "scripts/main.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/main.js~showPage",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 40,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 84,
+    "kind": "function",
+    "name": "addCurrentYear",
+    "memberof": "scripts/main.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/main.js~addCurrentYear",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 90,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 85,
+    "kind": "function",
+    "name": "scrTo",
+    "memberof": "scripts/main.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/main.js~scrTo",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 97,
+    "undocument": true,
+    "params": [
+      {
+        "name": "panel",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 86,
+    "kind": "function",
+    "name": "getURLParam",
+    "memberof": "scripts/main.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/main.js~getURLParam",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 105,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "function",
+    "name": "copyAddress",
+    "memberof": "scripts/main.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/main.js~copyAddress",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 133,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 88,
+    "kind": "function",
+    "name": "addTextToClipboard",
+    "memberof": "scripts/main.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "scripts/main.js~addTextToClipboard",
+    "access": "public",
+    "export": false,
+    "importPath": "./scripts/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 143,
+    "undocument": true,
+    "params": [
+      {
+        "name": "text",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "kind": "index",
+    "content": "# epat9.github.io\r\n\r\nIt's my webpage hosted by [Github Pages](https://pages.github.com/).\r\n\r\nIt contains informations about me, my projects etc.\r\n\r\n[Documentation](https://htmlpreview.github.io/?https://github.com/Epat9/epat9.github.com/blob/master/docs/index.html)\r\n",
+    "longname": "F:\\Programowanie\\JS\\epacik.github.com\\README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "",
+    "longname": "",
+    "name": "",
+    "static": true,
+    "access": "public"
+  }
+]

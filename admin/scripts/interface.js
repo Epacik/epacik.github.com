@@ -39,15 +39,20 @@ function addPostToList(key, data) {
     };
     let post = document.createElement("div");
 
-    let title = JSON.parse(data.title)[document.querySelector("html").lang];
-    let content = JSON.parse(data.content)[document.querySelector("html").lang];
 
-    post.insertAdjacentHTML("afterBegin", `<header><h5>${title}</h5></header>
+
+    let title = JSON.parse(data.title);
+    let content = JSON.parse(data.content);
+
+    let lng = title[document.querySelector("html").lang] === undefined ? "en" : document.querySelector("html").lang;
+
+
+    post.insertAdjacentHTML("afterBegin", `<header><h5>${title[lng]}</h5></header>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`);
     post.setAttribute("data-date", JSON.stringify(d));
     post.setAttribute("data-JSONDate", JSON.stringify(date));
-    post.setAttribute("data-content", content);
-    post.setAttribute("data-title", title);
+    post.setAttribute("data-content", data.content);
+    post.setAttribute("data-title", data.title);
     post.setAttribute("data-author", data.author);
     post.setAttribute("data-id", key);
     post.classList.add("sm");
@@ -120,109 +125,12 @@ function removePostIdFromHash() {
 }
 
 
-function openPost(e, isNotEvent) {
-    //console.log(e);
-    let target;
-    const postModal = document.getElementById("postModal");
-    if (hash[0] !== "blog") {
-        return;
-    }
-    if (isNotEvent) {
-        location.hash = `#blog/${e}`;
-        db.collection("wpisy").doc(e).get().then(doc => {
-            if (doc._document == null) {
-                i18n.textdomain("errors");
-
-                postModal.children[0].children[0].innerHTML = `<div class="modal-header">
-                  <h5 class="modal-title" id="postModalScrollableTitle"></h5>
-                  <button type="button" class="close" data-dismiss="modal" onclick="window.stop()" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  ${i18n.gettext("missing post")}
-              </div>
-              <div class="modal-footer">
-                  <b>Epat</b> 
-              </div>`;
-            }
-            else {
-                let data = doc.data();
-
-
-                let date = new Date(data.time.seconds * 1000);
-                let d = {
-                    hr: ("0" + date.getHours().toString()).slice(-2),
-                    mn: ("0" + date.getMinutes().toString()).slice(-2),
-                    mnt: ("0" + (date.getMonth() + 1).toString()).slice(-2),
-                    day: (("0" + date.getDate().toString()).slice(-2)),
-                    yr: date.getFullYear()
-                };
-
-                let title = JSON.parse(data.title)[document.querySelector("html").lang];
-                let content = JSON.parse(data.content)[document.querySelector("html").lang];
-
-                postModal.children[0].children[0].innerHTML = `<div class="modal-header">
-                  <h5 class="modal-title" id="postModalScrollableTitle">${title}</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <textarea>${content}</textarea>
-              </div>
-              <div class="modal-footer">
-                  <button class="btn btn-outline-secondary" onclick="copyAddress()"><i 
-                 class="fas fa-share"></i></button><b>
-${data.author}</b>   
-                    &nbsp; ${d.day}/${d.mnt}/${d.yr} 
-${d.hr}:${d.mn}
-              </div>`;
-
-            }
-            document.getElementById("openPost").click();
-            //document.querySelector('#postModal .close').addEventListener("click", removePostIdFromHash )
-
-        });
-    }
-    else {
-        target = e.target;
-        while( !target.classList.contains("post") || "body" === target.id ){
-            target = target.parentNode;
-        }
-        let d = JSON.parse(target.dataset.date);
-
-
-        location.hash = `#blog/${target.dataset.id}`;
-
-        postModal.children[0].children[0].innerHTML = `<div class="modal-header">
-                  <h5 class="modal-title" id="postModalScrollableTitle">${target.dataset.title}</h5>
-                  <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                    <label>Lang: <input id="postLang" type="text" placeholder="en"></label>
-                    <label>Title: <input  id="postTitle" type="text" placeholder="Title"> </label>
-                    <label>Content: <textarea >${target.dataset.content}</textarea></label>
-              </div>
-              <div class="modal-footer">
-                  <button class="btn btn-outline-secondary" onclick="copyAddress()"><i class="fas fa-share"></i></button><b>
-${target.dataset.author}</b>     &nbsp; ${d.day}/${d.mnt}/${d.yr} ${d.hr}:${d.mn}
-              </div>`;
-        document.getElementById("openPost").click();
-        //console.log(target);
-        document.querySelector('#postModal .close').addEventListener("click", removePostIdFromHash )
-    }
-
-
-}
-
-
-
-
 
 $('#postModal').on('hidden.bs.modal', function (e) {
+    removePostIdFromHash();
+});
+
+$('#editPostModal').on('hidden.bs.modal', function (e){
     removePostIdFromHash();
 });
 
@@ -423,24 +331,36 @@ function darkMode(enable) {
 
     if (enable){
         document.body.classList.add("dark"); //For my css
-        document.querySelector("#postModal .modal-content").classList.add("bg-dark");
-        document.querySelector("#copyModal .modal-content").classList.add("bg-dark");
-        document.querySelector("#postModal .modal-content").classList.add("text-white");
-        document.querySelector("#copyModal .modal-content").classList.add("text-white");
-        document.querySelector("#addPostModal .modal-content").classList.add("bg-dark");
-        document.querySelector("#addPostModal .modal-content").classList.add("text-white");
+
+        let modals = document.querySelectorAll(".modal .modal-content");
+
+        modals.forEach(modal => {
+            modal.classList.add("bg-dark");
+            modal.classList.add("text-white");
+        });
+
+
+
+
         for (i = 0; i < ico.length; i++) {
             ico[i].children[0].classList.remove("fa-moon");
             ico[i].children[0].classList.add( "fa-sun");
         }
     } else {
         document.body.classList.remove("dark");
-        document.querySelector("#postModal .modal-content").classList.remove("bg-dark");
-        document.querySelector("#copyModal .modal-content").classList.remove("bg-dark");
-        document.querySelector("#postModal .modal-content").classList.remove("text-white");
-        document.querySelector("#copyModal .modal-content").classList.remove("text-white");
-        document.querySelector("#addPostModal .modal-content").classList.remove("bg-dark");
-        document.querySelector("#addPostModal .modal-content").classList.remove("text-white");
+        let modals = document.querySelectorAll(".modal .modal-content");
+
+        modals.forEach(modal => {
+           modal.remove("bg-dark");
+           modal .remove("text-white");
+        });
+
+        // document.querySelector("#postModal .modal-content").classList.remove("bg-dark");
+        // document.querySelector("#copyModal .modal-content").classLis
+        // document.querySelector("#postModal .modal-content").classList
+        // document.querySelector("#copyModal .modal-content").classList.remove("text-white");
+        // document.querySelector("#addPostModal .modal-content").classList.remove("bg-dark");
+        // document.querySelector("#addPostModal .modal-content").classList.remove("text-white");
         for (i = 0; i < ico.length; i++) {
             ico[i].children[0].classList.remove("fa-sun");
             ico[i].children[0].classList.add( "fa-moon");
@@ -461,3 +381,8 @@ setTimeout(()=>{
         }
     }
 }, 1000);
+
+
+document.getElementById("addPostButton").addEventListener("click", e => {
+
+});

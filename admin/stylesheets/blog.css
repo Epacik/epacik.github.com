@@ -11,6 +11,13 @@
     transition: transform 0.3s;
 }
 
+#addPostButton {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
 .post.sm {
     -webkit-transform: scale(0);
     -moz-transform: scale(0);

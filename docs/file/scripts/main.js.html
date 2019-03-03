@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl">
-  <title data-ice="title">Home</title>
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">scripts/main.js</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -68,10 +68,159 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="epat9-github-io">epat9.github.io</h1><p>It&apos;s my webpage hosted by <a href="https://pages.github.com/">Github Pages</a>.</p>
-<p>It contains informations about me, my projects etc.</p>
-<p><a href="https://htmlpreview.github.io/?https://github.com/Epat9/epat9.github.com/blob/master/docs/index.html">Documentation</a></p>
-</div>
+<div class="content" data-ice="content"><h1 data-ice="title">scripts/main.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">var isIE = /*@cc_on!@*/!!document.documentMode;
+
+
+if (isIE) {
+    alert(&apos;This webpage isn\&apos;t supporting Internet Explorer.\nIf you want to use that page, you have to use newer web browser like:\nGoogle Chrome, Mozilla Firefox, Opera, Apple Safari, Microsoft Edge etc.&apos;);
+}
+
+const postList = document.querySelector(&quot;#blog .posts&quot;);
+
+console.log(&apos;loaded&apos;);
+
+/**
+ * @function toggleLoading
+ * @desc Toggles loading screen
+ */
+function toggleLoading() {
+    loading = document.querySelector(&apos;.page-loading&apos;);
+    if (loading.style.opacity === &apos;0&apos;) {
+        loading.style.opacity = &apos;&apos;;
+        loading.style.pointerEvents = &apos;&apos;;
+        loading.style.transform = &quot;scale(1)&quot;;
+        document.body.style.overflow = &apos;&apos;;
+        document.querySelector(&apos;.page-loading #spinner div&apos;).style.animationName = &apos;spin&apos;;
+    } else {
+        loading.style.opacity = &apos;0&apos;;
+        loading.style.pointerEvents = &apos;none&apos;;
+        document.body.style.overflow = &apos;auto&apos;;
+        loading.style.transform = &quot;scale(2)&quot;;
+        document.querySelector(&apos;.page-loading #spinner div&apos;).style.animationName = &apos;&apos;;
+    }
+
+}
+
+
+
+let hash = &quot;&quot;;
+
+
+
+function showPage() {
+    hash = location.hash;
+    hash = hash.replace(&quot;#&quot;, &quot;&quot;);
+    hash = hash.split(&quot;/&quot;);
+    let pages = document.querySelectorAll(&quot;.subpage&quot;);
+    let moved = false;
+    for (let i = 0; i &lt; pages.length; i++) {
+        if (pages[i].id === hash[0]) {
+            moved = true;
+            pages[i].classList.add(&quot;show&quot;);
+        } else {
+            pages[i].classList.remove(&quot;show&quot;);
+        }
+    }
+
+    let navlinks = document.querySelectorAll(&quot;.nav-link&quot;);
+
+    for (let i = 0; i &lt; navlinks.length; i++){
+        let dest = navlinks[i].href.split(&quot;#&quot;)[1].split(&quot;/&quot;)[0];
+        if ( hash[0] === &quot;#&quot; || hash[0] === &quot;&quot;){
+            hash[0] = &quot;home&quot;;
+        }
+        if (dest === hash[0]) {
+            navlinks[i].parentElement.classList.add(&quot;active&quot;);
+        } else {
+            navlinks[i].parentElement.classList.remove(&quot;active&quot;);
+        }
+    }
+
+    if (!moved) {
+        if(hash[0] === &quot;&quot; || hash[0] === &quot;home&quot;) {
+            document.getElementById(&quot;home&quot;).classList.add(&quot;show&quot;);
+        } else {
+            location.href = &quot;./404.html&quot;;
+        }
+    }
+    let sec = document.querySelector(`#${hash[0]} #${hash[1]}`);
+    if (hash.length === 2 &amp;&amp; sec !== null) {
+        setTimeout(() =&gt; {sec.scrollIntoView({behavior: &quot;smooth&quot;, block: &quot;start&quot;});}, 100)
+
+    }
+
+    if (hash[0] === &quot;blog&quot; &amp;&amp; hash[1] !== &quot;&quot; &amp;&amp; hash[1] !== undefined ){
+        openPost(hash[1], true);
+    }else {
+        $(&quot;#postModal&quot;).modal(&quot;hide&quot;);
+    }
+
+}
+
+function addCurrentYear() {
+    let items = document.querySelectorAll(&quot;.curYr&quot;);
+    for (i = 0; i &lt; items.length; i++) {
+        items[i].innerHTML = (new Date()).getFullYear();
+    }
+}
+
+function scrTo(panel) {
+    if (typeof panel == &quot;string&quot;){
+        panel = document.getElementById(panel);
+    }
+    panel.scrollIntoView({behavior: &quot;smooth&quot;, block: &quot;start&quot;});
+}
+
+
+function getURLParam(key) {
+    let params = new URLSearchParams(location.search);
+    return params.get(key);
+}
+
+applyLayout();
+addCurrentYear();
+
+showPage();
+window.addEventListener(&quot;hashchange&quot;, showPage);
+
+if (getURLParam(&quot;debug_loading&quot;) === &quot;true&quot;){
+    setTimeout(toggleLoading, 3000);
+} else {
+    if (hash.length === 2  ) {
+        if (document.querySelector(`#${hash[0]} #${hash[1]}`) !== null) {
+            showPage();
+            scrTo(document.querySelector(`#${hash[0]} #${hash[1]}`));
+        } else if (hash[0] === &quot;blog&quot; &amp;&amp; hash[1] !== undefined){
+            showPage();
+            openPost(hash[1], true);
+        }
+
+
+    }
+    toggleLoading();
+}
+
+function copyAddress() {
+    let support = document.getElementById(&apos;cpy&apos;);
+    support.value = location.href;
+
+    document.getElementById(&quot;copyM&quot;).click();
+    support.select();
+}
+
+
+
+function addTextToClipboard (text) {
+    let support = document.getElementById(&quot;cpy&quot;);
+    support.value = text;
+    support.select();
+    document.execCommand(&quot;copy&quot;);
+    addToast(&quot;Copied&quot;, `Copied ${text} to clipboard`);
+}
+
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -1,0 +1,9 @@
+{
+  "source": "./scripts",
+  "destination": "./docs",
+  "plugins": [
+    {"name": "esdoc-standard-plugin"},
+    {"name": "esdoc-external-nodejs-plugin"},
+    {"name": "esdoc-unexported-identifier-plugin", "option": {"enable": true}}
+  ]
+}
