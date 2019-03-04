@@ -170,6 +170,7 @@ o88o    88 o88o  o888o 888
     padding: 20px;
     margin: 5px;
     margin-bottom: 10px;
+    border-radius: 15px;
     box-sizing: border-box;
     box-shadow: 0 3px 5px 0 rgba(0,0,0,.075);
 }
