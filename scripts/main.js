@@ -96,7 +96,11 @@ if (getURLParam("debug_loading") === "true"){
     setTimeout(toggleLoading, 3000);
 } else {
     if (hash.length === 2  ) {
-        if (document.querySelector(`#${hash[0]} #${hash[1]}`) !== null) {
+        let sel = null;
+        try {
+            sel = document.querySelector(`#${hash[0]} #${hash[1]}`)
+        } catch (e) {}
+        if ( sel !== null) {
             showPage();
             scrTo(document.querySelector(`#${hash[0]} #${hash[1]}`));
         } else if (hash[0] === "blog" && hash[1] !== undefined){

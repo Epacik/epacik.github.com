@@ -29,10 +29,11 @@
     <link id="bootstrap-css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
 
 
-  <link href="stylesheets/master.css" rel="stylesheet" />
-    <link href="stylesheets/home.css" rel="stylesheet" />
-    <link rel="stylesheet" href="stylesheets/blog.css">
-  <link href="stylesheets/contact.css" rel="stylesheet" />
+  <link href="../stylesheets/master.css" rel="stylesheet" />
+    <link href="../stylesheets/home.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../stylesheets/blog.css">
+  <link href="../stylesheets/contact.css" rel="stylesheet" />
+    <link href="stylesheets/admin.css" rel="stylesheet">
 
 
   <link rel="shortcut icon" href="../favicon.png">
@@ -108,6 +109,10 @@
       <section id="proj" class="subpage">
           <section id="projects" class="pane">
               <h3>My projects</h3>
+              <section class="posts2">
+                  <div  id="addProjectButton" class="addButton post" onclick="$('#addProjectModal').modal('show');"><i
+                          class="fas fa-plus-circle"></i></div>
+              </section>
               <section id="projectsWrapper" class="cards-wrapper">
                   <div id="projectsPreloader" class="spinner-grow text-primary" role="status">
                       <span class="sr-only">Loading...</span>
@@ -117,8 +122,13 @@
       </section>
 
       <section id="rend" class="subpage">
+
           <section id="renders" class="pane">
               <h3>Here you can find some renders of scenes that I made</h3>
+              <section class="posts2">
+                  <div  id="addRenderButton" class="addButton post" onclick="$('#addPostModal').modal('show');"><i
+                          class="fas fa-plus-circle"></i></div>
+              </section>
               <section id="rendersWrapper" class="cards-wrapper">
                   <div id="rendersPreloader" class="spinner-grow text-primary" role="status">
                       <span class="sr-only">Loading...</span>
@@ -131,7 +141,7 @@
       <section id="blog" class="subpage">
 
           <section class="posts2">
-              <div  id="addPostButton" class="post" onclick="$('#addPostModal').modal('show');"><i
+              <div  id="addPostButton" class="addButton post" onclick="$('#addPostModal').modal('show');"><i
                   class="fas fa-plus-circle"></i></div>
           </section>
 
@@ -157,6 +167,10 @@
       <section id="contact" class="subpage">
         <section class="pane" id="contactPane">
             <h3>You can find me here</h3>
+            <section class="posts2">
+                <div  id="addContactButton" class="addButton post" onclick="$('#addPostModal').modal('show');"><i
+                        class="fas fa-plus-circle"></i></div>
+            </section>
             <section id="contactCards" class="cards-wrapper">
 
                 <div id="contactPreloader" class="spinner-grow text-primary" role="status">
@@ -211,6 +225,52 @@
       </div>
   </div>
 
+  <div class="modal fade" id="addProjectModal" onclick="" tabindex="-1" role="dialog"
+       aria-labelledby="postModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+          <div class="modal-content">
+
+              <div class="modal-header">
+                  <h5 class="modal-title" id="addProjectModalScrollableTitle">Add new project</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+
+              <div class="modal-body">
+                  <form name="addProject">
+                      <div class="form-group col">
+                          <label>Lang:
+                              <input class="form-control" name="lang"  type="text" placeholder="en"></label><br>
+                          <label>Name: <input  class="form-control" name="name" type="text"
+                                                placeholder="Title">
+                          </label><br>
+                          <label>Description:
+                              <textarea name="description"  class="form-control" cols="auto" ></textarea></label><br>
+                          <label>Link: <input  class="form-control" name="link" type="text"
+                                                 placeholder="link"></label>
+                          <label>Path to image: <input  class="form-control" name="pathToImg" type="text"
+                                               placeholder="link"></label>
+                          <label>Image alternate text: <input  class="form-control" name="imgAlt" type="text"
+                                                        placeholder="link"></label>
+                          <label >Show
+                              <select name="show" class="form-control">
+                                  <option value="true">True</option>
+                                  <option value="false">False</option>
+                              </select>
+                          </label>
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" onclick="addPostLang()" class="btn btn-secondary">Add lang</button>
+                  <button type="button" onclick="addPostToDB()" class="btn btn-primary">Add to DB</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
   <!-- Modal -->
   <div class="modal fade" id="postModal" onclick="" tabindex="-1" role="dialog"
                aria-labelledby="postModalScrollableTitle" aria-hidden="true">
@@ -233,7 +293,6 @@
           </div>
       </div>
   </div>
-
 
   <div class="modal fade" id="addPostModal" onclick="" tabindex="-1" role="dialog"
        aria-labelledby="postModalScrollableTitle" aria-hidden="true">
@@ -276,8 +335,6 @@
       </div>
   </div>
 
-
-
   <div class="modal fade" id="addLangModal" style="z-index: 10000" onclick="" tabindex="-1" role="dialog"
        aria-labelledby="postModalScrollableTitle" aria-hidden="true">
       <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
@@ -311,8 +368,6 @@
           </div>
       </div>
   </div>
-
-
 
   <div class="modal fade" id="editPostModal" onclick="" tabindex="-1" role="dialog"
        aria-labelledby="postModalScrollableTitle" aria-hidden="true">
@@ -360,6 +415,8 @@
           </div>
       </div>
   </div>
+
+
 
   <div class="modal fade" id="copyModal" tabindex="-1" role="dialog"
        aria-labelledby="postModalScrollableTitle" aria-hidden="true">

@@ -1,17 +1,17 @@
 
 const darkmodeButton = document.querySelectorAll("#darkmode-button");
 function toggleDarkmode() {
-    darkMode(localStorage.getItem("darkmode") == "true" ? false : true);
+    darkMode(localStorage.getItem("darkmode") === "true" ? false : true);
 }
 
 function applyLayout() {
     let layout = document.querySelector(".layoutTemplate").innerHTML;
     let pages = document.querySelectorAll(".subpage");
-    darkMode(localStorage.getItem("darkmode") == "true"? true : false);
+    darkMode(localStorage.getItem("darkmode") === "true"? true : false);
 
     for (i = 0; i < darkmodeButton.length; i++) {
-        darkmodeButton[i].children[0].classList.remove(localStorage.getItem("darkmode") == "true" ? "fa-moon": "fa-sun");
-        darkmodeButton[i].children[0].classList.add(localStorage.getItem("darkmode") == "false" ? "fa-moon": "fa-sun");
+        darkmodeButton[i].children[0].classList.remove(localStorage.getItem("darkmode") === "true" ? "fa-moon": "fa-sun");
+        darkmodeButton[i].children[0].classList.add(localStorage.getItem("darkmode") === "false" ? "fa-moon": "fa-sun");
     }
 
 
