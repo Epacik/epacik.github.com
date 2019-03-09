@@ -21,6 +21,16 @@ function applyLayout() {
         pages[i].querySelector(".spContent").innerHTML = content;
     }
     document.body.removeChild(document.querySelector(".layoutTemplate"));
+
+    document.querySelector("#home").classList.add("navbar-transparent");
+
+    document.querySelector("#home .navbar-toggler").addEventListener("click", (e) => {
+        if (!e.target.classList.contains("collapsed")){
+            document.querySelector("#home").classList.add("navbar-transparent");
+        }  else {
+            document.querySelector("#home").classList.remove("navbar-transparent");
+        }
+    });
 }
 
 function addPostToList(key, data) {

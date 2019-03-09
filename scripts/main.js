@@ -131,3 +131,12 @@ function addTextToClipboard (text) {
     addToast("Copied", `Copied ${text} to clipboard`);
 }
 
+
+document.getElementById("home").addEventListener("scroll", (e) => {
+    if ((e.target.scrollTop < 10 && document.querySelector("#home .navbar-toggler").classList.contains("collapsed"))) {
+        document.querySelector("#home").classList.add("navbar-transparent");
+    } else {
+        document.querySelector("#home").classList.remove("navbar-transparent");
+    }
+});
+
