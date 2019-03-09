@@ -25,10 +25,12 @@ function applyLayout() {
     document.querySelector("#home").classList.add("navbar-transparent");
 
     document.querySelector("#home .navbar-toggler").addEventListener("click", (e) => {
-        if (!e.target.classList.contains("collapsed")){
+        if (!e.target.classList.contains("collapsed") && document.querySelector("#home").scrollTop < 30){
             document.querySelector("#home").classList.add("navbar-transparent");
+            document.querySelector("#home").scrollBy(0,10)
         }  else {
             document.querySelector("#home").classList.remove("navbar-transparent");
+
         }
     });
 }
