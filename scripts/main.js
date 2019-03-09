@@ -133,8 +133,12 @@ function addTextToClipboard (text) {
 
 
 document.getElementById("home").addEventListener("scroll", (e) => {
-    if ((e.target.scrollTop < 30 && document.querySelector("#home .navbar-toggler").classList.contains("collapsed"))) {
-        document.querySelector("#home").classList.add("navbar-transparent");
+    console.log(e.target.scrollTop);
+    if ((e.target.scrollTop < 30)) {
+        if ((window.innerWidth <= 991  && document.querySelector("#home .navbar-toggler").classList.contains("collapsed")) || window.innerWidth > 991) {
+            document.querySelector("#home").classList.add("navbar-transparent");
+        }
+
     } else {
         document.querySelector("#home").classList.remove("navbar-transparent");
     }
