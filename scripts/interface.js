@@ -26,7 +26,7 @@ function applyLayout() {
 
     document.querySelector("#home .navbar-toggler").addEventListener("click", (e) => {
         console.log(e);
-        if ((e.target.scrollTop < 30 && document.querySelector("#home .navbar-toggler").classList.contains("collapsed"))) {
+        if ((window.innerWidth <= 991  && !document.querySelector("#home .navbar-toggler").classList.contains("collapsed")) || window.innerWidth > 991) {
             document.querySelector("#home").classList.add("navbar-transparent");
         } else {
             document.querySelector("#home").classList.remove("navbar-transparent");
