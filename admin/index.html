@@ -94,11 +94,13 @@
 
       <section id="home" class="subpage">
         <section id="basicInfo" class="pane">
-            <h1 >Hello</h1>
-            <h3>I'm Epat</h3>
-            <h5>A simple student with passion for computer science, astronomy and whatever else I find interesting.</h5>
-            <br><br><br>
-            <h4>If you want to find out what I'm doing lately, scroll down, maybe something will interest you.</h4>
+         <section>
+             <h1 >Hello</h1>
+             <h3>I'm Epat</h3>
+             <h5>A simple student with passion for computer science, astronomy and whatever else I find interesting.</h5>
+             <br><br><br>
+             <h4>If you want to find out what I'm doing lately, scroll down, maybe something will interest you.</h4>
+         </section>
 
 
             <section id="scrStop"></section>
@@ -136,7 +138,6 @@
               </section>
           </section>
       </section>
-
 
       <section id="blog" class="subpage">
 
@@ -192,7 +193,7 @@
 
   </section>
 
-
+  <!-- Modale -->
 
   <div class="modal fade" id="loginModal" onclick="" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
        aria-labelledby="postModalScrollableTitle" aria-hidden="true">
@@ -263,15 +264,13 @@
                   </form>
               </div>
               <div class="modal-footer">
-                  <button type="button" onclick="addPostLang()" class="btn btn-secondary">Add lang</button>
-                  <button type="button" onclick="addPostToDB()" class="btn btn-primary">Add to DB</button>
+                  <button type="button" onclick="addProjectLang()" class="btn btn-secondary">Add lang</button>
+                  <button type="button" onclick="addProjectToDB()" class="btn btn-primary">Add to DB</button>
               </div>
           </div>
       </div>
   </div>
 
-
-  <!-- Modal -->
   <div class="modal fade" id="postModal" onclick="" tabindex="-1" role="dialog"
                aria-labelledby="postModalScrollableTitle" aria-hidden="true">
       <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
@@ -471,15 +470,8 @@
   <script src="./scripts/interface.js" charset="utf-8"></script>
   <script src="scripts/lang.js" charset="utf-8"></script>
   <script src="scripts/addPost.js" charset="utf-8"></script>
-  <script>
-      // let geoData;
-      // $.getJSON('https://ipapi.co/json/', function(data) {
-      //     geoData = data;
-      //     applyLocalization()
-      // });
-  </script>
-
   <script src="scripts/editPost.js" defer></script>
+  <script src="scripts/projects.js" defer></script>
   <script src="scripts/firebase.js" defer></script>
   <script src="./scripts/main.js" charset="utf-8" defer></script>
 
