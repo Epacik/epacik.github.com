@@ -102,13 +102,12 @@ if (getURLParam("debug_loading") === "true"){
         } catch (e) {}
         if ( sel !== null) {
             showPage();
-            scrTo(document.querySelector(`#${hash[0]} #${hash[1]}`));
+            scrTo(sel);
         } else if (hash[0] === "blog" && hash[1] !== undefined){
             showPage();
-            openPost(hash[1], true);
+            op1.id = hash[1];
+            op1.show = true;
         }
-
-
     }
 
 }

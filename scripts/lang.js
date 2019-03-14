@@ -168,8 +168,16 @@ function applyLocalization() {
     toggleLoading();
 }
 
+let op1 = {
+    show: false,
+}
+
 let geoData;
 $.getJSON('https://ipapi.co/json/', function(data) {
     geoData = data;
-    applyLocalization()
+    applyLocalization();
+    if (op1.show && op1.id !== undefined) {
+        openPost(op1.id, true);
+        op1 = {};
+    }
 });
