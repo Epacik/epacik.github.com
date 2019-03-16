@@ -1,28 +1,37 @@
 #basicInfo {
     /*width: 100%;*/
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 55px);
+    height: calc(100vh - 55px);
     text-align: center;
     position: relative;
-    background-image: url("../img/backgrounds/low-poly-purple-light.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+
     color: white;
     text-shadow: 0 0 10px #000;
 
     /*transition: background 0.3s, color 0.3s, text-shadow 0.3s;*/
 }
 
-.dark #basicInfo{
-    background-image: url("../img/backgrounds/low-poly-purple.jpg");
-    /*color: black;*/
-    /*text-shadow: 0 0 10px #fff;*/
+#basicInfo::before{
+    background-image: url("../img/backgrounds/low-poly-purple-light.jpg");
+    background-color: palevioletred;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    transition: filter 0.3s;
 }
 
-/*#home-projects{*/
-    /*min-height: calc(100vh - 70px);*/
-/*}*/
 
-#projects h3, h4 {
+.dark #basicInfo:before{
+    filter: brightness(30%);
+}
+
+
+#projects h3, #projects h4 {
     text-align: center;
 }
 
