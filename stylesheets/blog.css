@@ -26,8 +26,8 @@
 }
 
 .dark .post {
-    background-color: #363636;
-    box-shadow: 0 2px 3px 0 rgba(180, 180, 180, 0.2);
+    background-color: #1c1c1c;
+    box-shadow: 0 2px 3px 0 rgba(80, 80, 80, 0.24);
 }
 
 .post * {

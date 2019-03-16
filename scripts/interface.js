@@ -1,5 +1,6 @@
 
 const darkmodeButton = document.querySelectorAll("#darkmode-button");
+const plainTextRenderer = new Renderer();
 function toggleDarkmode() {
     darkMode(localStorage.getItem("darkmode") === "true" ? false : true);
 }
@@ -57,8 +58,14 @@ function addPostToList(key, data) {
     if (date > new Date(new Date(Date).getTime() - 60 * 60 * 24 * 1000)) {
         navigator.vibrate([300, 200, 400]);
     }
-    post.insertAdjacentHTML("afterBegin", `<header><h5>${title[lng]}</h5></header>
+
+    i18n.textdomain("other");
+
+    post.insertAdjacentHTML("afterBegin", `<header><h4>${title[lng]}</h4></header><br>
+                <div>${marked(content[lng], {renderer: plainTextRenderer}).replace(/^(.{300}[^\s]*).*/, "$1").replace("You can download it here", "").trim() + " <br>" + i18n.gettext("open post")}</div>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`);
+
+
     post.setAttribute("data-date", JSON.stringify(d));
     post.setAttribute("data-JSONDate", JSON.stringify(date));
     post.setAttribute("data-content", content[lng]);
@@ -125,8 +132,10 @@ function changePost(key, data) {
 
     let lng = document.querySelector("html").lang;
 
+    i18n.textdomain("other");
     if ( title[lng] === undefined || content[lng] === undefined) return;
     post.innerHTML = `<header><h5>${title[lng]}</h5></header>
+<div>${marked(content[lng], {renderer: plainTextRenderer}).replace(/^(.{300}[^\\s]*).*/, "$1").replace("You can download it here", "").trim() + " <br>" + i18n.gettext("open post")}</div>
                  <p><b>${data.author}</b> ${d.day}/${d.mnt}/${date.getFullYear()} ${d.hr}:${d.mn}</p>`;
     post.setAttribute("data-date", JSON.stringify(d));
     post.setAttribute("data-JSONDate", JSON.stringify(date));

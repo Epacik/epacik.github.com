@@ -131,6 +131,10 @@ function addTextToClipboard (text) {
 }
 
 
+function forceEnglish(Switch) {
+    localStorage.setItem("force-en", Switch);
+}
+
 // document.getElementById("home").addEventListener("scroll", (e) => {
 //     console.log(e.target.scrollTop);
 //     if ((e.target.scrollTop < 30)) {

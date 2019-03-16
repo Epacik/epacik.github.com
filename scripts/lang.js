@@ -34,10 +34,12 @@ i18n.setMessages("buttons", "en", {
 
 i18n.setMessages("other", "pl", {
     "copy address": "Skopiuj adres",
+    "open post": "Otwórz post.",
 });
 
 i18n.setMessages("other", "en", {
     "copy address": "Copy address",
+     "open post": "Open post.",
 });
 
 i18n.setMessages("errors", "pl", {
@@ -170,7 +172,7 @@ function applyLocalization() {
 
 let op1 = {
     show: false,
-}
+};
 
 let geoData;
 $.getJSON('https://ipapi.co/json/', function(data) {
