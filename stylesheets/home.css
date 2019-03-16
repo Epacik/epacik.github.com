@@ -13,7 +13,6 @@
 
 #basicInfo::before{
     background-image: url("../img/backgrounds/low-poly-purple-light.jpg");
-    background-color: palevioletred;
     background-size: cover;
     background-repeat: no-repeat;
     display: block;
