@@ -1,0 +1,187 @@
+function resizeCanvas() {
+    let bgnd = document.getElementById("BGND");
+    bgnd.width = window.innerWidth;
+    bgnd.height = window.innerHeight - 10;
+}
+
+let cnvs = document.getElementById("BGND");
+
+let gradientEnd = {
+    x: window.innerWidth * 2,
+    y: window.innerHeight * 2,
+};
+
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
+
+let rows = [];
+
+
+function generatePoints() {
+    let offsetX = cnvs.width / 20;
+    let offsetY = cnvs.width / 20;
+
+    let scr = {
+        W: cnvs.width,
+        H: cnvs.height
+    };
+    rows = [];
+    let h1 = {x: 0, y: 0};
+    rows.push([{x: 0, y: 0}]);
+
+
+    do {
+        let h2 = -1;
+        try {
+            h2 = rows[rows.length - 1][0].y
+        } catch (e) {
+            h2 = -1;
+        }
+        if (rows[0].length > 1){
+            rows.push([{
+                x: rows[rows.length - 1][0].x === -(offsetX / 2) ? 0 : -(offsetX / 2),
+                y: rows[rows.length - 1][0].y >= 0 ? h2 + offsetY : 0,
+            }]);
+        }
+
+        do {
+            rows[rows.length - 1].push({
+                x: rows[rows.length - 1][rows[rows.length - 1].length - 1].x + offsetX,
+                y: rows[rows.length - 1][0].y
+            });
+        } while (rows[rows.length - 1][rows[rows.length - 1].length - 1].x - offsetX <= scr.W);
+
+
+        try {
+            h1 = rows[rows.length - 1][rows[rows.length - 1].length - 1];
+        } catch (e) {
+            h1 = {x: 0, y: 0};
+        }
+    } while ( h1.y <= scr.H);
+}
+
+function drawTriangle(triangle, ctx) {
+    if (triangle === undefined || triangle === null || ctx === undefined || ctx === null) {
+        return "ERROR";
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(triangle[0].x, triangle[0].y);
+    ctx.lineTo(triangle[1].x, triangle[1].y);
+    ctx.lineTo(triangle[2].x, triangle[2].y);
+    var gradient = ctx.createLinearGradient(
+        triangle[0].x,
+        triangle[0].y,
+        gradientEnd.x,
+        gradientEnd.y);
+    if (triangle[0].x > gradientEnd.x) {
+        gradient = ctx.createLinearGradient(
+            triangle[1].x,
+            triangle[1].y,
+            gradientEnd.x,
+            gradientEnd.y);
+    }
+
+    gradient.addColorStop(0, `hsl(289, 70%, 40%)`);
+    gradient.addColorStop(1, `hsl(281, 100%, 89%)`);
+
+    ctx.fillStyle = gradient; //`hsl(289, ${Math.random() * 30 + 70}%, ${Math.random() * 30 + 40}%)`;
+    ctx.fill();
+    ctx.strokeStyle = "white";
+    ctx.stroke();
+}
+
+function drawCNVS() {
+    let ctx = undefined;
+    if (cnvs.getContext) {
+        ctx = cnvs.getContext("2d");
+    }
+    for (i = 0; i < rows.length - 1; i++){
+        for (j = 0; j < rows[i].length - 1; j++) {
+            let z = i % 2 === 0 ? i : i + 1;
+
+            if (i % 2 === 0) {
+                let triangle = [
+                    {x: rows[i][j].x, y: rows[i][j].y},
+                    {x: rows[i][j + 1].x, y: rows[i][j + 1].y},
+                    {x: rows[i + 1][j + 1].x, y: rows[i + 1][j + 1].y}
+                ];
+                drawTriangle(triangle, ctx);
+
+                triangle = [
+                    {x: rows[i][j].x, y: rows[i][j].y},
+                    {x: rows[i + 1][j + 1].x, y: rows[i + 1][j + 1].y},
+                    {x: rows[i + 1][j].x, y: rows[i + 1][j].y}
+                ];
+                drawTriangle(triangle, ctx);
+            } else {
+                let triangle = [
+                    {x: rows[i][j].x, y: rows[i][j].y},
+                    {x: rows[i][j + 1].x, y: rows[i][j + 1].y},
+                    {x: rows[i + 1][j].x, y: rows[i + 1][j].y}
+                ];
+                drawTriangle(triangle, ctx);
+
+                if (j < rows[i].length - 2){
+                    triangle = [
+                        {x: rows[i][j + 1].x, y: rows[i][j + 1].y},
+                        {x: rows[i + 1][j + 1].x, y: rows[i + 1][j + 1].y},
+                        {x: rows[i + 1][j].x, y: rows[i + 1][j].y}
+                    ];
+                    drawTriangle(triangle, ctx);
+                }
+
+            }
+
+        }
+    }
+
+}
+
+
+
+function redrawFull() {
+    generatePoints();
+    drawCNVS();
+}
+
+function movePoints() {
+    for (i = 1; i < rows.length - 1; i++) {
+        for (j = 1; j < rows[i].length - 1; j++) {
+            rows[i][j].x += (Math.random() -  0.5);
+            rows[i][j].y += (Math.random() - 0.5);
+        }
+    }
+}
+
+function redrawWithMove() {
+    if (!document.hasFocus()) {
+        return;
+    }
+    movePoints();
+    drawCNVS();
+}
+
+setInterval(redrawWithMove, 1000/20);
+
+
+window.addEventListener("resize", redrawFull);
+
+function changeGradient(e) {
+   gradientEnd = {
+       x: e.clientX,
+       y: e.clientY,
+   }
+}
+
+cnvs.addEventListener("mousemove", changeGradient);
+cnvs.addEventListener("mouseleave", e => {
+    gradientEnd = {
+        x: cnvs.width * 2,
+        y: cnvs.height * 2,
+    }
+});
+generatePoints();
+
+drawCNVS();
