@@ -77,8 +77,8 @@ function drawTriangle(triangle, ctx) {
         triangle[1].x + (triangle[1].x - triangle[0].x) ,
         triangle[2].y);
 
-    gradient.addColorStop(0, `hsl(289, 70%, 40%)`);
-    gradient.addColorStop(1, `rgb(0, 140, 255)`);
+    gradient.addColorStop(0, `hsl(277, 100%, 76%)`);
+    gradient.addColorStop(1, `rgb(155, 187, 255)`);
 
     ctx.fillStyle = gradient; //`hsl(289, ${Math.random() * 30 + 70}%, ${Math.random() * 30 + 40}%)`;
     ctx.fill();
