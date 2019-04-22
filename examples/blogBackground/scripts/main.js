@@ -7,8 +7,9 @@ function resizeCanvas() {
 let cnvs = document.getElementById("BGND");
 
 let gradientEnd = {
-    x: window.innerWidth * 2,
-    y: window.innerHeight * 2,
+    x: window.innerWidth,
+    y: window.innerHeight,
+    moveBack: false,
 };
 
 resizeCanvas();
@@ -73,18 +74,11 @@ function drawTriangle(triangle, ctx) {
     var gradient = ctx.createLinearGradient(
         triangle[0].x,
         triangle[0].y,
-        gradientEnd.x,
-        gradientEnd.y);
-    if (triangle[0].x > gradientEnd.x) {
-        gradient = ctx.createLinearGradient(
-            triangle[1].x,
-            triangle[1].y,
-            gradientEnd.x,
-            gradientEnd.y);
-    }
+        triangle[1].x + (triangle[1].x - triangle[0].x) ,
+        triangle[2].y);
 
     gradient.addColorStop(0, `hsl(289, 70%, 40%)`);
-    gradient.addColorStop(1, `hsl(281, 100%, 89%)`);
+    gradient.addColorStop(1, `rgb(0, 140, 255)`);
 
     ctx.fillStyle = gradient; //`hsl(289, ${Math.random() * 30 + 70}%, ${Math.random() * 30 + 40}%)`;
     ctx.fill();
@@ -160,6 +154,7 @@ function redrawWithMove() {
         return;
     }
     movePoints();
+    changeGradient();
     drawCNVS();
     window.requestAnimationFrame(redrawWithMove);
 }
@@ -170,20 +165,22 @@ window.requestAnimationFrame(redrawWithMove);
 
 window.addEventListener("resize", redrawFull);
 
-function changeGradient(e) {
-   gradientEnd = {
-       x: e.clientX,
-       y: e.clientY,
+
+function changeGradient() {
+   if (gradientEnd.moveBack) {
+       gradientEnd.x += cnvs.width/1000;
+       gradientEnd.y += cnvs.height/1000;
+   } else {
+       gradientEnd.x -= cnvs.width/1000;
+       gradientEnd.y -= cnvs.height/1000;
+   }
+
+   if (gradientEnd.x == cnvs.width/1000 && gradientEnd.y == cnvs.height/1000) {
+       gradientEnd.moveBack = !gradientEnd.moveBack;
    }
 }
 
-cnvs.addEventListener("mousemove", changeGradient);
-cnvs.addEventListener("mouseleave", e => {
-    gradientEnd = {
-        x: cnvs.width * 2,
-        y: cnvs.height * 2,
-    }
-});
+
 
 ctx = undefined;
 if (cnvs.getContext) {
