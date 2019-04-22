@@ -92,11 +92,10 @@ function drawTriangle(triangle, ctx) {
     ctx.stroke();
 }
 
+let ctx = undefined;
+
 function drawCNVS() {
-    let ctx = undefined;
-    if (cnvs.getContext) {
-        ctx = cnvs.getContext("2d");
-    }
+
     for (i = 0; i < rows.length - 1; i++){
         for (j = 0; j < rows[i].length - 1; j++) {
             let z = i % 2 === 0 ? i : i + 1;
@@ -157,13 +156,16 @@ function movePoints() {
 
 function redrawWithMove() {
     if (!document.hasFocus()) {
+        window.requestAnimationFrame(redrawWithMove);
         return;
     }
     movePoints();
     drawCNVS();
+    window.requestAnimationFrame(redrawWithMove);
 }
 
-setInterval(redrawWithMove, 1000/20);
+window.requestAnimationFrame(redrawWithMove);
+//setInterval(redrawWithMove, 1000/20);
 
 
 window.addEventListener("resize", redrawFull);
@@ -182,6 +184,14 @@ cnvs.addEventListener("mouseleave", e => {
         y: cnvs.height * 2,
     }
 });
+
+ctx = undefined;
+if (cnvs.getContext) {
+    ctx = cnvs.getContext("2d");
+    ctx.translate(-0.5, -0.5);
+}
 generatePoints();
+
+
 
 drawCNVS();
