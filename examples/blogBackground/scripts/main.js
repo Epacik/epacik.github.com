@@ -18,10 +18,16 @@ window.addEventListener("resize", resizeCanvas);
 
 let rows = [];
 
+let cursor = {
+    x: 0,
+    y: 0,
+    mouseOver: false,
+};
+
 
 function generatePoints() {
-    let offsetX = cnvs.width / 20;
-    let offsetY = cnvs.width / 20;
+    let offsetX = cnvs.width / 15;
+    let offsetY = cnvs.width / 15;
 
     let scr = {
         W: cnvs.width,
@@ -60,6 +66,13 @@ function generatePoints() {
             h1 = {x: 0, y: 0};
         }
     } while ( h1.y <= scr.H);
+
+    for (i = 1; i < rows.length - 1; i++) {
+        for (j = 1; j < rows[i].length - 1; j++) {
+            rows[i][j].x += (Math.random() * 30 - 15);
+            rows[i][j].y += (Math.random() * 30 - 15);
+        }
+    }
 }
 
 function drawTriangle(triangle, ctx) {
@@ -71,6 +84,7 @@ function drawTriangle(triangle, ctx) {
     ctx.moveTo(triangle[0].x, triangle[0].y);
     ctx.lineTo(triangle[1].x, triangle[1].y);
     ctx.lineTo(triangle[2].x, triangle[2].y);
+    ctx.lineTo(triangle[0].x, triangle[0].y);
     var gradient = ctx.createLinearGradient(
         triangle[0].x,
         triangle[0].y,
@@ -83,8 +97,12 @@ function drawTriangle(triangle, ctx) {
     ctx.fillStyle = gradient; //`hsl(289, ${Math.random() * 30 + 70}%, ${Math.random() * 30 + 40}%)`;
     ctx.fill();
     ctx.strokeStyle = "white";
+    ctx.lineWidth = 2;
     ctx.stroke();
+
 }
+
+
 
 let ctx = undefined;
 
@@ -142,8 +160,26 @@ function redrawFull() {
 function movePoints() {
     for (i = 1; i < rows.length - 1; i++) {
         for (j = 1; j < rows[i].length - 1; j++) {
-            rows[i][j].x += (Math.random() -  0.5);
-            rows[i][j].y += (Math.random() - 0.5);
+            var r = rows[i][j];
+            if( Math.sqrt((r.x - cursor.x) * (r.x - cursor.x) + (r.y - cursor.y) * (r.y - cursor.y)) < cnvs.width / 20 && cursor.mouseOver){
+                var d = Math.sqrt((r.x - cursor.x) * (r.x - cursor.x) + (r.y - cursor.y) * (r.y - cursor.y));
+                while ( Math.sqrt((r.x - cursor.x) * (r.x - cursor.x) + (r.y - cursor.y) * (r.y - cursor.y)) <= d) {
+                    if (r.x > cursor.x) {
+                        r.x += (Math.random() * 1.2)
+                    } else {
+                        r.x -= (Math.random() * 1.2)
+                    }
+
+                    if (r.y > cursor.y) {
+                        r.y += (Math.random() * 1.2)
+                    } else {
+                        r.y -= (Math.random() * 1.2)
+                    }
+                }
+            } else {
+                rows[i][j].x += (Math.random() * 0.5 - 0.25);
+                rows[i][j].y += (Math.random() * 0.5 - 0.25);
+            }
         }
     }
 }
@@ -175,7 +211,7 @@ function changeGradient() {
        gradientEnd.y -= cnvs.height/1000;
    }
 
-   if (gradientEnd.x == cnvs.width/1000 && gradientEnd.y == cnvs.height/1000) {
+   if (gradientEnd.x === cnvs.width/1000 && gradientEnd.y === cnvs.height/1000) {
        gradientEnd.moveBack = !gradientEnd.moveBack;
    }
 }
@@ -192,3 +228,13 @@ generatePoints();
 
 
 drawCNVS();
+
+function cursorPosCh(e) {
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
+    // console.log(cursor);
+}
+
+cnvs.addEventListener("mousemove", cursorPosCh);
+cnvs.addEventListener("mouseover", () => {cursor.mouseOver = true});
+cnvs.addEventListener("mouseleave", () => {cursor.mouseOver = false});
