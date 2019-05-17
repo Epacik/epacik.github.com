@@ -69,8 +69,13 @@ function generatePoints() {
 
     for (i = 1; i < rows.length - 1; i++) {
         for (j = 1; j < rows[i].length - 1; j++) {
+
             rows[i][j].x += (Math.random() * 30 - 15);
             rows[i][j].y += (Math.random() * 30 - 15);
+            rows[i][j].default = {
+                x: rows[i][j].x,
+                y: rows[i][j].y,
+            };
         }
     }
 }
@@ -164,21 +169,40 @@ function movePoints() {
             if( Math.sqrt((r.x - cursor.x) * (r.x - cursor.x) + (r.y - cursor.y) * (r.y - cursor.y)) < cnvs.width / 20 && cursor.mouseOver){
                 var d = Math.sqrt((r.x - cursor.x) * (r.x - cursor.x) + (r.y - cursor.y) * (r.y - cursor.y));
                 while ( Math.sqrt((r.x - cursor.x) * (r.x - cursor.x) + (r.y - cursor.y) * (r.y - cursor.y)) <= d) {
-                    if (r.x > cursor.x) {
+                    if (r.x > cursor.x && Math.sqrt((r.x - r.default.x) * (r.x - r.default.x) + (r.y - r.default.y) * (r.y - r.default.y)) < cnvs.width / 10) {
                         r.x += (Math.random() * 1.2)
                     } else {
                         r.x -= (Math.random() * 1.2)
                     }
 
-                    if (r.y > cursor.y) {
+                    if (r.y > cursor.y && Math.sqrt((r.x - r.default.x) * (r.x - r.default.x) + (r.y - r.default.y) * (r.y - r.default.y)) < cnvs.width / 10) {
                         r.y += (Math.random() * 1.2)
                     } else {
                         r.y -= (Math.random() * 1.2)
                     }
                 }
+            } else if( Math.sqrt((r.x - r.default.x) * (r.x - r.default.x) + (r.y - r.default.y) * (r.y - r.default.y)) < cnvs.width / 20 && !cursor.mouseOver && r.x !== r.default.x && r.y !== r.default.y ){
+                var d = Math.sqrt((r.x - r.default.x) * (r.x - r.default.x) + (r.y - r.default.y) * (r.y - r.default.y));
+                while ( Math.sqrt((r.x - r.default.x) * (r.x - r.default.x) + (r.y - r.default.y) * (r.y - r.default.y)) <= 0) {
+                    if (r.x > r.default.x) {
+                        r.x -= (Math.random() * 1.2)
+                    } else {
+                        r.x += (Math.random() * 1.2)
+                    }
+
+                    if (r.y > r.default.y) {
+                        r.y -= (Math.random() * 1.2)
+                    } else {
+                        r.y += (Math.random() * 1.2)
+                    }
+                }
             } else {
                 rows[i][j].x += (Math.random() * 0.5 - 0.25);
                 rows[i][j].y += (Math.random() * 0.5 - 0.25);
+                rows[i][j].default = {
+                    x: rows[i][j].x,
+                    y: rows[i][j].y,
+                }
             }
         }
     }
