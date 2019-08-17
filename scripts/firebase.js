@@ -27,6 +27,7 @@ window.initFirebase = () => {
         });
     });
 
+
     db.collection("projects").where("allow", "==", true).where("show", "==", true).orderBy("name").onSnapshot(snapshot => {
         let ch = snapshot.docChanges();
         ch.forEach(change => {
