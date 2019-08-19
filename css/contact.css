@@ -44,10 +44,13 @@ a.card {
     height: 0;
 }
 
+#contactPane {
+    margin-top: 20px;
+}
 
 @media screen and (min-width: 600px) {
     #contactPane {
         width: 60%;
-        margin: 0 auto;
+        margin: 20px auto;
     }
 }
