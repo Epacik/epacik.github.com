@@ -23,11 +23,21 @@ function ToggleNavMenu(button) {
 
 setInterval(() => {
     
-    let cards = document.querySelectorAll(".card.shadow-sm.sm");
+    let cards = document.querySelectorAll(".contact.card.shadow-sm.sm");
     cards.forEach((el) => {
         el.classList.remove("sm");
     })
     let spinner = document.getElementById("contactSpinner");
+    if (spinner != null && cards.length != 0) spinner.parentNode.removeChild(spinner);
+}, 1000);
+
+setInterval(() => {
+
+    let cards = document.querySelectorAll(".proj.card.shadow-sm.sm");
+    cards.forEach((el) => {
+        el.classList.remove("sm");
+    })
+    let spinner = document.getElementById("projectsPreloader");
     if (spinner != null && cards.length != 0) spinner.parentNode.removeChild(spinner);
 }, 1000);
 
