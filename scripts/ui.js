@@ -41,3 +41,7 @@ setInterval(() => {
     if (spinner != null && cards.length != 0) spinner.parentNode.removeChild(spinner);
 }, 1000);
 
+window.RenderHTML = (id, html) => {
+    let container = document.getElementById(id);
+    container.innerHTML = html;
+}

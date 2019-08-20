@@ -42,4 +42,13 @@
     display: none;
 }
 
+.Post {
+    margin: 30px;
+    max-width: 100%;
+}
+
+.Post * {
+    max-width: 100%;
+}
+
 
