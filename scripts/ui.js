@@ -45,3 +45,10 @@ window.RenderHTML = (id, html) => {
     let container = document.getElementById(id);
     container.innerHTML = html;
 }
+
+setInterval(() => {
+    let posts = document.querySelectorAll(".post.sm");
+    posts.forEach((e) => {
+        e.classList.remove("sm");
+    });
+}, 1000);

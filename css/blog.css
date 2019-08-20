@@ -9,7 +9,18 @@
     margin: 10px auto;
     min-width: 300px;
     transition: transform 0.3s;
+    color: black;
 }
+
+    .post:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+    .post:active {
+        color: black;
+        text-decoration: none;
+    }
 
 .post.sm {
     -webkit-transform: scale(0);
