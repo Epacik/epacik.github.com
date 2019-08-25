@@ -182,12 +182,11 @@ o88o    88 o88o  o888o 888
     margin-bottom: 10px;
     border-radius: 15px;
     box-sizing: border-box;
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,.075);
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.08) !important;
 }
 
 .dark .pane {
-
-    box-shadow: 0 3px 5px 0 rgba(255,255,255,.075);
+    box-shadow: 0 3px 5px 0 rgba(255,255,255,0.4) !important;
 }
 
 .pane h3, .pane h4 {
@@ -197,11 +196,12 @@ o88o    88 o88o  o888o 888
 
 
 .dark .card {
-    box-shadow: 0 3px 5px 0 rgba(255,255,255,.075);
+    box-shadow: 0 3px 5px 0 rgba(255,255,255,0.4)!important;
 }
 
 .dark {
     background-color: black;
+    color: white;
 }
 
 .preloader {

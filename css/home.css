@@ -10,6 +10,10 @@
 
     /*transition: background 0.3s, color 0.3s, text-shadow 0.3s;*/
 }
+
+.dark #basicInfo {
+    box-shadow: 0px 3px 5px 4px rgba(255, 255, 255, 0.21) !important;
+}
 @media (max-width: 767.98px) {
     #basicInfo {
         height: calc(100vh - 55px);

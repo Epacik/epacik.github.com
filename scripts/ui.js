@@ -13,7 +13,7 @@ function ToggleNavMenu(button) {
     nav.classList.replace("collapse", "collapsing");
     
 
-    setTimeout(() => nav.style.height = collapseNavMenu ? "0px" : "248px", 100)
+    setTimeout(() => nav.style.height = collapseNavMenu ? "0px" : "318px", 100)
     
     setTimeout(() => {
         nav.classList.toggle("show");
@@ -52,3 +52,10 @@ setInterval(() => {
         e.classList.remove("sm");
     });
 }, 1000);
+
+
+
+window.ToggleDarkMode = () => {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("darkmode", document.body.classList.contains("dark"));
+}

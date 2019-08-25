@@ -42,6 +42,10 @@ app {
     box-shadow: 0px 5px 7px 0px rgba(0,0,0,0.4);
 }
 
+.dark .sidebar {
+    box-shadow: 0px 5px 7px 0px rgba(255, 255, 255, 0.40);
+}
+
     .sidebar .top-row {
         background-color: rgba(0,0,0,0.4);
     }
@@ -70,13 +74,15 @@ app {
         padding-bottom: 1rem;
     }
 
-    .nav-item a {
+    .nav-item a, .nav-item button {
         color: #d7d7d7;
         border-radius: 4px;
         height: 3rem;
         display: flex;
         align-items: center;
         line-height: 3rem;
+        background: transparent;
+        border: none;
     }
 
         .nav-item a.active {
@@ -84,7 +90,7 @@ app {
             color: white;
         }
 
-        .nav-item a:hover {
+        .nav-item a:hover, .nav-item button:hover {
             background-color: rgba(255,255,255,0.1);
             color: white;
         }
