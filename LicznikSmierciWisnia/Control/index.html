@@ -4,22 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Licznik śmierci Wiśni w Gothicu 2</title>
+    <title>Kontrolki licznika śmierci Wiśni w Gothicu 2</title>
     <link href="https://fonts.googleapis.com/css?family=Sarpanch&display=swap" rel="stylesheet"> 
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
     <style>
+        body{
+            background: darkslategray;
+            color: white;
+        }
         div{
-            font-size: 24px;
+            font-size: 48px;
             font-family: 'Sarpanch', sans-serif;
             color: white;
             text-shadow: 0 0 5px black ;
         }
+        button{
+            width: 400px;
+            font-size: 60px;
+        }
     </style>
 </head>
 <body >
-    
-    <div>Licznik śmierci: <span id="amount"></span></div>
+    <div style="display: flex; align-items: center; flex-direction: column; justify-content: center; height: 100vh">
+        <button onclick="AddLicz()" style="background: #1c7430; border-radius: 5px; color: white;">+</button>
+        <div style="margin: 30px">Licznik śmierci: <span id="amount"></span></div>
+        <button onclick="SubLicz()" style="background: #b21f2d; border-radius: 5px; color: white;">-</button>
+    </div>
     <script>
        
         // Required for side-effects
@@ -44,12 +55,24 @@
                 //addProjectToList(change.doc.id, change.doc.data());
                 document.getElementById("amount").innerHTML = change.doc.data().Licznik;
             } else if (change.type === "removed") {
-                rdocument.getElementById("amount").innerHTML = 0;
+                document.getElementById("amount").innerHTML = 0;
             } else if (change.type === "modified") {
                 document.getElementById("amount").innerHTML = change.doc.data().Licznik;
             }
         });
     });
+    function AddLicz() {
+        let CurNum = Number(document.getElementById("amount").innerHTML);
+        let licz = db.collection('Wisnia').doc('LicznikSmierci');
+        licz.update({Licznik: CurNum + 1});
+    }
+
+    function SubLicz() {
+        let CurNum = Number(document.getElementById("amount").innerHTML);
+        let licz = db.collection('Wisnia').doc('LicznikSmierci');
+        licz.update({Licznik: CurNum - 1});
+    }
+
 
     </script>
 </body>

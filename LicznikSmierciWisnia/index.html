@@ -83,11 +83,21 @@
                     return;
             }
 
+
+
             let curNum = Nums[0];
 
             let element = document.createElement("div");
 
             element.innerText = newNum;
+
+          if(Nums.length > 1) {
+              while(Nums.length > 0){
+                  Holder.removeChild(Nums[0]);
+              }
+              Holder.insertAdjacentElement("afterbegin", element);
+              return;
+          }
 
             let dir = direction == 2 ? "afterbegin" : "beforeend";
 
@@ -96,7 +106,12 @@
             curNum.scrollIntoView();
             element.scrollIntoView({behavior: 'smooth'});
             setTimeout(()=>{
-                Holder.removeChild(curNum);
+                try{
+                    Holder.removeChild(curNum);
+                }
+                catch (e) {
+
+                }
             }, 200);
 
 
