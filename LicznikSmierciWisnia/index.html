@@ -15,11 +15,22 @@
             color: white;
             text-shadow: 0 0 5px black ;
         }
+
+        #amount {
+            display: inline-block;
+            height: 33px;
+            overflow: hidden;
+            padding: 5px;
+        }
+
+        #amount > div{
+
+        }
     </style>
 </head>
 <body >
     
-    <div>Licznik śmierci: <span id="amount"></span></div>
+    <div style="display: flex;"><span style="padding: 5px;">Licznik śmierci: </span><span id="amount"></span></div>
     <script>
        
         // Required for side-effects
@@ -42,14 +53,58 @@
         ch.forEach(change => {
             if (change.type === "added") {
                 //addProjectToList(change.doc.id, change.doc.data());
-                document.getElementById("amount").innerHTML = change.doc.data().Licznik;
+                //document.getElementById("amount").innerHTML = change.doc.data().Licznik;
+                ChNum(change.doc.data().Licznik);
             } else if (change.type === "removed") {
-                rdocument.getElementById("amount").innerHTML = 0;
+                //document.getElementById("amount").innerHTML = 0;
+                ChNum(0);
             } else if (change.type === "modified") {
-                document.getElementById("amount").innerHTML = change.doc.data().Licznik;
+                //document.getElementById("amount").innerHTML = change.doc.data().Licznik;
+                ChNum(change.doc.data().Licznik);
             }
         });
     });
+
+      function ChNum(newNum){
+            let Holder = document.getElementById("amount");
+            let Nums = Holder.children;
+            let direction = 1; // 0 = Down; 1 = Stay; 2 = Up;
+            if(Nums.length == 0){
+                Holder.insertAdjacentHTML("afterbegin", "<div>" + newNum + "</div>");
+                return;
+            }
+            else (Nums.length == 1)
+            {
+                if(Number(Nums[0].innerHTML) < newNum)
+                    direction = 2;
+                else if((Number(Nums[0].innerHTML) > newNum))
+                    direction = 0;
+                else
+                    return;
+            }
+
+            let curNum = Nums[0];
+
+            let element = document.createElement("div");
+
+            element.innerText = newNum;
+
+            let dir = direction == 2 ? "afterbegin" : "beforeend";
+
+            Holder.insertAdjacentElement(dir, element);
+
+            curNum.scrollIntoView();
+            element.scrollIntoView({behavior: 'smooth'});
+            setTimeout(()=>{
+                Holder.removeChild(curNum);
+            }, 200);
+
+
+
+
+
+
+      }
 
     </script>
 </body>
