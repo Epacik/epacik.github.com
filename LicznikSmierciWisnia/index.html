@@ -8,12 +8,13 @@
     <link href="https://fonts.googleapis.com/css?family=Sarpanch&display=swap" rel="stylesheet"> 
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
         div{
             font-size: 24px;
             font-family: 'Sarpanch', sans-serif;
             color: white;
-            text-shadow: 0 0 5px black ;
+            text-shadow: 0 0 5px black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black ;
         }
 
         #amount {
@@ -27,12 +28,25 @@
 
         }
     </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body >
     
-    <div style="display: flex;"><span style="padding: 5px;">Licznik śmierci: </span><span id="amount"></span></div>
-    <script>
+    <div style="display: flex;left: 0; position: absolute;"><span style="padding: 5px;">Licznik śmierci: </span><span id="amount">
        
+    </span>
+    <div id="cont" class="container">
+        <span class="txt anim-text-flow">Wszystkiego najlepszego Wiśnia!</span>
+    </div>
+        
+    </div>
+    
+    <script>
+       $('.txt').html(function(i, html) {
+        var chars = $.trim(html).split("");
+
+        return '<span>' + chars.join('</span><span>') + '</span>';
+        });
         // Required for side-effects
         //require("firebase/firestore");
         // Initialize Cloud Firestore through Firebase
@@ -55,12 +69,15 @@
                 //addProjectToList(change.doc.id, change.doc.data());
                 //document.getElementById("amount").innerHTML = change.doc.data().Licznik;
                 ChNum(change.doc.data().Licznik);
+                ShZyc(change.doc.data().Zyczenia);
             } else if (change.type === "removed") {
                 //document.getElementById("amount").innerHTML = 0;
                 ChNum(0);
+                ShZyc(false);
             } else if (change.type === "modified") {
                 //document.getElementById("amount").innerHTML = change.doc.data().Licznik;
                 ChNum(change.doc.data().Licznik);
+                ShZyc(change.doc.data().Zyczenia);
             }
         });
     });
@@ -121,6 +138,15 @@
 
       }
 
+      function ShZyc(enabled){
+        console.log(enabled);
+        if(enabled == true){
+            document.getElementById("cont").style.visibility = "visible";
+        }
+        else {
+            document.getElementById("cont").style.visibility = "collapse";
+        }
+      }
     </script>
 </body>
 </html>
