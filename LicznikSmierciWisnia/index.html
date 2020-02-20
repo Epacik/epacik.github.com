@@ -19,20 +19,22 @@
 
         #amount {
             display: inline-block;
-            height: 33px;
+            height: 45px;
             overflow: hidden;
-            padding: 5px;
+            
         }
 
         #amount > div{
-
+            margin: 0;
+            padding: 0;
+            margin-left: 3px;
         }
     </style>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body >
     
-    <div style="display: flex;left: 0; position: absolute;"><span style="padding: 5px;">Licznik śmierci: </span><span style="padding: 5px;" id="amount">
+    <div style="display: flex;left: 0; position: absolute; padding: 5px;"><span style="margin-right: 5px;">Licznik śmierci: </span><span id="amount">
        
     </span>
     <div id="cont" class="container">
@@ -87,7 +89,7 @@
             let Nums = Holder.children;
             let direction = 1; // 0 = Down; 1 = Stay; 2 = Up;
             if(Nums.length == 0){
-                Holder.insertAdjacentHTML("afterbegin", "<div style='padding: 5px;'>" + newNum + "</div>");
+                Holder.insertAdjacentHTML("afterbegin", "<div>" + newNum + "</div>");
                 return;
             }
             else (Nums.length == 1)
@@ -117,6 +119,7 @@
           }
 
             let dir = direction == 2 ? "afterbegin" : "beforeend";
+            //if (direction != 2 ) element.style.marginTop = "17px"
 
             Holder.insertAdjacentElement(dir, element);
 
@@ -125,11 +128,12 @@
             setTimeout(()=>{
                 try{
                     Holder.removeChild(curNum);
+                    element.scrollIntoView({behavior: 'smooth'});
                 }
                 catch (e) {
 
                 }
-            }, 200);
+            }, 300);
 
 
 
