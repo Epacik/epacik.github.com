@@ -7,7 +7,7 @@ const checkboxClicked = e => {
         checkbox.classList.remove("clicking");
     }, 310);
     parent.postMessage(
-        "captchaRequested", 
+        "dzieCaptchaRequested", 
         address
     );
 }

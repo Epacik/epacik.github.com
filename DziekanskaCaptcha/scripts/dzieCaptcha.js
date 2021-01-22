@@ -36,8 +36,8 @@ var dzieCaptcha = {
     receiveMessage: (event) => {
         var origin = event.origin || event.originalEvent.origin; 
         // For Chrome, the origin property is in the event.originalEvent object.
-        if(!dzieCaptcha.iframeMouseOver){
-            
+        if(!dzieCaptcha.iframeMouseOver || event.data != "dzieCaptchaRequested"){
+            return;
         }
 
         console.log(`Clicked in dzieCAPTCHA with ID: ${dzieCaptcha.activeIframe.id}`);
