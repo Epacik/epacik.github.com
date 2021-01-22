@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto,helvetica,arial,sans-serif;
+    font-size: 14px;
+}
+.container {
+    width: 300px;
+    height: 74px;
+    background-color: #f9f9f9;
+    color: black;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    display: grid;
+    grid-template: "ch tx log" 100% / 54px 152px 94px;
+
+    box-shadow: 0 0 4px 1px rgba(0,0,0,0.08);
+    -webkit-box-shadow: 0 0 4px 1px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0 0 4px 1px rgba(0,0,0,0.08);
+}
+
+.checkbox-container{
+    display: inline-flex;
+    width: 54px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox{
+    width: 28px;
+    height: 28px;
+    border: 2px solid #bbbbbb;
+    border-radius: 2px;
+    box-sizing: border-box;
+    background-color: white;
+    transform-origin: center;
+}
+
+.checkbox.clicked{
+    animation: checkboxClick 300ms ease;
+
+}
+
+@keyframes checkboxClick{
+    from {
+        width: 28px;
+        height: 28px;
+    }
+    to {
+        width: 0px;
+        height: 0px;
+    }
+}
+
+.text-container{
+    display: inline-flex;
+    width: 152px;
+    height: 100%;
+    align-items: center;
+    font-weight: 400;
+}
+
+.logo-and-terms{
+    display: flex;
+    justify-items: right;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo{
+    background-image: url(../img/dziek.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    margin-left: 15px;
+    background-position: center;
+    content: "";
+    height: 32px;
+    width: 40px;
+
+}
+
+.logo-and-terms > .text{
+    font-size: 10px;
+    color: #555;
+}
+
+.logo-and-terms > .links{
+    margin-right: 7px;
+    font-size: 8px;
+}
+.logo-and-terms > .links > *{
+    display: inline;
+    margin: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    color: #555;
+    font-size: 8px;
+    font-weight: 400;
+}

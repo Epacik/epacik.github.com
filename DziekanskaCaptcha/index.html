@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dziekańska Captcha</title>
+    <script type="text/javascript">
+        var onloadCallback = function() {
+          grecaptcha.render('html_element', {
+            'sitekey' : '6Ld-kzcaAAAAAM3sJa83yb3XyHAVXpkwofBBGB5S'
+          });
+        };
+      </script>
+  
+</head>
+<body>
+    <form action="?" method="POST">
+      <div id="html_element"></div>
+      <br>
+      <input type="submit" value="Submit">
+      <br><br><br>
+    </form>
+    <!-- <iframe src="./checkbox.html" role="presentation" name="a-ktlq6ea72np6" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="304" height="78" frameborder="0"></iframe> -->
+    <div id="dzieCAPTCHA" data-dziecaptcha="loadHere">
+
+    </div>
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
+
+    <script async defer src="./scripts/dzieCaptcha.js">
+    </script>
+
+
+  </body>
+
+</html>
