@@ -76,6 +76,8 @@ var dzieCaptcha = {
 
         document.body.insertAdjacentElement("beforeend", modal);
 
+        const submit = document.querySelector(".dzie-captcha-question-submit");
+
         dzieCaptcha.activaModalOptions = document.querySelectorAll("button[data-dzie-captcha-question-selection]");
 
         dzieCaptcha.activaModalOptions.forEach(el => {
@@ -84,17 +86,37 @@ var dzieCaptcha = {
                     el1.classList.remove("active");
                 });
                 el.classList.add("active");
+                submit.innerHTML = "Zatwierdź";
+                submit.style.width = "80px";
                 console.log(ev);
             });
         });
 
-        document.querySelector(".dzie-captcha-question-submit").addEventListener("click", ()=>{
+        submit.addEventListener("click", ()=>{
             document.body.removeChild(modal);
+
+            const ac = document.querySelectorAll("button[data-dzie-captcha-question-selection].active");
+
+            
+            if(ac != null && ac.innerText == "Użyję włącznika"){
+                ifr.postMessage(
+                    "accepted", 
+                    ifr.children[0].src
+                );
+            }
+            else{
+                ifr.postMessage(
+                    "denied", 
+                    ifr.children[0].src
+                );
+            }
+
             dzieCaptcha.activeModal = null;
 
         });
     },
     activaModalOptions: null,
+
 
 }
 

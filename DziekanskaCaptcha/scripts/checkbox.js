@@ -14,5 +14,9 @@ const checkboxClicked = e => {
 
 checkbox.addEventListener("click", checkboxClicked);
 
+window.addEventListener("message", e => { 
+    console.log(e);
+ }, false);
+
 const address = location.search.replace("?", "").split("&").find(e => e.startsWith("href")).replace("href=", "");
 
