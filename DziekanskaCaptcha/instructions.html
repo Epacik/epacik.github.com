@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrukcje umieszczenia dzieCAPTCHA</title>
+</head>
+<body>
+    <div style="font-family: Calibri, 'Trebuchet MS', sans-serif;">
+        <h4>
+            Jak umieścić dzieCAPTCHę na własnej stronie internetowej?
+        </h4>
+
+        Umieść na stronie dowolny element posiadający atrybut <b>data-dziecaptcha="loadHere"</b><br>
+        Na przykład: <br>
+        <b> &ltdiv id="dzieCAPTCHA" data-dziecaptcha="loadHere"&gt&lt/div&gt</b>
+        <br><br>
+        Następnie umieść w końcowej części strony znacznik:<br>
+        <b>&ltscript async defer src="./scripts/dzieCaptcha.js"&gt
+            &lt/script&gt</b><br><br>
+
+            I gotowe!
+
+    </div>
+</body>
+</html>
