@@ -1,6 +1,24 @@
 var dzieCaptcha = {
     iframeMouseOver : false,
-    activeIframe: undefined
+    activeIframe: null,
+    getCoords: (elem) => {
+        var box = elem.getBoundingClientRect();
+
+        var body = document.body;
+        var docEl = document.documentElement;
+
+        var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+        var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+
+        var clientTop = docEl.clientTop || body.clientTop || 0;
+        var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+
+        var top  = box.top +  scrollTop - clientTop;
+        var left = box.left + scrollLeft - clientLeft;
+
+        return { top: Math.round(top), left: Math.round(left) };
+    },
+    activeModal: null,
 }
 
 window.addEventListener("message", receiveMessage, false);
@@ -9,20 +27,45 @@ function receiveMessage(event)
 {
   var origin = event.origin || event.originalEvent.origin; 
   // For Chrome, the origin property is in the event.originalEvent object.
-  console.log(origin);
+  if(!dzieCaptcha.iframeMouseOver){
+    
+  }
 
-  // ...
+  console.log(`Clicked in dzieCAPTCHA with ID: ${dzieCaptcha.activeIframe.id}`);
+
+  const ifr = dzieCaptcha.activeIframe;
+
+  const coords = dzieCaptcha.getCoords(ifr);
+
+  const modalContent = `
+  <section class="dzie-captcha-question-container" >
+        <section class="dzie-captcha-question-header">
+            <section>
+                Jak włączyłbyś rzutnik?
+            </section>
+        </section>
+        <section class="dzie-captcha-question-list" >
+            <button data-dzie-captcha-question-selection="1">Użyję włącznika</button>
+            <button data-dzie-captcha-question-selection="2">Zapytam kolegę o pomoc</button>
+            <button data-dzie-captcha-question-selection="3">Poszukam w instrukcji</button>
+            <button data-dzie-captcha-question-selection="4">Poszukam w Google</button>
+        </section>
+        <section class="dzie-captcha-question-button-container">
+            <button class="dzie-captcha-question-submit">Pomiń</button>
+        </section>
+    </section>
+  `;
+
+  const modal = document.createElement("div");
+  modal.innerHTML = modalContent;
+  modal.style.position = "absolute";
+  modal.style.top = coords.top;
+  modal.style.left = coords.left;
+
+  document.body.insertAdjacentElement("beforeend", modal);
+
 }
 
-window.addEventListener('blur',function(){
-    if(dzieCaptcha.iframeMouseOver){
-        console.log('Wow! Iframe Click!');
-        document.body.click();
-        document.body.focus();
-        window.focus();
-        dzieCaptcha.activeIframe.blur();
-    }
-});
 
 
 document.querySelectorAll("div[data-dziecaptcha='loadHere']").forEach(element => {
@@ -41,12 +84,10 @@ document.querySelectorAll("div[data-dziecaptcha='loadHere']").forEach(element =>
     element.addEventListener('mouseover', ()=>{
         dzieCaptcha.iframeMouseOver = true;
         dzieCaptcha.activeIframe = element;
-        console.log(dzieCaptcha.activeIframe);
     });
     element.addEventListener('mouseout', ()=>{
         dzieCaptcha.iframeMouseOver = false;
-        dzieCaptcha.activeIframe = undefined;
-        console.log(dzieCaptcha.activeIframe);
+        dzieCaptcha.activeIframe = null;
     });
 
 });

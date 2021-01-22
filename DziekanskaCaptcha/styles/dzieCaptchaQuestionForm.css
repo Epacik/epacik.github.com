@@ -1,0 +1,67 @@
+.dzie-captcha-question-container{
+    width: 300px;
+    height: 340px;
+    background-color:white; 
+    padding: 0; 
+    border: 1px solid rgb(204, 204, 204); 
+    font-family: Roboto,helvetica,arial,sans-serif;
+
+}
+
+.dzie-captcha-question-header{
+    background: #CB5180; 
+    height: 100px; 
+    color: white;
+    font-weight: 700;
+    font-size: 18px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 5px;
+    margin: 7px 7px 0 7px;
+}
+
+.dzie-captcha-question-list{
+    margin: 0 7px;
+    padding-top: 10px;
+}
+
+.dzie-captcha-question-list button{
+    border: 2px solid #d3d3d3;
+    border-radius: 3px;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-items: flex-start;
+    background-color: transparent;
+    margin-bottom: 5px;
+}
+
+.dzie-captcha-question-button-container{
+    height: 40px;
+    margin-top: 10px;
+    border-top: 1px solid rgb(204, 204, 204); 
+    padding-top: 10px;
+}
+
+.dzie-captcha-question-button-container button{
+    border: 0 solid #973C5F;
+    background: #CB5180; 
+    color: white;
+    border-radius: 3px;
+    padding: 5px 10px;
+    width: 60px;
+    height: 30px;
+    margin: 10px 10px 10px auto;
+    display: flex;
+    justify-items: flex-start;
+    margin-bottom: 5px;
+    transition: border 0.15s;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dzie-captcha-question-button-container button:active{
+    border-width: 2px;
+}

@@ -1,16 +1,18 @@
 const checkbox = document.querySelector(".checkbox");
-const address = location.search.replace("?", "").split("&").find(e => e.startsWith("href")).replace("href=", "");
+
 
 const checkboxClicked = e => {
-    checkbox.classList.add("clicked");
+    checkbox.classList.add("clicking");
     setTimeout(()=> {
-        checkbox.classList.remove("clicked");
+        checkbox.classList.remove("clicking");
     }, 310);
     parent.postMessage(
-        "The user is 'bob' and the password is 'secret'", 
+        "captchaRequested", 
         address
     );
 }
 
 checkbox.addEventListener("click", checkboxClicked);
+
+const address = location.search.replace("?", "").split("&").find(e => e.startsWith("href")).replace("href=", "");
 
