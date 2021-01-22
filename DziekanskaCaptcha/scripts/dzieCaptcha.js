@@ -88,24 +88,22 @@ var dzieCaptcha = {
                 el.classList.add("active");
                 submit.innerHTML = "Zatwierdź";
                 submit.style.width = "80px";
-                console.log(ev);
             });
         });
 
         submit.addEventListener("click", ()=>{
+            const ac = document.querySelector("button.active[data-dzie-captcha-question-selection]");
+
             document.body.removeChild(modal);
-
-            const ac = document.querySelectorAll("button[data-dzie-captcha-question-selection].active");
-
             
             if(ac != null && ac.innerText == "Użyję włącznika"){
-                ifr.postMessage(
+                ifr.children[0].contentWindow.postMessage(
                     "accepted", 
                     ifr.children[0].src
                 );
             }
             else{
-                ifr.postMessage(
+                ifr.children[0].contentWindow.postMessage(
                     "denied", 
                     ifr.children[0].src
                 );

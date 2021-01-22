@@ -39,6 +39,10 @@ body{
     box-sizing: border-box;
     background-color: white;
     transform-origin: center;
+    transition: border-color, 0.3s;
+}
+.checkbox.denied {
+    border-color: #CB5180;
 }
 
 .checkbox.clicked{
