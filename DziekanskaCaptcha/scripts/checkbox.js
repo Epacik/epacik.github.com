@@ -18,12 +18,14 @@ window.addEventListener("message", e => {
 
     const checkbox = document.querySelector(".checkbox");
     if(e.data == "accepted"){
+        checkbox.classList.remove("denied");
         checkbox.classList.add("accepted");
         setTimeout(()=>{
             checkbox.classList.remove("accepted");
-        }, 5000);
+        }, 10000);
     }
     else{
+        checkbox.classList.remove("accepted");
         checkbox.classList.add("denied");
         setTimeout(()=>{
             checkbox.classList.remove("denied");
