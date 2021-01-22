@@ -5,6 +5,7 @@ const checkboxClicked = e => {
     setTimeout(()=> {
         checkbox.classList.remove("clicked");
     }, 310);
+    parent.focus();
 }
 
 checkbox.addEventListener("click", checkboxClicked);

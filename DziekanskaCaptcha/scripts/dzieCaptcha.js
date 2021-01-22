@@ -1,3 +1,16 @@
+var dzieCaptcha = {
+    iframeMouseOver : false,
+    activeIframe: undefined
+}
+window.addEventListener('blur',function(){
+    if(dzieCaptcha.iframeMouseOver){
+        console.log('Wow! Iframe Click!');
+        window.focus();
+        dzieCaptcha.activeIframe.blur();
+    }
+});
+
+
 document.querySelectorAll("div[data-dziecaptcha='loadHere']").forEach(element => {
     const captcha = document.createElement("iframe");
     captcha.src = "https://epacik.github.io/DziekanskaCaptcha/checkbox.html";
@@ -10,4 +23,18 @@ document.querySelectorAll("div[data-dziecaptcha='loadHere']").forEach(element =>
     element.insertAdjacentElement("afterbegin",captcha);
 
     element.style.height = "78px";
+
+    element.addEventListener('mouseover', ()=>{
+        dzieCaptcha.iframeMouseOver = true;
+        dzieCaptcha.activeIframe = element;
+        console.log(dzieCaptcha.activeIframe);
+    });
+    element.addEventListener('mouseout', ()=>{
+        dzieCaptcha.iframeMouseOver = false;
+        dzieCaptcha.activeIframe = undefined;
+        console.log(dzieCaptcha.activeIframe);
+    });
+
+    element.con
 });
+
