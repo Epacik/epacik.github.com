@@ -1,4 +1,4 @@
-const checkbox = document.querySelector(".checkbox");
+const checkbox = document.querySelector(".checkbox-container");
 
 
 const checkboxClicked = e => {

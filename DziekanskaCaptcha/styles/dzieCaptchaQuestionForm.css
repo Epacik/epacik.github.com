@@ -37,6 +37,10 @@
     margin-bottom: 5px;
 }
 
+.dzie-captcha-question-list button.active{
+    border-color: #973C5F;
+}
+
 .dzie-captcha-question-button-container{
     height: 40px;
     margin-top: 10px;

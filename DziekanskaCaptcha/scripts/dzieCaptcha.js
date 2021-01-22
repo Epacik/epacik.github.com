@@ -19,52 +19,89 @@ var dzieCaptcha = {
         return { top: Math.round(top), left: Math.round(left) };
     },
     activeModal: null,
-}
+    loadCss: ()=>{
+        const cssId = 'dzie-captcha-css';
+        if (!document.getElementById(cssId))
+        {
+            var head  = document.getElementsByTagName('head')[0];
+            var link  = document.createElement('link');
+            link.id   = cssId;
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'https://epacik.github.io/DziekanskaCaptcha/styles/dzieCaptchaQuestionForm.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }
+    },
+    receiveMessage: (event) => {
+        var origin = event.origin || event.originalEvent.origin; 
+        // For Chrome, the origin property is in the event.originalEvent object.
+        if(!dzieCaptcha.iframeMouseOver){
+            
+        }
 
-window.addEventListener("message", receiveMessage, false);
+        console.log(`Clicked in dzieCAPTCHA with ID: ${dzieCaptcha.activeIframe.id}`);
 
-function receiveMessage(event)
-{
-  var origin = event.origin || event.originalEvent.origin; 
-  // For Chrome, the origin property is in the event.originalEvent object.
-  if(!dzieCaptcha.iframeMouseOver){
-    
-  }
+        
+        dzieCaptcha.loadCss();
 
-  console.log(`Clicked in dzieCAPTCHA with ID: ${dzieCaptcha.activeIframe.id}`);
+        const ifr = dzieCaptcha.activeIframe;
 
-  const ifr = dzieCaptcha.activeIframe;
+        const coords = dzieCaptcha.getCoords(ifr);
 
-  const coords = dzieCaptcha.getCoords(ifr);
-
-  const modalContent = `
-  <section class="dzie-captcha-question-container" >
-        <section class="dzie-captcha-question-header">
-            <section>
-                Jak włączyłbyś rzutnik?
+        const modalContent = `
+        <section class="dzie-captcha-question-container" >
+                <section class="dzie-captcha-question-header">
+                    <section>
+                        Jak włączyłbyś rzutnik?
+                    </section>
+                </section>
+                <section class="dzie-captcha-question-list" >
+                    <button data-dzie-captcha-question-selection="1">Użyję włącznika</button>
+                    <button data-dzie-captcha-question-selection="2">Zapytam kolegę o pomoc</button>
+                    <button data-dzie-captcha-question-selection="3">Poszukam w instrukcji</button>
+                    <button data-dzie-captcha-question-selection="4">Poszukam w Google</button>
+                </section>
+                <section class="dzie-captcha-question-button-container">
+                    <button class="dzie-captcha-question-submit">Pomiń</button>
+                </section>
             </section>
-        </section>
-        <section class="dzie-captcha-question-list" >
-            <button data-dzie-captcha-question-selection="1">Użyję włącznika</button>
-            <button data-dzie-captcha-question-selection="2">Zapytam kolegę o pomoc</button>
-            <button data-dzie-captcha-question-selection="3">Poszukam w instrukcji</button>
-            <button data-dzie-captcha-question-selection="4">Poszukam w Google</button>
-        </section>
-        <section class="dzie-captcha-question-button-container">
-            <button class="dzie-captcha-question-submit">Pomiń</button>
-        </section>
-    </section>
-  `;
+        `;
 
-  const modal = document.createElement("div");
-  modal.innerHTML = modalContent;
-  modal.style.position = "absolute";
-  modal.style.top = coords.top;
-  modal.style.left = coords.left;
+        const modal = document.createElement("div");
+        modal.innerHTML = modalContent;
+        modal.style.position = "absolute";
+        modal.style.top = `${coords.top}px`;
+        modal.style.left =`${coords.left}px`;
 
-  document.body.insertAdjacentElement("beforeend", modal);
+        document.body.insertAdjacentElement("beforeend", modal);
+
+        dzieCaptcha.activaModalOptions = document.querySelectorAll("button[data-dzie-captcha-question-selection]");
+
+        dzieCaptcha.activaModalOptions.forEach(el => {
+            el.addEventListener("click", ev => {
+                dzieCaptcha.activaModalOptions.forEach(el1 => {
+                    el1.classList.remove("active");
+                });
+                el.classList.add("active");
+                console.log(ev);
+            });
+        });
+
+        document.querySelector(".dzie-captcha-question-submit").addEventListener("click", ()=>{
+            document.body.removeChild(modal);
+            dzieCaptcha.activeModal = null;
+
+        });
+    },
+    activaModalOptions: null,
 
 }
+
+window.addEventListener("message", e => { dzieCaptcha.receiveMessage(e); }, false);
+
+
+
 
 
 
@@ -91,4 +128,6 @@ document.querySelectorAll("div[data-dziecaptcha='loadHere']").forEach(element =>
     });
 
 });
+
+dzieCaptcha.loadCss();
 
