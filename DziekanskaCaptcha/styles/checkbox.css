@@ -45,6 +45,13 @@ body{
     border-color: #CB5180;
 }
 
+.checkbox.accepted {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background: "url(./img/check.png)";
+}
+
 .checkbox.clicked{
     animation: checkboxClick 300ms ease;
 

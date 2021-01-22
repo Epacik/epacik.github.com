@@ -18,7 +18,10 @@ window.addEventListener("message", e => {
 
     const checkbox = document.querySelector(".checkbox");
     if(e.data == "accepted"){
-        checkbox.style.backgroundImage = "url(./img/check.png)";
+        checkbox.classList.add("accepted");
+        setTimeout(()=>{
+            checkbox.classList.remove("accepted");
+        }, 5000);
     }
     else{
         checkbox.classList.add("denied");
