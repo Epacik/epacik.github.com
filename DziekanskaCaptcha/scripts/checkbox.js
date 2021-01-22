@@ -5,7 +5,11 @@ const checkboxClicked = e => {
     setTimeout(()=> {
         checkbox.classList.remove("clicked");
     }, 310);
-    parent.focus();
+    parent.postMessage(
+        "The user is 'bob' and the password is 'secret'", 
+        parent.location.href
+    );
 }
 
 checkbox.addEventListener("click", checkboxClicked);
+
