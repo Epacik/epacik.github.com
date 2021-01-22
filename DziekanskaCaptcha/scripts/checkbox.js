@@ -24,7 +24,7 @@ window.addEventListener("message", e => {
         checkbox.classList.add("denied");
         setTimeout(()=>{
             checkbox.classList.remove("denied");
-        }, 600);
+        }, 5000);
     }
  }, false);
 
