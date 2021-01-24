@@ -58,7 +58,7 @@ db.settings({});
 
 const data = db.collection('DzieCaptcha').doc("data");
 
-data.get().then(()=>{
+data.get().then( doc =>{
     if (doc.exists) {
         let docData = doc.data();
         data.update({counter: docData.counter + 1});
