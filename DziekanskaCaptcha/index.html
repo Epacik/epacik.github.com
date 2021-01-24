@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dziekańska Captcha</title>
-    
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     
 </head>
 <body>
     
     <div id="dzieCAPTCHA" data-dziecaptcha="loadHere"></div>
-    <a style="font-size: 12px;" href="./instructions.html">Instrukcje dodawania dzieCAPTCHA do własnej strony internetowej</a>
+    <a style="font-size: 12px;" href="./instructions.html">Instrukcje dodawania dzieCAPTCHA do własnej strony internetowej</a><br/>
+    <p>Użyto <span id="counter">0</span> razy</p>
 
     <script async defer src="./scripts/dzieCaptcha.js">
     </script>
+    <script defer src="./scripts/firebaseCounter.js"></script>
 
     
 
